@@ -199,55 +199,30 @@ class LazySupervisedDataset(Dataset):
         return self.total_len
 
     def __getitem__(self, index):
-    """
-    Return a sample from the merged dataset based on the index and determine which task it belongs to:
-      - If the index is less than the number of score_samples, the sample comes from the scoring task (score), using gt_score_norm as the solution;
-      - Otherwise, the sample comes from the degradation detection task (dist), with the solution containing distortion_class and severity.
-    """        
-    # If both score_samples and dist_samples exist, use simple concatenation:
-    if self.score_samples and self.dist_samples:
-        if index < len(self.score_samples):
-            chosen_task = "score"
-            example = self.score_samples[index]
-            solution = example.get("gt_score_norm", None)
-            prompt_text = SCORE_QUESTION_PROMPT  # Prompt for the scoring task
-        else:
-            chosen_task = "dist"
-            # For dist_samples index, subtract the length of score_samples
-            index2 = index - len(self.score_samples)
-            if index2 >= len(self.dist_samples):
-                raise IndexError("Index out of range for dist_samples")
-            example = self.dist_samples[index2]
-            solution = {
-                "distortion_class": example.get("distortion_class", None),
-                "severity": example.get("severity", None)
-            }
-            prompt_text = DIST_QUESTION_PROMPT  # Prompt for the degradation detection task
-
-       def __getitem__(self, index):
-    """
-    Return a sample from the merged dataset based on the index and determine which task it belongs to:
-      - If index < len(score_samples), the sample comes from the scoring task (score) with its solution from gt_score_norm.
-      - Otherwise, the sample comes from the degradation detection task (dist) with solution containing distortion_class and severity.
-    """
-    # If both score_samples and dist_samples exist, concatenate them:
-    if self.score_samples and self.dist_samples:
-        if index < len(self.score_samples):
-            chosen_task = "score"
-            example = self.score_samples[index]
-            solution = example.get("gt_score_norm", None)
-            prompt_text = SCORE_QUESTION_PROMPT  # Prompt for the scoring task
-        else:
-            chosen_task = "dist"
-            index2 = index - len(self.score_samples)
-            if index2 >= len(self.dist_samples):
-                raise IndexError("Index out of range for dist_samples")
-            example = self.dist_samples[index2]
-            solution = {
-                "distortion_class": example.get("distortion_class", None),
-                "severity": example.get("severity", None)
-            }
-            prompt_text = DIST_QUESTION_PROMPT  # Prompt for the degradation detection task
+        """
+        Return a sample from the merged dataset based on the index and determine which task it belongs to:
+        - If the index is less than the number of score_samples, the sample comes from the scoring task (score), using gt_score_norm as the solution;
+        - Otherwise, the sample comes from the degradation detection task (dist), with the solution containing distortion_class and severity.
+        """        
+        # If both score_samples and dist_samples exist, use simple concatenation:
+        if self.score_samples and self.dist_samples:
+            if index < len(self.score_samples):
+                chosen_task = "score"
+                example = self.score_samples[index]
+                solution = example.get("gt_score_norm", None)
+                prompt_text = SCORE_QUESTION_PROMPT  # Prompt for the scoring task
+            else:
+                chosen_task = "dist"
+                # For dist_samples index, subtract the length of score_samples
+                index2 = index - len(self.score_samples)
+                if index2 >= len(self.dist_samples):
+                    raise IndexError("Index out of range for dist_samples")
+                example = self.dist_samples[index2]
+                solution = {
+                    "distortion_class": example.get("distortion_class", None),
+                    "severity": example.get("severity", None)
+                }
+                prompt_text = DIST_QUESTION_PROMPT  # Prompt for the degradation detection task
 
         # If only score_samples exists:
         elif self.score_samples:

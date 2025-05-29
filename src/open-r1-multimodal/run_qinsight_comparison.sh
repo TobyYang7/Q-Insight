@@ -58,7 +58,7 @@ torchrun --nproc_per_node=${nproc_per_node} \
     src/open_r1/qinsight_comparison.py \
     --deepspeed local_scripts/zero3.json \
     --output_dir output/$RUN_NAME \
-    --model_name_or_path /path/to/pretrained/Q-Insight\
+    --model_name_or_path /path/to/pretrained/Q-Insight \
     --dataset_name None \
     --dataset_comparison data_config/iqa_comparison.yaml \
     --image_root ./data/DiffIQA/ValidationImage/images \
