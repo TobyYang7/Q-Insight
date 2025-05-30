@@ -28,9 +28,9 @@ PLCC comparisons between our proposed Q-Insight and existing IQA metrics (left) 
 </p>
 
 ## 🚩 Updates
-
-- 5.26 Release our v2 paper.
-- 3.28 Release Q-Insight technical report.
+- 05.30 Released training and testing code, along with the pretrained model.
+- 05.26 Released our v2 paper.
+- 03.28 Released the Q-Insight technical report.
 
 ## 🔧 Dependencies and Installation
 ```bash
@@ -67,7 +67,7 @@ Arrange the folders in `./src/open-r1-multimodal/data`as follows:
     |-- metas
 ```
 #### Degradation Perception
-Download the `rerefA_sd_brief` subset from [KADIS-700K](https://huggingface.co/datasets/zhiyuanyou/DataDepictQA/tree/main/KADIS700K).
+Download the `rerefA_sd_brief` subset from [KADIS-700K](https://modelscope.cn/datasets/zhiyuanyou/DataDepictQA/files).
 Arrange the folders in `./src/open-r1-multimodal/data` as follows:
 ```
 |-- KADIS-700K
@@ -100,10 +100,14 @@ bash run_qinsight_comparison.sh
 
 
 ## ✏️ To Do List
-- [ ] Gradio demo
+- [ ] Add support for LoRA fine-tuning
+- [ ] Provide a Gradio demo
 - [x] Release inference code and weights
 - [x] Release training code
 - [x] Release the paper
+
+## Acknowledgement
+We appreciate the releasing codes and data of [VLM-R1](https://github.com/om-ai-lab/VLM-R1), [DepictQA](https://github.com/XPixelGroup/DepictQA) and [DeQA-Score](https://github.com/zhiyuanyou/DeQA-Score).
 
 
 
