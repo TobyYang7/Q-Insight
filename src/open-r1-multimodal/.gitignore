@@ -171,8 +171,12 @@ cython_debug/
 .pypirc
 
 # Temp folders
-data/
+# data/
 wandb/
 scripts/
 checkpoints/
 .vscode/
+
+Data-DeQA-Score
+DiffIQA
+KADIS700K
