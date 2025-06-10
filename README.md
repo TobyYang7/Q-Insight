@@ -67,11 +67,11 @@ Arrange the folders in `./src/open-r1-multimodal/data`as follows:
     |-- metas
 ```
 #### Degradation Perception
-Download the `rerefA_sd_brief` subset from [KADIS-700K](https://modelscope.cn/datasets/zhiyuanyou/DataDepictQA/files).
+Download the `refA_sd_brief` subset from [KADIS-700K](https://modelscope.cn/datasets/zhiyuanyou/DataDepictQA/files).
 Arrange the folders in `./src/open-r1-multimodal/data` as follows:
 ```
 |-- KADIS-700K
-  |-- rerefA_sd_brief
+  |-- refA_sd_brief
     |-- dist_imgs/*.jpg
     |-- metas/train_dist.json
 ```
