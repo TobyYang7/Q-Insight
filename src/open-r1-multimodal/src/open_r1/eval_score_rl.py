@@ -281,43 +281,6 @@ def score_reward(completions, solution, task=None, image_path=None, score_reward
             current_time = datetime.now().strftime("%d-%H-%M-%S-%f")
             log_path = os.getenv("LOG_PATH", "./debug_log_eval_score_rl.txt")
             
-            # Print to console
-            print(f"------------- {current_time} Rank: {current_rank} -------------")
-            for i, content in enumerate(contents):
-                # Extract and display think process
-                think_match = re.search(r'<think>(.*?)</think>', content, re.DOTALL)
-                think_content = think_match.group(1).strip() if think_match else "Not found"
-                
-                # Extract and display answer
-                answer_match = re.search(r'<answer>(.*?)</answer>', content, re.DOTALL)
-                answer_content = answer_match.group(1).strip() if answer_match else "Not found"
-                
-                # Get ground truth
-                ground_truth = subsampled_solutions[i] if i < len(subsampled_solutions) else 'N/A'
-                
-                print(f"Think: {think_content}")
-                print(f"Answer: {answer_content}")
-                print(f"Ground Truth: {ground_truth}")
-                
-                # Debug reward calculation
-                if answer_match:
-                    score_match = re.search(r'(\d+\.?\d*)', answer_content)
-                    if score_match:
-                        try:
-                            model_score = float(score_match.group(1))
-                            score_diff = abs(model_score - ground_truth)
-                            print(f"Model Score: {model_score}, Diff: {score_diff}, Threshold: {threshold}, Reward: {rewards[i] if i < len(rewards) else 'N/A'}")
-                        except ValueError:
-                            print(f"Score parsing failed")
-                    else:
-                        print(f"No numeric score found")
-                print(f"{'=' * 40}")
-            
-            print(f"Threshold: {threshold}")
-            print(f"All Rewards: {rewards}")
-            print("=" * 60)
-            
-            # Also write to log file
             with open(log_path, "a", encoding="utf-8") as f:
                 f.write(f"------------- {current_time} Rank: {current_rank} -------------\n")
                 for i, content in enumerate(contents):
