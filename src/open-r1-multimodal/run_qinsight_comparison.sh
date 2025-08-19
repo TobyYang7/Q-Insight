@@ -50,15 +50,15 @@ export CUDA_TIMER_STREAM_KAFKA_CLUSTER=bmq_data_va
 export CUDA_TIMER_STREAM_KAFKA_TOPIC=megatron_cuda_timer_tracing_original_v2
 export PYTORCH_CUDA_ALLOC_CONF="expandable_segments:True"
 
-torchrun --nproc_per_node=${nproc_per_node} \
-    --nnodes=${nnodes} \
-    --node_rank=${node_rank} \
-    --master_addr=${master_addr} \
-    --master_port=${master_port} \
+uv run torchrun --nproc_per_node=8 \
+    --nnodes=1 \
+    --node_rank=0 \
+    --master_addr=127.0.0.1 \
+    --master_port=12345 \
     src/open_r1/qinsight_comparison.py \
     --deepspeed local_scripts/zero3.json \
     --output_dir output/$RUN_NAME \
-    --model_name_or_path /path/to/pretrained/Q-Insight \
+    --model_name_or_path Qwen/Qwen2.5-VL-7B-Instruct \
     --dataset_name None \
     --dataset_comparison data_config/iqa_comparison.yaml \
     --image_root ./data/DiffIQA/ValidationImage/images \

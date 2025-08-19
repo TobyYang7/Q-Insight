@@ -1,9 +1,9 @@
 cd src/open-r1-multimodal 
-pip install -e ".[dev]"
+uv pip install -e ".[dev]"
 
 # Addtional modules
-pip install wandb==0.18.3
-pip install tensorboardx
-pip install qwen_vl_utils torchvision
-pip install flash-attn --no-build-isolation
-pip install transformers==4.51.3
+uv pip install wandb==0.18.3
+uv pip install tensorboardx
+uv pip install qwen_vl_utils torchvision
+uv pip install flash-attn --no-build-isolation
+uv pip install transformers==4.51.3

@@ -407,10 +407,18 @@ class Qwen2VLGRPOTrainer(Trainer):
         # self.model_accepts_loss_kwargs to False to enable scaling.
         self.model_accepts_loss_kwargs = False
 
+
         if self.ref_model is not None:
             if self.is_deepspeed_enabled:
-                self.ref_model = prepare_deepspeed(self.ref_model, self.accelerator)
+                # For DeepSpeed, we manually handle the reference model.
+                # It's for inference only, so we freeze its parameters, set it to evaluation mode,
+                # and move it to the correct device. No optimizer is needed.
+                for param in self.ref_model.parameters():
+                    param.requires_grad = False
+                self.ref_model.eval()
+                self.ref_model = self.ref_model.to(self.accelerator.device)
             else:
+                # The original logic for non-DeepSpeed environments is correct.
                 self.ref_model = self.accelerator.prepare_model(self.ref_model, evaluation_mode=True)
 
         for i, reward_func in enumerate(self.reward_funcs):
@@ -498,7 +506,7 @@ class Qwen2VLGRPOTrainer(Trainer):
             return_tensors="pt",
             padding=True,
             padding_side="left",
-            add_special_tokens=False,
+            # add_special_tokens=False,
         )
         prompt_inputs = super()._prepare_inputs(prompt_inputs)
 
