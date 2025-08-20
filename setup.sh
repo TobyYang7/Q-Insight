@@ -1,3 +1,8 @@
+git clone https://github.com/TobyYang7/paper-slide-crawler
+pip install nvitop
+pip install uv
+uv venv
+
 cd src/open-r1-multimodal 
 uv pip install -e ".[dev]"
 
