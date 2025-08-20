@@ -51,7 +51,7 @@ uv run torchrun --nproc_per_node=8 \
     --run_name ${RUN_NAME} \
     --save_steps 500 \
     --save_only_model true \
-    --score_reward_threshold 0.35 \
+    --score_reward_threshold 0.5 \
     --beta 0.001 \
     --deepspeed local_scripts/zero2.json \
 

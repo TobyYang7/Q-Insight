@@ -101,7 +101,7 @@ SYSTEM_PROMPT = (
 
 SCORE_QUESTION_PROMPT = (
     'What is your overall rating on the quality of this slide?'
-    'The rating should be a float between 1 and 5, rounded to two decimal places, with 1 representing very poor quality and 5 representing excellent quality.'
+    'The rating should be a float between 1 and 10, rounded to two decimal places, with 1 representing very poor quality and 5 representing excellent quality.'
 )
 
 
