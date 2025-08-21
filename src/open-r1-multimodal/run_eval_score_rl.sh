@@ -24,6 +24,9 @@ export NCCL_IB_GID_INDEX=3
 export NCCL_SOCKET_IFNAME=eth0
 export PYTORCH_CUDA_ALLOC_CONF="expandable_segments:True"
 
+# rm logs
+rm -rf $LOG_PATH
+
 uv run torchrun --nproc_per_node=8 \
     --nnodes=1 \
     --node_rank=0 \

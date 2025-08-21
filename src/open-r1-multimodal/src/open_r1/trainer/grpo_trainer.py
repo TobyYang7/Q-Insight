@@ -478,27 +478,53 @@ class Qwen2VLGRPOTrainer(Trainer):
         device = self.accelerator.device
         prompts = [x["prompt"] for x in inputs]
         prompts_text = [maybe_apply_chat_template(example, self.processing_class)["prompt"] for example in inputs]
-        # Handle both pre-loaded images and image paths
+        
         images = []
+        
+        # Define your size constraints for clarity
+        MAX_LONG_SIDE = 1280
+        MIN_SIDE = 28
+
         for x in inputs:
             if "image" in x:
                 img = x["image"]
             else:
-                img = PIL.Image.open(x["image_path"])
+                # It's good practice to convert to RGB to handle grayscale, RGBA, etc.
+                img = PIL.Image.open(x["image_path"]).convert("RGB")
 
-            # Ensure minimum dimensions of 28 pixels
             w, h = img.size
-            if w < 28 or h < 28:
-                # Calculate new dimensions maintaining aspect ratio
-                if w < h:
-                    new_w = 28
-                    new_h = int(h * (28/w))
+
+            # --- START: MODIFIED LOGIC ---
+
+            # 1. Handle images that are too LARGE (downscale)
+            if w > MAX_LONG_SIDE or h > MAX_LONG_SIDE:
+                if w > h:
+                    # Width is the longest side
+                    new_w = MAX_LONG_SIDE
+                    new_h = int(h * (MAX_LONG_SIDE / w))
                 else:
-                    new_h = 28
-                    new_w = int(w * (28/h))
+                    # Height is the longest side
+                    new_h = MAX_LONG_SIDE
+                    new_w = int(w * (MAX_LONG_SIDE / h))
                 img = img.resize((new_w, new_h), PIL.Image.Resampling.LANCZOS)
             
+            # 2. Handle images that are too SMALL (upscale)
+            # Use 'elif' since an image won't be both too large and too small
+            elif w < MIN_SIDE or h < MIN_SIDE:
+                if w < h:
+                    # Width is the shortest side
+                    new_w = MIN_SIDE
+                    new_h = int(h * (MIN_SIDE / w))
+                else:
+                    # Height is the shortest side
+                    new_h = MIN_SIDE
+                    new_w = int(w * (MIN_SIDE / h))
+                img = img.resize((new_w, new_h), PIL.Image.Resampling.LANCZOS)
+            
+            # --- END: MODIFIED LOGIC ---
+            
             images.append(img)
+
 
         prompt_inputs = self.processing_class(
             text=prompts_text,
