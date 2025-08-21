@@ -1,0 +1,1 @@
+uv run hf upload TobyYang7/Q-Insight-eval-score-rl output/Q-Insight-eval-score-rl --repo-type model --commit-message "Initial upload of Q-Insight eval scores" --exclude "**/checkpoint-*/"
