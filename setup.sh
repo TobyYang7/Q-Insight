@@ -1,4 +1,5 @@
 git clone https://github.com/TobyYang7/paper-slide-crawler
+git clone https://github.com/zhuohaouw/SlideAudit
 git config --global user.email "tobyyang7@outlool.com"
 git config --global user.name "TobyYang7"
 pip install nvitop
