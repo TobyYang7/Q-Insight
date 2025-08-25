@@ -2,7 +2,7 @@ import os
 import re
 from dataclasses import dataclass, field
 from datetime import datetime
-from typing import Optional
+from typing import Optional, List
 
 from PIL import Image
 from torch.utils.data import Dataset
@@ -14,6 +14,12 @@ import json
 import random
 import math
 import torch
+import openai
+from dotenv import load_dotenv
+from pydantic import BaseModel
+
+# Load environment variables
+load_dotenv()
 
 # ----------------------- Fix the flash attention bug in the current version of transformers -----------------------
 from transformers.models.qwen2_5_vl.modeling_qwen2_5_vl import (
@@ -266,36 +272,114 @@ class LazyMultiTaskDataset(Dataset):
         return sample
 
 
+class DeficiencyClassification(BaseModel):
+    deficiencies: List[str]
+
+
+def classify_deficiencies(model_output_text):
+    """
+    Uses OpenAI API to classify deficiencies in model output text.
+    Returns a list of classified deficiencies.
+    """
+    # Define the deficiency categories
+    deficiency_categories = {
+        "🎨 Composition & Layout": [
+            "Poor Visual Hierarchy",
+            "Cluttered Layout", 
+            "Unbalanced Space Distribution",
+            "Content Alignment Issues",
+            "Content Overflow/Cut-off",
+            "Occluded Content"
+        ],
+        "🔤 Typography": [
+            "Illegible Typeface Selection or Usage",
+            "Improper Font Sizing",
+            "Excessive Text Volume",
+            "Improper Text Styling",
+            "Improper Line/Character Spacing",
+            "Poor Text Hierarchy"
+        ],
+        "🌈 Color": [
+            "Insufficient Color Contrast for Readability",
+            "Excessive or Inconsistent Color Usage",
+            "Inappropriate or Mismatched Color Combinations"
+        ],
+        "🖼️ Imagery & Visualizations": [
+            "Irrelevant Visual Content",
+            "Poor Image Quality/Editing",
+            "Improper Image Sizing",
+            "Inconsistent Visual Style Usage"
+        ]
+    }
+    
+    # Flatten all deficiency types for the prompt
+    all_deficiencies = []
+    for category, deficiencies in deficiency_categories.items():
+        all_deficiencies.extend(deficiencies)
+    
+    prompt = f"""You are an expert in slide design analysis. Your task is to analyze the following text that describes deficiencies in a slide design, and classify each deficiency mentioned into one of the predefined categories.
+
+Predefined deficiency categories:
+{json.dumps(all_deficiencies, indent=2)}
+
+Model output text to analyze:
+{model_output_text}
+
+Please identify which of the predefined deficiencies are mentioned or implied in the model output text. Return only the exact names of the deficiencies that match the model output. If no deficiencies are found or if the text indicates no issues, return an empty list."""
+    
+    try:
+        client = openai.OpenAI(
+            api_key=os.getenv("OPENAI_API_KEY"),
+            base_url=os.getenv("OPENAI_API_BASE_URL")
+        )
+        
+        model_type = os.getenv("MODEL_TYPE", "gpt-4o-2024-08-06")
+        
+        completion = client.chat.completions.parse(
+            model=model_type,
+            messages=[
+                {"role": "system", "content": "You are an expert in slide design analysis. Classify deficiencies accurately based on the predefined categories."},
+                {"role": "user", "content": prompt}
+            ],
+            response_format=DeficiencyClassification,
+            temperature=0.1
+        )
+        
+        result = completion.choices[0].message.parsed
+        if result and result.deficiencies:
+            return result.deficiencies
+        else:
+            return []
+            
+    except Exception as e:
+        print(f"Error calling OpenAI API: {e}")
+        return []
+
+
 def verify_deficiency(completion_content, ground_truth_deficiencies, **kwargs):
     """
-    Verifies the model's output against a list of ground truth deficiencies.
+    Verifies the model's output against a list of ground truth deficiencies using OpenAI API classification.
     """
     n = len(ground_truth_deficiencies)
     
+    # Use OpenAI API to classify deficiencies in the model output
+    classified_deficiencies = classify_deficiencies(completion_content)
+    
     if n == 0:
-        # Check for the expected responses when no deficiencies exist
-        no_deficiency_indicators = [
-            "no deficiencies", "no issues", "perfect", "no problems", 
-            "no concerns", "no defects", "no bugs", "no errors",
-            "everything looks good", "all good", "no issues found",
-            "no deficiencies found", "no problems found"
-        ]
-        
-        content_lower = completion_content.lower()
-        has_correct_response = any(indicator in content_lower for indicator in no_deficiency_indicators)
-        
-        if has_correct_response:
-            return 1.0
-        else:
-            return 0.0
-
+        # If no deficiencies expected, reward if LLM found no deficiencies
+        return 1.0 if len(classified_deficiencies) == 0 else 0.0
+    
+    if len(classified_deficiencies) == 0:
+        return 0.0
+    
     reward = 0.0
     
     for deficiency_item in ground_truth_deficiencies:
         deficiency_name = deficiency_item.get("deficiency")
         has_strong_agreement = deficiency_item.get("has_strong_agreement", False)
         
-        if deficiency_name and deficiency_name.lower() in completion_content.lower():
+        # Check if this deficiency was classified by OpenAI
+        if deficiency_name and deficiency_name in classified_deficiencies:
             base_reward = 1.0 / n
             if has_strong_agreement:
                 reward += base_reward * 2
@@ -364,10 +448,17 @@ def accuracy_reward(completions, solution, task, image_path=None, score_reward_t
                             match_answer = re.search(answer_tag_pattern, content, re.DOTALL)
                             if match_answer:
                                 answer_content = match_answer.group(1).strip()
-                                f.write(f"Content: {answer_content}\n")
-                                f.write(f"Ground Truth: {subsampled_solutions[i]}\n")
-                        except Exception:
-                            f.write("Failed to extract answer content\n")
+                                
+                                # Get LLM classification results
+                                classified_deficiencies = classify_deficiencies(answer_content)
+                                
+                                # Extract only deficiency names from ground truth
+                                gt_deficiency_names = [item.get("deficiency") for item in subsampled_solutions[i] if item.get("deficiency")]
+                                
+                                f.write(f"LLM Classified Deficiencies: {classified_deficiencies}\n")
+                                f.write(f"Ground Truth Deficiencies: {gt_deficiency_names}\n")
+                        except Exception as e:
+                            f.write(f"Failed to extract answer content or classify deficiencies: {e}\n")
                     
                     f.write(f"{'=' * 40}\n")
         except Exception:
