@@ -483,7 +483,7 @@ class Qwen2VLGRPOTrainer(Trainer):
         images = []
         
         # Define your size constraints for clarity
-        MAX_LONG_SIDE = 1280
+        MAX_LONG_SIDE = 1024
         MIN_SIDE = 28
 
         for x in inputs:

@@ -41,7 +41,7 @@ uv run torchrun --nproc_per_node=8 \
     --max_prompt_length 4096 \
     --num_generations 8 \
     --per_device_train_batch_size 1 \
-    --gradient_accumulation_steps 8 \
+    --gradient_accumulation_steps 4 \
     --logging_steps 1 \
     --bf16 \
     --torch_dtype bfloat16 \

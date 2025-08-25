@@ -117,17 +117,10 @@ SCORE_QUESTION_PROMPT = (
 )
 
 DEFICIENCY_PROMPT = (
-    "Analyze the provided slide for any design deficiencies from a professional perspective. "
-    "List all the deficiencies you identify in your answer. "
-    # "For example: 'Poor Visual Hierarchy', 'Cluttered Layout', 'Unbalanced Space Distribution', "
-    # "'Content Alignment Issues', 'Content Overflow/Cut-off', 'Occluded Content', "
-    # "'Illegible Typeface Selection or Usage', 'Improper Font Sizing', 'Excessive Text Volume', "
-    # "'Improper Text Styling', 'Improper Line/Character Spacing', 'Poor Text Hierarchy', "
-    # "'Insufficient Color Contrast for Readability', 'Excessive or Inconsistent Color Usage', "
-    # "'Inappropriate or Mismatched Color Combinations', 'Irrelevant Visual Content', "
-    # "'Poor Image Quality/Editing', 'Improper Image Sizing', 'Inconsistent Visual Style Usage'."
-    "If there are no deficiencies, you should say 'No deficiencies' or 'No issues' or 'Perfect'."
-    "You need to provide your detailed reasoning process."
+    "Please provide a professional design critique of the accompanying slide. "
+    "If there are no deficiencies, you should say 'No deficiencies'."
+    "Otherwise, your analysis should identify any design deficiencies, explain the reasoning behind your critique, "
+    "and offer specific, actionable suggestions for improvement. "
 )
 
 
@@ -283,7 +276,7 @@ def classify_deficiencies(model_output_text):
     """
     # Define the deficiency categories
     deficiency_categories = {
-        "🎨 Composition & Layout": [
+        "Composition & Layout": [
             "Poor Visual Hierarchy",
             "Cluttered Layout", 
             "Unbalanced Space Distribution",
@@ -291,7 +284,7 @@ def classify_deficiencies(model_output_text):
             "Content Overflow/Cut-off",
             "Occluded Content"
         ],
-        "🔤 Typography": [
+        "Typography": [
             "Illegible Typeface Selection or Usage",
             "Improper Font Sizing",
             "Excessive Text Volume",
@@ -299,12 +292,12 @@ def classify_deficiencies(model_output_text):
             "Improper Line/Character Spacing",
             "Poor Text Hierarchy"
         ],
-        "🌈 Color": [
+        "Color": [
             "Insufficient Color Contrast for Readability",
             "Excessive or Inconsistent Color Usage",
             "Inappropriate or Mismatched Color Combinations"
         ],
-        "🖼️ Imagery & Visualizations": [
+        "Imagery & Visualizations": [
             "Irrelevant Visual Content",
             "Poor Image Quality/Editing",
             "Improper Image Sizing",
@@ -317,15 +310,15 @@ def classify_deficiencies(model_output_text):
     for category, deficiencies in deficiency_categories.items():
         all_deficiencies.extend(deficiencies)
     
-    prompt = f"""You are an expert in slide design analysis. Your task is to analyze the following text that describes deficiencies in a slide design, and classify each deficiency mentioned into one of the predefined categories.
+        prompt = f"""Analyze the input text which describes slide design problems. From the predefined categories, identify all deficiencies mentioned in the text.
 
-Predefined deficiency categories:
-{json.dumps(all_deficiencies, indent=2)}
+        Predefined deficiency categories:
+        {json.dumps(all_deficiencies, indent=2)}
 
-Model output text to analyze:
-{model_output_text}
+        Input text to analyze:
+        {model_output_text}
 
-Please identify which of the predefined deficiencies are mentioned or implied in the model output text. Return only the exact names of the deficiencies that match the model output. If no deficiencies are found or if the text indicates no issues, return an empty list."""
+        Return a list containing only the exact names of the deficiencies found. If no deficiencies are found, return an empty list."""
     
     try:
         client = openai.OpenAI(
@@ -372,19 +365,39 @@ def verify_deficiency(completion_content, ground_truth_deficiencies, **kwargs):
     if len(classified_deficiencies) == 0:
         return 0.0
     
+    # Define all valid deficiencies in the four categories
+    valid_deficiencies = {
+        "Poor Visual Hierarchy", "Cluttered Layout", "Unbalanced Space Distribution",
+        "Content Alignment Issues", "Content Overflow/Cut-off", "Occluded Content",
+        "Illegible Typeface Selection or Usage", "Improper Font Sizing", "Excessive Text Volume",
+        "Improper Text Styling", "Improper Line/Character Spacing", "Poor Text Hierarchy",
+        "Insufficient Color Contrast for Readability", "Excessive or Inconsistent Color Usage",
+        "Inappropriate or Mismatched Color Combinations", "Irrelevant Visual Content",
+        "Poor Image Quality/Editing", "Improper Image Sizing", "Inconsistent Visual Style Usage"
+    }
+    
     reward = 0.0
+    base_reward = 1.0 / n
     
     for deficiency_item in ground_truth_deficiencies:
         deficiency_name = deficiency_item.get("deficiency")
         has_strong_agreement = deficiency_item.get("has_strong_agreement", False)
         
-        # Check if this deficiency was classified by OpenAI
-        if deficiency_name and deficiency_name in classified_deficiencies:
-            base_reward = 1.0 / n
-            if has_strong_agreement:
-                reward += base_reward * 2
+        if deficiency_name:
+            # Check if this exact deficiency was classified by OpenAI
+            if deficiency_name in classified_deficiencies:
+                # Full reward for exact match
+                if has_strong_agreement:
+                    reward += base_reward * 2
+                else:
+                    reward += base_reward
             else:
-                reward += base_reward
+                # Check if any of the classified deficiencies are valid (in our categories)
+                # and give partial reward
+                for classified_def in classified_deficiencies:
+                    if classified_def in valid_deficiencies:
+                        reward += base_reward / 2
+                        break  # Only give partial reward once per ground truth item
     
     return reward
 
