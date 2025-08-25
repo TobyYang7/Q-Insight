@@ -1,6 +1,6 @@
 [
   {
-    "image": "SlideAudit/data/images/slide_1261.jpg",
+    "image": "SlideAudit/data/images/slide_1261.png",
     "slide_id": "1261",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -21,14 +21,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2392.jpg",
+    "image": "SlideAudit/data/images/slide_2392.png",
     "slide_id": "2392",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1849.jpg",
+    "image": "SlideAudit/data/images/slide_1849.png",
     "slide_id": "1849",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -42,7 +42,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1533.jpg",
+    "image": "SlideAudit/data/images/slide_1533.png",
     "slide_id": "1533",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -56,14 +56,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1388.jpg",
+    "image": "SlideAudit/data/images/slide_1388.png",
     "slide_id": "1388",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0777.jpg",
+    "image": "SlideAudit/data/images/slide_0777.png",
     "slide_id": "777",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -83,7 +83,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1960.jpg",
+    "image": "SlideAudit/data/images/slide_1960.png",
     "slide_id": "1960",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -97,21 +97,21 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1362.jpg",
+    "image": "SlideAudit/data/images/slide_1362.png",
     "slide_id": "1362",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0862.jpg",
+    "image": "SlideAudit/data/images/slide_0862.png",
     "slide_id": "862",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0393.jpg",
+    "image": "SlideAudit/data/images/slide_0393.png",
     "slide_id": "393",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -132,7 +132,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2291.jpg",
+    "image": "SlideAudit/data/images/slide_2291.png",
     "slide_id": "2291",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -153,21 +153,21 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1136.jpg",
+    "image": "SlideAudit/data/images/slide_1136.png",
     "slide_id": "1136",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0606.jpg",
+    "image": "SlideAudit/data/images/slide_0606.png",
     "slide_id": "606",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1428.jpg",
+    "image": "SlideAudit/data/images/slide_1428.png",
     "slide_id": "1428",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -188,7 +188,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0825.jpg",
+    "image": "SlideAudit/data/images/slide_0825.png",
     "slide_id": "825",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -208,7 +208,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0669.jpg",
+    "image": "SlideAudit/data/images/slide_0669.png",
     "slide_id": "669",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -229,7 +229,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2129.jpg",
+    "image": "SlideAudit/data/images/slide_2129.png",
     "slide_id": "2129",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -262,7 +262,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1366.jpg",
+    "image": "SlideAudit/data/images/slide_1366.png",
     "slide_id": "1366",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -301,7 +301,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2055.jpg",
+    "image": "SlideAudit/data/images/slide_2055.png",
     "slide_id": "2055",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -315,14 +315,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1039.jpg",
+    "image": "SlideAudit/data/images/slide_1039.png",
     "slide_id": "1039",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0616.jpg",
+    "image": "SlideAudit/data/images/slide_0616.png",
     "slide_id": "616",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -361,14 +361,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1844.jpg",
+    "image": "SlideAudit/data/images/slide_1844.png",
     "slide_id": "1844",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1475.jpg",
+    "image": "SlideAudit/data/images/slide_1475.png",
     "slide_id": "1475",
     "has_design_deficiencies": true,
     "deficiency_count": 5,
@@ -438,7 +438,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0256.jpg",
+    "image": "SlideAudit/data/images/slide_0256.png",
     "slide_id": "256",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -459,7 +459,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1737.jpg",
+    "image": "SlideAudit/data/images/slide_1737.png",
     "slide_id": "1737",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -492,7 +492,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1359.jpg",
+    "image": "SlideAudit/data/images/slide_1359.png",
     "slide_id": "1359",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -506,7 +506,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1980.jpg",
+    "image": "SlideAudit/data/images/slide_1980.png",
     "slide_id": "1980",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -533,7 +533,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2235.jpg",
+    "image": "SlideAudit/data/images/slide_2235.png",
     "slide_id": "2235",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -560,7 +560,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2242.jpg",
+    "image": "SlideAudit/data/images/slide_2242.png",
     "slide_id": "2242",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -587,21 +587,21 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1886.jpg",
+    "image": "SlideAudit/data/images/slide_1886.png",
     "slide_id": "1886",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_2048.jpg",
+    "image": "SlideAudit/data/images/slide_2048.png",
     "slide_id": "2048",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1944.jpg",
+    "image": "SlideAudit/data/images/slide_1944.png",
     "slide_id": "1944",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -635,7 +635,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0144.jpg",
+    "image": "SlideAudit/data/images/slide_0144.png",
     "slide_id": "144",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -668,7 +668,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0884.jpg",
+    "image": "SlideAudit/data/images/slide_0884.png",
     "slide_id": "884",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -688,7 +688,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0746.jpg",
+    "image": "SlideAudit/data/images/slide_0746.png",
     "slide_id": "746",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -702,7 +702,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2194.jpg",
+    "image": "SlideAudit/data/images/slide_2194.png",
     "slide_id": "2194",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -716,7 +716,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1374.jpg",
+    "image": "SlideAudit/data/images/slide_1374.png",
     "slide_id": "1374",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -730,7 +730,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1510.jpg",
+    "image": "SlideAudit/data/images/slide_1510.png",
     "slide_id": "1510",
     "has_design_deficiencies": true,
     "deficiency_count": 5,
@@ -782,7 +782,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1520.jpg",
+    "image": "SlideAudit/data/images/slide_1520.png",
     "slide_id": "1520",
     "has_design_deficiencies": true,
     "deficiency_count": 7,
@@ -846,7 +846,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1926.jpg",
+    "image": "SlideAudit/data/images/slide_1926.png",
     "slide_id": "1926",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -860,7 +860,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1474.jpg",
+    "image": "SlideAudit/data/images/slide_1474.png",
     "slide_id": "1474",
     "has_design_deficiencies": true,
     "deficiency_count": 5,
@@ -936,7 +936,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1407.jpg",
+    "image": "SlideAudit/data/images/slide_1407.png",
     "slide_id": "1407",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -950,7 +950,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1103.jpg",
+    "image": "SlideAudit/data/images/slide_1103.png",
     "slide_id": "1103",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -977,7 +977,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1652.jpg",
+    "image": "SlideAudit/data/images/slide_1652.png",
     "slide_id": "1652",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -991,7 +991,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1896.jpg",
+    "image": "SlideAudit/data/images/slide_1896.png",
     "slide_id": "1896",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -1025,7 +1025,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1065.jpg",
+    "image": "SlideAudit/data/images/slide_1065.png",
     "slide_id": "1065",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -1052,7 +1052,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0004.jpg",
+    "image": "SlideAudit/data/images/slide_0004.png",
     "slide_id": "4",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -1085,14 +1085,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1979.jpg",
+    "image": "SlideAudit/data/images/slide_1979.png",
     "slide_id": "1979",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_2199.jpg",
+    "image": "SlideAudit/data/images/slide_2199.png",
     "slide_id": "2199",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -1119,42 +1119,42 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0091.jpg",
+    "image": "SlideAudit/data/images/slide_0091.png",
     "slide_id": "91",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0522.jpg",
+    "image": "SlideAudit/data/images/slide_0522.png",
     "slide_id": "522",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0390.jpg",
+    "image": "SlideAudit/data/images/slide_0390.png",
     "slide_id": "390",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1181.jpg",
+    "image": "SlideAudit/data/images/slide_1181.png",
     "slide_id": "1181",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1843.jpg",
+    "image": "SlideAudit/data/images/slide_1843.png",
     "slide_id": "1843",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0789.jpg",
+    "image": "SlideAudit/data/images/slide_0789.png",
     "slide_id": "789",
     "has_design_deficiencies": true,
     "deficiency_count": 5,
@@ -1211,7 +1211,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1995.jpg",
+    "image": "SlideAudit/data/images/slide_1995.png",
     "slide_id": "1995",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -1232,14 +1232,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1048.jpg",
+    "image": "SlideAudit/data/images/slide_1048.png",
     "slide_id": "1048",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1242.jpg",
+    "image": "SlideAudit/data/images/slide_1242.png",
     "slide_id": "1242",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -1266,14 +1266,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0894.jpg",
+    "image": "SlideAudit/data/images/slide_0894.png",
     "slide_id": "894",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0643.jpg",
+    "image": "SlideAudit/data/images/slide_0643.png",
     "slide_id": "643",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -1287,7 +1287,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1611.jpg",
+    "image": "SlideAudit/data/images/slide_1611.png",
     "slide_id": "1611",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -1320,7 +1320,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1493.jpg",
+    "image": "SlideAudit/data/images/slide_1493.png",
     "slide_id": "1493",
     "has_design_deficiencies": true,
     "deficiency_count": 5,
@@ -1404,7 +1404,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0708.jpg",
+    "image": "SlideAudit/data/images/slide_0708.png",
     "slide_id": "708",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -1431,7 +1431,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0890.jpg",
+    "image": "SlideAudit/data/images/slide_0890.png",
     "slide_id": "890",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -1458,7 +1458,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1222.jpg",
+    "image": "SlideAudit/data/images/slide_1222.png",
     "slide_id": "1222",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -1479,7 +1479,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0223.jpg",
+    "image": "SlideAudit/data/images/slide_0223.png",
     "slide_id": "223",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -1499,7 +1499,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0079.jpg",
+    "image": "SlideAudit/data/images/slide_0079.png",
     "slide_id": "79",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -1526,7 +1526,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0544.jpg",
+    "image": "SlideAudit/data/images/slide_0544.png",
     "slide_id": "544",
     "has_design_deficiencies": true,
     "deficiency_count": 4,
@@ -1565,14 +1565,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2169.jpg",
+    "image": "SlideAudit/data/images/slide_2169.png",
     "slide_id": "2169",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1190.jpg",
+    "image": "SlideAudit/data/images/slide_1190.png",
     "slide_id": "1190",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -1586,7 +1586,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0366.jpg",
+    "image": "SlideAudit/data/images/slide_0366.png",
     "slide_id": "366",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -1606,7 +1606,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0535.jpg",
+    "image": "SlideAudit/data/images/slide_0535.png",
     "slide_id": "535",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -1646,7 +1646,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1988.jpg",
+    "image": "SlideAudit/data/images/slide_1988.png",
     "slide_id": "1988",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -1667,7 +1667,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1797.jpg",
+    "image": "SlideAudit/data/images/slide_1797.png",
     "slide_id": "1797",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -1738,7 +1738,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0237.jpg",
+    "image": "SlideAudit/data/images/slide_0237.png",
     "slide_id": "237",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -1771,14 +1771,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0057.jpg",
+    "image": "SlideAudit/data/images/slide_0057.png",
     "slide_id": "57",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1924.jpg",
+    "image": "SlideAudit/data/images/slide_1924.png",
     "slide_id": "1924",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -1792,7 +1792,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0679.jpg",
+    "image": "SlideAudit/data/images/slide_0679.png",
     "slide_id": "679",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -1806,7 +1806,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1099.jpg",
+    "image": "SlideAudit/data/images/slide_1099.png",
     "slide_id": "1099",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -1827,7 +1827,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1728.jpg",
+    "image": "SlideAudit/data/images/slide_1728.png",
     "slide_id": "1728",
     "has_design_deficiencies": true,
     "deficiency_count": 4,
@@ -1880,7 +1880,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1392.jpg",
+    "image": "SlideAudit/data/images/slide_1392.png",
     "slide_id": "1392",
     "has_design_deficiencies": true,
     "deficiency_count": 5,
@@ -1938,7 +1938,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0819.jpg",
+    "image": "SlideAudit/data/images/slide_0819.png",
     "slide_id": "819",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -1958,14 +1958,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1044.jpg",
+    "image": "SlideAudit/data/images/slide_1044.png",
     "slide_id": "1044",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1314.jpg",
+    "image": "SlideAudit/data/images/slide_1314.png",
     "slide_id": "1314",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -1992,7 +1992,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0720.jpg",
+    "image": "SlideAudit/data/images/slide_0720.png",
     "slide_id": "720",
     "has_design_deficiencies": true,
     "deficiency_count": 4,
@@ -2038,7 +2038,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2309.jpg",
+    "image": "SlideAudit/data/images/slide_2309.png",
     "slide_id": "2309",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -2071,7 +2071,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1584.jpg",
+    "image": "SlideAudit/data/images/slide_1584.png",
     "slide_id": "1584",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -2085,7 +2085,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1981.jpg",
+    "image": "SlideAudit/data/images/slide_1981.png",
     "slide_id": "1981",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -2099,14 +2099,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0143.jpg",
+    "image": "SlideAudit/data/images/slide_0143.png",
     "slide_id": "143",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1771.jpg",
+    "image": "SlideAudit/data/images/slide_1771.png",
     "slide_id": "1771",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -2139,7 +2139,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0571.jpg",
+    "image": "SlideAudit/data/images/slide_0571.png",
     "slide_id": "571",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -2166,7 +2166,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0673.jpg",
+    "image": "SlideAudit/data/images/slide_0673.png",
     "slide_id": "673",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -2187,14 +2187,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0817.jpg",
+    "image": "SlideAudit/data/images/slide_0817.png",
     "slide_id": "817",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0396.jpg",
+    "image": "SlideAudit/data/images/slide_0396.png",
     "slide_id": "396",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -2215,14 +2215,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1352.jpg",
+    "image": "SlideAudit/data/images/slide_1352.png",
     "slide_id": "1352",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0049.jpg",
+    "image": "SlideAudit/data/images/slide_0049.png",
     "slide_id": "49",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -2249,7 +2249,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2279.jpg",
+    "image": "SlideAudit/data/images/slide_2279.png",
     "slide_id": "2279",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -2295,7 +2295,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0467.jpg",
+    "image": "SlideAudit/data/images/slide_0467.png",
     "slide_id": "467",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -2328,7 +2328,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1785.jpg",
+    "image": "SlideAudit/data/images/slide_1785.png",
     "slide_id": "1785",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -2367,7 +2367,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1629.jpg",
+    "image": "SlideAudit/data/images/slide_1629.png",
     "slide_id": "1629",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -2387,7 +2387,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1681.jpg",
+    "image": "SlideAudit/data/images/slide_1681.png",
     "slide_id": "1681",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -2414,7 +2414,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0626.jpg",
+    "image": "SlideAudit/data/images/slide_0626.png",
     "slide_id": "626",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -2471,7 +2471,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0717.jpg",
+    "image": "SlideAudit/data/images/slide_0717.png",
     "slide_id": "717",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -2504,7 +2504,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2223.jpg",
+    "image": "SlideAudit/data/images/slide_2223.png",
     "slide_id": "2223",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -2544,14 +2544,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1881.jpg",
+    "image": "SlideAudit/data/images/slide_1881.png",
     "slide_id": "1881",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1673.jpg",
+    "image": "SlideAudit/data/images/slide_1673.png",
     "slide_id": "1673",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -2571,7 +2571,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0409.jpg",
+    "image": "SlideAudit/data/images/slide_0409.png",
     "slide_id": "409",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -2598,35 +2598,35 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0456.jpg",
+    "image": "SlideAudit/data/images/slide_0456.png",
     "slide_id": "456",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_2138.jpg",
+    "image": "SlideAudit/data/images/slide_2138.png",
     "slide_id": "2138",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1759.jpg",
+    "image": "SlideAudit/data/images/slide_1759.png",
     "slide_id": "1759",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_2257.jpg",
+    "image": "SlideAudit/data/images/slide_2257.png",
     "slide_id": "2257",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1787.jpg",
+    "image": "SlideAudit/data/images/slide_1787.png",
     "slide_id": "1787",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -2640,7 +2640,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0784.jpg",
+    "image": "SlideAudit/data/images/slide_0784.png",
     "slide_id": "784",
     "has_design_deficiencies": true,
     "deficiency_count": 4,
@@ -2698,7 +2698,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2195.jpg",
+    "image": "SlideAudit/data/images/slide_2195.png",
     "slide_id": "2195",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -2712,7 +2712,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1437.jpg",
+    "image": "SlideAudit/data/images/slide_1437.png",
     "slide_id": "1437",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -2726,14 +2726,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1613.jpg",
+    "image": "SlideAudit/data/images/slide_1613.png",
     "slide_id": "1613",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_2347.jpg",
+    "image": "SlideAudit/data/images/slide_2347.png",
     "slide_id": "2347",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -2747,7 +2747,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0547.jpg",
+    "image": "SlideAudit/data/images/slide_0547.png",
     "slide_id": "547",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -2761,7 +2761,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0509.jpg",
+    "image": "SlideAudit/data/images/slide_0509.png",
     "slide_id": "509",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -2813,7 +2813,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1661.jpg",
+    "image": "SlideAudit/data/images/slide_1661.png",
     "slide_id": "1661",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -2846,21 +2846,21 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1506.jpg",
+    "image": "SlideAudit/data/images/slide_1506.png",
     "slide_id": "1506",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1770.jpg",
+    "image": "SlideAudit/data/images/slide_1770.png",
     "slide_id": "1770",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1372.jpg",
+    "image": "SlideAudit/data/images/slide_1372.png",
     "slide_id": "1372",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -2874,14 +2874,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2167.jpg",
+    "image": "SlideAudit/data/images/slide_2167.png",
     "slide_id": "2167",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0844.jpg",
+    "image": "SlideAudit/data/images/slide_0844.png",
     "slide_id": "844",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -2920,7 +2920,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1907.jpg",
+    "image": "SlideAudit/data/images/slide_1907.png",
     "slide_id": "1907",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -2947,7 +2947,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1603.jpg",
+    "image": "SlideAudit/data/images/slide_1603.png",
     "slide_id": "1603",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -2968,7 +2968,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1361.jpg",
+    "image": "SlideAudit/data/images/slide_1361.png",
     "slide_id": "1361",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -2982,7 +2982,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0735.jpg",
+    "image": "SlideAudit/data/images/slide_0735.png",
     "slide_id": "735",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -3015,14 +3015,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0102.jpg",
+    "image": "SlideAudit/data/images/slide_0102.png",
     "slide_id": "102",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1689.jpg",
+    "image": "SlideAudit/data/images/slide_1689.png",
     "slide_id": "1689",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -3042,7 +3042,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0726.jpg",
+    "image": "SlideAudit/data/images/slide_0726.png",
     "slide_id": "726",
     "has_design_deficiencies": true,
     "deficiency_count": 6,
@@ -3112,7 +3112,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0666.jpg",
+    "image": "SlideAudit/data/images/slide_0666.png",
     "slide_id": "666",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -3126,7 +3126,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0970.jpg",
+    "image": "SlideAudit/data/images/slide_0970.png",
     "slide_id": "970",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -3140,7 +3140,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0634.jpg",
+    "image": "SlideAudit/data/images/slide_0634.png",
     "slide_id": "634",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -3154,14 +3154,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2171.jpg",
+    "image": "SlideAudit/data/images/slide_2171.png",
     "slide_id": "2171",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1449.jpg",
+    "image": "SlideAudit/data/images/slide_1449.png",
     "slide_id": "1449",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -3181,7 +3181,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0422.jpg",
+    "image": "SlideAudit/data/images/slide_0422.png",
     "slide_id": "422",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -3201,7 +3201,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1023.jpg",
+    "image": "SlideAudit/data/images/slide_1023.png",
     "slide_id": "1023",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -3221,7 +3221,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0861.jpg",
+    "image": "SlideAudit/data/images/slide_0861.png",
     "slide_id": "861",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -3267,7 +3267,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1466.jpg",
+    "image": "SlideAudit/data/images/slide_1466.png",
     "slide_id": "1466",
     "has_design_deficiencies": true,
     "deficiency_count": 4,
@@ -3299,14 +3299,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0164.jpg",
+    "image": "SlideAudit/data/images/slide_0164.png",
     "slide_id": "164",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1494.jpg",
+    "image": "SlideAudit/data/images/slide_1494.png",
     "slide_id": "1494",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -3332,14 +3332,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1263.jpg",
+    "image": "SlideAudit/data/images/slide_1263.png",
     "slide_id": "1263",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0172.jpg",
+    "image": "SlideAudit/data/images/slide_0172.png",
     "slide_id": "172",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -3366,7 +3366,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0523.jpg",
+    "image": "SlideAudit/data/images/slide_0523.png",
     "slide_id": "523",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -3393,7 +3393,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1761.jpg",
+    "image": "SlideAudit/data/images/slide_1761.png",
     "slide_id": "1761",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -3407,7 +3407,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0607.jpg",
+    "image": "SlideAudit/data/images/slide_0607.png",
     "slide_id": "607",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -3447,7 +3447,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1513.jpg",
+    "image": "SlideAudit/data/images/slide_1513.png",
     "slide_id": "1513",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -3461,7 +3461,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0148.jpg",
+    "image": "SlideAudit/data/images/slide_0148.png",
     "slide_id": "148",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -3475,14 +3475,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0611.jpg",
+    "image": "SlideAudit/data/images/slide_0611.png",
     "slide_id": "611",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_2179.jpg",
+    "image": "SlideAudit/data/images/slide_2179.png",
     "slide_id": "2179",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -3522,7 +3522,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2256.jpg",
+    "image": "SlideAudit/data/images/slide_2256.png",
     "slide_id": "2256",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -3549,7 +3549,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0040.jpg",
+    "image": "SlideAudit/data/images/slide_0040.png",
     "slide_id": "40",
     "has_design_deficiencies": true,
     "deficiency_count": 4,
@@ -3594,7 +3594,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1752.jpg",
+    "image": "SlideAudit/data/images/slide_1752.png",
     "slide_id": "1752",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -3640,7 +3640,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1810.jpg",
+    "image": "SlideAudit/data/images/slide_1810.png",
     "slide_id": "1810",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -3685,7 +3685,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2263.jpg",
+    "image": "SlideAudit/data/images/slide_2263.png",
     "slide_id": "2263",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -3705,7 +3705,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1073.jpg",
+    "image": "SlideAudit/data/images/slide_1073.png",
     "slide_id": "1073",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -3719,14 +3719,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0536.jpg",
+    "image": "SlideAudit/data/images/slide_0536.png",
     "slide_id": "536",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1367.jpg",
+    "image": "SlideAudit/data/images/slide_1367.png",
     "slide_id": "1367",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -3740,7 +3740,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0015.jpg",
+    "image": "SlideAudit/data/images/slide_0015.png",
     "slide_id": "15",
     "has_design_deficiencies": true,
     "deficiency_count": 5,
@@ -3799,7 +3799,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0181.jpg",
+    "image": "SlideAudit/data/images/slide_0181.png",
     "slide_id": "181",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -3813,14 +3813,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1134.jpg",
+    "image": "SlideAudit/data/images/slide_1134.png",
     "slide_id": "1134",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_2198.jpg",
+    "image": "SlideAudit/data/images/slide_2198.png",
     "slide_id": "2198",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -3834,7 +3834,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0379.jpg",
+    "image": "SlideAudit/data/images/slide_0379.png",
     "slide_id": "379",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -3848,14 +3848,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0209.jpg",
+    "image": "SlideAudit/data/images/slide_0209.png",
     "slide_id": "209",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1029.jpg",
+    "image": "SlideAudit/data/images/slide_1029.png",
     "slide_id": "1029",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -3869,7 +3869,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2258.jpg",
+    "image": "SlideAudit/data/images/slide_2258.png",
     "slide_id": "2258",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -3890,14 +3890,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2071.jpg",
+    "image": "SlideAudit/data/images/slide_2071.png",
     "slide_id": "2071",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1082.jpg",
+    "image": "SlideAudit/data/images/slide_1082.png",
     "slide_id": "1082",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -3937,7 +3937,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0834.jpg",
+    "image": "SlideAudit/data/images/slide_0834.png",
     "slide_id": "834",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -3951,7 +3951,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1405.jpg",
+    "image": "SlideAudit/data/images/slide_1405.png",
     "slide_id": "1405",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -3978,7 +3978,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0863.jpg",
+    "image": "SlideAudit/data/images/slide_0863.png",
     "slide_id": "863",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -4024,14 +4024,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1155.jpg",
+    "image": "SlideAudit/data/images/slide_1155.png",
     "slide_id": "1155",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1116.jpg",
+    "image": "SlideAudit/data/images/slide_1116.png",
     "slide_id": "1116",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -4052,7 +4052,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2371.jpg",
+    "image": "SlideAudit/data/images/slide_2371.png",
     "slide_id": "2371",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -4079,14 +4079,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0439.jpg",
+    "image": "SlideAudit/data/images/slide_0439.png",
     "slide_id": "439",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0473.jpg",
+    "image": "SlideAudit/data/images/slide_0473.png",
     "slide_id": "473",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -4107,7 +4107,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2362.jpg",
+    "image": "SlideAudit/data/images/slide_2362.png",
     "slide_id": "2362",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -4146,7 +4146,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0551.jpg",
+    "image": "SlideAudit/data/images/slide_0551.png",
     "slide_id": "551",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -4191,7 +4191,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0425.jpg",
+    "image": "SlideAudit/data/images/slide_0425.png",
     "slide_id": "425",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -4236,14 +4236,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1227.jpg",
+    "image": "SlideAudit/data/images/slide_1227.png",
     "slide_id": "1227",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0033.jpg",
+    "image": "SlideAudit/data/images/slide_0033.png",
     "slide_id": "33",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -4264,7 +4264,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1240.jpg",
+    "image": "SlideAudit/data/images/slide_1240.png",
     "slide_id": "1240",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -4291,7 +4291,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2232.jpg",
+    "image": "SlideAudit/data/images/slide_2232.png",
     "slide_id": "2232",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -4312,7 +4312,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0647.jpg",
+    "image": "SlideAudit/data/images/slide_0647.png",
     "slide_id": "647",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -4345,7 +4345,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1168.jpg",
+    "image": "SlideAudit/data/images/slide_1168.png",
     "slide_id": "1168",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -4359,7 +4359,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1514.jpg",
+    "image": "SlideAudit/data/images/slide_1514.png",
     "slide_id": "1514",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -4392,7 +4392,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1001.jpg",
+    "image": "SlideAudit/data/images/slide_1001.png",
     "slide_id": "1001",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -4431,7 +4431,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0282.jpg",
+    "image": "SlideAudit/data/images/slide_0282.png",
     "slide_id": "282",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -4445,7 +4445,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1430.jpg",
+    "image": "SlideAudit/data/images/slide_1430.png",
     "slide_id": "1430",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -4484,7 +4484,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0543.jpg",
+    "image": "SlideAudit/data/images/slide_0543.png",
     "slide_id": "543",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -4498,7 +4498,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2161.jpg",
+    "image": "SlideAudit/data/images/slide_2161.png",
     "slide_id": "2161",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -4518,14 +4518,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2073.jpg",
+    "image": "SlideAudit/data/images/slide_2073.png",
     "slide_id": "2073",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0874.jpg",
+    "image": "SlideAudit/data/images/slide_0874.png",
     "slide_id": "874",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -4565,7 +4565,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0301.jpg",
+    "image": "SlideAudit/data/images/slide_0301.png",
     "slide_id": "301",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -4579,7 +4579,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0410.jpg",
+    "image": "SlideAudit/data/images/slide_0410.png",
     "slide_id": "410",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -4619,7 +4619,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1878.jpg",
+    "image": "SlideAudit/data/images/slide_1878.png",
     "slide_id": "1878",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -4633,14 +4633,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0039.jpg",
+    "image": "SlideAudit/data/images/slide_0039.png",
     "slide_id": "39",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0298.jpg",
+    "image": "SlideAudit/data/images/slide_0298.png",
     "slide_id": "298",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -4654,7 +4654,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2131.jpg",
+    "image": "SlideAudit/data/images/slide_2131.png",
     "slide_id": "2131",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -4668,7 +4668,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1873.jpg",
+    "image": "SlideAudit/data/images/slide_1873.png",
     "slide_id": "1873",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -4688,7 +4688,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1229.jpg",
+    "image": "SlideAudit/data/images/slide_1229.png",
     "slide_id": "1229",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -4715,7 +4715,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0537.jpg",
+    "image": "SlideAudit/data/images/slide_0537.png",
     "slide_id": "537",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -4754,28 +4754,28 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1622.jpg",
+    "image": "SlideAudit/data/images/slide_1622.png",
     "slide_id": "1622",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1088.jpg",
+    "image": "SlideAudit/data/images/slide_1088.png",
     "slide_id": "1088",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0978.jpg",
+    "image": "SlideAudit/data/images/slide_0978.png",
     "slide_id": "978",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1287.jpg",
+    "image": "SlideAudit/data/images/slide_1287.png",
     "slide_id": "1287",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -4789,7 +4789,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0837.jpg",
+    "image": "SlideAudit/data/images/slide_0837.png",
     "slide_id": "837",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -4815,7 +4815,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1069.jpg",
+    "image": "SlideAudit/data/images/slide_1069.png",
     "slide_id": "1069",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -4835,7 +4835,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1296.jpg",
+    "image": "SlideAudit/data/images/slide_1296.png",
     "slide_id": "1296",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -4868,14 +4868,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1718.jpg",
+    "image": "SlideAudit/data/images/slide_1718.png",
     "slide_id": "1718",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0336.jpg",
+    "image": "SlideAudit/data/images/slide_0336.png",
     "slide_id": "336",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -4921,7 +4921,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0163.jpg",
+    "image": "SlideAudit/data/images/slide_0163.png",
     "slide_id": "163",
     "has_design_deficiencies": true,
     "deficiency_count": 6,
@@ -4972,14 +4972,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1009.jpg",
+    "image": "SlideAudit/data/images/slide_1009.png",
     "slide_id": "1009",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0492.jpg",
+    "image": "SlideAudit/data/images/slide_0492.png",
     "slide_id": "492",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -4993,21 +4993,21 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1654.jpg",
+    "image": "SlideAudit/data/images/slide_1654.png",
     "slide_id": "1654",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0964.jpg",
+    "image": "SlideAudit/data/images/slide_0964.png",
     "slide_id": "964",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0279.jpg",
+    "image": "SlideAudit/data/images/slide_0279.png",
     "slide_id": "279",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -5034,7 +5034,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0281.jpg",
+    "image": "SlideAudit/data/images/slide_0281.png",
     "slide_id": "281",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -5048,7 +5048,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0762.jpg",
+    "image": "SlideAudit/data/images/slide_0762.png",
     "slide_id": "762",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -5087,7 +5087,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0329.jpg",
+    "image": "SlideAudit/data/images/slide_0329.png",
     "slide_id": "329",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -5114,21 +5114,21 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2081.jpg",
+    "image": "SlideAudit/data/images/slide_2081.png",
     "slide_id": "2081",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0233.jpg",
+    "image": "SlideAudit/data/images/slide_0233.png",
     "slide_id": "233",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0645.jpg",
+    "image": "SlideAudit/data/images/slide_0645.png",
     "slide_id": "645",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -5142,7 +5142,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2060.jpg",
+    "image": "SlideAudit/data/images/slide_2060.png",
     "slide_id": "2060",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -5156,7 +5156,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1953.jpg",
+    "image": "SlideAudit/data/images/slide_1953.png",
     "slide_id": "1953",
     "has_design_deficiencies": true,
     "deficiency_count": 4,
@@ -5188,7 +5188,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0206.jpg",
+    "image": "SlideAudit/data/images/slide_0206.png",
     "slide_id": "206",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -5208,14 +5208,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0235.jpg",
+    "image": "SlideAudit/data/images/slide_0235.png",
     "slide_id": "235",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1285.jpg",
+    "image": "SlideAudit/data/images/slide_1285.png",
     "slide_id": "1285",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -5236,7 +5236,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0250.jpg",
+    "image": "SlideAudit/data/images/slide_0250.png",
     "slide_id": "250",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -5257,7 +5257,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0240.jpg",
+    "image": "SlideAudit/data/images/slide_0240.png",
     "slide_id": "240",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -5283,7 +5283,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0892.jpg",
+    "image": "SlideAudit/data/images/slide_0892.png",
     "slide_id": "892",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -5303,7 +5303,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1216.jpg",
+    "image": "SlideAudit/data/images/slide_1216.png",
     "slide_id": "1216",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -5317,7 +5317,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0778.jpg",
+    "image": "SlideAudit/data/images/slide_0778.png",
     "slide_id": "778",
     "has_design_deficiencies": true,
     "deficiency_count": 6,
@@ -5387,7 +5387,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0635.jpg",
+    "image": "SlideAudit/data/images/slide_0635.png",
     "slide_id": "635",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -5414,14 +5414,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1994.jpg",
+    "image": "SlideAudit/data/images/slide_1994.png",
     "slide_id": "1994",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1733.jpg",
+    "image": "SlideAudit/data/images/slide_1733.png",
     "slide_id": "1733",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -5460,7 +5460,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1169.jpg",
+    "image": "SlideAudit/data/images/slide_1169.png",
     "slide_id": "1169",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -5493,21 +5493,21 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1864.jpg",
+    "image": "SlideAudit/data/images/slide_1864.png",
     "slide_id": "1864",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1087.jpg",
+    "image": "SlideAudit/data/images/slide_1087.png",
     "slide_id": "1087",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1600.jpg",
+    "image": "SlideAudit/data/images/slide_1600.png",
     "slide_id": "1600",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -5521,14 +5521,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0009.jpg",
+    "image": "SlideAudit/data/images/slide_0009.png",
     "slide_id": "9",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1553.jpg",
+    "image": "SlideAudit/data/images/slide_1553.png",
     "slide_id": "1553",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -5542,7 +5542,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0675.jpg",
+    "image": "SlideAudit/data/images/slide_0675.png",
     "slide_id": "675",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -5556,7 +5556,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0241.jpg",
+    "image": "SlideAudit/data/images/slide_0241.png",
     "slide_id": "241",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -5570,7 +5570,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1643.jpg",
+    "image": "SlideAudit/data/images/slide_1643.png",
     "slide_id": "1643",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -5603,7 +5603,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0876.jpg",
+    "image": "SlideAudit/data/images/slide_0876.png",
     "slide_id": "876",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -5617,7 +5617,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1972.jpg",
+    "image": "SlideAudit/data/images/slide_1972.png",
     "slide_id": "1972",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -5638,7 +5638,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1990.jpg",
+    "image": "SlideAudit/data/images/slide_1990.png",
     "slide_id": "1990",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -5652,14 +5652,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1665.jpg",
+    "image": "SlideAudit/data/images/slide_1665.png",
     "slide_id": "1665",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0682.jpg",
+    "image": "SlideAudit/data/images/slide_0682.png",
     "slide_id": "682",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -5686,14 +5686,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0969.jpg",
+    "image": "SlideAudit/data/images/slide_0969.png",
     "slide_id": "969",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0383.jpg",
+    "image": "SlideAudit/data/images/slide_0383.png",
     "slide_id": "383",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -5713,7 +5713,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0061.jpg",
+    "image": "SlideAudit/data/images/slide_0061.png",
     "slide_id": "61",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -5727,7 +5727,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0208.jpg",
+    "image": "SlideAudit/data/images/slide_0208.png",
     "slide_id": "208",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -5754,7 +5754,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0402.jpg",
+    "image": "SlideAudit/data/images/slide_0402.png",
     "slide_id": "402",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -5768,7 +5768,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1816.jpg",
+    "image": "SlideAudit/data/images/slide_1816.png",
     "slide_id": "1816",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -5789,7 +5789,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0309.jpg",
+    "image": "SlideAudit/data/images/slide_0309.png",
     "slide_id": "309",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -5834,7 +5834,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1024.jpg",
+    "image": "SlideAudit/data/images/slide_1024.png",
     "slide_id": "1024",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -5880,7 +5880,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1895.jpg",
+    "image": "SlideAudit/data/images/slide_1895.png",
     "slide_id": "1895",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -5907,14 +5907,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2211.jpg",
+    "image": "SlideAudit/data/images/slide_2211.png",
     "slide_id": "2211",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0752.jpg",
+    "image": "SlideAudit/data/images/slide_0752.png",
     "slide_id": "752",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -5928,21 +5928,21 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2391.jpg",
+    "image": "SlideAudit/data/images/slide_2391.png",
     "slide_id": "2391",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0575.jpg",
+    "image": "SlideAudit/data/images/slide_0575.png",
     "slide_id": "575",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1838.jpg",
+    "image": "SlideAudit/data/images/slide_1838.png",
     "slide_id": "1838",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -5968,7 +5968,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2203.jpg",
+    "image": "SlideAudit/data/images/slide_2203.png",
     "slide_id": "2203",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -5982,7 +5982,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0785.jpg",
+    "image": "SlideAudit/data/images/slide_0785.png",
     "slide_id": "785",
     "has_design_deficiencies": true,
     "deficiency_count": 4,
@@ -6076,7 +6076,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1019.jpg",
+    "image": "SlideAudit/data/images/slide_1019.png",
     "slide_id": "1019",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -6103,7 +6103,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0448.jpg",
+    "image": "SlideAudit/data/images/slide_0448.png",
     "slide_id": "448",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -6142,7 +6142,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1390.jpg",
+    "image": "SlideAudit/data/images/slide_1390.png",
     "slide_id": "1390",
     "has_design_deficiencies": true,
     "deficiency_count": 4,
@@ -6181,28 +6181,28 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1650.jpg",
+    "image": "SlideAudit/data/images/slide_1650.png",
     "slide_id": "1650",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0249.jpg",
+    "image": "SlideAudit/data/images/slide_0249.png",
     "slide_id": "249",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0404.jpg",
+    "image": "SlideAudit/data/images/slide_0404.png",
     "slide_id": "404",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0222.jpg",
+    "image": "SlideAudit/data/images/slide_0222.png",
     "slide_id": "222",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -6247,7 +6247,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1913.jpg",
+    "image": "SlideAudit/data/images/slide_1913.png",
     "slide_id": "1913",
     "has_design_deficiencies": true,
     "deficiency_count": 4,
@@ -6299,7 +6299,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1684.jpg",
+    "image": "SlideAudit/data/images/slide_1684.png",
     "slide_id": "1684",
     "has_design_deficiencies": true,
     "deficiency_count": 4,
@@ -6338,7 +6338,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1735.jpg",
+    "image": "SlideAudit/data/images/slide_1735.png",
     "slide_id": "1735",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -6365,14 +6365,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1452.jpg",
+    "image": "SlideAudit/data/images/slide_1452.png",
     "slide_id": "1452",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1766.jpg",
+    "image": "SlideAudit/data/images/slide_1766.png",
     "slide_id": "1766",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -6418,14 +6418,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0398.jpg",
+    "image": "SlideAudit/data/images/slide_0398.png",
     "slide_id": "398",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0387.jpg",
+    "image": "SlideAudit/data/images/slide_0387.png",
     "slide_id": "387",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -6439,7 +6439,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0780.jpg",
+    "image": "SlideAudit/data/images/slide_0780.png",
     "slide_id": "780",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -6460,21 +6460,21 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1668.jpg",
+    "image": "SlideAudit/data/images/slide_1668.png",
     "slide_id": "1668",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1938.jpg",
+    "image": "SlideAudit/data/images/slide_1938.png",
     "slide_id": "1938",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0996.jpg",
+    "image": "SlideAudit/data/images/slide_0996.png",
     "slide_id": "996",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -6508,7 +6508,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1937.jpg",
+    "image": "SlideAudit/data/images/slide_1937.png",
     "slide_id": "1937",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -6542,7 +6542,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0542.jpg",
+    "image": "SlideAudit/data/images/slide_0542.png",
     "slide_id": "542",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -6606,7 +6606,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0878.jpg",
+    "image": "SlideAudit/data/images/slide_0878.png",
     "slide_id": "878",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -6620,7 +6620,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1989.jpg",
+    "image": "SlideAudit/data/images/slide_1989.png",
     "slide_id": "1989",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -6634,14 +6634,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1141.jpg",
+    "image": "SlideAudit/data/images/slide_1141.png",
     "slide_id": "1141",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0975.jpg",
+    "image": "SlideAudit/data/images/slide_0975.png",
     "slide_id": "975",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -6668,7 +6668,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2106.jpg",
+    "image": "SlideAudit/data/images/slide_2106.png",
     "slide_id": "2106",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -6688,14 +6688,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2220.jpg",
+    "image": "SlideAudit/data/images/slide_2220.png",
     "slide_id": "2220",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1354.jpg",
+    "image": "SlideAudit/data/images/slide_1354.png",
     "slide_id": "1354",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -6728,7 +6728,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0129.jpg",
+    "image": "SlideAudit/data/images/slide_0129.png",
     "slide_id": "129",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -6761,7 +6761,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0277.jpg",
+    "image": "SlideAudit/data/images/slide_0277.png",
     "slide_id": "277",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -6775,7 +6775,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0938.jpg",
+    "image": "SlideAudit/data/images/slide_0938.png",
     "slide_id": "938",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -6802,7 +6802,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0242.jpg",
+    "image": "SlideAudit/data/images/slide_0242.png",
     "slide_id": "242",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -6816,7 +6816,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0291.jpg",
+    "image": "SlideAudit/data/images/slide_0291.png",
     "slide_id": "291",
     "has_design_deficiencies": true,
     "deficiency_count": 5,
@@ -6893,7 +6893,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0030.jpg",
+    "image": "SlideAudit/data/images/slide_0030.png",
     "slide_id": "30",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -6932,7 +6932,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2379.jpg",
+    "image": "SlideAudit/data/images/slide_2379.png",
     "slide_id": "2379",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -6959,7 +6959,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0943.jpg",
+    "image": "SlideAudit/data/images/slide_0943.png",
     "slide_id": "943",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -6992,7 +6992,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0087.jpg",
+    "image": "SlideAudit/data/images/slide_0087.png",
     "slide_id": "87",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -7013,7 +7013,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1385.jpg",
+    "image": "SlideAudit/data/images/slide_1385.png",
     "slide_id": "1385",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -7065,7 +7065,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0263.jpg",
+    "image": "SlideAudit/data/images/slide_0263.png",
     "slide_id": "263",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -7079,14 +7079,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0921.jpg",
+    "image": "SlideAudit/data/images/slide_0921.png",
     "slide_id": "921",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1016.jpg",
+    "image": "SlideAudit/data/images/slide_1016.png",
     "slide_id": "1016",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -7100,7 +7100,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0496.jpg",
+    "image": "SlideAudit/data/images/slide_0496.png",
     "slide_id": "496",
     "has_design_deficiencies": true,
     "deficiency_count": 7,
@@ -7170,7 +7170,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1850.jpg",
+    "image": "SlideAudit/data/images/slide_1850.png",
     "slide_id": "1850",
     "has_design_deficiencies": true,
     "deficiency_count": 4,
@@ -7216,7 +7216,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2120.jpg",
+    "image": "SlideAudit/data/images/slide_2120.png",
     "slide_id": "2120",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -7250,7 +7250,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1795.jpg",
+    "image": "SlideAudit/data/images/slide_1795.png",
     "slide_id": "1795",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -7321,7 +7321,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1530.jpg",
+    "image": "SlideAudit/data/images/slide_1530.png",
     "slide_id": "1530",
     "has_design_deficiencies": true,
     "deficiency_count": 5,
@@ -7373,7 +7373,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1635.jpg",
+    "image": "SlideAudit/data/images/slide_1635.png",
     "slide_id": "1635",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -7387,7 +7387,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1277.jpg",
+    "image": "SlideAudit/data/images/slide_1277.png",
     "slide_id": "1277",
     "has_design_deficiencies": true,
     "deficiency_count": 4,
@@ -7426,7 +7426,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0824.jpg",
+    "image": "SlideAudit/data/images/slide_0824.png",
     "slide_id": "824",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -7453,7 +7453,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2209.jpg",
+    "image": "SlideAudit/data/images/slide_2209.png",
     "slide_id": "2209",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -7474,7 +7474,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0868.jpg",
+    "image": "SlideAudit/data/images/slide_0868.png",
     "slide_id": "868",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -7488,14 +7488,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1734.jpg",
+    "image": "SlideAudit/data/images/slide_1734.png",
     "slide_id": "1734",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_2162.jpg",
+    "image": "SlideAudit/data/images/slide_2162.png",
     "slide_id": "2162",
     "has_design_deficiencies": true,
     "deficiency_count": 5,
@@ -7572,7 +7572,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1086.jpg",
+    "image": "SlideAudit/data/images/slide_1086.png",
     "slide_id": "1086",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -7618,14 +7618,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0677.jpg",
+    "image": "SlideAudit/data/images/slide_0677.png",
     "slide_id": "677",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1947.jpg",
+    "image": "SlideAudit/data/images/slide_1947.png",
     "slide_id": "1947",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -7652,21 +7652,21 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0526.jpg",
+    "image": "SlideAudit/data/images/slide_0526.png",
     "slide_id": "526",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0516.jpg",
+    "image": "SlideAudit/data/images/slide_0516.png",
     "slide_id": "516",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_2182.jpg",
+    "image": "SlideAudit/data/images/slide_2182.png",
     "slide_id": "2182",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -7693,7 +7693,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0284.jpg",
+    "image": "SlideAudit/data/images/slide_0284.png",
     "slide_id": "284",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -7720,7 +7720,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1991.jpg",
+    "image": "SlideAudit/data/images/slide_1991.png",
     "slide_id": "1991",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -7734,7 +7734,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0351.jpg",
+    "image": "SlideAudit/data/images/slide_0351.png",
     "slide_id": "351",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -7748,7 +7748,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2356.jpg",
+    "image": "SlideAudit/data/images/slide_2356.png",
     "slide_id": "2356",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -7794,7 +7794,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0987.jpg",
+    "image": "SlideAudit/data/images/slide_0987.png",
     "slide_id": "987",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -7808,7 +7808,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0238.jpg",
+    "image": "SlideAudit/data/images/slide_0238.png",
     "slide_id": "238",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -7835,7 +7835,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0981.jpg",
+    "image": "SlideAudit/data/images/slide_0981.png",
     "slide_id": "981",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -7849,14 +7849,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1260.jpg",
+    "image": "SlideAudit/data/images/slide_1260.png",
     "slide_id": "1260",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1487.jpg",
+    "image": "SlideAudit/data/images/slide_1487.png",
     "slide_id": "1487",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -7902,7 +7902,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0459.jpg",
+    "image": "SlideAudit/data/images/slide_0459.png",
     "slide_id": "459",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -7922,7 +7922,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0080.jpg",
+    "image": "SlideAudit/data/images/slide_0080.png",
     "slide_id": "80",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -7962,7 +7962,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2002.jpg",
+    "image": "SlideAudit/data/images/slide_2002.png",
     "slide_id": "2002",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -7976,7 +7976,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1328.jpg",
+    "image": "SlideAudit/data/images/slide_1328.png",
     "slide_id": "1328",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -8015,7 +8015,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0003.jpg",
+    "image": "SlideAudit/data/images/slide_0003.png",
     "slide_id": "3",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -8061,7 +8061,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2173.jpg",
+    "image": "SlideAudit/data/images/slide_2173.png",
     "slide_id": "2173",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -8082,14 +8082,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2210.jpg",
+    "image": "SlideAudit/data/images/slide_2210.png",
     "slide_id": "2210",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0662.jpg",
+    "image": "SlideAudit/data/images/slide_0662.png",
     "slide_id": "662",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -8116,14 +8116,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1532.jpg",
+    "image": "SlideAudit/data/images/slide_1532.png",
     "slide_id": "1532",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_2294.jpg",
+    "image": "SlideAudit/data/images/slide_2294.png",
     "slide_id": "2294",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -8144,7 +8144,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2382.jpg",
+    "image": "SlideAudit/data/images/slide_2382.png",
     "slide_id": "2382",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -8189,14 +8189,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2270.jpg",
+    "image": "SlideAudit/data/images/slide_2270.png",
     "slide_id": "2270",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1223.jpg",
+    "image": "SlideAudit/data/images/slide_1223.png",
     "slide_id": "1223",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -8223,28 +8223,28 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0436.jpg",
+    "image": "SlideAudit/data/images/slide_0436.png",
     "slide_id": "436",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_2080.jpg",
+    "image": "SlideAudit/data/images/slide_2080.png",
     "slide_id": "2080",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0732.jpg",
+    "image": "SlideAudit/data/images/slide_0732.png",
     "slide_id": "732",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_2051.jpg",
+    "image": "SlideAudit/data/images/slide_2051.png",
     "slide_id": "2051",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -8265,7 +8265,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1079.jpg",
+    "image": "SlideAudit/data/images/slide_1079.png",
     "slide_id": "1079",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -8305,7 +8305,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0014.jpg",
+    "image": "SlideAudit/data/images/slide_0014.png",
     "slide_id": "14",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -8332,7 +8332,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1859.jpg",
+    "image": "SlideAudit/data/images/slide_1859.png",
     "slide_id": "1859",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -8372,7 +8372,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0648.jpg",
+    "image": "SlideAudit/data/images/slide_0648.png",
     "slide_id": "648",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -8386,7 +8386,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1781.jpg",
+    "image": "SlideAudit/data/images/slide_1781.png",
     "slide_id": "1781",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -8400,14 +8400,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1203.jpg",
+    "image": "SlideAudit/data/images/slide_1203.png",
     "slide_id": "1203",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_2400.jpg",
+    "image": "SlideAudit/data/images/slide_2400.png",
     "slide_id": "2400",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -8421,28 +8421,28 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2373.jpg",
+    "image": "SlideAudit/data/images/slide_2373.png",
     "slide_id": "2373",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1093.jpg",
+    "image": "SlideAudit/data/images/slide_1093.png",
     "slide_id": "1093",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_2200.jpg",
+    "image": "SlideAudit/data/images/slide_2200.png",
     "slide_id": "2200",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0470.jpg",
+    "image": "SlideAudit/data/images/slide_0470.png",
     "slide_id": "470",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -8469,7 +8469,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0048.jpg",
+    "image": "SlideAudit/data/images/slide_0048.png",
     "slide_id": "48",
     "has_design_deficiencies": true,
     "deficiency_count": 5,
@@ -8532,7 +8532,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2267.jpg",
+    "image": "SlideAudit/data/images/slide_2267.png",
     "slide_id": "2267",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -8626,7 +8626,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1030.jpg",
+    "image": "SlideAudit/data/images/slide_1030.png",
     "slide_id": "1030",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -8640,7 +8640,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2168.jpg",
+    "image": "SlideAudit/data/images/slide_2168.png",
     "slide_id": "2168",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -8654,7 +8654,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1918.jpg",
+    "image": "SlideAudit/data/images/slide_1918.png",
     "slide_id": "1918",
     "has_design_deficiencies": true,
     "deficiency_count": 5,
@@ -8719,7 +8719,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1564.jpg",
+    "image": "SlideAudit/data/images/slide_1564.png",
     "slide_id": "1564",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -8746,7 +8746,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1577.jpg",
+    "image": "SlideAudit/data/images/slide_1577.png",
     "slide_id": "1577",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -8773,7 +8773,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0261.jpg",
+    "image": "SlideAudit/data/images/slide_0261.png",
     "slide_id": "261",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -8813,7 +8813,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1730.jpg",
+    "image": "SlideAudit/data/images/slide_1730.png",
     "slide_id": "1730",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -8859,7 +8859,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0656.jpg",
+    "image": "SlideAudit/data/images/slide_0656.png",
     "slide_id": "656",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -8879,7 +8879,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0627.jpg",
+    "image": "SlideAudit/data/images/slide_0627.png",
     "slide_id": "627",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -8893,7 +8893,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0450.jpg",
+    "image": "SlideAudit/data/images/slide_0450.png",
     "slide_id": "450",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -8939,14 +8939,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0193.jpg",
+    "image": "SlideAudit/data/images/slide_0193.png",
     "slide_id": "193",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0373.jpg",
+    "image": "SlideAudit/data/images/slide_0373.png",
     "slide_id": "373",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -8997,14 +8997,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2022.jpg",
+    "image": "SlideAudit/data/images/slide_2022.png",
     "slide_id": "2022",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_2088.jpg",
+    "image": "SlideAudit/data/images/slide_2088.png",
     "slide_id": "2088",
     "has_design_deficiencies": true,
     "deficiency_count": 4,
@@ -9075,14 +9075,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0567.jpg",
+    "image": "SlideAudit/data/images/slide_0567.png",
     "slide_id": "567",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0899.jpg",
+    "image": "SlideAudit/data/images/slide_0899.png",
     "slide_id": "899",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -9096,7 +9096,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1483.jpg",
+    "image": "SlideAudit/data/images/slide_1483.png",
     "slide_id": "1483",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -9116,7 +9116,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1636.jpg",
+    "image": "SlideAudit/data/images/slide_1636.png",
     "slide_id": "1636",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -9156,7 +9156,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1755.jpg",
+    "image": "SlideAudit/data/images/slide_1755.png",
     "slide_id": "1755",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -9183,7 +9183,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1077.jpg",
+    "image": "SlideAudit/data/images/slide_1077.png",
     "slide_id": "1077",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -9204,14 +9204,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2208.jpg",
+    "image": "SlideAudit/data/images/slide_2208.png",
     "slide_id": "2208",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_2300.jpg",
+    "image": "SlideAudit/data/images/slide_2300.png",
     "slide_id": "2300",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -9225,7 +9225,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1011.jpg",
+    "image": "SlideAudit/data/images/slide_1011.png",
     "slide_id": "1011",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -9239,7 +9239,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2395.jpg",
+    "image": "SlideAudit/data/images/slide_2395.png",
     "slide_id": "2395",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -9272,28 +9272,28 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1085.jpg",
+    "image": "SlideAudit/data/images/slide_1085.png",
     "slide_id": "1085",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0586.jpg",
+    "image": "SlideAudit/data/images/slide_0586.png",
     "slide_id": "586",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1880.jpg",
+    "image": "SlideAudit/data/images/slide_1880.png",
     "slide_id": "1880",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1621.jpg",
+    "image": "SlideAudit/data/images/slide_1621.png",
     "slide_id": "1621",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -9314,7 +9314,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2045.jpg",
+    "image": "SlideAudit/data/images/slide_2045.png",
     "slide_id": "2045",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -9335,7 +9335,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0871.jpg",
+    "image": "SlideAudit/data/images/slide_0871.png",
     "slide_id": "871",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -9368,14 +9368,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1289.jpg",
+    "image": "SlideAudit/data/images/slide_1289.png",
     "slide_id": "1289",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0865.jpg",
+    "image": "SlideAudit/data/images/slide_0865.png",
     "slide_id": "865",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -9395,7 +9395,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0272.jpg",
+    "image": "SlideAudit/data/images/slide_0272.png",
     "slide_id": "272",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -9428,21 +9428,21 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1097.jpg",
+    "image": "SlideAudit/data/images/slide_1097.png",
     "slide_id": "1097",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1644.jpg",
+    "image": "SlideAudit/data/images/slide_1644.png",
     "slide_id": "1644",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1293.jpg",
+    "image": "SlideAudit/data/images/slide_1293.png",
     "slide_id": "1293",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -9463,21 +9463,21 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0132.jpg",
+    "image": "SlideAudit/data/images/slide_0132.png",
     "slide_id": "132",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0939.jpg",
+    "image": "SlideAudit/data/images/slide_0939.png",
     "slide_id": "939",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0230.jpg",
+    "image": "SlideAudit/data/images/slide_0230.png",
     "slide_id": "230",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -9498,7 +9498,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1329.jpg",
+    "image": "SlideAudit/data/images/slide_1329.png",
     "slide_id": "1329",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -9531,7 +9531,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0900.jpg",
+    "image": "SlideAudit/data/images/slide_0900.png",
     "slide_id": "900",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -9564,21 +9564,21 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2282.jpg",
+    "image": "SlideAudit/data/images/slide_2282.png",
     "slide_id": "2282",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1106.jpg",
+    "image": "SlideAudit/data/images/slide_1106.png",
     "slide_id": "1106",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1555.jpg",
+    "image": "SlideAudit/data/images/slide_1555.png",
     "slide_id": "1555",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -9599,14 +9599,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1894.jpg",
+    "image": "SlideAudit/data/images/slide_1894.png",
     "slide_id": "1894",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0670.jpg",
+    "image": "SlideAudit/data/images/slide_0670.png",
     "slide_id": "670",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -9633,7 +9633,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1003.jpg",
+    "image": "SlideAudit/data/images/slide_1003.png",
     "slide_id": "1003",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -9660,7 +9660,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2188.jpg",
+    "image": "SlideAudit/data/images/slide_2188.png",
     "slide_id": "2188",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -9674,7 +9674,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0701.jpg",
+    "image": "SlideAudit/data/images/slide_0701.png",
     "slide_id": "701",
     "has_design_deficiencies": true,
     "deficiency_count": 5,
@@ -9726,14 +9726,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0293.jpg",
+    "image": "SlideAudit/data/images/slide_0293.png",
     "slide_id": "293",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1094.jpg",
+    "image": "SlideAudit/data/images/slide_1094.png",
     "slide_id": "1094",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -9766,7 +9766,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0859.jpg",
+    "image": "SlideAudit/data/images/slide_0859.png",
     "slide_id": "859",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -9793,7 +9793,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1456.jpg",
+    "image": "SlideAudit/data/images/slide_1456.png",
     "slide_id": "1456",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -9820,7 +9820,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1517.jpg",
+    "image": "SlideAudit/data/images/slide_1517.png",
     "slide_id": "1517",
     "has_design_deficiencies": true,
     "deficiency_count": 6,
@@ -9884,7 +9884,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0667.jpg",
+    "image": "SlideAudit/data/images/slide_0667.png",
     "slide_id": "667",
     "has_design_deficiencies": true,
     "deficiency_count": 5,
@@ -9941,7 +9941,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1495.jpg",
+    "image": "SlideAudit/data/images/slide_1495.png",
     "slide_id": "1495",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -9955,7 +9955,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1858.jpg",
+    "image": "SlideAudit/data/images/slide_1858.png",
     "slide_id": "1858",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -9969,14 +9969,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2372.jpg",
+    "image": "SlideAudit/data/images/slide_2372.png",
     "slide_id": "2372",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_2366.jpg",
+    "image": "SlideAudit/data/images/slide_2366.png",
     "slide_id": "2366",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -10016,7 +10016,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0414.jpg",
+    "image": "SlideAudit/data/images/slide_0414.png",
     "slide_id": "414",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -10037,7 +10037,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0954.jpg",
+    "image": "SlideAudit/data/images/slide_0954.png",
     "slide_id": "954",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -10057,7 +10057,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0327.jpg",
+    "image": "SlideAudit/data/images/slide_0327.png",
     "slide_id": "327",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -10084,7 +10084,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1186.jpg",
+    "image": "SlideAudit/data/images/slide_1186.png",
     "slide_id": "1186",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -10104,7 +10104,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0934.jpg",
+    "image": "SlideAudit/data/images/slide_0934.png",
     "slide_id": "934",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -10143,28 +10143,28 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0188.jpg",
+    "image": "SlideAudit/data/images/slide_0188.png",
     "slide_id": "188",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0285.jpg",
+    "image": "SlideAudit/data/images/slide_0285.png",
     "slide_id": "285",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0788.jpg",
+    "image": "SlideAudit/data/images/slide_0788.png",
     "slide_id": "788",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1482.jpg",
+    "image": "SlideAudit/data/images/slide_1482.png",
     "slide_id": "1482",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -10178,7 +10178,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1201.jpg",
+    "image": "SlideAudit/data/images/slide_1201.png",
     "slide_id": "1201",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -10192,7 +10192,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2262.jpg",
+    "image": "SlideAudit/data/images/slide_2262.png",
     "slide_id": "2262",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -10213,7 +10213,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0323.jpg",
+    "image": "SlideAudit/data/images/slide_0323.png",
     "slide_id": "323",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -10227,7 +10227,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1551.jpg",
+    "image": "SlideAudit/data/images/slide_1551.png",
     "slide_id": "1551",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -10247,14 +10247,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0512.jpg",
+    "image": "SlideAudit/data/images/slide_0512.png",
     "slide_id": "512",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_2197.jpg",
+    "image": "SlideAudit/data/images/slide_2197.png",
     "slide_id": "2197",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -10268,7 +10268,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1882.jpg",
+    "image": "SlideAudit/data/images/slide_1882.png",
     "slide_id": "1882",
     "has_design_deficiencies": true,
     "deficiency_count": 4,
@@ -10339,14 +10339,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0178.jpg",
+    "image": "SlideAudit/data/images/slide_0178.png",
     "slide_id": "178",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1084.jpg",
+    "image": "SlideAudit/data/images/slide_1084.png",
     "slide_id": "1084",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -10373,7 +10373,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1409.jpg",
+    "image": "SlideAudit/data/images/slide_1409.png",
     "slide_id": "1409",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -10400,7 +10400,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1471.jpg",
+    "image": "SlideAudit/data/images/slide_1471.png",
     "slide_id": "1471",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -10420,7 +10420,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0397.jpg",
+    "image": "SlideAudit/data/images/slide_0397.png",
     "slide_id": "397",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -10453,14 +10453,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1557.jpg",
+    "image": "SlideAudit/data/images/slide_1557.png",
     "slide_id": "1557",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0380.jpg",
+    "image": "SlideAudit/data/images/slide_0380.png",
     "slide_id": "380",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -10518,7 +10518,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0419.jpg",
+    "image": "SlideAudit/data/images/slide_0419.png",
     "slide_id": "419",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -10539,7 +10539,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1379.jpg",
+    "image": "SlideAudit/data/images/slide_1379.png",
     "slide_id": "1379",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -10553,7 +10553,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0882.jpg",
+    "image": "SlideAudit/data/images/slide_0882.png",
     "slide_id": "882",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -10574,21 +10574,21 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0637.jpg",
+    "image": "SlideAudit/data/images/slide_0637.png",
     "slide_id": "637",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1139.jpg",
+    "image": "SlideAudit/data/images/slide_1139.png",
     "slide_id": "1139",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1394.jpg",
+    "image": "SlideAudit/data/images/slide_1394.png",
     "slide_id": "1394",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -10615,21 +10615,21 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1732.jpg",
+    "image": "SlideAudit/data/images/slide_1732.png",
     "slide_id": "1732",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0654.jpg",
+    "image": "SlideAudit/data/images/slide_0654.png",
     "slide_id": "654",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0027.jpg",
+    "image": "SlideAudit/data/images/slide_0027.png",
     "slide_id": "27",
     "has_design_deficiencies": true,
     "deficiency_count": 4,
@@ -10674,14 +10674,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1140.jpg",
+    "image": "SlideAudit/data/images/slide_1140.png",
     "slide_id": "1140",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1840.jpg",
+    "image": "SlideAudit/data/images/slide_1840.png",
     "slide_id": "1840",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -10714,7 +10714,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0903.jpg",
+    "image": "SlideAudit/data/images/slide_0903.png",
     "slide_id": "903",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -10728,7 +10728,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_1719.jpg",
+    "image": "SlideAudit/data/images/slide_1719.png",
     "slide_id": "1719",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -10748,7 +10748,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2233.jpg",
+    "image": "SlideAudit/data/images/slide_2233.png",
     "slide_id": "2233",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -10787,7 +10787,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0815.jpg",
+    "image": "SlideAudit/data/images/slide_0815.png",
     "slide_id": "815",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -10801,7 +10801,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2299.jpg",
+    "image": "SlideAudit/data/images/slide_2299.png",
     "slide_id": "2299",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -10840,7 +10840,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0109.jpg",
+    "image": "SlideAudit/data/images/slide_0109.png",
     "slide_id": "109",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -10854,7 +10854,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2070.jpg",
+    "image": "SlideAudit/data/images/slide_2070.png",
     "slide_id": "2070",
     "has_design_deficiencies": true,
     "deficiency_count": 3,
@@ -10894,7 +10894,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0953.jpg",
+    "image": "SlideAudit/data/images/slide_0953.png",
     "slide_id": "953",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -10921,7 +10921,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0896.jpg",
+    "image": "SlideAudit/data/images/slide_0896.png",
     "slide_id": "896",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -10942,7 +10942,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0384.jpg",
+    "image": "SlideAudit/data/images/slide_0384.png",
     "slide_id": "384",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -10963,7 +10963,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0123.jpg",
+    "image": "SlideAudit/data/images/slide_0123.png",
     "slide_id": "123",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -10984,14 +10984,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0131.jpg",
+    "image": "SlideAudit/data/images/slide_0131.png",
     "slide_id": "131",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1729.jpg",
+    "image": "SlideAudit/data/images/slide_1729.png",
     "slide_id": "1729",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -11012,7 +11012,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0357.jpg",
+    "image": "SlideAudit/data/images/slide_0357.png",
     "slide_id": "357",
     "has_design_deficiencies": true,
     "deficiency_count": 6,
@@ -11077,14 +11077,14 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_2234.jpg",
+    "image": "SlideAudit/data/images/slide_2234.png",
     "slide_id": "2234",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_0420.jpg",
+    "image": "SlideAudit/data/images/slide_0420.png",
     "slide_id": "420",
     "has_design_deficiencies": true,
     "deficiency_count": 2,
@@ -11118,7 +11118,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0572.jpg",
+    "image": "SlideAudit/data/images/slide_0572.png",
     "slide_id": "572",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -11132,21 +11132,21 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0915.jpg",
+    "image": "SlideAudit/data/images/slide_0915.png",
     "slide_id": "915",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1004.jpg",
+    "image": "SlideAudit/data/images/slide_1004.png",
     "slide_id": "1004",
     "has_design_deficiencies": false,
     "deficiency_count": 0,
     "deficiencies": []
   },
   {
-    "image": "SlideAudit/data/images/slide_1127.jpg",
+    "image": "SlideAudit/data/images/slide_1127.png",
     "slide_id": "1127",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -11160,7 +11160,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0103.jpg",
+    "image": "SlideAudit/data/images/slide_0103.png",
     "slide_id": "103",
     "has_design_deficiencies": true,
     "deficiency_count": 1,
@@ -11181,7 +11181,7 @@
     ]
   },
   {
-    "image": "SlideAudit/data/images/slide_0457.jpg",
+    "image": "SlideAudit/data/images/slide_0457.png",
     "slide_id": "457",
     "has_design_deficiencies": true,
     "deficiency_count": 2,

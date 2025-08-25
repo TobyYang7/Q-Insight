@@ -45,7 +45,7 @@ def create_slide_entry(slide_id: str, annotation_data: Dict) -> Dict[str, Any]:
     
     # Create slide entry with actual annotation data
     slide_entry = {
-        "image": f"SlideAudit/data/images/slide_{slide_id.zfill(4)}.jpg",
+        "image": f"SlideAudit/data/images/slide_{slide_id.zfill(4)}.png",
         "slide_id": slide_id,
         "has_design_deficiencies": len(deficiencies) > 0,
         "deficiency_count": len(deficiencies),
