@@ -1,7 +1,7 @@
 set -x
 
 export DEBUG_MODE="true"
-RUN_NAME="Q-Insight-eval-multi-task-rl"
+RUN_NAME="eval-multi-task-rl"
 export LOG_PATH="./debug_log_${RUN_NAME}.txt"
 
 # Dist args (single node by default)
@@ -36,25 +36,23 @@ uv run torchrun --nproc_per_node=8 \
     --output_dir output/${RUN_NAME} \
     --model_name_or_path Qwen/Qwen2.5-VL-7B-Instruct \
     --dataset_name None \
-    --dataset_score data_config/iqa_score_custom.yaml \
-    --dataset_deficiency data_config/slideaudit.yaml \
     --max_prompt_length 4096 \
     --num_generations 8 \
     --per_device_train_batch_size 1 \
-    --gradient_accumulation_steps 4 \
+    --gradient_accumulation_steps 16 \
     --logging_steps 1 \
     --bf16 \
     --torch_dtype bfloat16 \
     --data_seed 42 \
     --report_to wandb \
-    --gradient_checkpointing false \
     --attn_implementation flash_attention_2 \
-    --num_train_epochs 3 \
+    --num_train_epochs 5 \
     --run_name ${RUN_NAME} \
-    --save_steps 500 \
-    --save_only_model true \
+    --save_steps 300 \
     --score_reward_threshold 0.5 \
     --beta 0.001 \
     --deepspeed local_scripts/zero2.json \
+    --dataset_deficiency data_config/slideaudit.yaml \
+    # --dataset_score data_config/iqa_score_custom.yaml \
 
 

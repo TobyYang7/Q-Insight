@@ -341,7 +341,7 @@ class Qwen2VLGRPOTrainer(Trainer):
         self.num_generations = args.num_generations  # = G in the GRPO paper
         self.generation_config = GenerationConfig(
             # max_new_tokens=self.max_completion_length,
-            max_new_tokens=1024,
+            max_new_tokens=1024*2,
             do_sample=True,  
             temperature=1,
             pad_token_id=pad_token_id,
@@ -483,7 +483,7 @@ class Qwen2VLGRPOTrainer(Trainer):
         images = []
         
         # Define your size constraints for clarity
-        MAX_LONG_SIDE = 1024
+        MAX_LONG_SIDE = 960
         MIN_SIDE = 28
 
         for x in inputs:

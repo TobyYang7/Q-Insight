@@ -1,3 +1,9 @@
+from typing import Tuple
+from transformers.models.qwen2_5_vl.modeling_qwen2_5_vl import (
+    Qwen2_5_VLVisionFlashAttention2,
+    apply_rotary_pos_emb_flashatt,
+    flash_attn_varlen_func,
+)
 import os
 import re
 from dataclasses import dataclass, field
@@ -22,12 +28,6 @@ from pydantic import BaseModel
 load_dotenv()
 
 # ----------------------- Fix the flash attention bug in the current version of transformers -----------------------
-from transformers.models.qwen2_5_vl.modeling_qwen2_5_vl import (
-    Qwen2_5_VLVisionFlashAttention2,
-    apply_rotary_pos_emb_flashatt,
-    flash_attn_varlen_func,
-)
-from typing import Tuple
 
 
 def _custom_flash_attn_forward(
@@ -85,10 +85,6 @@ class GRPOScriptArguments(ScriptArguments):
     min_pixels: Optional[int] = field(
         default=3136, metadata={"help": "Minimum number of pixels for the image"}
     )
-    # MODIFIED: Removed image_root field. It's now specified in the dataset YAML.
-    # image_root: Optional[str] = field(
-    #     default=None, metadata={"help": "Root directory of the image"}
-    # )
     score_reward_threshold: Optional[float] = field(
         default=0.35, metadata={"help": "Threshold for score reward (abs diff). Default 0.35 for 1-5 scale"}
     )
@@ -117,10 +113,9 @@ SCORE_QUESTION_PROMPT = (
 )
 
 DEFICIENCY_PROMPT = (
-    "Please provide a professional design critique of the accompanying slide. "
-    "If there are no deficiencies, you should say 'No deficiencies'."
-    "Otherwise, your analysis should identify any design deficiencies, explain the reasoning behind your critique, "
-    "and offer specific, actionable suggestions for improvement. "
+    "Please provide a professional design critique of the accompanying slide, focusing on the single most significant design deficiency. "
+    "Your analysis should identify this primary problem (considering major categories: Composition & Layout, Typography, Color, Imagery & Visualizations), explain the reasoning for why it's the most impactful issue, and offer a specific, actionable suggestion for improvement. "
+    "If there are no major deficiencies, you should say 'No deficiencies' without any other text."
 )
 
 
@@ -144,7 +139,7 @@ class LazyMultiTaskDataset(Dataset):
 
         if not self.score_samples and not self.deficiency_samples:
             raise ValueError("Please provide at least one dataset: --dataset_score or --dataset_deficiency")
-        
+
         self.total_len = len(self.score_samples) + len(self.deficiency_samples)
 
         prompt_file = getattr(script_args, "score_prompt_file", None)
@@ -153,10 +148,9 @@ class LazyMultiTaskDataset(Dataset):
                 self.score_prompt_text = pf.read().strip()
         else:
             self.score_prompt_text = SCORE_QUESTION_PROMPT
-            
+
         self.deficiency_prompt_text = DEFICIENCY_PROMPT
 
-    # MODIFIED: This function now reads 'image_root' from the YAML and adds it to each sample.
     def _load_samples_from_yaml(self, data_path: str):
         samples = []
         if not data_path.endswith(".yaml"):
@@ -166,7 +160,6 @@ class LazyMultiTaskDataset(Dataset):
             for ds in cfg.get("datasets", []):
                 path = ds.get("json_path")
                 strategy = ds.get("sampling_strategy", "all")
-                # NEW: Read image_root from the dataset entry
                 image_root = ds.get("image_root")
 
                 if path.endswith(".jsonl"):
@@ -192,17 +185,15 @@ class LazyMultiTaskDataset(Dataset):
                     random.shuffle(data_list)
                     data_list = data_list[:count]
 
-                # NEW: Add the image_root path to each sample
                 for sample in data_list:
                     sample['image_root'] = image_root
-                
+
                 samples.extend(data_list)
         return samples
 
     def __len__(self):
         return self.total_len
 
-    # MODIFIED: `__getitem__` now reads `image_root` from the sample's dictionary.
     def __getitem__(self, index):
         if index < len(self.score_samples):
             task_type = "score"
@@ -219,20 +210,17 @@ class LazyMultiTaskDataset(Dataset):
             sol = example.get("score", None) or example.get("gt_score_norm", None)
             sample["solution"] = sol
             sample["score_reward_threshold"] = self.script_args.score_reward_threshold
-        else: # deficiency task
+        else:  # deficiency task
             sample["prompt_text"] = self.deficiency_prompt_text
             sample["solution"] = example.get("deficiencies", [])
 
-        # MODIFIED: Get image_root from the specific example dictionary
         image_root = example.get("image_root")
         image_rel = example.get("image") or example.get("image_path")
         if image_rel is None:
             raise KeyError("Neither 'image' nor 'image_path' found in sample")
-        
-        # Build the full image path
+
         image_path = os.path.join(image_root, image_rel) if image_root else image_rel
-        
-        # Fallback logic
+
         while not os.path.exists(image_path):
             print(f"Warning: Image {image_path} not found, trying another random sample of the same type")
             if task_type == "score":
@@ -241,12 +229,11 @@ class LazyMultiTaskDataset(Dataset):
             else:
                 new_index = random.randint(0, len(self.deficiency_samples) - 1)
                 example = self.deficiency_samples[new_index]
-            
-            # Re-read image_root and image_rel from the new example
+
             image_root = example.get("image_root")
             next_rel = example.get("image") or example.get("image_path", "")
             image_path = os.path.join(image_root, next_rel) if image_root else next_rel
-            
+
         image = Image.open(image_path).convert("RGB")
         sample["image"] = image
         sample["image_path"] = image_path
@@ -269,137 +256,158 @@ class DeficiencyClassification(BaseModel):
     deficiencies: List[str]
 
 
+# --- MODIFIED: Deficiency categories defined globally for reuse ---
+DEFICIENCY_CATEGORIES = {
+    "Composition & Layout": [
+        "Poor Visual Hierarchy", "Cluttered Layout", "Unbalanced Space Distribution",
+        "Content Alignment Issues", "Content Overflow/Cut-off", "Occluded Content"
+    ],
+    "Typography": [
+        "Illegible Typeface Selection or Usage", "Improper Font Sizing", "Excessive Text Volume",
+        "Improper Text Styling", "Improper Line/Character Spacing", "Poor Text Hierarchy"
+    ],
+    "Color": [
+        "Insufficient Color Contrast for Readability", "Excessive or Inconsistent Color Usage",
+        "Inappropriate or Mismatched Color Combinations"
+    ],
+    "Imagery & Visualizations": [
+        "Irrelevant Visual Content", "Poor Image Quality/Editing", "Improper Image Sizing",
+        "Inconsistent Visual Style Usage"
+    ]
+}
+
+# --- ADDED: Reverse mapping from specific deficiency to its parent category ---
+DEFICIENCY_TO_CATEGORY = {
+    deficiency: category
+    for category, deficiencies in DEFICIENCY_CATEGORIES.items()
+    for deficiency in deficiencies
+}
+
+
 def classify_deficiencies(model_output_text):
     """
     Uses OpenAI API to classify deficiencies in model output text.
+    It first extracts content from the <answer> tag if present.
     Returns a list of classified deficiencies.
     """
-    # Define the deficiency categories
-    deficiency_categories = {
-        "Composition & Layout": [
-            "Poor Visual Hierarchy",
-            "Cluttered Layout", 
-            "Unbalanced Space Distribution",
-            "Content Alignment Issues",
-            "Content Overflow/Cut-off",
-            "Occluded Content"
-        ],
-        "Typography": [
-            "Illegible Typeface Selection or Usage",
-            "Improper Font Sizing",
-            "Excessive Text Volume",
-            "Improper Text Styling",
-            "Improper Line/Character Spacing",
-            "Poor Text Hierarchy"
-        ],
-        "Color": [
-            "Insufficient Color Contrast for Readability",
-            "Excessive or Inconsistent Color Usage",
-            "Inappropriate or Mismatched Color Combinations"
-        ],
-        "Imagery & Visualizations": [
-            "Irrelevant Visual Content",
-            "Poor Image Quality/Editing",
-            "Improper Image Sizing",
-            "Inconsistent Visual Style Usage"
-        ]
-    }
-    
-    # Flatten all deficiency types for the prompt
-    all_deficiencies = []
-    for category, deficiencies in deficiency_categories.items():
-        all_deficiencies.extend(deficiencies)
-    
-        prompt = f"""Analyze the input text which describes slide design problems. From the predefined categories, identify all deficiencies mentioned in the text.
+    # MODIFIED: Extract content specifically from the <answer> tag for analysis.
+    answer_tag_pattern = r"<answer>(.*?)</answer>"
+    match_answer = re.search(answer_tag_pattern, model_output_text, re.DOTALL)
 
-        Predefined deficiency categories:
-        {json.dumps(all_deficiencies, indent=2)}
+    if match_answer:
+        text_to_analyze = match_answer.group(1).strip()
+    else:
+        # Fallback to the original text if no <answer> tag is found.
+        text_to_analyze = model_output_text.strip()
 
-        Input text to analyze:
-        {model_output_text}
-
-        Return a list containing only the exact names of the deficiencies found. If no deficiencies are found, return an empty list."""
-    
-    try:
-        client = openai.OpenAI(
-            api_key=os.getenv("OPENAI_API_KEY"),
-            base_url=os.getenv("OPENAI_API_BASE_URL")
-        )
-        
-        model_type = os.getenv("MODEL_TYPE", "gpt-4o-2024-08-06")
-        
-        completion = client.chat.completions.parse(
-            model=model_type,
-            messages=[
-                {"role": "system", "content": "You are an expert in slide design analysis. Classify deficiencies accurately based on the predefined categories."},
-                {"role": "user", "content": prompt}
-            ],
-            response_format=DeficiencyClassification,
-            temperature=0.1
-        )
-        
-        result = completion.choices[0].message.parsed
-        if result and result.deficiencies:
-            return result.deficiencies
-        else:
-            return []
-            
-    except Exception as e:
-        print(f"Error calling OpenAI API: {e}")
+    # If there's no text to analyze, return an empty list to avoid an unnecessary API call.
+    if not text_to_analyze:
         return []
+
+    # Flatten all deficiency types for the prompt using the global definition
+    all_deficiencies = []
+    for category, deficiencies in DEFICIENCY_CATEGORIES.items():
+        all_deficiencies.extend(deficiencies)
+
+    # MODIFIED: The prompt now uses the extracted text_to_analyze
+    prompt = f"""Analyze the input text which describes slide design problems. From the predefined categories, identify all deficiencies mentioned in the text.
+
+    Predefined deficiency categories:
+    {json.dumps(all_deficiencies, indent=2)}
+
+    Input text to analyze:
+    {text_to_analyze}
+
+    Return a list containing only the exact names of the deficiencies found. If no deficiencies are found, return an empty list."""
+
+    for attempt in range(3):
+        try:
+            client = openai.OpenAI(
+                api_key=os.getenv("OPENAI_API_KEY"),
+                base_url=os.getenv("OPENAI_API_BASE_URL")
+            )
+
+            model_type = os.getenv("MODEL_TYPE", "gpt-4o-2024-08-06")
+
+            completion = client.chat.completions.parse(
+                model=model_type,
+                messages=[
+                    {"role": "system", "content": "You are an expert in slide design analysis. Classify deficiencies accurately based on the predefined categories."},
+                    {"role": "user", "content": prompt}
+                ],
+                response_format=DeficiencyClassification,
+                temperature=0.1
+            )
+
+            result = completion.choices[0].message.parsed
+            if result and result.deficiencies:
+                return result.deficiencies
+            else:
+                return []
+
+        except Exception as e:
+            print(f"\033[31mError calling OpenAI API (attempt {attempt + 1}/3): {e}\033[0m")
+            if attempt == 2:  # Last attempt
+                return []
 
 
 def verify_deficiency(completion_content, ground_truth_deficiencies, **kwargs):
     """
-    Verifies the model's output against a list of ground truth deficiencies using OpenAI API classification.
+    Verifies the model's output based on the F1 score of deficiency CATEGORIES.
+    
+    The reward is 1.0 if the category-level F1 score is > 0.5, otherwise 0.0.
     """
-    n = len(ground_truth_deficiencies)
-    
-    # Use OpenAI API to classify deficiencies in the model output
-    classified_deficiencies = classify_deficiencies(completion_content)
-    
-    if n == 0:
-        # If no deficiencies expected, reward if LLM found no deficiencies
-        return 1.0 if len(classified_deficiencies) == 0 else 0.0
-    
-    if len(classified_deficiencies) == 0:
-        return 0.0
-    
-    # Define all valid deficiencies in the four categories
-    valid_deficiencies = {
-        "Poor Visual Hierarchy", "Cluttered Layout", "Unbalanced Space Distribution",
-        "Content Alignment Issues", "Content Overflow/Cut-off", "Occluded Content",
-        "Illegible Typeface Selection or Usage", "Improper Font Sizing", "Excessive Text Volume",
-        "Improper Text Styling", "Improper Line/Character Spacing", "Poor Text Hierarchy",
-        "Insufficient Color Contrast for Readability", "Excessive or Inconsistent Color Usage",
-        "Inappropriate or Mismatched Color Combinations", "Irrelevant Visual Content",
-        "Poor Image Quality/Editing", "Improper Image Sizing", "Inconsistent Visual Style Usage"
+    # Get a set of ground truth specific deficiencies from the solution data.
+    gt_specific_deficiencies = {
+        item["deficiency"] for item in ground_truth_deficiencies if "deficiency" in item
     }
-    
-    reward = 0.0
-    base_reward = 1.0 / n
-    
-    for deficiency_item in ground_truth_deficiencies:
-        deficiency_name = deficiency_item.get("deficiency")
-        has_strong_agreement = deficiency_item.get("has_strong_agreement", False)
-        
-        if deficiency_name:
-            # Check if this exact deficiency was classified by OpenAI
-            if deficiency_name in classified_deficiencies:
-                # Full reward for exact match
-                if has_strong_agreement:
-                    reward += base_reward * 2
-                else:
-                    reward += base_reward
-            else:
-                # Check if any of the classified deficiencies are valid (in our categories)
-                # and give partial reward
-                for classified_def in classified_deficiencies:
-                    if classified_def in valid_deficiencies:
-                        reward += base_reward / 2
-                        break  # Only give partial reward once per ground truth item
-    
-    return reward
+
+    # --- Defer "No deficiencies" case to format_reward ---
+    # If there are no GT deficiencies, this reward function shouldn't penalize.
+    # The format_reward will handle verifying if the model correctly said "No deficiencies".
+    if not gt_specific_deficiencies:
+        return 0.0
+
+    # Get predicted specific deficiencies from the model's output text.
+    predicted_specific_deficiencies = classify_deficiencies(completion_content)
+
+    # Map specific deficiencies to their parent categories for both GT and predictions.
+    # Using a set automatically handles duplicates.
+    gt_categories = {
+        DEFICIENCY_TO_CATEGORY.get(deficiency)
+        for deficiency in gt_specific_deficiencies
+        if DEFICIENCY_TO_CATEGORY.get(deficiency) is not None
+    }
+    predicted_categories = {
+        DEFICIENCY_TO_CATEGORY.get(deficiency)
+        for deficiency in predicted_specific_deficiencies
+        if DEFICIENCY_TO_CATEGORY.get(deficiency) is not None
+    }
+
+    # --- Handle edge cases before calculating F1 score ---
+    # If there are no GT categories, reward is 1.0 only if model also predicts no categories.
+    if not gt_categories:
+        return 1.0 if not predicted_categories else 0.0
+
+    # If the model predicts no categories but there are GT categories, reward is 0.
+    if not predicted_categories:
+        return 0.0
+
+    # --- Calculate Precision, Recall, and F1 Score at the category level ---
+    true_positives = len(gt_categories.intersection(predicted_categories))
+
+    # Precision = TP / (TP + FP) = TP / (Total Predicted)
+    precision = true_positives / len(predicted_categories)
+
+    # Recall = TP / (TP + FN) = TP / (Total Ground Truth)
+    recall = true_positives / len(gt_categories)
+
+    # F1 Score = 2 * (Precision * Recall) / (Precision + Recall)
+    # Add a small epsilon to the denominator to avoid division by zero.
+    f1_score = 2 * (precision * recall) / (precision + recall + 1e-8)
+
+    # --- Determine the final reward based on the F1 score threshold ---
+    return 1.0 if f1_score > 0.5 else 0.0
 
 
 def accuracy_reward(completions, solution, task, image_path=None, score_reward_threshold=None, **kwargs):
@@ -414,7 +422,7 @@ def accuracy_reward(completions, solution, task, image_path=None, score_reward_t
     num_gen = len(solution) // len(contents) if len(contents) > 0 else 1
     subsampled_solutions = solution[::max(1, num_gen)]
     subsampled_tasks = task[::max(1, num_gen)]
-    
+
     thresholds = score_reward_threshold
     subsampled_thresholds = thresholds[::max(1, num_gen)] if isinstance(thresholds, (list, tuple)) else [thresholds] * len(subsampled_solutions)
     if not any(isinstance(t, float) for t in subsampled_thresholds):
@@ -426,7 +434,7 @@ def accuracy_reward(completions, solution, task, image_path=None, score_reward_t
             match_answer = re.search(answer_tag_pattern, content, re.DOTALL)
             if match_answer:
                 answer_content = match_answer.group(1).strip()
-                
+
                 if task_type == 'score':
                     score_match = re.search(r'(\d+\.?\d*)', answer_content)
                     if score_match:
@@ -434,9 +442,11 @@ def accuracy_reward(completions, solution, task, image_path=None, score_reward_t
                         threshold_value = subsampled_thresholds[i] if i < len(subsampled_thresholds) else 0.35
                         if abs(model_score - true_sol) < threshold_value:
                             reward = 1.0
-                
+
                 elif task_type == 'deficiency':
-                    reward = verify_deficiency(answer_content, true_sol)
+                    # The verify_deficiency function now handles the full content string
+                    # and extracts the answer part internally.
+                    reward = verify_deficiency(content, true_sol)
 
         except Exception:
             reward = 0.0
@@ -454,47 +464,64 @@ def accuracy_reward(completions, solution, task, image_path=None, score_reward_t
                     f.write(f"Reward: {rewards[i]}\n")
                     f.write(f"Content: {content}\n")
                     f.write(f"Ground Truth: {subsampled_solutions[i]}\n")
-                    
-                    # Add detailed information for deficiency tasks
+
                     if subsampled_tasks[i] == 'deficiency':
                         try:
-                            match_answer = re.search(answer_tag_pattern, content, re.DOTALL)
-                            if match_answer:
-                                answer_content = match_answer.group(1).strip()
-                                
-                                # Get LLM classification results
-                                classified_deficiencies = classify_deficiencies(answer_content)
-                                
-                                # Extract only deficiency names from ground truth
-                                gt_deficiency_names = [item.get("deficiency") for item in subsampled_solutions[i] if item.get("deficiency")]
-                                
-                                f.write(f"LLM Classified Deficiencies: {classified_deficiencies}\n")
-                                f.write(f"Ground Truth Deficiencies: {gt_deficiency_names}\n")
+                            # Classify deficiencies from the full content for logging
+                            classified_deficiencies = classify_deficiencies(content)
+
+                            gt_deficiency_names = [item.get("deficiency") for item in subsampled_solutions[i] if item.get("deficiency")]
+
+                            f.write(f"LLM Classified Deficiencies: {classified_deficiencies}\n")
+                            f.write(f"Ground Truth Deficiencies: {gt_deficiency_names}\n")
                         except Exception as e:
-                            f.write(f"Failed to extract answer content or classify deficiencies: {e}\n")
-                    
+                            f.write(f"Failed to extract answer content or classify deficiencies for logging: {e}\n")
+
                     f.write(f"{'=' * 40}\n")
         except Exception:
             pass
     return rewards
 
 
-def format_reward(completions, **kwargs):
+def format_reward(completions, solution, task, **kwargs):
     """
     Checks for <think>...</think><answer>...</answer> structure.
+    For deficiency tasks where the ground truth is "No deficiencies", it also
+    checks if the answer is exactly "No deficiencies", ignoring case, punctuation, and whitespace.
     """
-    think_answer_pattern = (
-        r"^<think>.*?</think>\s*<answer>.*?</answer>\s*$"
-    )
-    
+    think_answer_pattern = r"^<think>.*?</think>\s*<answer>(.*?)</answer>\s*$"
+
     completion_contents = [completion[0]["content"] for completion in completions]
     rewards = []
-    for content in completion_contents:
-        if re.fullmatch(think_answer_pattern, content, re.DOTALL | re.MULTILINE):
-            rewards.append(1.0)
-        else:
-            rewards.append(0.0)
+
+    # Subsample solution and task to match the number of completions
+    num_gen = len(solution) // len(completion_contents) if len(completion_contents) > 0 else 1
+    subsampled_solutions = solution[::max(1, num_gen)]
+    subsampled_tasks = task[::max(1, num_gen)]
+
+    for content, true_sol, task_type in zip(completion_contents, subsampled_solutions, subsampled_tasks):
+        reward = 0.0
+        match = re.fullmatch(think_answer_pattern, content, re.DOTALL | re.MULTILINE)
+
+        if match:
+            # Structure is correct, now check for the special "No deficiencies" case
+            if task_type == 'deficiency' and not true_sol:
+                # Ground truth expects "No deficiencies"
+                answer_content = match.group(1).strip()
+                # Clean the answer: remove punctuation, whitespace, and convert to lower case.
+                cleaned_answer = re.sub(r'[\s\W_]+', '', answer_content).lower()
+                if cleaned_answer == "nodeficiencies":
+                    reward = 1.0
+                # else reward remains 0.0
+            else:
+                # For all other cases, correct structure is enough for a reward of 1.0
+                reward = 1.0
+        # else reward remains 0.0 if structure is incorrect
+
+        rewards.append(reward)
+
     return rewards
+
 
 reward_funcs_registry = {
     "accuracy": accuracy_reward,
@@ -505,7 +532,6 @@ reward_funcs_registry = {
 def main(script_args, training_args, model_args):
     reward_funcs = [reward_funcs_registry[func] for func in script_args.reward_funcs]
 
-    # MODIFIED: Use the new multi-task dataset class
     dataset = LazyMultiTaskDataset(script_args)
 
     trainer_cls = Qwen2VLGRPOTrainer
