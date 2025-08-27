@@ -39,7 +39,7 @@ uv run torchrun --nproc_per_node=8 \
     --max_prompt_length 4096 \
     --num_generations 8 \
     --per_device_train_batch_size 1 \
-    --gradient_accumulation_steps 16 \
+    --gradient_accumulation_steps 8 \
     --logging_steps 1 \
     --bf16 \
     --torch_dtype bfloat16 \
@@ -48,7 +48,7 @@ uv run torchrun --nproc_per_node=8 \
     --attn_implementation flash_attention_2 \
     --num_train_epochs 5 \
     --run_name ${RUN_NAME} \
-    --save_steps 300 \
+    --save_steps 200 \
     --score_reward_threshold 0.5 \
     --beta 0.001 \
     --deepspeed local_scripts/zero2.json \

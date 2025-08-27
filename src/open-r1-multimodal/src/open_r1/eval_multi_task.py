@@ -20,11 +20,12 @@ import json
 import random
 import math
 import torch
+# Restoring imports for OpenAI API call
 import openai
 from dotenv import load_dotenv
 from pydantic import BaseModel
 
-# Load environment variables
+# Load environment variables for the OpenAI API
 load_dotenv()
 
 # ----------------------- Fix the flash attention bug in the current version of transformers -----------------------
@@ -112,10 +113,10 @@ SCORE_QUESTION_PROMPT = (
     'You need to provide your detailed reasoning process.'
 )
 
+# --- MODIFIED: DEFICIENCY_PROMPT reverted to its original version ---
 DEFICIENCY_PROMPT = (
-    "Please provide a professional design critique of the accompanying slide, focusing on the single most significant design deficiency. "
-    "Your analysis should identify this primary problem (considering major categories: Composition & Layout, Typography, Color, Imagery & Visualizations), explain the reasoning for why it's the most impactful issue, and offer a specific, actionable suggestion for improvement. "
-    "If there are no major deficiencies, you should say 'No deficiencies' without any other text."
+    "What are the major design deficiencies in the slide? How do you think the slide can be improved to avoid these deficiencies? How can we adjust the elements on the slide to improve the slide?"
+    "If there are no major deficiencies, simply respond with 'No deficiencies' without any other text."
 )
 
 
@@ -252,8 +253,9 @@ class LazyMultiTaskDataset(Dataset):
         return sample
 
 
-class DeficiencyClassification(BaseModel):
-    deficiencies: List[str]
+# --- ADDED: Pydantic model for structured LLM output ---
+class DeficiencyCategoryClassification(BaseModel):
+    deficiency_categories: List[str]
 
 
 # --- MODIFIED: Deficiency categories defined globally for reuse ---
@@ -284,13 +286,13 @@ DEFICIENCY_TO_CATEGORY = {
 }
 
 
-def classify_deficiencies(model_output_text):
+# --- MODIFIED: `classify_deficiencies` function reverted to use an LLM for classification ---
+def classify_deficiencies(model_output_text: str) -> List[str]:
     """
-    Uses OpenAI API to classify deficiencies in model output text.
-    It first extracts content from the <answer> tag if present.
-    Returns a list of classified deficiencies.
+    Uses an external LLM (OpenAI API) to classify the model's free-text output
+    into a predefined set of main deficiency categories.
     """
-    # MODIFIED: Extract content specifically from the <answer> tag for analysis.
+    # Extract content specifically from the <answer> tag for analysis.
     answer_tag_pattern = r"<answer>(.*?)</answer>"
     match_answer = re.search(answer_tag_pattern, model_output_text, re.DOTALL)
 
@@ -300,25 +302,22 @@ def classify_deficiencies(model_output_text):
         # Fallback to the original text if no <answer> tag is found.
         text_to_analyze = model_output_text.strip()
 
-    # If there's no text to analyze, return an empty list to avoid an unnecessary API call.
-    if not text_to_analyze:
+    # If there's no text to analyze, or it's a "no deficiencies" case, return an empty list.
+    if not text_to_analyze or "no deficiencies" in text_to_analyze.lower():
         return []
 
-    # Flatten all deficiency types for the prompt using the global definition
-    all_deficiencies = []
-    for category, deficiencies in DEFICIENCY_CATEGORIES.items():
-        all_deficiencies.extend(deficiencies)
+    # The four main categories for the LLM to classify against.
+    main_categories = list(DEFICIENCY_CATEGORIES.keys())
 
-    # MODIFIED: The prompt now uses the extracted text_to_analyze
-    prompt = f"""Analyze the input text which describes slide design problems. From the predefined categories, identify all deficiencies mentioned in the text.
+    prompt = f"""Analyze the input text, which describes design problems on a slide. Your task is to classify the problems mentioned into one or more of the following predefined categories.
 
-    Predefined deficiency categories:
-    {json.dumps(all_deficiencies, indent=2)}
+Predefined deficiency categories:
+{json.dumps(main_categories, indent=2)}
 
-    Input text to analyze:
-    {text_to_analyze}
+Input text to analyze:
+"{text_to_analyze}"
 
-    Return a list containing only the exact names of the deficiencies found. If no deficiencies are found, return an empty list."""
+Return a list containing only the exact names of the categories that are relevant to the problems described in the input text. If the text does not describe any problems relevant to these categories, return an empty list."""
 
     for attempt in range(3):
         try:
@@ -332,16 +331,18 @@ def classify_deficiencies(model_output_text):
             completion = client.chat.completions.parse(
                 model=model_type,
                 messages=[
-                    {"role": "system", "content": "You are an expert in slide design analysis. Classify deficiencies accurately based on the predefined categories."},
+                    {"role": "system", "content": "You are an expert in slide design analysis. Classify the user's text into the provided categories accurately."},
                     {"role": "user", "content": prompt}
                 ],
-                response_format=DeficiencyClassification,
-                temperature=0.1
+                response_format=DeficiencyCategoryClassification,
+                temperature=0.0
             )
 
             result = completion.choices[0].message.parsed
-            if result and result.deficiencies:
-                return result.deficiencies
+            if result and result.deficiency_categories:
+                # Filter to ensure only valid categories are returned
+                valid_categories = [cat for cat in result.deficiency_categories if cat in main_categories]
+                return valid_categories
             else:
                 return []
 
@@ -349,6 +350,7 @@ def classify_deficiencies(model_output_text):
             print(f"\033[31mError calling OpenAI API (attempt {attempt + 1}/3): {e}\033[0m")
             if attempt == 2:  # Last attempt
                 return []
+    return []
 
 
 def verify_deficiency(completion_content, ground_truth_deficiencies, **kwargs):
@@ -362,48 +364,31 @@ def verify_deficiency(completion_content, ground_truth_deficiencies, **kwargs):
         item["deficiency"] for item in ground_truth_deficiencies if "deficiency" in item
     }
 
-    # --- Defer "No deficiencies" case to format_reward ---
-    # If there are no GT deficiencies, this reward function shouldn't penalize.
-    # The format_reward will handle verifying if the model correctly said "No deficiencies".
+    # Defer "No deficiencies" case to format_reward
     if not gt_specific_deficiencies:
         return 0.0
 
-    # Get predicted specific deficiencies from the model's output text.
-    predicted_specific_deficiencies = classify_deficiencies(completion_content)
+    # Get predicted categories from the model's output text via the LLM classifier.
+    predicted_categories = set(classify_deficiencies(completion_content))
 
-    # Map specific deficiencies to their parent categories for both GT and predictions.
-    # Using a set automatically handles duplicates.
+    # Map ground truth specific deficiencies to their parent categories.
     gt_categories = {
         DEFICIENCY_TO_CATEGORY.get(deficiency)
         for deficiency in gt_specific_deficiencies
         if DEFICIENCY_TO_CATEGORY.get(deficiency) is not None
     }
-    predicted_categories = {
-        DEFICIENCY_TO_CATEGORY.get(deficiency)
-        for deficiency in predicted_specific_deficiencies
-        if DEFICIENCY_TO_CATEGORY.get(deficiency) is not None
-    }
 
     # --- Handle edge cases before calculating F1 score ---
-    # If there are no GT categories, reward is 1.0 only if model also predicts no categories.
     if not gt_categories:
         return 1.0 if not predicted_categories else 0.0
 
-    # If the model predicts no categories but there are GT categories, reward is 0.
     if not predicted_categories:
         return 0.0
 
     # --- Calculate Precision, Recall, and F1 Score at the category level ---
     true_positives = len(gt_categories.intersection(predicted_categories))
-
-    # Precision = TP / (TP + FP) = TP / (Total Predicted)
     precision = true_positives / len(predicted_categories)
-
-    # Recall = TP / (TP + FN) = TP / (Total Ground Truth)
     recall = true_positives / len(gt_categories)
-
-    # F1 Score = 2 * (Precision * Recall) / (Precision + Recall)
-    # Add a small epsilon to the denominator to avoid division by zero.
     f1_score = 2 * (precision * recall) / (precision + recall + 1e-8)
 
     # --- Determine the final reward based on the F1 score threshold ---
@@ -444,8 +429,6 @@ def accuracy_reward(completions, solution, task, image_path=None, score_reward_t
                             reward = 1.0
 
                 elif task_type == 'deficiency':
-                    # The verify_deficiency function now handles the full content string
-                    # and extracts the answer part internally.
                     reward = verify_deficiency(content, true_sol)
 
         except Exception:
@@ -467,15 +450,14 @@ def accuracy_reward(completions, solution, task, image_path=None, score_reward_t
 
                     if subsampled_tasks[i] == 'deficiency':
                         try:
-                            # Classify deficiencies from the full content for logging
-                            classified_deficiencies = classify_deficiencies(content)
-
+                            # --- MODIFIED: Update log message for clarity ---
+                            classified_categories = classify_deficiencies(content)
                             gt_deficiency_names = [item.get("deficiency") for item in subsampled_solutions[i] if item.get("deficiency")]
 
-                            f.write(f"LLM Classified Deficiencies: {classified_deficiencies}\n")
+                            f.write(f"LLM-Classified Categories: {classified_categories}\n")
                             f.write(f"Ground Truth Deficiencies: {gt_deficiency_names}\n")
                         except Exception as e:
-                            f.write(f"Failed to extract answer content or classify deficiencies for logging: {e}\n")
+                            f.write(f"Failed to classify deficiencies for logging: {e}\n")
 
                     f.write(f"{'=' * 40}\n")
         except Exception:
@@ -485,11 +467,15 @@ def accuracy_reward(completions, solution, task, image_path=None, score_reward_t
 
 def format_reward(completions, solution, task, **kwargs):
     """
-    Checks for <think>...</think><answer>...</answer> structure.
-    For deficiency tasks where the ground truth is "No deficiencies", it also
-    checks if the answer is exactly "No deficiencies", ignoring case, punctuation, and whitespace.
+    Checks for the exact <think>...</think><answer>...</answer> structure.
+    
+    A reward of 1.0 is given only if the output contains exactly one <think> block
+    followed by exactly one <answer> block. For deficiency tasks with "No deficiencies"
+    as the ground truth, it also validates that the answer content matches.
     """
-    think_answer_pattern = r"^<think>.*?</think>\s*<answer>(.*?)</answer>\s*$"
+    # This pattern requires the string to contain only the think/answer structure,
+    # allowing for surrounding whitespace.
+    think_answer_pattern = r"^\s*<think>.*?</think>\s*<answer>(.*?)</answer>\s*$"
 
     completion_contents = [completion[0]["content"] for completion in completions]
     rewards = []
@@ -501,22 +487,37 @@ def format_reward(completions, solution, task, **kwargs):
 
     for content, true_sol, task_type in zip(completion_contents, subsampled_solutions, subsampled_tasks):
         reward = 0.0
-        match = re.fullmatch(think_answer_pattern, content, re.DOTALL | re.MULTILINE)
 
-        if match:
-            # Structure is correct, now check for the special "No deficiencies" case
-            if task_type == 'deficiency' and not true_sol:
-                # Ground truth expects "No deficiencies"
-                answer_content = match.group(1).strip()
-                # Clean the answer: remove punctuation, whitespace, and convert to lower case.
-                cleaned_answer = re.sub(r'[\s\W_]+', '', answer_content).lower()
-                if cleaned_answer == "nodeficiencies":
+        # --- MODIFICATION START ---
+        # First, perform a strict count to ensure exactly one of each tag exists.
+        # This prevents rewarding outputs with multiple <think>/<answer> pairs.
+        is_single_tag_pair = (
+            content.count("<think>") == 1
+            and content.count("</think>") == 1
+            and content.count("<answer>") == 1
+            and content.count("</answer>") == 1
+        )
+
+        if is_single_tag_pair:
+            # If the counts are correct, now validate the overall structure with the regex.
+            # re.DOTALL ensures '.' matches newline characters within the tags.
+            match = re.fullmatch(think_answer_pattern, content.strip(), re.DOTALL)
+
+            if match:
+                # Structure is correct, now check for the special "No deficiencies" case
+                if task_type == 'deficiency' and not true_sol:
+                    # Ground truth expects "No deficiencies"
+                    answer_content = match.group(1).strip()
+                    # Clean the answer for robust comparison
+                    cleaned_answer = re.sub(r'[\s\W_]+', '', answer_content).lower()
+                    if cleaned_answer == "nodeficiencies":
+                        reward = 1.0
+                    # else reward remains 0.0
+                else:
+                    # For all other cases, the correct structure is sufficient for a reward of 1.0
                     reward = 1.0
-                # else reward remains 0.0
-            else:
-                # For all other cases, correct structure is enough for a reward of 1.0
-                reward = 1.0
-        # else reward remains 0.0 if structure is incorrect
+        # If tag counts are incorrect, reward remains 0.0
+        # --- MODIFICATION END ---
 
         rewards.append(reward)
 
