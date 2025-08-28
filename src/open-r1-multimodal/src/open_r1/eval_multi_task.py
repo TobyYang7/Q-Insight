@@ -110,12 +110,14 @@ SYSTEM_PROMPT = (
 SCORE_QUESTION_PROMPT = (
     'What is your overall rating on the quality of this slide?'
     'The rating should be a float between 1 and 10, rounded to two decimal places, with 1 representing very poor quality and 5 representing excellent quality.'
-    'You need to provide your detailed reasoning process.'
+    "You can consider the following aspects: composition & layout, typography, color, imagery & visualizations."
+    'And you need to provide your detailed reasoning process.'
 )
 
 # --- MODIFIED: DEFICIENCY_PROMPT reverted to its original version ---
 DEFICIENCY_PROMPT = (
     "What are the major design deficiencies in the slide? How do you think the slide can be improved to avoid these deficiencies? How can we adjust the elements on the slide to improve the slide?"
+    "You can consider the following aspects: composition & layout, typography, color, imagery & visualizations."
     "If there are no major deficiencies, simply respond with 'No deficiencies' without any other text."
 )
 
@@ -309,7 +311,7 @@ def classify_deficiencies(model_output_text: str) -> List[str]:
     # The four main categories for the LLM to classify against.
     main_categories = list(DEFICIENCY_CATEGORIES.keys())
 
-    prompt = f"""Analyze the input text, which describes design problems on a slide. Your task is to classify the problems mentioned into one or more of the following predefined categories.
+    prompt = f"""Analyze the input text, which describes design problems on a slide. Your task is to classify the problems mentioned into one or two of the following predefined categories.
 
 Predefined deficiency categories:
 {json.dumps(main_categories, indent=2)}
@@ -403,18 +405,18 @@ def verify_deficiency(completion_content, ground_truth_deficiencies, **kwargs):
 
     # --- Calculate Precision, Recall, and F1 Score at the category level ---
     true_positives = len(gt_categories.intersection(predicted_categories))
-    
+
     # Add a small epsilon to avoid division by zero
     precision = true_positives / len(predicted_categories)
     recall = true_positives / len(gt_categories)
-    
+
     if precision + recall == 0:
         f1_score = 0.0
     else:
         f1_score = 2 * (precision * recall) / (precision + recall)
 
     # --- Determine the final reward based on the F1 score threshold ---
-    return 1.0 if f1_score > 0.5 else 0.0
+    return 1.0 if precision > 0.65 else 0.0
 
 
 def accuracy_reward(completions, solution, task, image_path=None, score_reward_threshold=None, **kwargs):

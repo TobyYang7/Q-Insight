@@ -1,7 +1,7 @@
 set -x
 
 export DEBUG_MODE="true"
-RUN_NAME="eval-multi-task-rl-thinker"
+RUN_NAME="eval_deficiency"
 export LOG_PATH="./debug_log_${RUN_NAME}.txt"
 
 # Dist args (single node by default)
@@ -34,7 +34,7 @@ uv run torchrun --nproc_per_node=8 \
     --master_port=12345 \
     src/open_r1/eval_multi_task.py \
     --output_dir output/${RUN_NAME} \
-    --model_name_or_path UCSC-VLAA/VLAA-Thinker-Qwen2.5VL-7B \
+    --model_name_or_path Qwen/Qwen2.5-VL-7B-Instruct \
     --dataset_name None \
     --max_prompt_length 4096 \
     --num_generations 8 \
@@ -46,13 +46,13 @@ uv run torchrun --nproc_per_node=8 \
     --data_seed 42 \
     --report_to wandb \
     --attn_implementation flash_attention_2 \
-    --num_train_epochs 1 \
+    --num_train_epochs 3 \
     --run_name ${RUN_NAME} \
     --save_steps 200 \
     --score_reward_threshold 0.5 \
     --beta 0.001 \
     --deepspeed local_scripts/zero2.json \
     --dataset_deficiency data_config/slideaudit.yaml \
-    # --dataset_score data_config/iqa_score_custom.yaml \
+    --dataset_score data_config/iqa_score_custom.yaml \
 
 
