@@ -3,16 +3,13 @@ import os
 import base64
 import io
 from typing import List, Dict, Any
-from multiprocessing import Pool, cpu_count, set_start_method
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import argparse
 from tqdm import tqdm
-import torch
 from PIL import Image
-from transformers import Qwen2_5_VLForConditionalGeneration, AutoProcessor, set_seed, GenerationConfig
-from qwen_vl_utils import process_vision_info
 import openai
 from pydantic import BaseModel
+import time
 
 # --- Deficiency Categories and Mapping ---
 # Define categories and create a reverse map for easy lookup.
@@ -52,6 +49,9 @@ DEFICIENCY_TO_CATEGORY_MAP = {
     for category, deficiencies in DEFICIENCY_CATEGORIES.items()
     for deficiency in deficiencies
 }
+
+# Get all unique deficiencies for metrics initialization
+ALL_DEFICIENCIES = list(DEFICIENCY_TO_CATEGORY_MAP.keys())
 
 
 # Load environment variables from .env file manually
@@ -111,12 +111,10 @@ def classify_deficiencies(model_output_text: str) -> List[str]:
     Uses OpenAI API to classify deficiencies in model output text.
     Returns a list of classified deficiencies.
     """
-    all_deficiencies = list(DEFICIENCY_TO_CATEGORY_MAP.keys())
-
     prompt = f"""Analyze the input text which describes slide design problems. From the predefined categories, identify all deficiencies mentioned in the text.
 
     Predefined deficiency categories:
-    {json.dumps(all_deficiencies, indent=2)}
+    {json.dumps(ALL_DEFICIENCIES, indent=2)}
 
     Input text to analyze:
     {extract_answer_content(model_output_text)}
@@ -154,11 +152,20 @@ def classify_deficiencies(model_output_text: str) -> List[str]:
 
 
 class DeficiencyTester:
-    def __init__(self, model_path: str, device: str):
-        self.model_path = model_path
-        self.device = device
-
-        set_seed(42)
+    def __init__(self):
+        # Load API configuration
+        self.test_model = os.getenv("TEST_MODEL")
+        self.test_api_key = os.getenv("TEST_API_KEY")
+        self.test_base_url = os.getenv("TEST_BASE_URL")
+        
+        if not all([self.test_model, self.test_api_key, self.test_base_url]):
+            raise ValueError("TEST_MODEL, TEST_API_KEY, and TEST_BASE_URL must be set in .env file")
+        
+        # Initialize OpenAI client for test model
+        self.client = openai.OpenAI(
+            api_key=self.test_api_key,
+            base_url=self.test_base_url
+        )
 
         self.system_prompt = (
             "A conversation between User and Assistant. The user asks a question, and the Assistant solves it. The assistant "
@@ -168,120 +175,118 @@ class DeficiencyTester:
         )
 
         self.deficiency_prompt = (
-            "Please provide a professional design critique of the accompanying slide. "
-            "If there are no deficiencies, you should say 'No deficiencies'."
-            "Otherwise, your analysis should identify any design deficiencies, explain the reasoning behind your critique, "
-            "and offer specific, actionable suggestions for improvement. "
+            "What are the major design deficiencies in the slide? How do you think the slide can be improved to avoid these deficiencies? How can we adjust the elements on the slide to improve the slide?"
+            "If there are no major deficiencies, simply respond with 'No deficiencies' without any other text."
         )
 
-        # Initialize model and processor
-        print(f"Loading model on device: {self.device}")
-        self.model = Qwen2_5_VLForConditionalGeneration.from_pretrained(
-            self.model_path,
-            torch_dtype=torch.bfloat16,
-            attn_implementation="flash_attention_2",
-            device_map=self.device,
-        )
-        self.processor = AutoProcessor.from_pretrained(self.model_path)
-
-        # Generation config
-        self.gen_config = GenerationConfig(
-            do_sample=True,
-            temperature=1.0,
-            top_k=50,
-            top_p=0.95,
-            max_new_tokens=1024,
-        )
-
-    def process_single_image(self, image_path: str) -> str:
-        """Process a single image and return model output"""
-        base64_image_uri = image_to_base64_uri(image_path)
-        if not base64_image_uri:
-            return ""
-
-        message = [
-            {"role": "system", "content": [{"type": "text", "text": self.system_prompt}]},
-            {
-                "role": "user",
-                "content": [
-                    {"type": "text", "text": self.deficiency_prompt},
-                    {"type": "image", "image": base64_image_uri}
-                ]
-            }
-        ]
-
-        text = [self.processor.apply_chat_template(message, tokenize=False, add_generation_prompt=True)]
-        image_inputs, video_inputs = process_vision_info([message])
-        inputs = self.processor(
-            text=text,
-            images=image_inputs,
-            videos=video_inputs,
-            padding=True,
-            return_tensors="pt",
-        )
-        inputs = inputs.to(self.device)
-
-        # Generate response
-        generated_ids = self.model.generate(
-            **inputs,
-            generation_config=self.gen_config,
-            use_cache=True,
-        )
-        generated_ids_trimmed = [
-            out_ids[len(in_ids):] for in_ids, out_ids in zip(inputs.input_ids, generated_ids)
-        ]
-        output_text = self.processor.batch_decode(
-            generated_ids_trimmed, skip_special_tokens=True, clean_up_tokenization_spaces=False
-        )[0]
-
-        return output_text
-
-    def process_single_sample(self, item: Dict) -> Dict:
-        """Process a single test sample and calculate metrics based on major categories."""
+    def process_single(self, item: Dict, max_retries: int = 3) -> Dict:
+        """Process a single test sample: call API, classify deficiencies, and calculate metrics."""
         try:
-            # Run GPU inference to get model output
-            generated_text = self.process_single_image(item["image"])
+            # Convert image to base64
+            base64_image_uri = image_to_base64_uri(item["image"])
+            if not base64_image_uri:
+                return None
+
+            messages = [
+                {"role": "system", "content": self.system_prompt},
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "text", "text": self.deficiency_prompt},
+                        {"type": "image_url", "image_url": {"url": base64_image_uri}}
+                    ]
+                }
+            ]
+
+            # Call API with retries
+            generated_text = ""
+            for attempt in range(max_retries):
+                try:
+                    completion = self.client.chat.completions.create(
+                        model=self.test_model,
+                        messages=messages,
+                        temperature=1.0,
+                        top_p=0.95,
+                        max_tokens=1024,
+                    )
+                    
+                    generated_text = completion.choices[0].message.content or ""
+                    break
+                    
+                except Exception as e:
+                    print(f"API call failed for slide {item['slide_id']} (attempt {attempt + 1}/{max_retries}): {e}")
+                    if attempt < max_retries - 1:
+                        time.sleep(2 ** attempt)  # Exponential backoff
+                    else:
+                        print(f"Failed after {max_retries} attempts for slide {item['slide_id']}")
+                        return None
+            
             # Classify specific deficiencies from the generated text
             predicted_deficiencies = classify_deficiencies(generated_text)
 
             # Get ground truth specific deficiencies
             ground_truth_deficiencies = [d["deficiency"] for d in item["deficiencies"]]
 
-            # --- MODIFICATION START: Convert specific deficiencies to major categories ---
+            # Convert specific deficiencies to major categories
             predicted_categories = {
-                DEFICIENCY_TO_CATEGORY_MAP[d] for d in predicted_deficiencies if d in DEFICIENCY_TO_CATEGORY_MAP
+                DEFICIENCY_TO_CATEGORY_MAP[d] for d in predicted_deficiencies 
+                if d in DEFICIENCY_TO_CATEGORY_MAP
             }
             ground_truth_categories = {
-                DEFICIENCY_TO_CATEGORY_MAP[d] for d in ground_truth_deficiencies if d in DEFICIENCY_TO_CATEGORY_MAP
+                DEFICIENCY_TO_CATEGORY_MAP[d] for d in ground_truth_deficiencies 
+                if d in DEFICIENCY_TO_CATEGORY_MAP
             }
-            # --- MODIFICATION END ---
 
-            # --- MODIFICATION: Calculate accuracy metrics based on CATEGORIES ---
-            true_positives = len(predicted_categories.intersection(ground_truth_categories))
-            false_positives = len(predicted_categories - ground_truth_categories)
-            false_negatives = len(ground_truth_categories - predicted_categories)
+            # Calculate metrics for CATEGORIES
+            cat_true_positives = len(predicted_categories.intersection(ground_truth_categories))
+            cat_false_positives = len(predicted_categories - ground_truth_categories)
+            cat_false_negatives = len(ground_truth_categories - predicted_categories)
 
-            precision = true_positives / (true_positives + false_positives) if (true_positives + false_positives) > 0 else 0
-            recall = true_positives / (true_positives + false_negatives) if (true_positives + false_negatives) > 0 else 0
-            f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
+            cat_precision = cat_true_positives / (cat_true_positives + cat_false_positives) if (cat_true_positives + cat_false_positives) > 0 else 0
+            cat_recall = cat_true_positives / (cat_true_positives + cat_false_negatives) if (cat_true_positives + cat_false_negatives) > 0 else 0
+            cat_f1 = 2 * cat_precision * cat_recall / (cat_precision + cat_recall) if (cat_precision + cat_recall) > 0 else 0
+
+            # Calculate metrics for SPECIFIC DEFICIENCIES
+            predicted_deficiencies_set = set(predicted_deficiencies)
+            ground_truth_deficiencies_set = set(ground_truth_deficiencies)
+            
+            def_true_positives = len(predicted_deficiencies_set.intersection(ground_truth_deficiencies_set))
+            def_false_positives = len(predicted_deficiencies_set - ground_truth_deficiencies_set)
+            def_false_negatives = len(ground_truth_deficiencies_set - predicted_deficiencies_set)
+
+            def_precision = def_true_positives / (def_true_positives + def_false_positives) if (def_true_positives + def_false_positives) > 0 else 0
+            def_recall = def_true_positives / (def_true_positives + def_false_negatives) if (def_true_positives + def_false_negatives) > 0 else 0
+            def_f1 = 2 * def_precision * def_recall / (def_precision + def_recall) if (def_precision + def_recall) > 0 else 0
 
             result = {
                 "slide_id": item["slide_id"],
                 "image": item["image"],
                 "ground_truth_deficiencies": ground_truth_deficiencies,
                 "predicted_deficiencies": predicted_deficiencies,
-                "ground_truth_categories": sorted(list(ground_truth_categories)),  # Added for clarity
-                "predicted_categories": sorted(list(predicted_categories)),     # Added for clarity
+                "ground_truth_categories": sorted(list(ground_truth_categories)),
+                "predicted_categories": sorted(list(predicted_categories)),
                 "model_output": generated_text,
-                "precision": precision,
-                "recall": recall,
-                "f1": f1,
-                "true_positives": true_positives,
-                "false_positives": false_positives,
-                "false_negatives": false_negatives
+                # Category-level metrics
+                "category_metrics": {
+                    "precision": cat_precision,
+                    "recall": cat_recall,
+                    "f1": cat_f1,
+                    "true_positives": cat_true_positives,
+                    "false_positives": cat_false_positives,
+                    "false_negatives": cat_false_negatives
+                },
+                # Deficiency-level metrics
+                "deficiency_metrics": {
+                    "precision": def_precision,
+                    "recall": def_recall,
+                    "f1": def_f1,
+                    "true_positives": def_true_positives,
+                    "false_positives": def_false_positives,
+                    "false_negatives": def_false_negatives
+                }
             }
 
-            print(f"Processed slide {item['slide_id']} on {self.device}")
+            print(f"Processed slide {item['slide_id']} - Cat F1: {cat_f1:.3f}, Def F1: {def_f1:.3f}")
             return result
 
         except Exception as e:
@@ -289,41 +294,93 @@ class DeficiencyTester:
             return None
 
 
-def worker_process(args):
-    """Worker function for multiprocessing - load model once per GPU, process assigned samples"""
-    samples_for_gpu, model_path, gpu_id = args
-    device = f"cuda:{gpu_id}"
-
-    # Load model once per GPU
-    print(f"Loading model on {device}")
-    tester = DeficiencyTester(model_path, device)
-
-    # Process all samples assigned to this GPU
-    results = []
-    for sample in samples_for_gpu:
-        result = tester.process_single_sample(sample)
-        if result:
-            results.append(result)
-
-    return results
+def calculate_per_class_metrics(results: List[Dict]) -> Dict:
+    """Calculate per-category and per-deficiency metrics."""
+    # Initialize counters for each category
+    category_stats = {cat: {"tp": 0, "fp": 0, "fn": 0, "support": 0} for cat in DEFICIENCY_CATEGORIES.keys()}
+    
+    # Initialize counters for each specific deficiency
+    deficiency_stats = {def_name: {"tp": 0, "fp": 0, "fn": 0, "support": 0} for def_name in ALL_DEFICIENCIES}
+    
+    for result in results:
+        # Process category-level stats
+        gt_categories = set(result["ground_truth_categories"])
+        pred_categories = set(result["predicted_categories"])
+        
+        for cat in DEFICIENCY_CATEGORIES.keys():
+            if cat in gt_categories:
+                category_stats[cat]["support"] += 1
+                if cat in pred_categories:
+                    category_stats[cat]["tp"] += 1
+                else:
+                    category_stats[cat]["fn"] += 1
+            elif cat in pred_categories:
+                category_stats[cat]["fp"] += 1
+        
+        # Process deficiency-level stats
+        gt_deficiencies = set(result["ground_truth_deficiencies"])
+        pred_deficiencies = set(result["predicted_deficiencies"])
+        
+        for def_name in ALL_DEFICIENCIES:
+            if def_name in gt_deficiencies:
+                deficiency_stats[def_name]["support"] += 1
+                if def_name in pred_deficiencies:
+                    deficiency_stats[def_name]["tp"] += 1
+                else:
+                    deficiency_stats[def_name]["fn"] += 1
+            elif def_name in pred_deficiencies:
+                deficiency_stats[def_name]["fp"] += 1
+    
+    # Calculate metrics for each category
+    category_metrics = {}
+    for cat, stats in category_stats.items():
+        tp, fp, fn = stats["tp"], stats["fp"], stats["fn"]
+        precision = tp / (tp + fp) if (tp + fp) > 0 else 0
+        recall = tp / (tp + fn) if (tp + fn) > 0 else 0
+        f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
+        
+        category_metrics[cat] = {
+            "precision": precision,
+            "recall": recall,
+            "f1": f1,
+            "support": stats["support"],
+            "true_positives": tp,
+            "false_positives": fp,
+            "false_negatives": fn
+        }
+    
+    # Calculate metrics for each deficiency
+    deficiency_metrics = {}
+    for def_name, stats in deficiency_stats.items():
+        tp, fp, fn = stats["tp"], stats["fp"], stats["fn"]
+        precision = tp / (tp + fp) if (tp + fp) > 0 else 0
+        recall = tp / (tp + fn) if (tp + fn) > 0 else 0
+        f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
+        
+        deficiency_metrics[def_name] = {
+            "precision": precision,
+            "recall": recall,
+            "f1": f1,
+            "support": stats["support"],
+            "true_positives": tp,
+            "false_positives": fp,
+            "false_negatives": fn
+        }
+    
+    return {
+        "category_metrics": category_metrics,
+        "deficiency_metrics": deficiency_metrics
+    }
 
 
 def main():
-    # Set multiprocessing start method to 'spawn' for CUDA compatibility
-    try:
-        set_start_method('spawn', force=True)
-    except RuntimeError:
-        pass  # Already set
-
-    parser = argparse.ArgumentParser(description="Test deficiency detection with multi-GPU")
-    parser.add_argument("--model_path", type=str, default="model/VLAA-Thinker-Qwen2.5VL-7B",
-                        help="Path to the model")
-    parser.add_argument("--test_data", type=str, default="dataset/slideaudit_test.json",
+    parser = argparse.ArgumentParser(description="Test deficiency detection with API")
+    parser.add_argument("--test_data", type=str, default="slideaudit_test.json",
                         help="Path to test data JSON file")
-    parser.add_argument("--output_file", type=str, default="deficiency_test_results_VLAA-Thinker-Qwen2.5VL-7B.json",
+    parser.add_argument("--output_file", type=str, default="deficiency_test_results_api.json",
                         help="Output file for results")
-    parser.add_argument("--num_workers", type=int, default=None,
-                        help="Number of worker processes (default: number of available GPUs)")
+    parser.add_argument("--num_workers", type=int, default=30,
+                        help="Number of concurrent API workers")
 
     args = parser.parse_args()
 
@@ -331,86 +388,109 @@ def main():
     with open(args.test_data, 'r') as f:
         test_data = json.load(f)
 
-    # Determine number of workers
-    num_gpus = torch.cuda.device_count()
-    if args.num_workers is None:
-        args.num_workers = num_gpus
-    else:
-        args.num_workers = min(args.num_workers, num_gpus)
-
-    if args.num_workers == 0:
-        print("Error: No available GPUs found. This script requires at least one GPU.")
-        return
-
     print(f"Loaded {len(test_data)} test samples")
-    print(f"Available GPUs: {num_gpus}")
-    print(f"Using {args.num_workers} worker processes")
+    print(f"Using {args.num_workers} concurrent workers")
+    print(f"Test Model: {os.getenv('TEST_MODEL')}")
+    print(f"API Base URL: {os.getenv('TEST_BASE_URL')}")
 
+    # Initialize tester
+    tester = DeficiencyTester()
+    
     all_results = []
 
     if args.num_workers == 1:
-        # Single process mode
-        device = "cuda:0"
-        tester = DeficiencyTester(args.model_path, device)
+        # Single thread mode
         for item in tqdm(test_data, desc="Processing samples"):
-            result = tester.process_single_sample(item)
+            result = tester.process_single(item)
             if result:
                 all_results.append(result)
     else:
-        # Multi-process mode - divide samples among GPUs
-        samples_per_gpu = len(test_data) // args.num_workers
-        remainder = len(test_data) % args.num_workers
-
-        worker_args = []
-        start_idx = 0
-
-        for gpu_id in range(args.num_workers):
-            num_samples = samples_per_gpu + (1 if gpu_id < remainder else 0)
-            end_idx = start_idx + num_samples
-
-            samples_for_gpu = test_data[start_idx:end_idx]
-            worker_args.append((samples_for_gpu, args.model_path, gpu_id))
-
-            print(f"GPU {gpu_id} will process {len(samples_for_gpu)} samples")
-            start_idx = end_idx
-
-        with Pool(processes=args.num_workers) as pool:
-            gpu_results = pool.map(worker_process, worker_args)
-
-            # Flatten results from all GPUs
-            all_results = []
-            for gpu_result in gpu_results:
-                all_results.extend(gpu_result)
+        # Multi-threaded mode for concurrent API calls
+        with ThreadPoolExecutor(max_workers=args.num_workers) as executor:
+            # Submit all tasks
+            futures = {executor.submit(tester.process_single, item): item for item in test_data}
+            
+            # Collect results with progress bar
+            with tqdm(total=len(test_data), desc="Processing samples") as pbar:
+                for future in as_completed(futures):
+                    result = future.result()
+                    if result:
+                        all_results.append(result)
+                    pbar.update(1)
 
     # Calculate overall metrics
-    total_precision = sum(r["precision"] for r in all_results) / len(all_results) if all_results else 0
-    total_recall = sum(r["recall"] for r in all_results) / len(all_results) if all_results else 0
-    total_f1 = sum(r["f1"] for r in all_results) / len(all_results) if all_results else 0
+    if all_results:
+        # Category-level overall metrics
+        cat_total_precision = sum(r["category_metrics"]["precision"] for r in all_results) / len(all_results)
+        cat_total_recall = sum(r["category_metrics"]["recall"] for r in all_results) / len(all_results)
+        cat_total_f1 = sum(r["category_metrics"]["f1"] for r in all_results) / len(all_results)
 
-    total_tp = sum(r["true_positives"] for r in all_results)
-    total_fp = sum(r["false_positives"] for r in all_results)
-    total_fn = sum(r["false_negatives"] for r in all_results)
+        cat_total_tp = sum(r["category_metrics"]["true_positives"] for r in all_results)
+        cat_total_fp = sum(r["category_metrics"]["false_positives"] for r in all_results)
+        cat_total_fn = sum(r["category_metrics"]["false_negatives"] for r in all_results)
 
-    overall_precision = total_tp / (total_tp + total_fp) if (total_tp + total_fp) > 0 else 0
-    overall_recall = total_tp / (total_tp + total_fn) if (total_tp + total_fn) > 0 else 0
-    overall_f1 = 2 * overall_precision * overall_recall / (overall_precision + overall_recall) if (overall_precision + overall_recall) > 0 else 0
+        cat_overall_precision = cat_total_tp / (cat_total_tp + cat_total_fp) if (cat_total_tp + cat_total_fp) > 0 else 0
+        cat_overall_recall = cat_total_tp / (cat_total_tp + cat_total_fn) if (cat_total_tp + cat_total_fn) > 0 else 0
+        cat_overall_f1 = 2 * cat_overall_precision * cat_overall_recall / (cat_overall_precision + cat_overall_recall) if (cat_overall_precision + cat_overall_recall) > 0 else 0
+
+        # Deficiency-level overall metrics
+        def_total_precision = sum(r["deficiency_metrics"]["precision"] for r in all_results) / len(all_results)
+        def_total_recall = sum(r["deficiency_metrics"]["recall"] for r in all_results) / len(all_results)
+        def_total_f1 = sum(r["deficiency_metrics"]["f1"] for r in all_results) / len(all_results)
+
+        def_total_tp = sum(r["deficiency_metrics"]["true_positives"] for r in all_results)
+        def_total_fp = sum(r["deficiency_metrics"]["false_positives"] for r in all_results)
+        def_total_fn = sum(r["deficiency_metrics"]["false_negatives"] for r in all_results)
+
+        def_overall_precision = def_total_tp / (def_total_tp + def_total_fp) if (def_total_tp + def_total_fp) > 0 else 0
+        def_overall_recall = def_total_tp / (def_total_tp + def_total_fn) if (def_total_tp + def_total_fn) > 0 else 0
+        def_overall_f1 = 2 * def_overall_precision * def_overall_recall / (def_overall_precision + def_overall_recall) if (def_overall_precision + def_overall_recall) > 0 else 0
+        
+        # Calculate per-class metrics
+        per_class_results = calculate_per_class_metrics(all_results)
+        
+    else:
+        cat_total_precision = cat_total_recall = cat_total_f1 = 0
+        cat_overall_precision = cat_overall_recall = cat_overall_f1 = 0
+        cat_total_tp = cat_total_fp = cat_total_fn = 0
+        
+        def_total_precision = def_total_recall = def_total_f1 = 0
+        def_overall_precision = def_overall_recall = def_overall_f1 = 0
+        def_total_tp = def_total_fp = def_total_fn = 0
+        
+        per_class_results = {"category_metrics": {}, "deficiency_metrics": {}}
 
     # Prepare final results
     final_results = {
-        "model_path": args.model_path,
+        "test_model": os.getenv("TEST_MODEL"),
+        "test_api_base_url": os.getenv("TEST_BASE_URL"),
         "test_data": args.test_data,
         "total_samples": len(all_results),
         "overall_metrics": {
-            "average_precision": total_precision,
-            "average_recall": total_recall,
-            "average_f1": total_f1,
-            "overall_precision": overall_precision,
-            "overall_recall": overall_recall,
-            "overall_f1": overall_f1,
-            "total_true_positives": total_tp,
-            "total_false_positives": total_fp,
-            "total_false_negatives": total_fn
+            "category_level": {
+                "average_precision": cat_total_precision,
+                "average_recall": cat_total_recall,
+                "average_f1": cat_total_f1,
+                "overall_precision": cat_overall_precision,
+                "overall_recall": cat_overall_recall,
+                "overall_f1": cat_overall_f1,
+                "total_true_positives": cat_total_tp,
+                "total_false_positives": cat_total_fp,
+                "total_false_negatives": cat_total_fn
+            },
+            "deficiency_level": {
+                "average_precision": def_total_precision,
+                "average_recall": def_total_recall,
+                "average_f1": def_total_f1,
+                "overall_precision": def_overall_precision,
+                "overall_recall": def_overall_recall,
+                "overall_f1": def_overall_f1,
+                "total_true_positives": def_total_tp,
+                "total_false_positives": def_total_fp,
+                "total_false_negatives": def_total_fn
+            }
         },
+        "per_class_metrics": per_class_results,
         "detailed_results": all_results
     }
 
@@ -418,14 +498,39 @@ def main():
     with open(args.output_file, 'w') as f:
         json.dump(final_results, f, indent=2, ensure_ascii=False)
 
-    print(f"\n=== Results Summary (Calculated by Category) ===")
+    # Print summary
+    print(f"\n{'='*60}")
+    print(f"RESULTS SUMMARY")
+    print(f"{'='*60}")
     print(f"Total samples processed: {len(all_results)}")
-    print(f"Average Precision: {total_precision:.4f}")
-    print(f"Average Recall: {total_recall:.4f}")
-    print(f"Average F1: {total_f1:.4f}")
-    print(f"Overall Precision: {overall_precision:.4f}")
-    print(f"Overall Recall: {overall_recall:.4f}")
-    print(f"Overall F1: {overall_f1:.4f}")
+    
+    print(f"\n{'='*30} CATEGORY-LEVEL METRICS {'='*30}")
+    print(f"Average Precision: {cat_total_precision:.4f}")
+    print(f"Average Recall: {cat_total_recall:.4f}")
+    print(f"Average F1: {cat_total_f1:.4f}")
+    print(f"Overall Precision: {cat_overall_precision:.4f}")
+    print(f"Overall Recall: {cat_overall_recall:.4f}")
+    print(f"Overall F1: {cat_overall_f1:.4f}")
+    
+    print(f"\nPer-Category Performance:")
+    for cat_name, metrics in per_class_results["category_metrics"].items():
+        if metrics["support"] > 0:
+            print(f"  {cat_name:30s} - P: {metrics['precision']:.3f}, R: {metrics['recall']:.3f}, F1: {metrics['f1']:.3f}, Support: {metrics['support']}")
+    
+    print(f"\n{'='*30} DEFICIENCY-LEVEL METRICS {'='*30}")
+    print(f"Average Precision: {def_total_precision:.4f}")
+    print(f"Average Recall: {def_total_recall:.4f}")
+    print(f"Average F1: {def_total_f1:.4f}")
+    print(f"Overall Precision: {def_overall_precision:.4f}")
+    print(f"Overall Recall: {def_overall_recall:.4f}")
+    print(f"Overall F1: {def_overall_f1:.4f}")
+    
+    print(f"\nPer-Deficiency Performance (showing deficiencies with support > 0):")
+    for def_name, metrics in per_class_results["deficiency_metrics"].items():
+        if metrics["support"] > 0:
+            print(f"  {def_name:50s} - P: {metrics['precision']:.3f}, R: {metrics['recall']:.3f}, F1: {metrics['f1']:.3f}, Support: {metrics['support']}")
+    
+    print(f"\n{'='*60}")
     print(f"Results saved to: {args.output_file}")
 
 
