@@ -1,4 +1,7 @@
-MODEL_PATH="TobyYang7/eval_deficiency_ckpt1000_0827"
+uv venv vllm_env
+source vllm_env/bin/activate
+uv pip install vllm
+MODEL_PATH="/Q-Insight/src/open-r1-multimodal/output/eval_deficiency_f1_0.6_ep_1_new"
 
 uv run python -m vllm.entrypoints.openai.api_server \
   --model "$MODEL_PATH" \

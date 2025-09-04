@@ -1,0 +1,13 @@
+What are the design deficiencies in the provided slide? How can you improve the slide? Please answer by addressing the following questions for each category and provide detailed improvements suggestions. If there are no major deficiencies, please respond with "No major deficiencies found.".
+
+* **1. Composition & Layout:**
+    * What are the strengths and weaknesses of the slide's composition and layout? Consider alignment, balance, white space, and visual hierarchy. How would you rearrange, align, or resize elements to improve the overall structure and clarity?
+
+* **2. Typography:**
+    * How effective is the typography? Evaluate the font choices, readability, and visual hierarchy (titles, body text). What specific changes to fonts, sizes, or styling would you recommend to improve legibility and structure?
+
+* **3. Color:**
+    * What issues, if any, exist with the color scheme? Analyze the palette's harmony, text-background contrast, and overall impact. What new color palette or specific adjustments would you suggest?
+
+* **4. Imagery & Visualizations:**
+    * Are the images and visualizations (e.g., charts, graphs) clear, relevant, and effective, or are they distracting and cluttered? What improvements, replacements, or simplifications would you make to better support the slide's message?

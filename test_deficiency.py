@@ -50,8 +50,11 @@ DEFICIENCY_TO_CATEGORY_MAP = {
     for deficiency in deficiencies
 }
 
-# Get all unique deficiencies for metrics initialization
-ALL_DEFICIENCIES = list(DEFICIENCY_TO_CATEGORY_MAP.keys())
+class CategoryBooleans(BaseModel):
+    composition_layout: bool
+    typography: bool
+    color: bool
+    imagery_visualizations: bool
 
 
 # Load environment variables from .env file manually
@@ -68,6 +71,18 @@ def load_env_file(env_file='.env'):
 load_env_file()
 
 
+def load_classify_categories_prompt() -> str:
+    """Load the classify categories prompt from file."""
+    prompt_file = "src/open-r1-multimodal/prompts/classify_categories_prompt.txt"
+    if os.path.exists(prompt_file):
+        try:
+            with open(prompt_file, "r", encoding="utf-8") as f:
+                return f.read().strip()
+        except Exception as e:
+            print(f"Warning: Could not load prompt from {prompt_file}: {e}")
+    return ""
+
+
 def extract_answer_content(text: str) -> str:
     """Extract content from <answer></answer> tags"""
     import re
@@ -77,8 +92,11 @@ def extract_answer_content(text: str) -> str:
     return text
 
 
-class DeficiencyClassification(BaseModel):
-    deficiencies: List[str]
+class CategoryBooleanResponse(BaseModel):
+    composition_layout: bool
+    typography: bool
+    color: bool
+    imagery_visualizations: bool
 
 
 def image_to_base64_uri(image_path: str, max_width: int = 960) -> str:
@@ -106,20 +124,20 @@ def image_to_base64_uri(image_path: str, max_width: int = 960) -> str:
         return None
 
 
-def classify_deficiencies(model_output_text: str) -> List[str]:
+def classify_categories(model_output_text: str) -> List[str]:
     """
-    Uses OpenAI API to classify deficiencies in model output text.
-    Returns a list of classified deficiencies.
+    Uses OpenAI API to classify whether each main category has deficiencies (booleans).
+    Returns a list of category names predicted as True.
     """
-    prompt = f"""Analyze the input text which describes slide design problems. From the predefined categories, identify all deficiencies mentioned in the text.
+    input_text = extract_answer_content(model_output_text)
+    main_categories = list(DEFICIENCY_CATEGORIES.keys())
 
-    Predefined deficiency categories:
-    {json.dumps(ALL_DEFICIENCIES, indent=2)}
-
-    Input text to analyze:
-    {extract_answer_content(model_output_text)}
-
-    Respond with a JSON object containing a single key "deficiencies" which holds a list of the exact names of the deficiencies found. If no deficiencies are found, the list should be empty."""
+    # Load prompt from file
+    prompt_template = load_classify_categories_prompt()
+    prompt = prompt_template.format(
+        categories=json.dumps(main_categories, indent=2),
+        input_text=input_text
+    )
 
     try:
         client = openai.OpenAI(
@@ -132,19 +150,25 @@ def classify_deficiencies(model_output_text: str) -> List[str]:
         completion = client.chat.completions.create(
             model=model_type,
             messages=[
-                {"role": "system", "content": "You are an expert in slide design analysis. Your output must be a valid JSON object."},
+                {"role": "system", "content": "You are an expert in slide design analysis. Your output must be a valid JSON object with booleans per category."},
                 {"role": "user", "content": prompt}
             ],
             response_format={"type": "json_object"},
-            temperature=0.1
+            temperature=0.0
         )
 
         response_text = completion.choices[0].message.content
-        if response_text:
-            parsed_response = DeficiencyClassification.model_validate_json(response_text)
-            return parsed_response.deficiencies
-        else:
+        if not response_text:
             return []
+
+        parsed = CategoryBooleanResponse.model_validate_json(response_text)
+        bools = {
+            "Composition & Layout": getattr(parsed, "composition_layout", False),
+            "Typography": getattr(parsed, "typography", False),
+            "Color": getattr(parsed, "color", False),
+            "Imagery & Visualizations": getattr(parsed, "imagery_visualizations", False),
+        }
+        return [name for name, flag in bools.items() if flag]
 
     except Exception as e:
         print(f"Error calling OpenAI API or parsing response: {e}")
@@ -152,6 +176,17 @@ def classify_deficiencies(model_output_text: str) -> List[str]:
 
 
 class DeficiencyTester:
+    def _load_prompt_from_file(self, prompt_file: str, default_prompt: str = "") -> str:
+        """Load prompt text from file, with fallback to default if file doesn't exist."""
+        if os.path.exists(prompt_file):
+            try:
+                with open(prompt_file, "r", encoding="utf-8") as f:
+                    return f.read().strip()
+            except Exception as e:
+                print(f"Warning: Could not load prompt from {prompt_file}: {e}")
+        return default_prompt
+
+
     def __init__(self):
         # Load API configuration
         self.test_model = os.getenv("TEST_MODEL")
@@ -167,17 +202,9 @@ class DeficiencyTester:
             base_url=self.test_base_url
         )
 
-        self.system_prompt = (
-            "A conversation between User and Assistant. The user asks a question, and the Assistant solves it. The assistant "
-            "first thinks about the reasoning process in the mind and then provides the user with the answer. The reasoning "
-            "process and answer are enclosed within <think> </think> and <answer> </answer> tags, respectively, i.e., "
-            "<think> reasoning process here </think><answer> answer here </answer>"
-        )
-
-        self.deficiency_prompt = (
-            "What are the major design deficiencies in the slide? How do you think the slide can be improved to avoid these deficiencies? How can we adjust the elements on the slide to improve the slide?"
-            "If there are no major deficiencies, simply respond with 'No deficiencies' without any other text."
-        )
+        # Load prompts from files
+        self.system_prompt = self._load_prompt_from_file("src/open-r1-multimodal/prompts/system_prompt.txt")
+        self.deficiency_prompt = self._load_prompt_from_file("src/open-r1-multimodal/prompts/deficiency_prompt.txt")
 
     def process_single(self, item: Dict, max_retries: int = 3) -> Dict:
         """Process a single test sample: call API, classify deficiencies, and calculate metrics."""
@@ -221,17 +248,11 @@ class DeficiencyTester:
                         print(f"Failed after {max_retries} attempts for slide {item['slide_id']}")
                         return None
             
-            # Classify specific deficiencies from the generated text
-            predicted_deficiencies = classify_deficiencies(generated_text)
+            # Predict major categories directly via boolean classification
+            predicted_categories = set(classify_categories(generated_text))
 
-            # Get ground truth specific deficiencies
+            # Get ground truth specific deficiencies and map to categories
             ground_truth_deficiencies = [d["deficiency"] for d in item["deficiencies"]]
-
-            # Convert specific deficiencies to major categories
-            predicted_categories = {
-                DEFICIENCY_TO_CATEGORY_MAP[d] for d in predicted_deficiencies 
-                if d in DEFICIENCY_TO_CATEGORY_MAP
-            }
             ground_truth_categories = {
                 DEFICIENCY_TO_CATEGORY_MAP[d] for d in ground_truth_deficiencies 
                 if d in DEFICIENCY_TO_CATEGORY_MAP
@@ -246,23 +267,9 @@ class DeficiencyTester:
             cat_recall = cat_true_positives / (cat_true_positives + cat_false_negatives) if (cat_true_positives + cat_false_negatives) > 0 else 0
             cat_f1 = 2 * cat_precision * cat_recall / (cat_precision + cat_recall) if (cat_precision + cat_recall) > 0 else 0
 
-            # Calculate metrics for SPECIFIC DEFICIENCIES
-            predicted_deficiencies_set = set(predicted_deficiencies)
-            ground_truth_deficiencies_set = set(ground_truth_deficiencies)
-            
-            def_true_positives = len(predicted_deficiencies_set.intersection(ground_truth_deficiencies_set))
-            def_false_positives = len(predicted_deficiencies_set - ground_truth_deficiencies_set)
-            def_false_negatives = len(ground_truth_deficiencies_set - predicted_deficiencies_set)
-
-            def_precision = def_true_positives / (def_true_positives + def_false_positives) if (def_true_positives + def_false_positives) > 0 else 0
-            def_recall = def_true_positives / (def_true_positives + def_false_negatives) if (def_true_positives + def_false_negatives) > 0 else 0
-            def_f1 = 2 * def_precision * def_recall / (def_precision + def_recall) if (def_precision + def_recall) > 0 else 0
-
             result = {
                 "slide_id": item["slide_id"],
                 "image": item["image"],
-                "ground_truth_deficiencies": ground_truth_deficiencies,
-                "predicted_deficiencies": predicted_deficiencies,
                 "ground_truth_categories": sorted(list(ground_truth_categories)),
                 "predicted_categories": sorted(list(predicted_categories)),
                 "model_output": generated_text,
@@ -275,18 +282,9 @@ class DeficiencyTester:
                     "false_positives": cat_false_positives,
                     "false_negatives": cat_false_negatives
                 },
-                # Deficiency-level metrics
-                "deficiency_metrics": {
-                    "precision": def_precision,
-                    "recall": def_recall,
-                    "f1": def_f1,
-                    "true_positives": def_true_positives,
-                    "false_positives": def_false_positives,
-                    "false_negatives": def_false_negatives
-                }
             }
 
-            print(f"Processed slide {item['slide_id']} - Cat F1: {cat_f1:.3f}, Def F1: {def_f1:.3f}")
+            print(f"Processed slide {item['slide_id']} - Cat F1: {cat_f1:.3f}")
             return result
 
         except Exception as e:
@@ -295,12 +293,9 @@ class DeficiencyTester:
 
 
 def calculate_per_class_metrics(results: List[Dict]) -> Dict:
-    """Calculate per-category and per-deficiency metrics."""
+    """Calculate per-category metrics only."""
     # Initialize counters for each category
     category_stats = {cat: {"tp": 0, "fp": 0, "fn": 0, "support": 0} for cat in DEFICIENCY_CATEGORIES.keys()}
-    
-    # Initialize counters for each specific deficiency
-    deficiency_stats = {def_name: {"tp": 0, "fp": 0, "fn": 0, "support": 0} for def_name in ALL_DEFICIENCIES}
     
     for result in results:
         # Process category-level stats
@@ -316,20 +311,6 @@ def calculate_per_class_metrics(results: List[Dict]) -> Dict:
                     category_stats[cat]["fn"] += 1
             elif cat in pred_categories:
                 category_stats[cat]["fp"] += 1
-        
-        # Process deficiency-level stats
-        gt_deficiencies = set(result["ground_truth_deficiencies"])
-        pred_deficiencies = set(result["predicted_deficiencies"])
-        
-        for def_name in ALL_DEFICIENCIES:
-            if def_name in gt_deficiencies:
-                deficiency_stats[def_name]["support"] += 1
-                if def_name in pred_deficiencies:
-                    deficiency_stats[def_name]["tp"] += 1
-                else:
-                    deficiency_stats[def_name]["fn"] += 1
-            elif def_name in pred_deficiencies:
-                deficiency_stats[def_name]["fp"] += 1
     
     # Calculate metrics for each category
     category_metrics = {}
@@ -349,27 +330,8 @@ def calculate_per_class_metrics(results: List[Dict]) -> Dict:
             "false_negatives": fn
         }
     
-    # Calculate metrics for each deficiency
-    deficiency_metrics = {}
-    for def_name, stats in deficiency_stats.items():
-        tp, fp, fn = stats["tp"], stats["fp"], stats["fn"]
-        precision = tp / (tp + fp) if (tp + fp) > 0 else 0
-        recall = tp / (tp + fn) if (tp + fn) > 0 else 0
-        f1 = 2 * precision * recall / (precision + recall) if (precision + recall) > 0 else 0
-        
-        deficiency_metrics[def_name] = {
-            "precision": precision,
-            "recall": recall,
-            "f1": f1,
-            "support": stats["support"],
-            "true_positives": tp,
-            "false_positives": fp,
-            "false_negatives": fn
-        }
-    
     return {
-        "category_metrics": category_metrics,
-        "deficiency_metrics": deficiency_metrics
+        "category_metrics": category_metrics
     }
 
 
@@ -377,14 +339,57 @@ def main():
     parser = argparse.ArgumentParser(description="Test deficiency detection with API")
     parser.add_argument("--test_data", type=str, default="slideaudit_test.json",
                         help="Path to test data JSON file")
-    parser.add_argument("--output_file", type=str, default="deficiency_test_results_api.json",
+    parser.add_argument("--output_file", type=str, default="deficiency_result/eval_deficiency_f1_0.6_ep_1_new.json",
                         help="Output file for results")
     parser.add_argument("--num_workers", type=int, default=30,
                         help="Number of concurrent API workers")
+    parser.add_argument("--report", action="store_true",
+                        help="If set, skip API calls and report from --output_file JSON")
 
     args = parser.parse_args()
 
-    # Load test data
+    # If only reporting is requested, skip API calls and read existing results
+    if args.report:
+        results_path = args.output_file
+        if not results_path or not os.path.exists(results_path):
+            raise FileNotFoundError("In --report mode, provide an existing --output_file JSON to read")
+
+        with open(results_path, 'r') as f:
+            prev_results = json.load(f)
+
+        all_results = prev_results.get("detailed_results", [])
+
+        # Calculate per-class metrics and distribution
+        if all_results:
+            per_class_results = calculate_per_class_metrics(all_results)
+            category_distribution = {}
+            total_samples = len(all_results)
+            for cat_name in DEFICIENCY_CATEGORIES.keys():
+                count = sum(1 for r in all_results if cat_name in r.get("predicted_categories", []))
+                category_distribution[cat_name] = {
+                    "count": count,
+                    "rate": (count / total_samples) if total_samples > 0 else 0.0
+                }
+
+            print(f"\n{'='*60}")
+            print(f"REPORT SUMMARY (from {results_path})")
+            print(f"{'='*60}")
+            print(f"Total samples (in results): {len(all_results)}")
+
+            print(f"\n{'='*30} CATEGORY-LEVEL METRICS {'='*30}")
+            for cat_name, metrics in per_class_results["category_metrics"].items():
+                if metrics["support"] > 0:
+                    print(f"  {cat_name:30s} - P: {metrics['precision']:.3f}, R: {metrics['recall']:.3f}, F1: {metrics['f1']:.3f}, Support: {metrics['support']}")
+
+            print(f"\n{'='*30} CATEGORY DISTRIBUTION {'='*30}")
+            for cat_name, stats in category_distribution.items():
+                print(f"  {cat_name:30s} - count: {stats['count']}, rate: {stats['rate']:.3f}")
+
+        else:
+            print("No detailed_results found in the results file.")
+        return
+
+    # Load test data (normal run)
     with open(args.test_data, 'r') as f:
         test_data = json.load(f)
 
@@ -433,32 +438,26 @@ def main():
         cat_overall_recall = cat_total_tp / (cat_total_tp + cat_total_fn) if (cat_total_tp + cat_total_fn) > 0 else 0
         cat_overall_f1 = 2 * cat_overall_precision * cat_overall_recall / (cat_overall_precision + cat_overall_recall) if (cat_overall_precision + cat_overall_recall) > 0 else 0
 
-        # Deficiency-level overall metrics
-        def_total_precision = sum(r["deficiency_metrics"]["precision"] for r in all_results) / len(all_results)
-        def_total_recall = sum(r["deficiency_metrics"]["recall"] for r in all_results) / len(all_results)
-        def_total_f1 = sum(r["deficiency_metrics"]["f1"] for r in all_results) / len(all_results)
-
-        def_total_tp = sum(r["deficiency_metrics"]["true_positives"] for r in all_results)
-        def_total_fp = sum(r["deficiency_metrics"]["false_positives"] for r in all_results)
-        def_total_fn = sum(r["deficiency_metrics"]["false_negatives"] for r in all_results)
-
-        def_overall_precision = def_total_tp / (def_total_tp + def_total_fp) if (def_total_tp + def_total_fp) > 0 else 0
-        def_overall_recall = def_total_tp / (def_total_tp + def_total_fn) if (def_total_tp + def_total_fn) > 0 else 0
-        def_overall_f1 = 2 * def_overall_precision * def_overall_recall / (def_overall_precision + def_overall_recall) if (def_overall_precision + def_overall_recall) > 0 else 0
-        
         # Calculate per-class metrics
         per_class_results = calculate_per_class_metrics(all_results)
+        
+        # Optional: Category prediction distribution across all samples
+        category_distribution = {}
+        total_samples = len(all_results)
+        for cat_name in DEFICIENCY_CATEGORIES.keys():
+            count = sum(1 for r in all_results if cat_name in r["predicted_categories"])
+            category_distribution[cat_name] = {
+                "count": count,
+                "rate": (count / total_samples) if total_samples > 0 else 0.0
+            }
         
     else:
         cat_total_precision = cat_total_recall = cat_total_f1 = 0
         cat_overall_precision = cat_overall_recall = cat_overall_f1 = 0
         cat_total_tp = cat_total_fp = cat_total_fn = 0
         
-        def_total_precision = def_total_recall = def_total_f1 = 0
-        def_overall_precision = def_overall_recall = def_overall_f1 = 0
-        def_total_tp = def_total_fp = def_total_fn = 0
-        
-        per_class_results = {"category_metrics": {}, "deficiency_metrics": {}}
+        per_class_results = {"category_metrics": {}}
+        category_distribution = {}
 
     # Prepare final results
     final_results = {
@@ -478,23 +477,16 @@ def main():
                 "total_false_positives": cat_total_fp,
                 "total_false_negatives": cat_total_fn
             },
-            "deficiency_level": {
-                "average_precision": def_total_precision,
-                "average_recall": def_total_recall,
-                "average_f1": def_total_f1,
-                "overall_precision": def_overall_precision,
-                "overall_recall": def_overall_recall,
-                "overall_f1": def_overall_f1,
-                "total_true_positives": def_total_tp,
-                "total_false_positives": def_total_fp,
-                "total_false_negatives": def_total_fn
-            }
         },
         "per_class_metrics": per_class_results,
+        "category_distribution": category_distribution if args.report else {},
         "detailed_results": all_results
     }
 
     # Save results
+    output_dir = os.path.dirname(args.output_file)
+    if output_dir and not os.path.exists(output_dir):
+        os.makedirs(output_dir, exist_ok=True)
     with open(args.output_file, 'w') as f:
         json.dump(final_results, f, indent=2, ensure_ascii=False)
 
@@ -517,18 +509,11 @@ def main():
         if metrics["support"] > 0:
             print(f"  {cat_name:30s} - P: {metrics['precision']:.3f}, R: {metrics['recall']:.3f}, F1: {metrics['f1']:.3f}, Support: {metrics['support']}")
     
-    print(f"\n{'='*30} DEFICIENCY-LEVEL METRICS {'='*30}")
-    print(f"Average Precision: {def_total_precision:.4f}")
-    print(f"Average Recall: {def_total_recall:.4f}")
-    print(f"Average F1: {def_total_f1:.4f}")
-    print(f"Overall Precision: {def_overall_precision:.4f}")
-    print(f"Overall Recall: {def_overall_recall:.4f}")
-    print(f"Overall F1: {def_overall_f1:.4f}")
-    
-    print(f"\nPer-Deficiency Performance (showing deficiencies with support > 0):")
-    for def_name, metrics in per_class_results["deficiency_metrics"].items():
-        if metrics["support"] > 0:
-            print(f"  {def_name:50s} - P: {metrics['precision']:.3f}, R: {metrics['recall']:.3f}, F1: {metrics['f1']:.3f}, Support: {metrics['support']}")
+    # Optional distribution report
+    if args.report and category_distribution:
+        print(f"\n{'='*30} CATEGORY DISTRIBUTION {'='*30}")
+        for cat_name, stats in category_distribution.items():
+            print(f"  {cat_name:30s} - count: {stats['count']}, rate: {stats['rate']:.3f}")
     
     print(f"\n{'='*60}")
     print(f"Results saved to: {args.output_file}")

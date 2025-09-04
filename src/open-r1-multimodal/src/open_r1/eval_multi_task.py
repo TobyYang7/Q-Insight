@@ -100,26 +100,29 @@ class GRPOScriptArguments(ScriptArguments):
     )
 
 
-SYSTEM_PROMPT = (
-    "A conversation between User and Assistant. The user asks a question, and the Assistant solves it. The assistant "
-    "first thinks about the reasoning process in the mind and then provides the user with the answer. The reasoning "
-    "process and answer are enclosed within <think> </think> and <answer> </answer> tags, respectively, i.e., "
-    "<think> reasoning process here </think><answer> answer here </answer>"
-)
+# Load prompts from files
+def load_prompt_from_file(prompt_file: str, default_prompt: str = "") -> str:
+    """Load prompt text from file, with fallback to default if file doesn't exist."""
+    if os.path.exists(prompt_file):
+        try:
+            with open(prompt_file, "r", encoding="utf-8") as f:
+                return f.read().strip()
+        except Exception as e:
+            print(f"Warning: Could not load prompt from {prompt_file}: {e}")
+    return default_prompt
 
-SCORE_QUESTION_PROMPT = (
-    'What is your overall rating on the quality of this slide?'
-    'The rating should be a float between 1 and 10, rounded to two decimal places, with 1 representing very poor quality and 5 representing excellent quality.'
-    "You can consider the following aspects: composition & layout, typography, color, imagery & visualizations."
-    'And you need to provide your detailed reasoning process.'
-)
+# Define prompt file paths
+PROMPTS_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "prompts")
+SYSTEM_PROMPT_FILE = os.path.join(PROMPTS_DIR, "system_prompt.txt")
+SCORE_QUESTION_PROMPT_FILE = os.path.join(PROMPTS_DIR, "score_question_prompt.txt")
+DEFICIENCY_PROMPT_FILE = os.path.join(PROMPTS_DIR, "deficiency_prompt.txt")
+CLASSIFY_CATEGORIES_PROMPT_FILE = os.path.join(PROMPTS_DIR, "classify_categories_prompt.txt")
 
-# --- MODIFIED: DEFICIENCY_PROMPT reverted to its original version ---
-DEFICIENCY_PROMPT = (
-    "What are the major design deficiencies in the slide? How do you think the slide can be improved to avoid these deficiencies? How can we adjust the elements on the slide to improve the slide?"
-    "You can consider the following aspects: composition & layout, typography, color, imagery & visualizations."
-    "If there are no major deficiencies, simply respond with 'No deficiencies' without any other text."
-)
+# Load prompts from files
+SYSTEM_PROMPT = load_prompt_from_file(SYSTEM_PROMPT_FILE)
+SCORE_QUESTION_PROMPT = load_prompt_from_file(SCORE_QUESTION_PROMPT_FILE)
+DEFICIENCY_PROMPT = load_prompt_from_file(DEFICIENCY_PROMPT_FILE)
+CLASSIFY_CATEGORIES_PROMPT = load_prompt_from_file(CLASSIFY_CATEGORIES_PROMPT_FILE)
 
 
 class LazyMultiTaskDataset(Dataset):
@@ -256,8 +259,11 @@ class LazyMultiTaskDataset(Dataset):
 
 
 # --- ADDED: Pydantic model for structured LLM output ---
-class DeficiencyCategoryClassification(BaseModel):
-    deficiency_categories: List[str]
+class DeficiencyCategoryBooleans(BaseModel):
+    composition_layout: bool
+    typography: bool
+    color: bool
+    imagery_visualizations: bool
 
 
 # --- MODIFIED: Deficiency categories defined globally for reuse ---
@@ -311,15 +317,10 @@ def classify_deficiencies(model_output_text: str) -> List[str]:
     # The four main categories for the LLM to classify against.
     main_categories = list(DEFICIENCY_CATEGORIES.keys())
 
-    prompt = f"""Analyze the input text, which describes design problems on a slide. Your task is to classify the problems mentioned into one or two of the following predefined categories.
-
-Predefined deficiency categories:
-{json.dumps(main_categories, indent=2)}
-
-Input text to analyze:
-"{text_to_analyze}"
-
-Return a list containing only the exact names of the categories that are relevant to the problems described in the input text. If the text does not describe any problems relevant to these categories, return an empty list."""
+    prompt = CLASSIFY_CATEGORIES_PROMPT.format(
+        categories=json.dumps(main_categories, indent=2),
+        input_text=text_to_analyze
+    )
 
     for attempt in range(3):
         try:
@@ -336,17 +337,23 @@ Return a list containing only the exact names of the categories that are relevan
                     {"role": "system", "content": "You are an expert in slide design analysis. Classify the user's text into the provided categories accurately."},
                     {"role": "user", "content": prompt}
                 ],
-                response_format=DeficiencyCategoryClassification,
+                response_format=DeficiencyCategoryBooleans,
                 temperature=0.0
             )
 
             result = completion.choices[0].message.parsed
-            if result and result.deficiency_categories:
-                # Filter to ensure only valid categories are returned
-                valid_categories = [cat for cat in result.deficiency_categories if cat in main_categories]
-                return valid_categories
-            else:
+            if not result:
                 return []
+
+            category_bools = {
+                "Composition & Layout": getattr(result, "composition_layout", False),
+                "Typography": getattr(result, "typography", False),
+                "Color": getattr(result, "color", False),
+                "Imagery & Visualizations": getattr(result, "imagery_visualizations", False),
+            }
+
+            valid_categories = [name for name, is_present in category_bools.items() if is_present]
+            return valid_categories
 
         except Exception as e:
             print(f"\033[31mError calling OpenAI API (attempt {attempt + 1}/3): {e}\033[0m")
@@ -359,7 +366,7 @@ def verify_deficiency(completion_content, ground_truth_deficiencies, **kwargs):
     """
     Verifies the model's output based on the F1 score of deficiency CATEGORIES.
     
-    The reward is 1.0 if the category-level F1 score is > 0.5, otherwise 0.0.
+    The reward is 1.0 if the category-level F1 score is > 0.7, otherwise 0.0.
     This version first extracts the answer from within <answer>...</answer> tags.
     """
     # --- MODIFICATION START: Extract content from <answer> tags ---
@@ -416,7 +423,7 @@ def verify_deficiency(completion_content, ground_truth_deficiencies, **kwargs):
         f1_score = 2 * (precision * recall) / (precision + recall)
 
     # --- Determine the final reward based on the F1 score threshold ---
-    return 1.0 if precision > 0.65 else 0.0
+    return 1.0 if f1_score > 0.7 else 0.0
 
 
 def accuracy_reward(completions, solution, task, image_path=None, score_reward_threshold=None, **kwargs):
