@@ -1,0 +1,5 @@
+paper_index: 8
+title: Convolutions Die Hard: Open-Vocabulary Segmentation with Single Frozen Convolutional CLIP
+openreview_id: 83LJRUzXWj
+pdf: https://openreview.net/pdf?id=83LJRUzXWj
+site: https://nips.cc/virtual/2023/poster/72672

@@ -1,0 +1,5 @@
+paper_index: 24
+title: MiniLLM: Knowledge Distillation of Large Language Models
+openreview_id: 5h0qf7IBZZ
+pdf: https://openreview.net/pdf?id=5h0qf7IBZZ
+site: https://iclr.cc/virtual/2024/poster/19420

@@ -1,0 +1,5 @@
+paper_index: 48
+title: Deep Model Reassembly
+openreview_id: gtCPWaY5bNh
+pdf: https://openreview.net/pdf?id=gtCPWaY5bNh
+site: https://nips.cc/virtual/2022/poster/55131

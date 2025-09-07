@@ -1,0 +1,5 @@
+paper_index: 22
+title: SeaFormer: Squeeze-enhanced Axial Transformer for Mobile Semantic Segmentation
+openreview_id: -qg8MQNrxZw
+pdf: https://openreview.net/pdf?id=-qg8MQNrxZw
+site: https://iclr.cc/virtual/2023/poster/11994

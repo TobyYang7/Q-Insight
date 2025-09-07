@@ -1,0 +1,5 @@
+paper_index: 15
+title: Model Tells You What to Discard: Adaptive KV Cache Compression for LLMs
+openreview_id: uNrFpDPMyo
+pdf: https://openreview.net/pdf?id=uNrFpDPMyo
+site: https://iclr.cc/virtual/2024/poster/17575

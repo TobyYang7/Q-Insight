@@ -1,0 +1,5 @@
+paper_index: 34
+title: Deep Bidirectional Language-Knowledge Graph Pretraining
+openreview_id: 4NpoSrT8uU-
+pdf: https://openreview.net/pdf?id=4NpoSrT8uU-
+site: https://nips.cc/virtual/2022/poster/53754

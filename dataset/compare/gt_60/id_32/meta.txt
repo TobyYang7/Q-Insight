@@ -1,0 +1,5 @@
+paper_index: 32
+title: Antigen-Specific Antibody Design and Optimization with Diffusion-Based Generative Models for Protein Structures
+openreview_id: jSorGn2Tjg
+pdf: https://openreview.net/pdf?id=jSorGn2Tjg
+site: https://nips.cc/virtual/2022/poster/55183

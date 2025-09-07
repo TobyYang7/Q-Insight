@@ -1,0 +1,5 @@
+paper_index: 9
+title: Discover and Cure: Concept-aware Mitigation of Spurious Correlation
+openreview_id: QDxtrlPmfB
+pdf: https://openreview.net/pdf?id=QDxtrlPmfB
+site: https://icml.cc/virtual/2023/poster/25154

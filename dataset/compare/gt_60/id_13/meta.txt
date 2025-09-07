@@ -1,0 +1,5 @@
+paper_index: 13
+title: GoLLIE: Annotation Guidelines improve Zero-Shot Information-Extraction
+openreview_id: Y3wpuxd7u9
+pdf: https://openreview.net/pdf?id=Y3wpuxd7u9
+site: https://iclr.cc/virtual/2024/poster/18435

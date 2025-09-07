@@ -1,0 +1,5 @@
+paper_index: 4
+title: Bayesian Nonparametrics Meets Data-Driven Distributionally Robust Optimization
+openreview_id: 8CguPoe3TP
+pdf: https://openreview.net/pdf?id=8CguPoe3TP
+site: https://neurips.cc/virtual/2024/poster/96385

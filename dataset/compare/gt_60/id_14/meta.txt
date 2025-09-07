@@ -1,0 +1,5 @@
+paper_index: 14
+title: Probabilistic Concept Bottleneck Models
+openreview_id: yOxy3T0d6e
+pdf: https://openreview.net/pdf?id=yOxy3T0d6e
+site: https://icml.cc/virtual/2023/poster/25148

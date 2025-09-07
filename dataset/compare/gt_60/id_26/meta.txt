@@ -1,0 +1,5 @@
+paper_index: 26
+title: High-dimensional Asymptotics of Feature Learning: How One Gradient Step Improves the Representation
+openreview_id: akddwRG6EGi
+pdf: https://openreview.net/pdf?id=akddwRG6EGi
+site: https://nips.cc/virtual/2022/poster/53597

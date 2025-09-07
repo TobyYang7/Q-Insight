@@ -1,0 +1,5 @@
+paper_index: 44
+title: DistillSpec: Improving Speculative Decoding via Knowledge Distillation
+openreview_id: rsY6J3ZaTF
+pdf: https://openreview.net/pdf?id=rsY6J3ZaTF
+site: https://iclr.cc/virtual/2024/poster/17680

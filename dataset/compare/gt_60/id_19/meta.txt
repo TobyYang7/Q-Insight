@@ -1,0 +1,5 @@
+paper_index: 19
+title: Towards Understanding the Working Mechanism of Text-to-Image Diffusion Model
+openreview_id: zTu0QEpvtZ
+pdf: https://openreview.net/pdf?id=zTu0QEpvtZ
+site: https://neurips.cc/virtual/2024/poster/92954

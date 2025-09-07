@@ -1,0 +1,5 @@
+paper_index: 5
+title: Better Diffusion Models Further Improve Adversarial Training
+openreview_id: 1EWPr0ks8I
+pdf: https://openreview.net/pdf?id=1EWPr0ks8I
+site: https://icml.cc/virtual/2023/poster/24423

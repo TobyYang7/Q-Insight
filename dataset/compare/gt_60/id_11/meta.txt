@@ -1,0 +1,5 @@
+paper_index: 11
+title: CogView2: Faster and Better Text-to-Image Generation via Hierarchical Transformers
+openreview_id: GkDbQb6qu_r
+pdf: https://openreview.net/pdf?id=GkDbQb6qu_r
+site: https://nips.cc/virtual/2022/poster/54803

@@ -1,0 +1,5 @@
+paper_index: 39
+title: SE(3) diffusion model with application to protein backbone generation
+openreview_id: m8OUBymxwv
+pdf: https://openreview.net/pdf?id=m8OUBymxwv
+site: https://icml.cc/virtual/2023/poster/24926

@@ -1,0 +1,5 @@
+paper_index: 25
+title: GenImage: A Million-Scale Benchmark for Detecting AI-Generated Image
+openreview_id: GF84C0z45H
+pdf: https://openreview.net/pdf?id=GF84C0z45H
+site: https://nips.cc/virtual/2023/poster/73644

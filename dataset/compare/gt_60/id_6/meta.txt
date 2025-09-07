@@ -1,0 +1,5 @@
+paper_index: 6
+title: GET3D: A Generative Model of High Quality 3D Textured Shapes Learned from Images
+openreview_id: GAUwreODU5L
+pdf: https://openreview.net/pdf?id=GAUwreODU5L
+site: https://nips.cc/virtual/2022/poster/55188

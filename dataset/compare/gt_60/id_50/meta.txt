@@ -1,0 +1,5 @@
+paper_index: 50
+title: A Fully First-Order Method for Stochastic Bilevel Optimization
+openreview_id: FZ1C5BXrfz
+pdf: https://openreview.net/pdf?id=FZ1C5BXrfz
+site: https://icml.cc/virtual/2023/poster/24834

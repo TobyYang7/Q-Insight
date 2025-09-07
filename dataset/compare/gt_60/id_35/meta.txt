@@ -1,0 +1,5 @@
+paper_index: 35
+title: Consistency-guided Prompt Learning for Vision-Language Models
+openreview_id: wsRXwlwx4w
+pdf: https://openreview.net/pdf?id=wsRXwlwx4w
+site: https://iclr.cc/virtual/2024/poster/17475

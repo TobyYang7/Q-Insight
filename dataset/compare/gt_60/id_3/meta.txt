@@ -1,0 +1,5 @@
+paper_index: 3
+title: WildPPG: A Real-World PPG Dataset of Long Continuous Recordings
+openreview_id: MojU63gze2
+pdf: https://openreview.net/pdf?id=MojU63gze2
+site: https://neurips.cc/virtual/2024/poster/97729

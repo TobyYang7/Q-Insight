@@ -1,0 +1,5 @@
+paper_index: 27
+title: Inference-Time Intervention: Eliciting Truthful Answers from a Language Model
+openreview_id: aLLuYpn83y
+pdf: https://openreview.net/pdf?id=aLLuYpn83y
+site: https://nips.cc/virtual/2023/poster/71200

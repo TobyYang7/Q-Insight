@@ -1,0 +1,5 @@
+paper_index: 23
+title: Mind the Gap: Understanding the Modality Gap in Multi-modal Contrastive Representation Learning
+openreview_id: S7Evzt9uit3
+pdf: https://openreview.net/pdf?id=S7Evzt9uit3
+site: https://nips.cc/virtual/2022/poster/55406

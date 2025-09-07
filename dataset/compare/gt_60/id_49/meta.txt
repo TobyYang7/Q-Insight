@@ -1,0 +1,5 @@
+paper_index: 49
+title: Unveiling the Tapestry of Consistency in Large Vision-Language Models
+openreview_id: tu1oC7zHGW
+pdf: https://openreview.net/pdf?id=tu1oC7zHGW
+site: https://neurips.cc/virtual/2024/poster/93307

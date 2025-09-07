@@ -1,0 +1,5 @@
+paper_index: 30
+title: Autoregressive Search Engines: Generating Substrings as Document Identifiers
+openreview_id: Z4kZxAjg8Y
+pdf: https://openreview.net/pdf?id=Z4kZxAjg8Y
+site: https://nips.cc/virtual/2022/poster/54916

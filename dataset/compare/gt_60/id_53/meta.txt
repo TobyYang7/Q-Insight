@@ -1,0 +1,5 @@
+paper_index: 53
+title: Hyena Hierarchy: Towards Larger Convolutional Language Models
+openreview_id: 1sxiBaGEtg
+pdf: https://openreview.net/pdf?id=1sxiBaGEtg
+site: https://icml.cc/virtual/2023/poster/24143

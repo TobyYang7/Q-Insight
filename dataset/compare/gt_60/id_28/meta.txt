@@ -1,0 +1,5 @@
+paper_index: 28
+title: Can Large Language Models Reason about Program Invariants?
+openreview_id: mXv2aVqUGG
+pdf: https://openreview.net/pdf?id=mXv2aVqUGG
+site: https://icml.cc/virtual/2023/poster/23500

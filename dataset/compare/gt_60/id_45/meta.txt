@@ -1,0 +1,5 @@
+paper_index: 45
+title: Understanding and Mitigating Copying in Diffusion Models
+openreview_id: HtMXRGbUMt
+pdf: https://openreview.net/pdf?id=HtMXRGbUMt
+site: https://nips.cc/virtual/2023/poster/72148
