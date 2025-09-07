@@ -244,15 +244,17 @@ class Qwen2VLGRPOTrainer(Trainer):
             model_init_kwargs["use_cache"] = (
                 False if args.gradient_checkpointing else model_init_kwargs.get("use_cache")
             )
-            if "Qwen2-VL" in model_id:
-                model = Qwen2VLForConditionalGeneration.from_pretrained(model, **model_init_kwargs)
-            elif "Qwen2.5-VL" in model_id:
-                model = Qwen2_5_VLForConditionalGeneration.from_pretrained(model, **model_init_kwargs)
-            elif "Aria" in model_id:
-                model_init_kwargs.pop("use_cache")
-                model = AriaForConditionalGeneration.from_pretrained(model, **model_init_kwargs)
-            else:
-                model = AutoModelForCausalLM.from_pretrained(model, **model_init_kwargs)
+            # if "Qwen2-VL" in model_id:
+            #     model = Qwen2VLForConditionalGeneration.from_pretrained(model, **model_init_kwargs)
+            # elif "Qwen2.5-VL" in model_id:
+            #     model = Qwen2_5_VLForConditionalGeneration.from_pretrained(model, **model_init_kwargs)
+            # elif "Aria" in model_id:
+            #     model_init_kwargs.pop("use_cache")
+            #     model = AriaForConditionalGeneration.from_pretrained(model, **model_init_kwargs)
+            # else:
+                # model = AutoModelForCausalLM.from_pretrained(model, **model_init_kwargs)
+            model = Qwen2_5_VLForConditionalGeneration.from_pretrained(model, **model_init_kwargs)
+            # model = AutoModelForCausalLM.from_pretrained(model, **model_init_kwargs)
         else:
             model_id = model.config._name_or_path
             if args.model_init_kwargs is not None:
@@ -288,17 +290,21 @@ class Qwen2VLGRPOTrainer(Trainer):
 
         # Processing class
         if processing_class is None:
-            if "Qwen2-VL" in model_id or "Qwen2.5-VL" in model_id or "Aria" in model_id:
-                processing_class = AutoProcessor.from_pretrained(model_id)
-                pad_token_id = processing_class.tokenizer.pad_token_id
-                processing_class.pad_token_id = pad_token_id
-                processing_class.eos_token_id = processing_class.tokenizer.eos_token_id
-                if "Qwen" in model_id or "Qwen2.5-VL" in model_id:
-                    processing_class.image_processor.max_pixels = max_pixels
-                    processing_class.image_processor.min_pixels = min_pixels
-            else:
-                processing_class = AutoTokenizer.from_pretrained(model.config._name_or_path, padding_side="left")
-                pad_token_id = processing_class.pad_token_id
+            # if "Qwen2-VL" in model_id or "Qwen2.5-VL" in model_id or "Aria" in model_id:
+            #     processing_class = AutoProcessor.from_pretrained(model_id)
+            #     pad_token_id = processing_class.tokenizer.pad_token_id
+            #     processing_class.pad_token_id = pad_token_id
+            #     processing_class.eos_token_id = processing_class.tokenizer.eos_token_id
+            #     if "Qwen" in model_id or "Qwen2.5-VL" in model_id:
+            #         processing_class.image_processor.max_pixels = max_pixels
+            #         processing_class.image_processor.min_pixels = min_pixels
+            # else:
+            #     processing_class = AutoTokenizer.from_pretrained(model.config._name_or_path, padding_side="left")
+            #     pad_token_id = processing_class.pad_token_id
+            processing_class = AutoProcessor.from_pretrained(model_id)
+            pad_token_id = processing_class.tokenizer.pad_token_id
+            processing_class.pad_token_id = pad_token_id
+            processing_class.eos_token_id = processing_class.tokenizer.eos_token_id
 
         # Reward functions
         if not isinstance(reward_funcs, list):
@@ -532,7 +538,7 @@ class Qwen2VLGRPOTrainer(Trainer):
             images=images,
             return_tensors="pt",
             padding=True,
-            padding_side="left",
+            # padding_side="left",
             # add_special_tokens=False,
         )
         prompt_inputs = super()._prepare_inputs(prompt_inputs)

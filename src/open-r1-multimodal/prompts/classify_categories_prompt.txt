@@ -1,0 +1,8 @@
+Analyze the input text which describes slide design problems. For each of the following categories, indicate with a boolean whether there are deficiencies mentioned.
+
+Categories: {categories}
+
+Input text to analyze:
+{input_text}
+
+Respond with a JSON object with keys: composition_layout, typography, color, imagery_visualizations, each set to true or false.
