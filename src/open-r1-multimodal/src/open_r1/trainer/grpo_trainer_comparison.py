@@ -480,11 +480,11 @@ class Qwen2VLGRPOTrainerComparison(Trainer):
             msg = [
                 {"role": "system", "content":[{"type":"text","text": ex['system_prompt']}]},
                 {"role": "user", "content":[
-                    {"type":"text","text":"Given a low-quality reference image and two enhanced outputs. Reference Image:"},
+                    {"type":"text","text":"Given a low-quality reference slide and two enhanced outputs. Reference Slide:"},
                     {"type":"image","image": f"file://{ex['ref_image_path']}"},
-                    {"type":"text","text":"Image A:"},
+                    {"type":"text","text":"Slide A:"},
                     {"type":"image","image": f"file://{ex['imageA_path']}"},
-                    {"type":"text","text":"Image B:"},
+                    {"type":"text","text":"Slide B:"},
                     {"type":"image","image": f"file://{ex['imageB_path']}"},
                     {"type":"text","text": ex['custom_question']},
                 ]}
