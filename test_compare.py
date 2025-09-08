@@ -7,6 +7,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 import argparse
 from tqdm import tqdm
 from PIL import Image
+import PIL
 import openai
 import time
 
@@ -40,32 +41,43 @@ def extract_answer_content(text: str) -> str:
         return match.group(1).strip()
     return text
 
-def image_to_base64_uri(image_path: str, max_width: int = 720) -> str:
-    """
-    Loads an image, resizes it to a maximum width while preserving
-    the aspect ratio, and encodes it as a Base64 data URI.
-    """
+def process_image_to_base64(image_path: str, max_long_side: int = 720, min_side: int = 28) -> str:
     try:
-        img = Image.open(image_path)
-        img_format = img.format if img.format else 'PNG'
+        img = PIL.Image.open(image_path).convert("RGB")
+        w, h = img.size
 
-        if img.width > max_width:
-            aspect_ratio = img.height / img.width
-            new_height = int(max_width * aspect_ratio)
-            img = img.resize((max_width, new_height), Image.Resampling.LANCZOS)
+        # Handle images that are too LARGE (downscale)
+        if w > max_long_side or h > max_long_side:
+            if w > h:
+                new_w = max_long_side
+                new_h = int(h * (max_long_side / w))
+            else:
+                new_h = max_long_side
+                new_w = int(w * (max_long_side / h))
+            img = img.resize((new_w, new_h), PIL.Image.Resampling.LANCZOS)
 
-        buffered = io.BytesIO()
-        img.save(buffered, format=img_format)
-        img_byte = buffered.getvalue()
-        base64_str = base64.b64encode(img_byte).decode('utf-8')
+        # Handle images that are too SMALL (upscale)
+        elif w < min_side or h < min_side:
+            if w < h:
+                new_w = min_side
+                new_h = int(h * (min_side / w))
+            else:
+                new_h = min_side
+                new_w = int(w * (min_side / h))
+            img = img.resize((new_w, new_h), PIL.Image.Resampling.LANCZOS)
 
-        return f"data:image/{img_format.lower()};base64,{base64_str}"
+        # Convert resized image to base64 data URI
+        buffer = io.BytesIO()
+        img.save(buffer, format='JPEG', quality=85)
+        img_base64 = base64.b64encode(buffer.getvalue()).decode('utf-8')
+        return f"data:image/jpeg;base64,{img_base64}"
+
     except Exception as e:
-        print(f"Error processing image {image_path}: {e}")
-        return None
+        print(f"Warning: Could not process image {image_path}: {e}")
+        return f"file://{image_path}"
 
 def normalize_prediction(prediction: str) -> str:
-    """Normalize prediction to one of: Slide A, Slide B, or Similar"""
+    """Normalize prediction to one of: Slide A or Slide B (no Similar)."""
     prediction = prediction.strip().lower()
     
     # Check for various ways to express the same choice
@@ -73,8 +85,6 @@ def normalize_prediction(prediction: str) -> str:
         return "Slide A"
     elif any(phrase in prediction for phrase in ['slide b', 'image b', 'b is', 'b better', 'b superior']):
         return "Slide B"
-    elif any(phrase in prediction for phrase in ['similar', 'comparable', 'equal', 'same', 'tie']):
-        return "Similar"
     else:
         # Default fallback - try to extract from the text
         if 'a' in prediction and 'b' not in prediction:
@@ -82,7 +92,8 @@ def normalize_prediction(prediction: str) -> str:
         elif 'b' in prediction and 'a' not in prediction:
             return "Slide B"
         else:
-            return "Similar"
+            # With no Similar option, default deterministically to Slide A
+            return "Slide A"
 
 class CompareTester:
     def __init__(self, image_root: str = "dataset/compare"):
@@ -108,27 +119,30 @@ class CompareTester:
     def process_single(self, item: Dict, max_retries: int = 3) -> Dict:
         """Process a single test sample: call API and calculate metrics."""
         try:
-            # Convert images to base64 with 720 pixel width constraint
+            # Convert images to base64 with constraints matching trainer
             ref_image_path = os.path.join(self.image_root, item["ref_image"])
             image_a_path = os.path.join(self.image_root, item["ImageA"])
             image_b_path = os.path.join(self.image_root, item["ImageB"])
             
-            ref_image_uri = image_to_base64_uri(ref_image_path, max_width=720)
-            image_a_uri = image_to_base64_uri(image_a_path, max_width=720)
-            image_b_uri = image_to_base64_uri(image_b_path, max_width=720)
+            ref_image_uri = process_image_to_base64(ref_image_path, max_long_side=720, min_side=28)
+            image_a_uri = process_image_to_base64(image_a_path, max_long_side=720, min_side=28)
+            image_b_uri = process_image_to_base64(image_b_path, max_long_side=720, min_side=28)
             
             if not all([ref_image_uri, image_a_uri, image_b_uri]):
                 return None
 
             messages = [
-                {"role": "system", "content": self.system_prompt},
+                {"role": "system", "content": [{"type": "text", "text": self.system_prompt}]},
                 {
                     "role": "user",
                     "content": [
+                        {"type": "text", "text": "Given a low-quality reference slide and two enhanced outputs. Reference Slide:"},
+                        {"type": "image_url", "image_url": {"url": f"{ref_image_uri}"}},
+                        {"type": "text", "text": "Slide A:"},
+                        {"type": "image_url", "image_url": {"url": f"{image_a_uri}"}},
+                        {"type": "text", "text": "Slide B:"},
+                        {"type": "image_url", "image_url": {"url": f"{image_b_uri}"}},
                         {"type": "text", "text": self.compare_prompt},
-                        {"type": "image_url", "image_url": {"url": ref_image_uri}},
-                        {"type": "image_url", "image_url": {"url": image_a_uri}},
-                        {"type": "image_url", "image_url": {"url": image_b_uri}}
                     ]
                 }
             ]
@@ -201,8 +215,7 @@ def calculate_metrics(results: List[Dict]) -> Dict:
     
     # Calculate per-class metrics
     class_stats = {"Slide A": {"correct": 0, "total": 0}, 
-                   "Slide B": {"correct": 0, "total": 0}, 
-                   "Similar": {"correct": 0, "total": 0}}
+                   "Slide B": {"correct": 0, "total": 0}}
     
     for result in results:
         gt = result["ground_truth"]
@@ -240,7 +253,7 @@ def main():
     parser = argparse.ArgumentParser(description="Test comparison task with API")
     parser.add_argument("--test_data", type=str, default="dataset/compare/test_comparison.json",
                         help="Path to test data JSON file")
-    parser.add_argument("--output_file", type=str, default="compare_result/eval_compare_ep3_dp1500.json",
+    parser.add_argument("--output_file", type=str, default="compare_result/qwen-vl-32b.json",
                         help="Output file for results")
     parser.add_argument("--num_workers", type=int, default=50,
                         help="Number of concurrent API workers")
