@@ -113,8 +113,8 @@ class CompareTester:
         )
 
         # Load prompts from files
-        self.system_prompt = load_prompt_from_file("src/open-r1-multimodal/prompts/system_prompt.txt")
-        self.compare_prompt = load_prompt_from_file("src/open-r1-multimodal/prompts/compare_question_prompt.txt")
+        self.system_prompt = load_prompt_from_file("train/prompts/system_prompt.txt")
+        self.compare_prompt = load_prompt_from_file("train/prompts/compare_question_prompt.txt")
 
     def process_single(self, item: Dict, max_retries: int = 3) -> Dict:
         """Process a single test sample: call API and calculate metrics."""
