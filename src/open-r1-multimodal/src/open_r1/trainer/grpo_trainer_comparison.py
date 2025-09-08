@@ -343,7 +343,8 @@ class Qwen2VLGRPOTrainerComparison(Trainer):
         self.max_completion_length = args.max_completion_length  # = |o_i| in the GRPO paper
         self.num_generations = args.num_generations  # = G in the GRPO paper
         self.generation_config = GenerationConfig(
-            max_new_tokens=self.max_completion_length,
+            # max_new_tokens=self.max_completion_length,
+            max_new_tokens=1024*2,
             do_sample=True,  
             temperature=1,
             pad_token_id=pad_token_id,
