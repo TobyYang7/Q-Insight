@@ -1,6 +1,9 @@
 {
     "version": "0.2.0",
     "configurations": [
+        
+
+    
     
             {
             "name": "multi-task RL",
@@ -216,6 +219,57 @@
                 "NCCL_DEBUG": "OFF"
             },
             "python": "/root/Q-Insight/.venv/bin/python",
+            "justMyCode": false,
+            "stopOnEntry": false,
+            "subProcess": true
+        },
+        {
+            "name": "compare",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/.venv/bin/torchrun",
+            "args": [
+                "--nproc_per_node=8",
+                "--nnodes=1",
+                "--node_rank=0",
+                "--master_addr=127.0.0.1",
+                "--master_port=12345",
+                "${workspaceFolder}/src/open_r1/eval_compare.py",
+                "--deepspeed", "${workspaceFolder}/src/open-r1-multimodal/local_scripts/zero2.json",
+                "--output_dir", "${workspaceFolder}/src/open-r1-multimodal/output/compare",
+                "--model_name_or_path", "Qwen/Qwen2.5-VL-7B-Instruct",
+                "--dataset_comparison", "${workspaceFolder}/src/open-r1-multimodal/data_config/slide_compare.yaml",
+                "--max_prompt_length", "4096",
+                "--num_generations", "8",
+                "--per_device_train_batch_size", "1",
+                "--gradient_accumulation_steps", "1",
+                "--logging_steps", "1",
+                "--bf16",
+                "--torch_dtype", "bfloat16",
+                "--data_seed", "42",
+                "--report_to", "wandb",
+                "--gradient_checkpointing", "false",
+                "--attn_implementation", "flash_attention_2",
+                "--num_train_epochs", "10",
+                "--run_name", "compare",
+                "--save_steps", "500",
+                "--save_only_model", "true",
+                "--score_reward_threshold", "0.35",
+                "--beta", "0.001"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}/src/open-r1-multimodal",
+            "env": {
+                "DEBUG_MODE": "false",
+                "LOG_PATH": "./debug_log_compare.txt",
+                "OMP_NUM_THREADS": "8",
+                "NCCL_IB_DISABLE": "0",
+                "NCCL_IB_GID_INDEX": "3",
+                "NCCL_SOCKET_IFNAME": "eth0",
+                "PYTORCH_CUDA_ALLOC_CONF": "expandable_segments:True",
+                "NCCL_DEBUG": "OFF"
+            },
+            "python": "${workspaceFolder}/.venv/bin/python",
             "justMyCode": false,
             "stopOnEntry": false,
             "subProcess": true

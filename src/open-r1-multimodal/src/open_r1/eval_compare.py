@@ -21,6 +21,7 @@ from typing import Optional
 from PIL import Image
 from torch.utils.data import Dataset
 from transformers import Qwen2VLForConditionalGeneration
+from transformers.utils import logging
 
 from math_verify import parse, verify
 from open_r1.trainer import Qwen2VLGRPOTrainerComparison, GRPOConfig
@@ -30,6 +31,9 @@ import yaml
 import json
 import random
 import math
+
+# Initialize logger
+logger = logging.get_logger(__name__)
 
 # ----------------------- Fix the flash attention bug in the current version of transformers -----------------------
 from transformers.models.qwen2_5_vl.modeling_qwen2_5_vl import Qwen2_5_VLVisionFlashAttention2, apply_rotary_pos_emb_flashatt, flash_attn_varlen_func
@@ -100,10 +104,6 @@ class GRPOScriptArguments(ScriptArguments):
         default=None,
         metadata={"help": "Root directory of the image"},
     )
-    score_reward_threshold: Optional[float] = field(
-        default=0.35,
-        metadata={"help": "Threshold for score reward"},
-    )
     dataset_dist: Optional[str] = field(
         default=None,
         metadata={"help": "YAML file path for the distortion detection dataset"},
@@ -115,6 +115,14 @@ class GRPOScriptArguments(ScriptArguments):
     dataset_comparison: Optional[str] = field(
         default=None,
         metadata={"help": "YAML file path for the comparison dataset"},
+    )
+    shuffle_dataset: bool = field(
+        default=False,
+        metadata={"help": "Whether to shuffle the dataset"},
+    )
+    max_samples: Optional[int] = field(
+        default=None,
+        metadata={"help": "Maximum number of samples to use from the dataset"},
     )
 
 def load_prompt_from_file(prompt_file):
@@ -138,7 +146,7 @@ class LazyComparisonDataset(Dataset):
         yaml_path = getattr(script_args, "dataset_comparison", None)
         if not yaml_path:
             raise ValueError("Please provide the dataset file: --dataset_comparison <path_to_yaml>")
-        self.samples = self._load_samples_from_yaml(yaml_path)
+        self.samples, self.original_size = self._load_samples_from_yaml(yaml_path)
         if not self.samples:
             raise ValueError("No samples loaded; please check your dataset file content and path.")
         self.total_len = len(self.samples)
@@ -167,7 +175,22 @@ class LazyComparisonDataset(Dataset):
                 
                 print(f"Loaded {len(data_list)} samples from {path}")
                 samples.extend(data_list)
-        return samples
+        
+        # Store original size before any sampling
+        original_size = len(samples)
+        
+        # Apply max_samples limit if specified
+        if self.script_args.max_samples is not None and self.script_args.max_samples > 0:
+            if len(samples) > self.script_args.max_samples:
+                samples = samples[:self.script_args.max_samples]
+                print(f"Limited dataset to {len(samples)} samples (max_samples={self.script_args.max_samples})")
+        
+        # Apply shuffle if requested
+        if self.script_args.shuffle_dataset:
+            random.shuffle(samples)
+            print(f"Dataset shuffled with {len(samples)} samples")
+        
+        return samples, original_size
 
     def __len__(self):
         return self.total_len
@@ -260,26 +283,43 @@ def score_reward(completions, solution, **kwargs):
 
 def format_reward(completions, **kwargs):
     """
-    Reward function that checks if the reasoning process is enclosed within <think> and </think> tags,
-    and the final answer is enclosed within <answer> and </answer> tags.
-    In addition, the content inside <answer> (after stripping leading/trailing whitespace)
-    must be a JSON-like string where the first non-whitespace character is '{' and the last is '}',
-    and no extra '{' or '}' appear inside.
-    """
-    pattern = (
-        r"^<think>\s*\n"         # <think> tag, possibly with whitespace, then a newline
-        r"[\s\S]*?\n"            # Content inside <think> (non-greedy), including newlines
-        r"\s*</think>\s*\n"      # </think> tag, possibly with whitespace, then a newline
-        r"<answer>\s*\n"         # <answer> tag, possibly with whitespace, then a newline
-        r"[\s\S]*?\n"            # Content inside <answer> (any characters, including newlines, non-greedy)
-        r"\s*</answer>\s*$"      # </answer> tag, possibly with whitespace, until end of string
-    )
+    Checks for the exact <think>...</think><answer>...</answer> structure.
     
-    completion_contents = [completion[0]["content"] for completion in completions]
+    A reward of 1.0 is given only if the output contains exactly one <think> block
+    followed by exactly one <answer> block.
+    """
+    # This pattern requires the string to contain only the think/answer structure,
+    # allowing for surrounding whitespace.
+    think_answer_pattern = r"^\s*<think>.*?</think>\s*<answer>(.*?)</answer>\s*$"
 
-    # Use re.fullmatch to ensure the entire string matches the regex pattern
-    matches = [re.fullmatch(pattern, content, re.DOTALL | re.MULTILINE) for content in completion_contents]
-    return [1.0 if match else 0.0 for match in matches]
+    completion_contents = [completion[0]["content"] for completion in completions]
+    rewards = []
+
+    for content in completion_contents:
+        reward = 0.0
+
+        # First, perform a strict count to ensure exactly one of each tag exists.
+        # This prevents rewarding outputs with multiple <think>/<answer> pairs.
+        is_single_tag_pair = (
+            content.count("<think>") == 1
+            and content.count("</think>") == 1
+            and content.count("<answer>") == 1
+            and content.count("</answer>") == 1
+        )
+
+        if is_single_tag_pair:
+            # If the counts are correct, now validate the overall structure with the regex.
+            # re.DOTALL ensures '.' matches newline characters within the tags.
+            match = re.fullmatch(think_answer_pattern, content.strip(), re.DOTALL)
+
+            if match:
+                # For comparison tasks, the correct structure is sufficient for a reward of 1.0
+                reward = 1.0
+        # If tag counts are incorrect, reward remains 0.0
+
+        rewards.append(reward)
+
+    return rewards
 
 
 
@@ -296,6 +336,9 @@ def main(script_args, training_args, model_args):
 
     # Load the dataset
     dataset = LazyComparisonDataset(script_args)
+    
+    # Print dataset information in blue
+    print("\033[94m" + f"Dataset loaded: {len(dataset.samples)}/{dataset.original_size}" + "\033[0m")
 
     trainer_cls = Qwen2VLGRPOTrainerComparison
     # Initialize the GRPO trainer

@@ -14,6 +14,8 @@
 
 import os
 import textwrap
+import base64
+import io
 from collections import defaultdict
 from typing import Any, Callable, Optional, Union, Sized
 
@@ -410,7 +412,13 @@ class Qwen2VLGRPOTrainerComparison(Trainer):
 
         if self.ref_model is not None:
             if self.is_deepspeed_enabled:
-                self.ref_model = prepare_deepspeed(self.ref_model, self.accelerator)
+                # fix: For DeepSpeed, manually handle the reference model to prevent BF16 optimizer error
+                # It's for inference only, so we freeze its parameters, set it to evaluation mode,
+                # and move it to the correct device. No optimizer is needed.
+                for param in self.ref_model.parameters():
+                    param.requires_grad = False
+                self.ref_model.eval()
+                self.ref_model = self.ref_model.to(self.accelerator.device)
             else:
                 self.ref_model = self.accelerator.prepare_model(self.ref_model, evaluation_mode=True)
 
@@ -474,6 +482,42 @@ class Qwen2VLGRPOTrainerComparison(Trainer):
         ) -> dict[str, Any]:
         device = self.accelerator.device
 
+        # fix: Helper function to resize image and convert to base64
+        def process_image_to_base64(image_path, max_long_side=720, min_side=28):
+            try:
+                img = PIL.Image.open(image_path).convert("RGB")
+                w, h = img.size
+                
+                # Handle images that are too LARGE (downscale)
+                if w > max_long_side or h > max_long_side:
+                    if w > h:
+                        new_w = max_long_side
+                        new_h = int(h * (max_long_side / w))
+                    else:
+                        new_h = max_long_side
+                        new_w = int(w * (max_long_side / h))
+                    img = img.resize((new_w, new_h), PIL.Image.Resampling.LANCZOS)
+                
+                # Handle images that are too SMALL (upscale)
+                elif w < min_side or h < min_side:
+                    if w < h:
+                        new_w = min_side
+                        new_h = int(h * (min_side / w))
+                    else:
+                        new_h = min_side
+                        new_w = int(w * (min_side / h))
+                    img = img.resize((new_w, new_h), PIL.Image.Resampling.LANCZOS)
+                
+                # Convert resized image to base64 data URI
+                buffer = io.BytesIO()
+                img.save(buffer, format='JPEG', quality=85)
+                img_base64 = base64.b64encode(buffer.getvalue()).decode('utf-8')
+                return f"data:image/jpeg;base64,{img_base64}"
+                
+            except Exception as e:
+                print(f"Warning: Could not process image {image_path}: {e}")
+                return f"file://{image_path}"  # fallback to file path
+
         raw_messages = []
         text_list    = []
         for ex in inputs:
@@ -481,11 +525,11 @@ class Qwen2VLGRPOTrainerComparison(Trainer):
                 {"role": "system", "content":[{"type":"text","text": ex['system_prompt']}]},
                 {"role": "user", "content":[
                     {"type":"text","text":"Given a low-quality reference slide and two enhanced outputs. Reference Slide:"},
-                    {"type":"image","image": f"file://{ex['ref_image_path']}"},
+                    {"type":"image","image": process_image_to_base64(ex['ref_image_path'])},
                     {"type":"text","text":"Slide A:"},
-                    {"type":"image","image": f"file://{ex['imageA_path']}"},
+                    {"type":"image","image": process_image_to_base64(ex['imageA_path'])},
                     {"type":"text","text":"Slide B:"},
-                    {"type":"image","image": f"file://{ex['imageB_path']}"},
+                    {"type":"image","image": process_image_to_base64(ex['imageB_path'])},
                     {"type":"text","text": ex['custom_question']},
                 ]}
             ]
@@ -500,7 +544,7 @@ class Qwen2VLGRPOTrainerComparison(Trainer):
                 )
             )
         prompts = text_list
-
+        
         image_inputs, video_inputs = process_vision_info(raw_messages)
 
         prompt_inputs = self.processing_class(
