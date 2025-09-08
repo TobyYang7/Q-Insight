@@ -1,0 +1,6 @@
+Compare the two enhanced slides and determine which is superior, or if they are comparable. Evaluate them based on the following criteria:
+1) Fidelity and Consistency: How well does the enhanced slide maintain the content, layout, and style of the original?
+2) Overall Perceptual Quality: How visually appealing and free of artifacts is the slide?
+3) Clarity and Readability: Are the text and visuals sharp and easy to understand?
+4) Effectiveness of Communication: How effectively does the slide convey its intended message?
+Return **exactly one** of: Slide A, Slide B.
