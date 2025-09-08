@@ -1,7 +1,7 @@
 set -x
 
 export DEBUG_MODE="true"
-RUN_NAME="eval_comparison_ep1_dp_all"
+RUN_NAME="eval_comparison_ep1_dp_1500"
 export LOG_PATH="./debug_log_${RUN_NAME}.txt"
 
 # Dist args (single node by default)
@@ -45,14 +45,12 @@ uv run torchrun --nproc_per_node=8 \
     --torch_dtype bfloat16 \
     --data_seed 42 \
     --report_to wandb \
-    --gradient_checkpointing false \
     --attn_implementation flash_attention_2 \
     --num_train_epochs 1 \
     --run_name $RUN_NAME \
     --save_steps 200 \
-    --save_only_model true \
     --beta 0.001 \
     --deepspeed local_scripts/zero2.json \
     --shuffle_dataset \
-    --max_samples 5000 \
+    --max_samples 1500 \
 
