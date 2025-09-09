@@ -1,0 +1,909 @@
+[
+  {
+    "image": "dataset/compare/gt_60/id_50/slide_010.png",
+    "slide_id": "slide_010",
+    "deficiency_count": 1,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": true
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/weak/id9/slide_2.png",
+    "slide_id": "slide_2",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/base/id39/slide_2.png",
+    "slide_id": "slide_2",
+    "deficiency_count": 1,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": true
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/gt_60/id_26/slide_006.png",
+    "slide_id": "slide_006",
+    "deficiency_count": 2,
+    "deficiencies": [
+      {
+        "category": "Typography",
+        "deficiency": "Improper Font Sizing",
+        "has_strong_agreement": true
+      },
+      {
+        "category": "Typography",
+        "deficiency": "Improper Line/Character Spacing",
+        "has_strong_agreement": true
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/good/id17/slide_2.png",
+    "slide_id": "slide_2",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/base/id46/slide_8.png",
+    "slide_id": "slide_8",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/good/id2/slide_5.png",
+    "slide_id": "slide_5",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/weak/id52/slide_3.png",
+    "slide_id": "slide_3",
+    "deficiency_count": 1,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": true
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/good/id5/slide_9.png",
+    "slide_id": "slide_9",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/weak/id20/slide_9.png",
+    "slide_id": "slide_9",
+    "deficiency_count": 2,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": true
+      },
+      {
+        "category": "Typography",
+        "deficiency": "Improper Font Sizing",
+        "has_strong_agreement": true
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/gt_60/id_25/slide_002.png",
+    "slide_id": "slide_002",
+    "deficiency_count": 1,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": false
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/weak/id54/slide_8.png",
+    "slide_id": "slide_8",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/base/id58/slide_9.png",
+    "slide_id": "slide_9",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/base/id23/slide_8.png",
+    "slide_id": "slide_8",
+    "deficiency_count": 1,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": true
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/gt_60/id_13/slide_001.png",
+    "slide_id": "slide_001",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/weak/id22/slide_1.png",
+    "slide_id": "slide_1",
+    "deficiency_count": 1,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": true
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/good/id58/slide_7.png",
+    "slide_id": "slide_7",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/gt_60/id_53/slide_011.png",
+    "slide_id": "slide_011",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/base/id4/slide_6.png",
+    "slide_id": "slide_6",
+    "deficiency_count": 2,
+    "deficiencies": [
+      {
+        "category": "Typography",
+        "deficiency": "Improper Font Sizing",
+        "has_strong_agreement": true
+      },
+      {
+        "category": "Typography",
+        "deficiency": "Improper Line/Character Spacing",
+        "has_strong_agreement": true
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/weak/id33/slide_0.png",
+    "slide_id": "slide_0",
+    "deficiency_count": 2,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Poor Visual Hierarchy",
+        "has_strong_agreement": true
+      },
+      {
+        "category": "Typography",
+        "deficiency": "Improper Font Sizing",
+        "has_strong_agreement": true
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/weak/id19/slide_0.png",
+    "slide_id": "slide_0",
+    "deficiency_count": 2,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": true
+      },
+      {
+        "category": "Typography",
+        "deficiency": "Improper Font Sizing",
+        "has_strong_agreement": true
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/good/id6/slide_6.png",
+    "slide_id": "slide_6",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/gt_60/id_24/slide_008.png",
+    "slide_id": "slide_008",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/base/id28/slide_5.png",
+    "slide_id": "slide_5",
+    "deficiency_count": 1,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Content Overflow/Cut-off",
+        "has_strong_agreement": true
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/weak/id23/slide_2.png",
+    "slide_id": "slide_2",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/weak/id29/slide_8.png",
+    "slide_id": "slide_8",
+    "deficiency_count": 3,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": false
+      },
+      {
+        "category": "Typography",
+        "deficiency": "Improper Font Sizing",
+        "has_strong_agreement": false
+      },
+      {
+        "category": "Typography",
+        "deficiency": "Improper Line/Character Spacing",
+        "has_strong_agreement": false
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/weak/id41/slide_5.png",
+    "slide_id": "slide_5",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/good/id1/slide_5.png",
+    "slide_id": "slide_5",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/good/id18/slide_8.png",
+    "slide_id": "slide_8",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/base/id45/slide_1.png",
+    "slide_id": "slide_1",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/good/id5/slide_4.png",
+    "slide_id": "slide_4",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/gt_60/id_28/slide_001.png",
+    "slide_id": "slide_001",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/base/id30/slide_2.png",
+    "slide_id": "slide_2",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/gt_60/id_43/slide_003.png",
+    "slide_id": "slide_003",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/good/id15/slide_4.png",
+    "slide_id": "slide_4",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/weak/id32/slide_3.png",
+    "slide_id": "slide_3",
+    "deficiency_count": 3,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": true
+      },
+      {
+        "category": "Typography",
+        "deficiency": "Improper Font Sizing",
+        "has_strong_agreement": true
+      },
+      {
+        "category": "Visual Design",
+        "deficiency": "Improper Image Sizing",
+        "has_strong_agreement": false
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/base/id8/slide_7.png",
+    "slide_id": "slide_7",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/weak/id16/slide_0.png",
+    "slide_id": "slide_0",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/weak/id34/slide_8.png",
+    "slide_id": "slide_8",
+    "deficiency_count": 2,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": true
+      },
+      {
+        "category": "Typography",
+        "deficiency": "Improper Font Sizing",
+        "has_strong_agreement": false
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/gt_60/id_34/slide_016.png",
+    "slide_id": "slide_016",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/weak/id29/slide_5.png",
+    "slide_id": "slide_5",
+    "deficiency_count": 2,
+    "deficiencies": [
+      {
+        "category": "Typography",
+        "deficiency": "Excessive Text Volume",
+        "has_strong_agreement": true
+      },
+      {
+        "category": "Typography",
+        "deficiency": "Improper Font Sizing",
+        "has_strong_agreement": false
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/base/id17/slide_1.png",
+    "slide_id": "slide_1",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/base/id47/slide_8.png",
+    "slide_id": "slide_8",
+    "deficiency_count": 5,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Content Overflow/Cut-off",
+        "has_strong_agreement": false
+      },
+      {
+        "category": "Typography",
+        "deficiency": "Excessive Text Volume",
+        "has_strong_agreement": false
+      },
+      {
+        "category": "Typography",
+        "deficiency": "Improper Line/Character Spacing",
+        "has_strong_agreement": false
+      },
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": false
+      },
+      {
+        "category": "Typography",
+        "deficiency": "Improper Font Sizing",
+        "has_strong_agreement": false
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/base/id5/slide_2.png",
+    "slide_id": "slide_2",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/gt_60/id_48/slide_002.png",
+    "slide_id": "slide_002",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/good/id24/slide_2.png",
+    "slide_id": "slide_2",
+    "deficiency_count": 1,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": true
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/gt_60/id_26/slide_001.png",
+    "slide_id": "slide_001",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/good/id47/slide_9.png",
+    "slide_id": "slide_9",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/base/id32/slide_1.png",
+    "slide_id": "slide_1",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/base/id21/slide_7.png",
+    "slide_id": "slide_7",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/gt_60/id_45/slide_010.png",
+    "slide_id": "slide_010",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/gt_60/id_8/slide_006.png",
+    "slide_id": "slide_006",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/base/id50/slide_9.png",
+    "slide_id": "slide_9",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/good/id21/slide_1.png",
+    "slide_id": "slide_1",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/weak/id23/slide_9.png",
+    "slide_id": "slide_9",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/base/id5/slide_6.png",
+    "slide_id": "slide_6",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/gt_60/id_19/slide_006.png",
+    "slide_id": "slide_006",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/base/id36/slide_8.png",
+    "slide_id": "slide_8",
+    "deficiency_count": 1,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": true
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/weak/id37/slide_7.png",
+    "slide_id": "slide_7",
+    "deficiency_count": 1,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": true
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/base/id38/slide_0.png",
+    "slide_id": "slide_0",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/good/id44/slide_9.png",
+    "slide_id": "slide_9",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/weak/id55/slide_8.png",
+    "slide_id": "slide_8",
+    "deficiency_count": 1,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": true
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/good/id54/slide_1.png",
+    "slide_id": "slide_1",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/base/id17/slide_5.png",
+    "slide_id": "slide_5",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/base/id55/slide_3.png",
+    "slide_id": "slide_3",
+    "deficiency_count": 3,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": true
+      },
+      {
+        "category": "Typography",
+        "deficiency": "Improper Font Sizing",
+        "has_strong_agreement": true
+      },
+      {
+        "category": "Visual Design",
+        "deficiency": "Improper Image Sizing",
+        "has_strong_agreement": true
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/gt_60/id_14/slide_010.png",
+    "slide_id": "slide_010",
+    "deficiency_count": 1,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": false
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/weak/id12/slide_2.png",
+    "slide_id": "slide_2",
+    "deficiency_count": 3,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": true
+      },
+      {
+        "category": "Typography",
+        "deficiency": "Improper Font Sizing",
+        "has_strong_agreement": true
+      },
+      {
+        "category": "Typography",
+        "deficiency": "Improper Line/Character Spacing",
+        "has_strong_agreement": true
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/weak/id8/slide_9.png",
+    "slide_id": "slide_9",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/weak/id50/slide_6.png",
+    "slide_id": "slide_6",
+    "deficiency_count": 1,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": true
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/base/id3/slide_6.png",
+    "slide_id": "slide_6",
+    "deficiency_count": 1,
+    "deficiencies": [
+      {
+        "category": "Typography",
+        "deficiency": "Improper Line/Character Spacing",
+        "has_strong_agreement": true
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/base/id43/slide_7.png",
+    "slide_id": "slide_7",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/gt_60/id_1/slide_009.png",
+    "slide_id": "slide_009",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/base/id53/slide_4.png",
+    "slide_id": "slide_4",
+    "deficiency_count": 1,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Content Overflow/Cut-off",
+        "has_strong_agreement": true
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/good/id22/slide_0.png",
+    "slide_id": "slide_0",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/weak/id25/slide_5.png",
+    "slide_id": "slide_5",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/weak/id39/slide_4.png",
+    "slide_id": "slide_4",
+    "deficiency_count": 1,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": true
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/gt_60/id_19/slide_011.png",
+    "slide_id": "slide_011",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/gt_60/id_51/slide_010.png",
+    "slide_id": "slide_010",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/gt_60/id_49/slide_002.png",
+    "slide_id": "slide_002",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/weak/id2/slide_0.png",
+    "slide_id": "slide_0",
+    "deficiency_count": 2,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": true
+      },
+      {
+        "category": "Typography",
+        "deficiency": "Improper Font Sizing",
+        "has_strong_agreement": false
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/weak/id47/slide_0.png",
+    "slide_id": "slide_0",
+    "deficiency_count": 1,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": true
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/weak/id41/slide_2.png",
+    "slide_id": "slide_2",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/base/id34/slide_5.png",
+    "slide_id": "slide_5",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/gt_60/id_34/slide_001.png",
+    "slide_id": "slide_001",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/base/id56/slide_4.png",
+    "slide_id": "slide_4",
+    "deficiency_count": 3,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Content Overflow/Cut-off",
+        "has_strong_agreement": true
+      },
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": true
+      },
+      {
+        "category": "Visual Design",
+        "deficiency": "Improper Image Sizing",
+        "has_strong_agreement": true
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/weak/id31/slide_9.png",
+    "slide_id": "slide_9",
+    "deficiency_count": 1,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": true
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/base/id54/slide_7.png",
+    "slide_id": "slide_7",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/good/id46/slide_6.png",
+    "slide_id": "slide_6",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/gt_60/id_0/slide_002.png",
+    "slide_id": "slide_002",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/good/id56/slide_7.png",
+    "slide_id": "slide_7",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/gt_60/id_0/slide_004.png",
+    "slide_id": "slide_004",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/gt_60/id_39/slide_010.png",
+    "slide_id": "slide_010",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/gt_60/id_18/slide_012.png",
+    "slide_id": "slide_012",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/base/id53/slide_1.png",
+    "slide_id": "slide_1",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/good/id4/slide_7.png",
+    "slide_id": "slide_7",
+    "deficiency_count": 0,
+    "deficiencies": []
+  },
+  {
+    "image": "dataset/compare/base/id6/slide_0.png",
+    "slide_id": "slide_0",
+    "deficiency_count": 2,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Content Alignment Issues",
+        "has_strong_agreement": true
+      },
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": true
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/gt_60/id_23/slide_002.png",
+    "slide_id": "slide_002",
+    "deficiency_count": 1,
+    "deficiencies": [
+      {
+        "category": "Composition & Layout",
+        "deficiency": "Unbalanced Space Distribution",
+        "has_strong_agreement": true
+      }
+    ]
+  },
+  {
+    "image": "dataset/compare/good/id11/slide_5.png",
+    "slide_id": "slide_5",
+    "deficiency_count": 0,
+    "deficiencies": []
+  }
+]
