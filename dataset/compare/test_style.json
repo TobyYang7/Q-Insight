@@ -1,0 +1,1394 @@
+[
+  {
+    "ref_image": "test_style/962397af_ref.png",
+    "ImageA": "test_style/962397af_a.png",
+    "ImageB": "test_style/962397af_b.png",
+    "result": "Slide B",
+    "combo_type": "good_vs_base",
+    "source": "paper5/slide_3"
+  },
+  {
+    "ref_image": "test_style/5c8c5c10_ref.png",
+    "ImageA": "test_style/5c8c5c10_a.png",
+    "ImageB": "test_style/5c8c5c10_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_good",
+    "source": "paper5/slide_3"
+  },
+  {
+    "ref_image": "test_style/63787448_ref.png",
+    "ImageA": "test_style/63787448_a.png",
+    "ImageB": "test_style/63787448_b.png",
+    "result": "Slide B",
+    "combo_type": "good_vs_weak",
+    "source": "paper5/slide_3"
+  },
+  {
+    "ref_image": "test_style/59a27190_ref.png",
+    "ImageA": "test_style/59a27190_a.png",
+    "ImageB": "test_style/59a27190_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_good",
+    "source": "paper5/slide_3"
+  },
+  {
+    "ref_image": "test_style/143de857_ref.png",
+    "ImageA": "test_style/143de857_a.png",
+    "ImageB": "test_style/143de857_b.png",
+    "result": "Slide A",
+    "combo_type": "base_vs_weak",
+    "source": "paper5/slide_3"
+  },
+  {
+    "ref_image": "test_style/6382caa3_ref.png",
+    "ImageA": "test_style/6382caa3_a.png",
+    "ImageB": "test_style/6382caa3_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_base",
+    "source": "paper5/slide_3"
+  },
+  {
+    "ref_image": "test_style/f2059277_ref.png",
+    "ImageA": "test_style/f2059277_a.png",
+    "ImageB": "test_style/f2059277_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_base",
+    "source": "paper5/slide_4"
+  },
+  {
+    "ref_image": "test_style/ba59552a_ref.png",
+    "ImageA": "test_style/ba59552a_a.png",
+    "ImageB": "test_style/ba59552a_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_good",
+    "source": "paper5/slide_4"
+  },
+  {
+    "ref_image": "test_style/f30cfd08_ref.png",
+    "ImageA": "test_style/f30cfd08_a.png",
+    "ImageB": "test_style/f30cfd08_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_weak",
+    "source": "paper5/slide_4"
+  },
+  {
+    "ref_image": "test_style/a925bd85_ref.png",
+    "ImageA": "test_style/a925bd85_a.png",
+    "ImageB": "test_style/a925bd85_b.png",
+    "result": "Slide A",
+    "combo_type": "weak_vs_good",
+    "source": "paper5/slide_4"
+  },
+  {
+    "ref_image": "test_style/b7e74265_ref.png",
+    "ImageA": "test_style/b7e74265_a.png",
+    "ImageB": "test_style/b7e74265_b.png",
+    "result": "Slide A",
+    "combo_type": "base_vs_weak",
+    "source": "paper5/slide_4"
+  },
+  {
+    "ref_image": "test_style/6907aba9_ref.png",
+    "ImageA": "test_style/6907aba9_a.png",
+    "ImageB": "test_style/6907aba9_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_base",
+    "source": "paper5/slide_4"
+  },
+  {
+    "ref_image": "test_style/1f876f43_ref.png",
+    "ImageA": "test_style/1f876f43_a.png",
+    "ImageB": "test_style/1f876f43_b.png",
+    "result": "Slide B",
+    "combo_type": "good_vs_base",
+    "source": "paper5/slide_6"
+  },
+  {
+    "ref_image": "test_style/d072d598_ref.png",
+    "ImageA": "test_style/d072d598_a.png",
+    "ImageB": "test_style/d072d598_b.png",
+    "result": "Slide A",
+    "combo_type": "base_vs_good",
+    "source": "paper5/slide_6"
+  },
+  {
+    "ref_image": "test_style/fb9d2f6b_ref.png",
+    "ImageA": "test_style/fb9d2f6b_a.png",
+    "ImageB": "test_style/fb9d2f6b_b.png",
+    "result": "Slide B",
+    "combo_type": "good_vs_weak",
+    "source": "paper5/slide_6"
+  },
+  {
+    "ref_image": "test_style/edf96ae1_ref.png",
+    "ImageA": "test_style/edf96ae1_a.png",
+    "ImageB": "test_style/edf96ae1_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_good",
+    "source": "paper5/slide_6"
+  },
+  {
+    "ref_image": "test_style/b2e1fbcf_ref.png",
+    "ImageA": "test_style/b2e1fbcf_a.png",
+    "ImageB": "test_style/b2e1fbcf_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_weak",
+    "source": "paper5/slide_6"
+  },
+  {
+    "ref_image": "test_style/f122903a_ref.png",
+    "ImageA": "test_style/f122903a_a.png",
+    "ImageB": "test_style/f122903a_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_base",
+    "source": "paper5/slide_6"
+  },
+  {
+    "ref_image": "test_style/cd127f4c_ref.png",
+    "ImageA": "test_style/cd127f4c_a.png",
+    "ImageB": "test_style/cd127f4c_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_base",
+    "source": "paper5/slide_7"
+  },
+  {
+    "ref_image": "test_style/053fd62d_ref.png",
+    "ImageA": "test_style/053fd62d_a.png",
+    "ImageB": "test_style/053fd62d_b.png",
+    "result": "Slide A",
+    "combo_type": "base_vs_good",
+    "source": "paper5/slide_7"
+  },
+  {
+    "ref_image": "test_style/7660feaa_ref.png",
+    "ImageA": "test_style/7660feaa_a.png",
+    "ImageB": "test_style/7660feaa_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_weak",
+    "source": "paper5/slide_7"
+  },
+  {
+    "ref_image": "test_style/e3d6539f_ref.png",
+    "ImageA": "test_style/e3d6539f_a.png",
+    "ImageB": "test_style/e3d6539f_b.png",
+    "result": "Slide A",
+    "combo_type": "weak_vs_good",
+    "source": "paper5/slide_7"
+  },
+  {
+    "ref_image": "test_style/41652988_ref.png",
+    "ImageA": "test_style/41652988_a.png",
+    "ImageB": "test_style/41652988_b.png",
+    "result": "Slide A",
+    "combo_type": "base_vs_weak",
+    "source": "paper5/slide_7"
+  },
+  {
+    "ref_image": "test_style/ebe5dfd3_ref.png",
+    "ImageA": "test_style/ebe5dfd3_a.png",
+    "ImageB": "test_style/ebe5dfd3_b.png",
+    "result": "Slide A",
+    "combo_type": "weak_vs_base",
+    "source": "paper5/slide_7"
+  },
+  {
+    "ref_image": "test_style/957a1d5c_ref.png",
+    "ImageA": "test_style/957a1d5c_a.png",
+    "ImageB": "test_style/957a1d5c_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_base",
+    "source": "paper5/slide_9"
+  },
+  {
+    "ref_image": "test_style/62fd1802_ref.png",
+    "ImageA": "test_style/62fd1802_a.png",
+    "ImageB": "test_style/62fd1802_b.png",
+    "result": "Slide A",
+    "combo_type": "base_vs_good",
+    "source": "paper5/slide_9"
+  },
+  {
+    "ref_image": "test_style/0a40f813_ref.png",
+    "ImageA": "test_style/0a40f813_a.png",
+    "ImageB": "test_style/0a40f813_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_weak",
+    "source": "paper5/slide_9"
+  },
+  {
+    "ref_image": "test_style/72670f3c_ref.png",
+    "ImageA": "test_style/72670f3c_a.png",
+    "ImageB": "test_style/72670f3c_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_good",
+    "source": "paper5/slide_9"
+  },
+  {
+    "ref_image": "test_style/99d42ccb_ref.png",
+    "ImageA": "test_style/99d42ccb_a.png",
+    "ImageB": "test_style/99d42ccb_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_weak",
+    "source": "paper5/slide_9"
+  },
+  {
+    "ref_image": "test_style/e50b23fb_ref.png",
+    "ImageA": "test_style/e50b23fb_a.png",
+    "ImageB": "test_style/e50b23fb_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_base",
+    "source": "paper5/slide_9"
+  },
+  {
+    "ref_image": "test_style/073f5640_ref.png",
+    "ImageA": "test_style/073f5640_a.png",
+    "ImageB": "test_style/073f5640_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_base",
+    "source": "paper5/slide_10"
+  },
+  {
+    "ref_image": "test_style/8d4b88f3_ref.png",
+    "ImageA": "test_style/8d4b88f3_a.png",
+    "ImageB": "test_style/8d4b88f3_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_good",
+    "source": "paper5/slide_10"
+  },
+  {
+    "ref_image": "test_style/321256dc_ref.png",
+    "ImageA": "test_style/321256dc_a.png",
+    "ImageB": "test_style/321256dc_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_weak",
+    "source": "paper5/slide_10"
+  },
+  {
+    "ref_image": "test_style/52737c19_ref.png",
+    "ImageA": "test_style/52737c19_a.png",
+    "ImageB": "test_style/52737c19_b.png",
+    "result": "Slide A",
+    "combo_type": "weak_vs_good",
+    "source": "paper5/slide_10"
+  },
+  {
+    "ref_image": "test_style/9456a856_ref.png",
+    "ImageA": "test_style/9456a856_a.png",
+    "ImageB": "test_style/9456a856_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_weak",
+    "source": "paper5/slide_10"
+  },
+  {
+    "ref_image": "test_style/a556ebde_ref.png",
+    "ImageA": "test_style/a556ebde_a.png",
+    "ImageB": "test_style/a556ebde_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_base",
+    "source": "paper5/slide_10"
+  },
+  {
+    "ref_image": "test_style/3a08aded_ref.png",
+    "ImageA": "test_style/3a08aded_a.png",
+    "ImageB": "test_style/3a08aded_b.png",
+    "result": "Slide B",
+    "combo_type": "good_vs_base",
+    "source": "paper5/slide_11"
+  },
+  {
+    "ref_image": "test_style/fd732452_ref.png",
+    "ImageA": "test_style/fd732452_a.png",
+    "ImageB": "test_style/fd732452_b.png",
+    "result": "Slide A",
+    "combo_type": "base_vs_good",
+    "source": "paper5/slide_11"
+  },
+  {
+    "ref_image": "test_style/aa42c839_ref.png",
+    "ImageA": "test_style/aa42c839_a.png",
+    "ImageB": "test_style/aa42c839_b.png",
+    "result": "Slide B",
+    "combo_type": "good_vs_weak",
+    "source": "paper5/slide_11"
+  },
+  {
+    "ref_image": "test_style/14df1c1d_ref.png",
+    "ImageA": "test_style/14df1c1d_a.png",
+    "ImageB": "test_style/14df1c1d_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_good",
+    "source": "paper5/slide_11"
+  },
+  {
+    "ref_image": "test_style/fae2d3ae_ref.png",
+    "ImageA": "test_style/fae2d3ae_a.png",
+    "ImageB": "test_style/fae2d3ae_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_weak",
+    "source": "paper5/slide_11"
+  },
+  {
+    "ref_image": "test_style/bd4d1086_ref.png",
+    "ImageA": "test_style/bd4d1086_a.png",
+    "ImageB": "test_style/bd4d1086_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_base",
+    "source": "paper5/slide_11"
+  },
+  {
+    "ref_image": "test_style/1d6219a0_ref.png",
+    "ImageA": "test_style/1d6219a0_a.png",
+    "ImageB": "test_style/1d6219a0_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_base",
+    "source": "paper5/slide_14"
+  },
+  {
+    "ref_image": "test_style/071975b6_ref.png",
+    "ImageA": "test_style/071975b6_a.png",
+    "ImageB": "test_style/071975b6_b.png",
+    "result": "Slide A",
+    "combo_type": "base_vs_good",
+    "source": "paper5/slide_14"
+  },
+  {
+    "ref_image": "test_style/9ba7b267_ref.png",
+    "ImageA": "test_style/9ba7b267_a.png",
+    "ImageB": "test_style/9ba7b267_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_weak",
+    "source": "paper5/slide_14"
+  },
+  {
+    "ref_image": "test_style/d684e1e0_ref.png",
+    "ImageA": "test_style/d684e1e0_a.png",
+    "ImageB": "test_style/d684e1e0_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_good",
+    "source": "paper5/slide_14"
+  },
+  {
+    "ref_image": "test_style/c1dea5f9_ref.png",
+    "ImageA": "test_style/c1dea5f9_a.png",
+    "ImageB": "test_style/c1dea5f9_b.png",
+    "result": "Slide A",
+    "combo_type": "base_vs_weak",
+    "source": "paper5/slide_14"
+  },
+  {
+    "ref_image": "test_style/2aa0bfba_ref.png",
+    "ImageA": "test_style/2aa0bfba_a.png",
+    "ImageB": "test_style/2aa0bfba_b.png",
+    "result": "Slide A",
+    "combo_type": "weak_vs_base",
+    "source": "paper5/slide_14"
+  },
+  {
+    "ref_image": "test_style/925d8275_ref.png",
+    "ImageA": "test_style/925d8275_a.png",
+    "ImageB": "test_style/925d8275_b.png",
+    "result": "Slide B",
+    "combo_type": "good_vs_base",
+    "source": "paper5/slide_15"
+  },
+  {
+    "ref_image": "test_style/bb66c091_ref.png",
+    "ImageA": "test_style/bb66c091_a.png",
+    "ImageB": "test_style/bb66c091_b.png",
+    "result": "Slide A",
+    "combo_type": "base_vs_good",
+    "source": "paper5/slide_15"
+  },
+  {
+    "ref_image": "test_style/662af4c3_ref.png",
+    "ImageA": "test_style/662af4c3_a.png",
+    "ImageB": "test_style/662af4c3_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_weak",
+    "source": "paper5/slide_15"
+  },
+  {
+    "ref_image": "test_style/fa5d4e1f_ref.png",
+    "ImageA": "test_style/fa5d4e1f_a.png",
+    "ImageB": "test_style/fa5d4e1f_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_good",
+    "source": "paper5/slide_15"
+  },
+  {
+    "ref_image": "test_style/eaa88acc_ref.png",
+    "ImageA": "test_style/eaa88acc_a.png",
+    "ImageB": "test_style/eaa88acc_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_weak",
+    "source": "paper5/slide_15"
+  },
+  {
+    "ref_image": "test_style/4e1250d8_ref.png",
+    "ImageA": "test_style/4e1250d8_a.png",
+    "ImageB": "test_style/4e1250d8_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_base",
+    "source": "paper5/slide_15"
+  },
+  {
+    "ref_image": "test_style/2899dbdf_ref.png",
+    "ImageA": "test_style/2899dbdf_a.png",
+    "ImageB": "test_style/2899dbdf_b.png",
+    "result": "Slide B",
+    "combo_type": "good_vs_base",
+    "source": "paper5/slide_17"
+  },
+  {
+    "ref_image": "test_style/0dfcbf77_ref.png",
+    "ImageA": "test_style/0dfcbf77_a.png",
+    "ImageB": "test_style/0dfcbf77_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_good",
+    "source": "paper5/slide_17"
+  },
+  {
+    "ref_image": "test_style/dd231593_ref.png",
+    "ImageA": "test_style/dd231593_a.png",
+    "ImageB": "test_style/dd231593_b.png",
+    "result": "Slide B",
+    "combo_type": "good_vs_weak",
+    "source": "paper5/slide_17"
+  },
+  {
+    "ref_image": "test_style/5fe5f3b5_ref.png",
+    "ImageA": "test_style/5fe5f3b5_a.png",
+    "ImageB": "test_style/5fe5f3b5_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_good",
+    "source": "paper5/slide_17"
+  },
+  {
+    "ref_image": "test_style/6982cc52_ref.png",
+    "ImageA": "test_style/6982cc52_a.png",
+    "ImageB": "test_style/6982cc52_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_weak",
+    "source": "paper5/slide_17"
+  },
+  {
+    "ref_image": "test_style/22749a1f_ref.png",
+    "ImageA": "test_style/22749a1f_a.png",
+    "ImageB": "test_style/22749a1f_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_base",
+    "source": "paper5/slide_17"
+  },
+  {
+    "ref_image": "test_style/71ac9697_ref.png",
+    "ImageA": "test_style/71ac9697_a.png",
+    "ImageB": "test_style/71ac9697_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_base",
+    "source": "paper1/slide_0"
+  },
+  {
+    "ref_image": "test_style/c79026dc_ref.png",
+    "ImageA": "test_style/c79026dc_a.png",
+    "ImageB": "test_style/c79026dc_b.png",
+    "result": "Slide A",
+    "combo_type": "base_vs_good",
+    "source": "paper1/slide_0"
+  },
+  {
+    "ref_image": "test_style/93f64dbd_ref.png",
+    "ImageA": "test_style/93f64dbd_a.png",
+    "ImageB": "test_style/93f64dbd_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_weak",
+    "source": "paper1/slide_0"
+  },
+  {
+    "ref_image": "test_style/ba73a5b0_ref.png",
+    "ImageA": "test_style/ba73a5b0_a.png",
+    "ImageB": "test_style/ba73a5b0_b.png",
+    "result": "Slide A",
+    "combo_type": "weak_vs_good",
+    "source": "paper1/slide_0"
+  },
+  {
+    "ref_image": "test_style/dd0cc121_ref.png",
+    "ImageA": "test_style/dd0cc121_a.png",
+    "ImageB": "test_style/dd0cc121_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_weak",
+    "source": "paper1/slide_0"
+  },
+  {
+    "ref_image": "test_style/381c267d_ref.png",
+    "ImageA": "test_style/381c267d_a.png",
+    "ImageB": "test_style/381c267d_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_base",
+    "source": "paper1/slide_0"
+  },
+  {
+    "ref_image": "test_style/36083ad5_ref.png",
+    "ImageA": "test_style/36083ad5_a.png",
+    "ImageB": "test_style/36083ad5_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_base",
+    "source": "paper1/slide_1"
+  },
+  {
+    "ref_image": "test_style/e79ea1ed_ref.png",
+    "ImageA": "test_style/e79ea1ed_a.png",
+    "ImageB": "test_style/e79ea1ed_b.png",
+    "result": "Slide A",
+    "combo_type": "base_vs_good",
+    "source": "paper1/slide_1"
+  },
+  {
+    "ref_image": "test_style/9f2939da_ref.png",
+    "ImageA": "test_style/9f2939da_a.png",
+    "ImageB": "test_style/9f2939da_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_weak",
+    "source": "paper1/slide_1"
+  },
+  {
+    "ref_image": "test_style/dc18e9aa_ref.png",
+    "ImageA": "test_style/dc18e9aa_a.png",
+    "ImageB": "test_style/dc18e9aa_b.png",
+    "result": "Slide A",
+    "combo_type": "weak_vs_good",
+    "source": "paper1/slide_1"
+  },
+  {
+    "ref_image": "test_style/49f7a06b_ref.png",
+    "ImageA": "test_style/49f7a06b_a.png",
+    "ImageB": "test_style/49f7a06b_b.png",
+    "result": "Slide A",
+    "combo_type": "base_vs_weak",
+    "source": "paper1/slide_1"
+  },
+  {
+    "ref_image": "test_style/019f279b_ref.png",
+    "ImageA": "test_style/019f279b_a.png",
+    "ImageB": "test_style/019f279b_b.png",
+    "result": "Slide A",
+    "combo_type": "weak_vs_base",
+    "source": "paper1/slide_1"
+  },
+  {
+    "ref_image": "test_style/d2c7c3dc_ref.png",
+    "ImageA": "test_style/d2c7c3dc_a.png",
+    "ImageB": "test_style/d2c7c3dc_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_base",
+    "source": "paper1/slide_4"
+  },
+  {
+    "ref_image": "test_style/761c1e4a_ref.png",
+    "ImageA": "test_style/761c1e4a_a.png",
+    "ImageB": "test_style/761c1e4a_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_good",
+    "source": "paper1/slide_4"
+  },
+  {
+    "ref_image": "test_style/6bafa798_ref.png",
+    "ImageA": "test_style/6bafa798_a.png",
+    "ImageB": "test_style/6bafa798_b.png",
+    "result": "Slide B",
+    "combo_type": "good_vs_weak",
+    "source": "paper1/slide_4"
+  },
+  {
+    "ref_image": "test_style/3a853a09_ref.png",
+    "ImageA": "test_style/3a853a09_a.png",
+    "ImageB": "test_style/3a853a09_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_good",
+    "source": "paper1/slide_4"
+  },
+  {
+    "ref_image": "test_style/b15534df_ref.png",
+    "ImageA": "test_style/b15534df_a.png",
+    "ImageB": "test_style/b15534df_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_weak",
+    "source": "paper1/slide_4"
+  },
+  {
+    "ref_image": "test_style/28abcb23_ref.png",
+    "ImageA": "test_style/28abcb23_a.png",
+    "ImageB": "test_style/28abcb23_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_base",
+    "source": "paper1/slide_4"
+  },
+  {
+    "ref_image": "test_style/d51deb9d_ref.png",
+    "ImageA": "test_style/d51deb9d_a.png",
+    "ImageB": "test_style/d51deb9d_b.png",
+    "result": "Slide B",
+    "combo_type": "good_vs_base",
+    "source": "paper1/slide_7"
+  },
+  {
+    "ref_image": "test_style/4d0ea1ac_ref.png",
+    "ImageA": "test_style/4d0ea1ac_a.png",
+    "ImageB": "test_style/4d0ea1ac_b.png",
+    "result": "Slide A",
+    "combo_type": "base_vs_good",
+    "source": "paper1/slide_7"
+  },
+  {
+    "ref_image": "test_style/dc5a3442_ref.png",
+    "ImageA": "test_style/dc5a3442_a.png",
+    "ImageB": "test_style/dc5a3442_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_weak",
+    "source": "paper1/slide_7"
+  },
+  {
+    "ref_image": "test_style/a3cb4a14_ref.png",
+    "ImageA": "test_style/a3cb4a14_a.png",
+    "ImageB": "test_style/a3cb4a14_b.png",
+    "result": "Slide A",
+    "combo_type": "weak_vs_good",
+    "source": "paper1/slide_7"
+  },
+  {
+    "ref_image": "test_style/963c98ac_ref.png",
+    "ImageA": "test_style/963c98ac_a.png",
+    "ImageB": "test_style/963c98ac_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_weak",
+    "source": "paper1/slide_7"
+  },
+  {
+    "ref_image": "test_style/ea144343_ref.png",
+    "ImageA": "test_style/ea144343_a.png",
+    "ImageB": "test_style/ea144343_b.png",
+    "result": "Slide A",
+    "combo_type": "weak_vs_base",
+    "source": "paper1/slide_7"
+  },
+  {
+    "ref_image": "test_style/dd73e048_ref.png",
+    "ImageA": "test_style/dd73e048_a.png",
+    "ImageB": "test_style/dd73e048_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_base",
+    "source": "paper1/slide_11"
+  },
+  {
+    "ref_image": "test_style/43068647_ref.png",
+    "ImageA": "test_style/43068647_a.png",
+    "ImageB": "test_style/43068647_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_good",
+    "source": "paper1/slide_11"
+  },
+  {
+    "ref_image": "test_style/2bc61e3d_ref.png",
+    "ImageA": "test_style/2bc61e3d_a.png",
+    "ImageB": "test_style/2bc61e3d_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_weak",
+    "source": "paper1/slide_11"
+  },
+  {
+    "ref_image": "test_style/6da2482e_ref.png",
+    "ImageA": "test_style/6da2482e_a.png",
+    "ImageB": "test_style/6da2482e_b.png",
+    "result": "Slide A",
+    "combo_type": "weak_vs_good",
+    "source": "paper1/slide_11"
+  },
+  {
+    "ref_image": "test_style/28bfcdca_ref.png",
+    "ImageA": "test_style/28bfcdca_a.png",
+    "ImageB": "test_style/28bfcdca_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_weak",
+    "source": "paper1/slide_11"
+  },
+  {
+    "ref_image": "test_style/dd3534de_ref.png",
+    "ImageA": "test_style/dd3534de_a.png",
+    "ImageB": "test_style/dd3534de_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_base",
+    "source": "paper1/slide_11"
+  },
+  {
+    "ref_image": "test_style/bcb846aa_ref.png",
+    "ImageA": "test_style/bcb846aa_a.png",
+    "ImageB": "test_style/bcb846aa_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_base",
+    "source": "paper3/slide_2"
+  },
+  {
+    "ref_image": "test_style/714ef3b5_ref.png",
+    "ImageA": "test_style/714ef3b5_a.png",
+    "ImageB": "test_style/714ef3b5_b.png",
+    "result": "Slide A",
+    "combo_type": "base_vs_good",
+    "source": "paper3/slide_2"
+  },
+  {
+    "ref_image": "test_style/4324b4b8_ref.png",
+    "ImageA": "test_style/4324b4b8_a.png",
+    "ImageB": "test_style/4324b4b8_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_weak",
+    "source": "paper3/slide_2"
+  },
+  {
+    "ref_image": "test_style/33c8b88e_ref.png",
+    "ImageA": "test_style/33c8b88e_a.png",
+    "ImageB": "test_style/33c8b88e_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_good",
+    "source": "paper3/slide_2"
+  },
+  {
+    "ref_image": "test_style/13a04773_ref.png",
+    "ImageA": "test_style/13a04773_a.png",
+    "ImageB": "test_style/13a04773_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_weak",
+    "source": "paper3/slide_2"
+  },
+  {
+    "ref_image": "test_style/cd44a8b7_ref.png",
+    "ImageA": "test_style/cd44a8b7_a.png",
+    "ImageB": "test_style/cd44a8b7_b.png",
+    "result": "Slide A",
+    "combo_type": "weak_vs_base",
+    "source": "paper3/slide_2"
+  },
+  {
+    "ref_image": "test_style/512978b3_ref.png",
+    "ImageA": "test_style/512978b3_a.png",
+    "ImageB": "test_style/512978b3_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_base",
+    "source": "paper3/slide_4"
+  },
+  {
+    "ref_image": "test_style/d5acc0d4_ref.png",
+    "ImageA": "test_style/d5acc0d4_a.png",
+    "ImageB": "test_style/d5acc0d4_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_good",
+    "source": "paper3/slide_4"
+  },
+  {
+    "ref_image": "test_style/fefa6099_ref.png",
+    "ImageA": "test_style/fefa6099_a.png",
+    "ImageB": "test_style/fefa6099_b.png",
+    "result": "Slide B",
+    "combo_type": "good_vs_weak",
+    "source": "paper3/slide_4"
+  },
+  {
+    "ref_image": "test_style/c132afde_ref.png",
+    "ImageA": "test_style/c132afde_a.png",
+    "ImageB": "test_style/c132afde_b.png",
+    "result": "Slide A",
+    "combo_type": "weak_vs_good",
+    "source": "paper3/slide_4"
+  },
+  {
+    "ref_image": "test_style/2d65d557_ref.png",
+    "ImageA": "test_style/2d65d557_a.png",
+    "ImageB": "test_style/2d65d557_b.png",
+    "result": "Slide A",
+    "combo_type": "base_vs_weak",
+    "source": "paper3/slide_4"
+  },
+  {
+    "ref_image": "test_style/9568552f_ref.png",
+    "ImageA": "test_style/9568552f_a.png",
+    "ImageB": "test_style/9568552f_b.png",
+    "result": "Slide A",
+    "combo_type": "weak_vs_base",
+    "source": "paper3/slide_4"
+  },
+  {
+    "ref_image": "test_style/a73327f9_ref.png",
+    "ImageA": "test_style/a73327f9_a.png",
+    "ImageB": "test_style/a73327f9_b.png",
+    "result": "Slide B",
+    "combo_type": "good_vs_base",
+    "source": "paper3/slide_11"
+  },
+  {
+    "ref_image": "test_style/74df9505_ref.png",
+    "ImageA": "test_style/74df9505_a.png",
+    "ImageB": "test_style/74df9505_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_good",
+    "source": "paper3/slide_11"
+  },
+  {
+    "ref_image": "test_style/a6330526_ref.png",
+    "ImageA": "test_style/a6330526_a.png",
+    "ImageB": "test_style/a6330526_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_weak",
+    "source": "paper3/slide_11"
+  },
+  {
+    "ref_image": "test_style/3346500d_ref.png",
+    "ImageA": "test_style/3346500d_a.png",
+    "ImageB": "test_style/3346500d_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_good",
+    "source": "paper3/slide_11"
+  },
+  {
+    "ref_image": "test_style/3bfbf782_ref.png",
+    "ImageA": "test_style/3bfbf782_a.png",
+    "ImageB": "test_style/3bfbf782_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_weak",
+    "source": "paper3/slide_11"
+  },
+  {
+    "ref_image": "test_style/2ee3c4d5_ref.png",
+    "ImageA": "test_style/2ee3c4d5_a.png",
+    "ImageB": "test_style/2ee3c4d5_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_base",
+    "source": "paper3/slide_11"
+  },
+  {
+    "ref_image": "test_style/5846da76_ref.png",
+    "ImageA": "test_style/5846da76_a.png",
+    "ImageB": "test_style/5846da76_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_base",
+    "source": "paper3/slide_14"
+  },
+  {
+    "ref_image": "test_style/48e008b6_ref.png",
+    "ImageA": "test_style/48e008b6_a.png",
+    "ImageB": "test_style/48e008b6_b.png",
+    "result": "Slide A",
+    "combo_type": "base_vs_good",
+    "source": "paper3/slide_14"
+  },
+  {
+    "ref_image": "test_style/5e9d9635_ref.png",
+    "ImageA": "test_style/5e9d9635_a.png",
+    "ImageB": "test_style/5e9d9635_b.png",
+    "result": "Slide B",
+    "combo_type": "good_vs_weak",
+    "source": "paper3/slide_14"
+  },
+  {
+    "ref_image": "test_style/fa52f6f5_ref.png",
+    "ImageA": "test_style/fa52f6f5_a.png",
+    "ImageB": "test_style/fa52f6f5_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_good",
+    "source": "paper3/slide_14"
+  },
+  {
+    "ref_image": "test_style/d798d4c0_ref.png",
+    "ImageA": "test_style/d798d4c0_a.png",
+    "ImageB": "test_style/d798d4c0_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_weak",
+    "source": "paper3/slide_14"
+  },
+  {
+    "ref_image": "test_style/05def86e_ref.png",
+    "ImageA": "test_style/05def86e_a.png",
+    "ImageB": "test_style/05def86e_b.png",
+    "result": "Slide A",
+    "combo_type": "weak_vs_base",
+    "source": "paper3/slide_14"
+  },
+  {
+    "ref_image": "test_style/36087064_ref.png",
+    "ImageA": "test_style/36087064_a.png",
+    "ImageB": "test_style/36087064_b.png",
+    "result": "Slide B",
+    "combo_type": "good_vs_base",
+    "source": "paper2/slide_2"
+  },
+  {
+    "ref_image": "test_style/0e86ff57_ref.png",
+    "ImageA": "test_style/0e86ff57_a.png",
+    "ImageB": "test_style/0e86ff57_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_good",
+    "source": "paper2/slide_2"
+  },
+  {
+    "ref_image": "test_style/993d5fb8_ref.png",
+    "ImageA": "test_style/993d5fb8_a.png",
+    "ImageB": "test_style/993d5fb8_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_weak",
+    "source": "paper2/slide_2"
+  },
+  {
+    "ref_image": "test_style/5bf55d6f_ref.png",
+    "ImageA": "test_style/5bf55d6f_a.png",
+    "ImageB": "test_style/5bf55d6f_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_good",
+    "source": "paper2/slide_2"
+  },
+  {
+    "ref_image": "test_style/0cb157f5_ref.png",
+    "ImageA": "test_style/0cb157f5_a.png",
+    "ImageB": "test_style/0cb157f5_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_weak",
+    "source": "paper2/slide_2"
+  },
+  {
+    "ref_image": "test_style/7d794412_ref.png",
+    "ImageA": "test_style/7d794412_a.png",
+    "ImageB": "test_style/7d794412_b.png",
+    "result": "Slide A",
+    "combo_type": "weak_vs_base",
+    "source": "paper2/slide_2"
+  },
+  {
+    "ref_image": "test_style/90a87f1e_ref.png",
+    "ImageA": "test_style/90a87f1e_a.png",
+    "ImageB": "test_style/90a87f1e_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_base",
+    "source": "paper2/slide_3"
+  },
+  {
+    "ref_image": "test_style/35d67e23_ref.png",
+    "ImageA": "test_style/35d67e23_a.png",
+    "ImageB": "test_style/35d67e23_b.png",
+    "result": "Slide A",
+    "combo_type": "base_vs_good",
+    "source": "paper2/slide_3"
+  },
+  {
+    "ref_image": "test_style/8e980731_ref.png",
+    "ImageA": "test_style/8e980731_a.png",
+    "ImageB": "test_style/8e980731_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_weak",
+    "source": "paper2/slide_3"
+  },
+  {
+    "ref_image": "test_style/ffa529f5_ref.png",
+    "ImageA": "test_style/ffa529f5_a.png",
+    "ImageB": "test_style/ffa529f5_b.png",
+    "result": "Slide A",
+    "combo_type": "weak_vs_good",
+    "source": "paper2/slide_3"
+  },
+  {
+    "ref_image": "test_style/faae9db2_ref.png",
+    "ImageA": "test_style/faae9db2_a.png",
+    "ImageB": "test_style/faae9db2_b.png",
+    "result": "Slide A",
+    "combo_type": "base_vs_weak",
+    "source": "paper2/slide_3"
+  },
+  {
+    "ref_image": "test_style/244e5f77_ref.png",
+    "ImageA": "test_style/244e5f77_a.png",
+    "ImageB": "test_style/244e5f77_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_base",
+    "source": "paper2/slide_3"
+  },
+  {
+    "ref_image": "test_style/ceab80e2_ref.png",
+    "ImageA": "test_style/ceab80e2_a.png",
+    "ImageB": "test_style/ceab80e2_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_base",
+    "source": "paper2/slide_4"
+  },
+  {
+    "ref_image": "test_style/6199335c_ref.png",
+    "ImageA": "test_style/6199335c_a.png",
+    "ImageB": "test_style/6199335c_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_good",
+    "source": "paper2/slide_4"
+  },
+  {
+    "ref_image": "test_style/068906e9_ref.png",
+    "ImageA": "test_style/068906e9_a.png",
+    "ImageB": "test_style/068906e9_b.png",
+    "result": "Slide B",
+    "combo_type": "good_vs_weak",
+    "source": "paper2/slide_4"
+  },
+  {
+    "ref_image": "test_style/9a1b9128_ref.png",
+    "ImageA": "test_style/9a1b9128_a.png",
+    "ImageB": "test_style/9a1b9128_b.png",
+    "result": "Slide A",
+    "combo_type": "weak_vs_good",
+    "source": "paper2/slide_4"
+  },
+  {
+    "ref_image": "test_style/37ff3089_ref.png",
+    "ImageA": "test_style/37ff3089_a.png",
+    "ImageB": "test_style/37ff3089_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_weak",
+    "source": "paper2/slide_4"
+  },
+  {
+    "ref_image": "test_style/c522d128_ref.png",
+    "ImageA": "test_style/c522d128_a.png",
+    "ImageB": "test_style/c522d128_b.png",
+    "result": "Slide A",
+    "combo_type": "weak_vs_base",
+    "source": "paper2/slide_4"
+  },
+  {
+    "ref_image": "test_style/46186fd1_ref.png",
+    "ImageA": "test_style/46186fd1_a.png",
+    "ImageB": "test_style/46186fd1_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_base",
+    "source": "paper2/slide_6"
+  },
+  {
+    "ref_image": "test_style/8f7c8b1a_ref.png",
+    "ImageA": "test_style/8f7c8b1a_a.png",
+    "ImageB": "test_style/8f7c8b1a_b.png",
+    "result": "Slide A",
+    "combo_type": "base_vs_good",
+    "source": "paper2/slide_6"
+  },
+  {
+    "ref_image": "test_style/f000363e_ref.png",
+    "ImageA": "test_style/f000363e_a.png",
+    "ImageB": "test_style/f000363e_b.png",
+    "result": "Slide B",
+    "combo_type": "good_vs_weak",
+    "source": "paper2/slide_6"
+  },
+  {
+    "ref_image": "test_style/dd86ad5d_ref.png",
+    "ImageA": "test_style/dd86ad5d_a.png",
+    "ImageB": "test_style/dd86ad5d_b.png",
+    "result": "Slide A",
+    "combo_type": "weak_vs_good",
+    "source": "paper2/slide_6"
+  },
+  {
+    "ref_image": "test_style/02b563dd_ref.png",
+    "ImageA": "test_style/02b563dd_a.png",
+    "ImageB": "test_style/02b563dd_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_weak",
+    "source": "paper2/slide_6"
+  },
+  {
+    "ref_image": "test_style/4929f0b2_ref.png",
+    "ImageA": "test_style/4929f0b2_a.png",
+    "ImageB": "test_style/4929f0b2_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_base",
+    "source": "paper2/slide_6"
+  },
+  {
+    "ref_image": "test_style/6738897c_ref.png",
+    "ImageA": "test_style/6738897c_a.png",
+    "ImageB": "test_style/6738897c_b.png",
+    "result": "Slide B",
+    "combo_type": "good_vs_base",
+    "source": "paper2/slide_7"
+  },
+  {
+    "ref_image": "test_style/095da7fc_ref.png",
+    "ImageA": "test_style/095da7fc_a.png",
+    "ImageB": "test_style/095da7fc_b.png",
+    "result": "Slide A",
+    "combo_type": "base_vs_good",
+    "source": "paper2/slide_7"
+  },
+  {
+    "ref_image": "test_style/3d9e8084_ref.png",
+    "ImageA": "test_style/3d9e8084_a.png",
+    "ImageB": "test_style/3d9e8084_b.png",
+    "result": "Slide B",
+    "combo_type": "good_vs_weak",
+    "source": "paper2/slide_7"
+  },
+  {
+    "ref_image": "test_style/a66c892c_ref.png",
+    "ImageA": "test_style/a66c892c_a.png",
+    "ImageB": "test_style/a66c892c_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_good",
+    "source": "paper2/slide_7"
+  },
+  {
+    "ref_image": "test_style/00ad06c1_ref.png",
+    "ImageA": "test_style/00ad06c1_a.png",
+    "ImageB": "test_style/00ad06c1_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_weak",
+    "source": "paper2/slide_7"
+  },
+  {
+    "ref_image": "test_style/87389568_ref.png",
+    "ImageA": "test_style/87389568_a.png",
+    "ImageB": "test_style/87389568_b.png",
+    "result": "Slide A",
+    "combo_type": "weak_vs_base",
+    "source": "paper2/slide_7"
+  },
+  {
+    "ref_image": "test_style/57122e44_ref.png",
+    "ImageA": "test_style/57122e44_a.png",
+    "ImageB": "test_style/57122e44_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_base",
+    "source": "paper2/slide_8"
+  },
+  {
+    "ref_image": "test_style/4c9e2ea1_ref.png",
+    "ImageA": "test_style/4c9e2ea1_a.png",
+    "ImageB": "test_style/4c9e2ea1_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_good",
+    "source": "paper2/slide_8"
+  },
+  {
+    "ref_image": "test_style/36894951_ref.png",
+    "ImageA": "test_style/36894951_a.png",
+    "ImageB": "test_style/36894951_b.png",
+    "result": "Slide B",
+    "combo_type": "good_vs_weak",
+    "source": "paper2/slide_8"
+  },
+  {
+    "ref_image": "test_style/387be912_ref.png",
+    "ImageA": "test_style/387be912_a.png",
+    "ImageB": "test_style/387be912_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_good",
+    "source": "paper2/slide_8"
+  },
+  {
+    "ref_image": "test_style/ea065892_ref.png",
+    "ImageA": "test_style/ea065892_a.png",
+    "ImageB": "test_style/ea065892_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_weak",
+    "source": "paper2/slide_8"
+  },
+  {
+    "ref_image": "test_style/e6737afc_ref.png",
+    "ImageA": "test_style/e6737afc_a.png",
+    "ImageB": "test_style/e6737afc_b.png",
+    "result": "Slide A",
+    "combo_type": "weak_vs_base",
+    "source": "paper2/slide_8"
+  },
+  {
+    "ref_image": "test_style/e8975e25_ref.png",
+    "ImageA": "test_style/e8975e25_a.png",
+    "ImageB": "test_style/e8975e25_b.png",
+    "result": "Slide B",
+    "combo_type": "good_vs_base",
+    "source": "paper2/slide_9"
+  },
+  {
+    "ref_image": "test_style/391a4c6b_ref.png",
+    "ImageA": "test_style/391a4c6b_a.png",
+    "ImageB": "test_style/391a4c6b_b.png",
+    "result": "Slide A",
+    "combo_type": "base_vs_good",
+    "source": "paper2/slide_9"
+  },
+  {
+    "ref_image": "test_style/1f9e6589_ref.png",
+    "ImageA": "test_style/1f9e6589_a.png",
+    "ImageB": "test_style/1f9e6589_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_weak",
+    "source": "paper2/slide_9"
+  },
+  {
+    "ref_image": "test_style/f3d5fe2d_ref.png",
+    "ImageA": "test_style/f3d5fe2d_a.png",
+    "ImageB": "test_style/f3d5fe2d_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_good",
+    "source": "paper2/slide_9"
+  },
+  {
+    "ref_image": "test_style/b6c4f3d2_ref.png",
+    "ImageA": "test_style/b6c4f3d2_a.png",
+    "ImageB": "test_style/b6c4f3d2_b.png",
+    "result": "Slide A",
+    "combo_type": "base_vs_weak",
+    "source": "paper2/slide_9"
+  },
+  {
+    "ref_image": "test_style/f402be43_ref.png",
+    "ImageA": "test_style/f402be43_a.png",
+    "ImageB": "test_style/f402be43_b.png",
+    "result": "Slide A",
+    "combo_type": "weak_vs_base",
+    "source": "paper2/slide_9"
+  },
+  {
+    "ref_image": "test_style/08626ca6_ref.png",
+    "ImageA": "test_style/08626ca6_a.png",
+    "ImageB": "test_style/08626ca6_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_base",
+    "source": "paper2/slide_12"
+  },
+  {
+    "ref_image": "test_style/b21f754d_ref.png",
+    "ImageA": "test_style/b21f754d_a.png",
+    "ImageB": "test_style/b21f754d_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_good",
+    "source": "paper2/slide_12"
+  },
+  {
+    "ref_image": "test_style/f3dfa423_ref.png",
+    "ImageA": "test_style/f3dfa423_a.png",
+    "ImageB": "test_style/f3dfa423_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_weak",
+    "source": "paper2/slide_12"
+  },
+  {
+    "ref_image": "test_style/ddea108e_ref.png",
+    "ImageA": "test_style/ddea108e_a.png",
+    "ImageB": "test_style/ddea108e_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_good",
+    "source": "paper2/slide_12"
+  },
+  {
+    "ref_image": "test_style/efc7a277_ref.png",
+    "ImageA": "test_style/efc7a277_a.png",
+    "ImageB": "test_style/efc7a277_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_weak",
+    "source": "paper2/slide_12"
+  },
+  {
+    "ref_image": "test_style/58254039_ref.png",
+    "ImageA": "test_style/58254039_a.png",
+    "ImageB": "test_style/58254039_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_base",
+    "source": "paper2/slide_12"
+  },
+  {
+    "ref_image": "test_style/8ab27010_ref.png",
+    "ImageA": "test_style/8ab27010_a.png",
+    "ImageB": "test_style/8ab27010_b.png",
+    "result": "Slide B",
+    "combo_type": "good_vs_base",
+    "source": "paper2/slide_13"
+  },
+  {
+    "ref_image": "test_style/14d3c53c_ref.png",
+    "ImageA": "test_style/14d3c53c_a.png",
+    "ImageB": "test_style/14d3c53c_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_good",
+    "source": "paper2/slide_13"
+  },
+  {
+    "ref_image": "test_style/c41dc363_ref.png",
+    "ImageA": "test_style/c41dc363_a.png",
+    "ImageB": "test_style/c41dc363_b.png",
+    "result": "Slide A",
+    "combo_type": "good_vs_weak",
+    "source": "paper2/slide_13"
+  },
+  {
+    "ref_image": "test_style/cbf99b52_ref.png",
+    "ImageA": "test_style/cbf99b52_a.png",
+    "ImageB": "test_style/cbf99b52_b.png",
+    "result": "Slide A",
+    "combo_type": "weak_vs_good",
+    "source": "paper2/slide_13"
+  },
+  {
+    "ref_image": "test_style/efedef87_ref.png",
+    "ImageA": "test_style/efedef87_a.png",
+    "ImageB": "test_style/efedef87_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_weak",
+    "source": "paper2/slide_13"
+  },
+  {
+    "ref_image": "test_style/22875f26_ref.png",
+    "ImageA": "test_style/22875f26_a.png",
+    "ImageB": "test_style/22875f26_b.png",
+    "result": "Slide A",
+    "combo_type": "weak_vs_base",
+    "source": "paper2/slide_13"
+  },
+  {
+    "ref_image": "test_style/067927d1_ref.png",
+    "ImageA": "test_style/067927d1_a.png",
+    "ImageB": "test_style/067927d1_b.png",
+    "result": "Slide B",
+    "combo_type": "good_vs_base",
+    "source": "paper2/slide_14"
+  },
+  {
+    "ref_image": "test_style/eddd45c0_ref.png",
+    "ImageA": "test_style/eddd45c0_a.png",
+    "ImageB": "test_style/eddd45c0_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_good",
+    "source": "paper2/slide_14"
+  },
+  {
+    "ref_image": "test_style/a4ceb6af_ref.png",
+    "ImageA": "test_style/a4ceb6af_a.png",
+    "ImageB": "test_style/a4ceb6af_b.png",
+    "result": "Slide B",
+    "combo_type": "good_vs_weak",
+    "source": "paper2/slide_14"
+  },
+  {
+    "ref_image": "test_style/568383b3_ref.png",
+    "ImageA": "test_style/568383b3_a.png",
+    "ImageB": "test_style/568383b3_b.png",
+    "result": "Slide B",
+    "combo_type": "weak_vs_good",
+    "source": "paper2/slide_14"
+  },
+  {
+    "ref_image": "test_style/157562bc_ref.png",
+    "ImageA": "test_style/157562bc_a.png",
+    "ImageB": "test_style/157562bc_b.png",
+    "result": "Slide B",
+    "combo_type": "base_vs_weak",
+    "source": "paper2/slide_14"
+  },
+  {
+    "ref_image": "test_style/68000aa6_ref.png",
+    "ImageA": "test_style/68000aa6_a.png",
+    "ImageB": "test_style/68000aa6_b.png",
+    "result": "Slide A",
+    "combo_type": "weak_vs_base",
+    "source": "paper2/slide_14"
+  }
+]
