@@ -42,7 +42,7 @@ DEFICIENCY_CATEGORIES = {
         "Improper Image Sizing",
         "Inconsistent Visual Style Usage"
     ]
-}
+} # to fix
 
 DEFICIENCY_TO_CATEGORY_MAP = {
     deficiency: category

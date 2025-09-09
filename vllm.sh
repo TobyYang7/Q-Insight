@@ -1,7 +1,7 @@
 uv venv vllm_env
 source vllm_env/bin/activate
 uv pip install vllm
-MODEL_PATH="/Q-Insight/src/open-r1-multimodal/output/eval_deficiency_f1_0.6_ep_1_new"
+MODEL_PATH="Qwen/Qwen2.5-VL-7B-Instruct"
 
 uv run python -m vllm.entrypoints.openai.api_server \
   --model "$MODEL_PATH" \
@@ -11,4 +11,4 @@ uv run python -m vllm.entrypoints.openai.api_server \
   --enforce-eager \
   --trust-remote-code \
   --tensor-parallel-size 1 \
-  --pipeline-parallel-size 8
+  --pipeline-parallel-size 8 \

@@ -6,7 +6,7 @@ pip install nvitop
 pip install uv
 uv venv
 
-cd src/open-r1-multimodal 
+cd train
 uv pip install -e ".[dev]"
 
 # Addtional modules
