@@ -251,9 +251,9 @@ def calculate_metrics(results: List[Dict]) -> Dict:
 
 def main():
     parser = argparse.ArgumentParser(description="Test comparison task with API")
-    parser.add_argument("--test_data", type=str, default="dataset/compare/test_comparison.json",
+    parser.add_argument("--test_data", type=str, default="dataset/compare/converted_annotations.json",
                         help="Path to test data JSON file")
-    parser.add_argument("--output_file", type=str, default="compare_result/qwen-vl-32b.json",
+    parser.add_argument("--output_file", type=str, default="compare_result/qwen-vl-7b_style.json",
                         help="Output file for results")
     parser.add_argument("--num_workers", type=int, default=50,
                         help="Number of concurrent API workers")

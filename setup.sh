@@ -6,6 +6,9 @@ pip install nvitop
 pip install uv
 uv venv
 
+# create .env file
+cp env-template .env
+
 cd train
 uv pip install -e ".[dev]"
 

@@ -1,7 +1,7 @@
 set -x
 
 export DEBUG_MODE="true"
-RUN_NAME="eval_comparison_ep1_dp_1500"
+RUN_NAME="eval_comparison_ep1_dp_1500_new"
 export LOG_PATH="./debug_log_${RUN_NAME}.txt"
 
 # Dist args (single node by default)

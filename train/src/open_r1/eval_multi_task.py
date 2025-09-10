@@ -98,6 +98,9 @@ class GRPOScriptArguments(ScriptArguments):
     score_prompt_file: Optional[str] = field(
         default=None, metadata={"help": "Optional text file path that contains the evaluation prompt for scoring"}
     )
+    deficiency_f1_threshold: Optional[float] = field(
+        default=0.7, metadata={"help": "Threshold for deficiency category-level F1 to grant reward"}
+    )
 
 
 # Load prompts from files
@@ -137,6 +140,7 @@ class LazyMultiTaskDataset(Dataset):
 
         score_yaml_path = getattr(script_args, "dataset_score", None)
         if score_yaml_path:
+            print(f"Loading score samples from {score_yaml_path}")
             self.score_samples = self._load_samples_from_yaml(score_yaml_path)
 
         deficiency_yaml_path = getattr(script_args, "dataset_deficiency", None)
@@ -214,11 +218,15 @@ class LazyMultiTaskDataset(Dataset):
         if task_type == "score":
             sample["prompt_text"] = self.score_prompt_text
             sol = example.get("score", None) or example.get("gt_score_norm", None)
+            # When score is a dict with multiple dimensions, use only the overall value
+            if isinstance(sol, dict):
+                sol = sol.get("overall")
             sample["solution"] = sol
             sample["score_reward_threshold"] = self.script_args.score_reward_threshold
         else:  # deficiency task
             sample["prompt_text"] = self.deficiency_prompt_text
             sample["solution"] = example.get("deficiencies", [])
+            sample["deficiency_f1_threshold"] = self.script_args.deficiency_f1_threshold
 
         image_root = example.get("image_root")
         image_rel = example.get("image") or example.get("image_path")
@@ -262,27 +270,28 @@ class LazyMultiTaskDataset(Dataset):
 class DeficiencyCategoryBooleans(BaseModel):
     composition_layout: bool
     typography: bool
-    color: bool
     imagery_visualizations: bool
 
 
 # --- MODIFIED: Deficiency categories defined globally for reuse ---
 DEFICIENCY_CATEGORIES = {
     "Composition & Layout": [
-        "Poor Visual Hierarchy", "Cluttered Layout", "Unbalanced Space Distribution",
-        "Content Alignment Issues", "Content Overflow/Cut-off", "Occluded Content"
+        "Poor Visual Hierarchy",
+        "Content Alignment Issues",
+        "Content Overflow/Cut-off",
+        "Unbalanced Space Distribution"
     ],
     "Typography": [
-        "Illegible Typeface Selection or Usage", "Improper Font Sizing", "Excessive Text Volume",
-        "Improper Text Styling", "Improper Line/Character Spacing", "Poor Text Hierarchy"
-    ],
-    "Color": [
-        "Insufficient Color Contrast for Readability", "Excessive or Inconsistent Color Usage",
-        "Inappropriate or Mismatched Color Combinations"
+        "Illegible Typeface Selection or Usage",
+        "Improper Font Sizing",
+        "Excessive Text Volume",
+        "Improper Line/Character Spacing"
     ],
     "Imagery & Visualizations": [
-        "Irrelevant Visual Content", "Poor Image Quality/Editing", "Improper Image Sizing",
-        "Inconsistent Visual Style Usage"
+        "Irrelevant Visual Content",
+        "Improper Image Sizing",
+        "Inconsistent Visual Style Usage",
+        "Inappropriate or Mismatched Color Combinations"
     ]
 }
 
@@ -348,7 +357,6 @@ def classify_deficiencies(model_output_text: str) -> List[str]:
             category_bools = {
                 "Composition & Layout": getattr(result, "composition_layout", False),
                 "Typography": getattr(result, "typography", False),
-                "Color": getattr(result, "color", False),
                 "Imagery & Visualizations": getattr(result, "imagery_visualizations", False),
             }
 
@@ -362,7 +370,7 @@ def classify_deficiencies(model_output_text: str) -> List[str]:
     return []
 
 
-def verify_deficiency(completion_content, ground_truth_deficiencies, **kwargs):
+def verify_deficiency(completion_content, ground_truth_deficiencies, f1_threshold: float = 0.7, **kwargs):
     """
     Verifies the model's output based on the F1 score of deficiency CATEGORIES.
     
@@ -423,7 +431,7 @@ def verify_deficiency(completion_content, ground_truth_deficiencies, **kwargs):
         f1_score = 2 * (precision * recall) / (precision + recall)
 
     # --- Determine the final reward based on the F1 score threshold ---
-    return 1.0 if f1_score > 0.7 else 0.0
+    return 1.0 if f1_score > f1_threshold else 0.0
 
 
 def accuracy_reward(completions, solution, task, image_path=None, score_reward_threshold=None, **kwargs):
@@ -444,6 +452,12 @@ def accuracy_reward(completions, solution, task, image_path=None, score_reward_t
     if not any(isinstance(t, float) for t in subsampled_thresholds):
         subsampled_thresholds = [0.35] * len(subsampled_solutions)
 
+    # Deficiency F1 thresholds (may arrive via batch kwargs)
+    def_f1_thresholds_in = kwargs.get("deficiency_f1_threshold")
+    subsampled_def_f1_thresholds = (
+        def_f1_thresholds_in[::max(1, num_gen)] if isinstance(def_f1_thresholds_in, (list, tuple)) else [def_f1_thresholds_in] * len(subsampled_solutions)
+    ) if def_f1_thresholds_in is not None else [0.7] * len(subsampled_solutions)
+
     for i, (content, true_sol, task_type) in enumerate(zip(contents, subsampled_solutions, subsampled_tasks)):
         reward = 0.0
         try:
@@ -460,7 +474,8 @@ def accuracy_reward(completions, solution, task, image_path=None, score_reward_t
                             reward = 1.0
 
                 elif task_type == 'deficiency':
-                    reward = verify_deficiency(content, true_sol)
+                    f1_thr = subsampled_def_f1_thresholds[i] if i < len(subsampled_def_f1_thresholds) else 0.7
+                    reward = verify_deficiency(content, true_sol, f1_threshold=f1_thr)
 
         except Exception:
             reward = 0.0
@@ -481,14 +496,42 @@ def accuracy_reward(completions, solution, task, image_path=None, score_reward_t
 
                     if subsampled_tasks[i] == 'deficiency':
                         try:
-                            # --- MODIFIED: Update log message for clarity ---
-                            classified_categories = classify_deficiencies(content)
-                            gt_deficiency_names = [item.get("deficiency") for item in subsampled_solutions[i] if item.get("deficiency")]
+                            # Extract answer content
+                            match_answer_dbg = re.search(answer_tag_pattern, content, re.DOTALL)
+                            answer_content_dbg = match_answer_dbg.group(1).strip() if match_answer_dbg else content
 
-                            f.write(f"LLM-Classified Categories: {classified_categories}\n")
-                            f.write(f"Ground Truth Deficiencies: {gt_deficiency_names}\n")
+                            # Predicted categories via LLM
+                            predicted_categories = set(classify_deficiencies(answer_content_dbg))
+
+                            # Ground truth categories via mapping
+                            gt_specific_deficiencies = {
+                                item.get("deficiency")
+                                for item in subsampled_solutions[i]
+                                if item.get("deficiency") is not None
+                            }
+                            gt_categories = {
+                                DEFICIENCY_TO_CATEGORY.get(defi)
+                                for defi in gt_specific_deficiencies
+                                if DEFICIENCY_TO_CATEGORY.get(defi) is not None
+                            }
+
+                            # Compute F1 (same as verify_deficiency)
+                            if not gt_categories and not predicted_categories:
+                                f1_score_dbg = 1.0
+                            elif not gt_categories or not predicted_categories:
+                                f1_score_dbg = 0.0
+                            else:
+                                tp_dbg = len(gt_categories.intersection(predicted_categories))
+                                precision_dbg = tp_dbg / len(predicted_categories) if len(predicted_categories) > 0 else 0.0
+                                recall_dbg = tp_dbg / len(gt_categories) if len(gt_categories) > 0 else 0.0
+                                f1_score_dbg = 0.0 if (precision_dbg + recall_dbg) == 0 else 2 * (precision_dbg * recall_dbg) / (precision_dbg + recall_dbg)
+
+                            # Write detailed logs
+                            f.write(f"Predicted Categories: {sorted(list(predicted_categories))}\n")
+                            f.write(f"GT Categories: {sorted(list(gt_categories))}\n")
+                            f.write(f"F1(Category-level): {f1_score_dbg:.4f}\n")
                         except Exception as e:
-                            f.write(f"Failed to classify deficiencies for logging: {e}\n")
+                            f.write(f"Failed deficiency detailed logging: {e}\n")
 
                     f.write(f"{'=' * 40}\n")
         except Exception:

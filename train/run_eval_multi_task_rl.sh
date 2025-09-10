@@ -1,7 +1,7 @@
 set -x
 
 export DEBUG_MODE="true"
-RUN_NAME="eval_deficiency_f1_0.6_ep_1_new"
+RUN_NAME="eval_deficiency_ep2_f1_0.7_s_0.25"
 export LOG_PATH="./debug_log_${RUN_NAME}.txt"
 
 # Dist args (single node by default)
@@ -46,13 +46,14 @@ uv run torchrun --nproc_per_node=8 \
     --data_seed 42 \
     --report_to wandb \
     --attn_implementation flash_attention_2 \
-    --num_train_epochs 1 \
+    --num_train_epochs 2 \
     --run_name ${RUN_NAME} \
     --save_steps 200 \
-    --score_reward_threshold 0.5 \
+    --score_reward_threshold 0.25 \
     --beta 0.001 \
     --deepspeed local_scripts/zero2.json \
-    --dataset_deficiency data_config/slideaudit.yaml \
-    # --dataset_score data_config/iqa_score_custom.yaml \
+    --dataset_deficiency data_config/slide_deficiency.yaml \
+    --dataset_score data_config/slide_score.yaml \
+    --deficiency_f1_threshold 0.7 \
 
 

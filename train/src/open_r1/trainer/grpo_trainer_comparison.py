@@ -484,7 +484,7 @@ class Qwen2VLGRPOTrainerComparison(Trainer):
         device = self.accelerator.device
 
         # fix: Helper function to resize image and convert to base64
-        def process_image_to_base64(image_path, max_long_side=720, min_side=28):
+        def process_image_to_base64(image_path, max_long_side=640, min_side=28):
             try:
                 img = PIL.Image.open(image_path).convert("RGB")
                 w, h = img.size

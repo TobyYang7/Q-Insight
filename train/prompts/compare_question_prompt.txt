@@ -3,4 +3,4 @@ Compare the two enhanced slides and determine which is superior, or if they are 
 2) Overall Perceptual Quality: How visually appealing and free of artifacts is the slide?
 3) Clarity and Readability: Are the text and visuals sharp and easy to understand?
 4) Effectiveness of Communication: How effectively does the slide convey its intended message?
-Return **exactly one** of: Slide A, Slide B.
+Your answer should be **exactly one** of: Slide A, Slide B.

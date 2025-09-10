@@ -271,12 +271,21 @@ def score_reward(completions, solution, **kwargs):
             )
             now = datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f")
             log_path = os.getenv("LOG_PATH", "comparison_reward.log")
+            
+            # Extract image paths from kwargs
+            ref_image_path = kwargs.get('ref_image_path', [''])[idx] if 'ref_image_path' in kwargs else ''
+            imageA_path = kwargs.get('imageA_path', [''])[idx] if 'imageA_path' in kwargs else ''
+            imageB_path = kwargs.get('imageB_path', [''])[idx] if 'imageB_path' in kwargs else ''
+            
             with open(log_path, "a", encoding="utf-8") as f:
                 f.write(f"----- {now} Rank:{rank} Index:{idx} -----\n")
                 f.write(f"Expected: {true_sol!r}\n")
                 f.write(f"Answer:   {answer_text!r}\n")
                 f.write(f"Content: {content}\n")
-                f.write(f"Reward:   {reward}\n\n")
+                f.write(f"Reward:   {reward}\n")
+                f.write(f"Ref Image Path: {ref_image_path}\n")
+                f.write(f"Image A Path: {imageA_path}\n")
+                f.write(f"Image B Path: {imageB_path}\n\n")
 
     return rewards
 
