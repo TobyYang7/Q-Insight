@@ -1,7 +1,7 @@
 set -x
 
 export DEBUG_MODE="true"
-RUN_NAME="eval_multi_gpt_ep2_f1_0.7_s_0.25"
+RUN_NAME="eval_multi_gpt_ep1_f1_0.7_s_0.25_compare"
 export LOG_PATH="./debug_log_${RUN_NAME}.txt"
 
 # Dist args (single node by default)
@@ -46,7 +46,7 @@ uv run torchrun --nproc_per_node=8 \
     --data_seed 42 \
     --report_to wandb \
     --attn_implementation flash_attention_2 \
-    --num_train_epochs 2 \
+    --num_train_epochs 1 \
     --run_name ${RUN_NAME} \
     --save_steps 200 \
     --score_reward_threshold 0.25 \
@@ -54,6 +54,8 @@ uv run torchrun --nproc_per_node=8 \
     --deepspeed local_scripts/zero2.json \
     --dataset_deficiency data_config/slide_deficiency.yaml \
     --dataset_score data_config/slide_score.yaml \
+    --dataset_comparison data_config/slide_compare.yaml \
     --deficiency_f1_threshold 0.7 \
+    --reward_funcs accuracy format comparison \
 
 

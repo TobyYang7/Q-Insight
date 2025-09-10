@@ -95,6 +95,9 @@ class GRPOScriptArguments(ScriptArguments):
     dataset_deficiency: Optional[str] = field(
         default=None, metadata={"help": "YAML file path for the deficiency detection dataset"}
     )
+    dataset_comparison: Optional[str] = field(
+        default=None, metadata={"help": "YAML file path for the comparison dataset"}
+    )
     score_prompt_file: Optional[str] = field(
         default=None, metadata={"help": "Optional text file path that contains the evaluation prompt for scoring"}
     )
@@ -120,16 +123,18 @@ SYSTEM_PROMPT_FILE = os.path.join(PROMPTS_DIR, "system_prompt.txt")
 SCORE_QUESTION_PROMPT_FILE = os.path.join(PROMPTS_DIR, "score_question_prompt.txt")
 DEFICIENCY_PROMPT_FILE = os.path.join(PROMPTS_DIR, "deficiency_prompt.txt")
 CLASSIFY_CATEGORIES_PROMPT_FILE = os.path.join(PROMPTS_DIR, "classify_categories_prompt.txt")
+COMPARE_QUESTION_PROMPT_FILE = os.path.join(PROMPTS_DIR, "compare_question_prompt.txt")
 
 # Load prompts from files
 SYSTEM_PROMPT = load_prompt_from_file(SYSTEM_PROMPT_FILE)
 SCORE_QUESTION_PROMPT = load_prompt_from_file(SCORE_QUESTION_PROMPT_FILE)
 DEFICIENCY_PROMPT = load_prompt_from_file(DEFICIENCY_PROMPT_FILE)
 CLASSIFY_CATEGORIES_PROMPT = load_prompt_from_file(CLASSIFY_CATEGORIES_PROMPT_FILE)
+COMPARE_QUESTION_PROMPT = load_prompt_from_file(COMPARE_QUESTION_PROMPT_FILE)
 
 
 class LazyMultiTaskDataset(Dataset):
-    """Multi-task dataset that loads samples for scoring and deficiency detection."""
+    """Multi-task dataset that loads samples for scoring, deficiency detection, and comparison."""
 
     def __init__(self, script_args: GRPOScriptArguments):
         super().__init__()
@@ -137,6 +142,7 @@ class LazyMultiTaskDataset(Dataset):
 
         self.score_samples = []
         self.deficiency_samples = []
+        self.comparison_samples = []
 
         score_yaml_path = getattr(script_args, "dataset_score", None)
         if score_yaml_path:
@@ -145,12 +151,18 @@ class LazyMultiTaskDataset(Dataset):
 
         deficiency_yaml_path = getattr(script_args, "dataset_deficiency", None)
         if deficiency_yaml_path:
+            print(f"Loading deficiency samples from {deficiency_yaml_path}")
             self.deficiency_samples = self._load_samples_from_yaml(deficiency_yaml_path)
 
-        if not self.score_samples and not self.deficiency_samples:
-            raise ValueError("Please provide at least one dataset: --dataset_score or --dataset_deficiency")
+        comparison_yaml_path = getattr(script_args, "dataset_comparison", None)
+        if comparison_yaml_path:
+            print(f"Loading comparison samples from {comparison_yaml_path}")
+            self.comparison_samples = self._load_samples_from_yaml(comparison_yaml_path)
 
-        self.total_len = len(self.score_samples) + len(self.deficiency_samples)
+        if not self.score_samples and not self.deficiency_samples and not self.comparison_samples:
+            raise ValueError("Please provide at least one dataset: --dataset_score, --dataset_deficiency, or --dataset_comparison")
+
+        self.total_len = len(self.score_samples) + len(self.deficiency_samples) + len(self.comparison_samples)
 
         prompt_file = getattr(script_args, "score_prompt_file", None)
         if prompt_file and os.path.exists(prompt_file):
@@ -160,6 +172,7 @@ class LazyMultiTaskDataset(Dataset):
             self.score_prompt_text = SCORE_QUESTION_PROMPT
 
         self.deficiency_prompt_text = DEFICIENCY_PROMPT
+        self.comparison_prompt_text = COMPARE_QUESTION_PROMPT
 
     def _load_samples_from_yaml(self, data_path: str):
         samples = []
@@ -208,10 +221,14 @@ class LazyMultiTaskDataset(Dataset):
         if index < len(self.score_samples):
             task_type = "score"
             example = self.score_samples[index]
-        else:
+        elif index < len(self.score_samples) + len(self.deficiency_samples):
             task_type = "deficiency"
             deficiency_index = index - len(self.score_samples)
             example = self.deficiency_samples[deficiency_index]
+        else:
+            task_type = "comparison"
+            comparison_index = index - len(self.score_samples) - len(self.deficiency_samples)
+            example = self.comparison_samples[comparison_index]
 
         sample = {"task": task_type}
 
@@ -223,47 +240,85 @@ class LazyMultiTaskDataset(Dataset):
                 sol = sol.get("overall")
             sample["solution"] = sol
             sample["score_reward_threshold"] = self.script_args.score_reward_threshold
-        else:  # deficiency task
+        elif task_type == "deficiency":
             sample["prompt_text"] = self.deficiency_prompt_text
             sample["solution"] = example.get("deficiencies", [])
             sample["deficiency_f1_threshold"] = self.script_args.deficiency_f1_threshold
+        else:  # comparison task
+            sample["prompt_text"] = self.comparison_prompt_text
+            sample["solution"] = example.get("result")
+            sample["system_prompt"] = SYSTEM_PROMPT
+            sample["custom_question"] = self.comparison_prompt_text
 
-        image_root = example.get("image_root")
-        image_rel = example.get("image") or example.get("image_path")
-        if image_rel is None:
-            raise KeyError("Neither 'image' nor 'image_path' found in sample")
-
-        image_path = os.path.join(image_root, image_rel) if image_root else image_rel
-
-        while not os.path.exists(image_path):
-            print(f"Warning: Image {image_path} not found, trying another random sample of the same type")
-            if task_type == "score":
-                new_index = random.randint(0, len(self.score_samples) - 1)
-                example = self.score_samples[new_index]
-            else:
-                new_index = random.randint(0, len(self.deficiency_samples) - 1)
-                example = self.deficiency_samples[new_index]
-
+        if task_type == "comparison":
+            # Handle comparison task with multiple images
             image_root = example.get("image_root")
-            next_rel = example.get("image") or example.get("image_path", "")
-            image_path = os.path.join(image_root, next_rel) if image_root else next_rel
+            
+            # Reference image
+            ref_rel = example.get("ref_image")
+            ref_fp = os.path.join(image_root, ref_rel) if image_root else ref_rel
+            if not os.path.exists(ref_fp):
+                raise FileNotFoundError(f"Reference image not found: {ref_fp}")
+            sample["ref_image"] = Image.open(ref_fp).convert("RGB")
+            sample["ref_image_path"] = ref_fp
+            
+            # Slide A
+            A_rel = example.get("ImageA")
+            A_fp = os.path.join(image_root, A_rel) if image_root else A_rel
+            if not os.path.exists(A_fp):
+                raise FileNotFoundError(f"Slide A not found: {A_fp}")
+            sample["imageA"] = Image.open(A_fp).convert("RGB")
+            sample["imageA_path"] = A_fp
+            
+            # Slide B
+            B_rel = example.get("ImageB")
+            B_fp = os.path.join(image_root, B_rel) if image_root else B_rel
+            if not os.path.exists(B_fp):
+                raise FileNotFoundError(f"Slide B not found: {B_fp}")
+            sample["imageB"] = Image.open(B_fp).convert("RGB")
+            sample["imageB_path"] = B_fp
 
-        image = Image.open(image_path).convert("RGB")
-        sample["image"] = image
-        sample["image_path"] = image_path
+            # For comparison tasks, we don't use the standard prompt format
+            # The trainer will handle the special format
+            return sample
+        else:
+            # Handle single image tasks (score and deficiency)
+            image_root = example.get("image_root")
+            image_rel = example.get("image") or example.get("image_path")
+            if image_rel is None:
+                raise KeyError("Neither 'image' nor 'image_path' found in sample")
 
-        sample["prompt"] = [
-            {"role": "system", "content": [{"type": "text", "text": SYSTEM_PROMPT}]},
-            {
-                "role": "user",
-                "content": [
-                    {"type": "image"},
-                    {"type": "text", "text": sample["prompt_text"]},
-                ],
-            },
-        ]
+            image_path = os.path.join(image_root, image_rel) if image_root else image_rel
 
-        return sample
+            while not os.path.exists(image_path):
+                print(f"Warning: Image {image_path} not found, trying another random sample of the same type")
+                if task_type == "score":
+                    new_index = random.randint(0, len(self.score_samples) - 1)
+                    example = self.score_samples[new_index]
+                else:  # deficiency
+                    new_index = random.randint(0, len(self.deficiency_samples) - 1)
+                    example = self.deficiency_samples[new_index]
+
+                image_root = example.get("image_root")
+                next_rel = example.get("image") or example.get("image_path", "")
+                image_path = os.path.join(image_root, next_rel) if image_root else next_rel
+
+            image = Image.open(image_path).convert("RGB")
+            sample["image"] = image
+            sample["image_path"] = image_path
+
+            sample["prompt"] = [
+                {"role": "system", "content": [{"type": "text", "text": SYSTEM_PROMPT}]},
+                {
+                    "role": "user",
+                    "content": [
+                        {"type": "image"},
+                        {"type": "text", "text": sample["prompt_text"]},
+                    ],
+                },
+            ]
+
+            return sample
 
 
 # --- ADDED: Pydantic model for structured LLM output ---
@@ -476,6 +531,11 @@ def accuracy_reward(completions, solution, task, image_path=None, score_reward_t
                 elif task_type == 'deficiency':
                     f1_thr = subsampled_def_f1_thresholds[i] if i < len(subsampled_def_f1_thresholds) else 0.7
                     reward = verify_deficiency(content, true_sol, f1_threshold=f1_thr)
+                
+                elif task_type == 'comparison':
+                    # For comparison tasks, use the comparison reward function
+                    comparison_rewards = comparison_reward([completion], [true_sol], [task_type], **kwargs)
+                    reward = comparison_rewards[0] if comparison_rewards else 0.0
 
         except Exception:
             reward = 0.0
@@ -601,9 +661,73 @@ def format_reward(completions, solution, task, **kwargs):
     return rewards
 
 
+def comparison_reward(completions, solution, task, **kwargs):
+    """
+    For comparison tasks only:
+      - Extract text from the <answer> tag.
+      - If it exactly matches the solution (e.g., "Slide A" or "Slide B"), assign a reward of 1.0; otherwise, 0.0.
+      - Preserve DEBUG logs by writing each match result to a file.
+    """
+    contents = [c[0]["content"] for c in completions]
+    rewards = []
+    answer_tag_pattern = r'<answer>(.*?)</answer>'
+
+    # Subsample solution and task to match the number of completions
+    num_gen = len(solution) // len(contents) if len(contents) > 0 else 1
+    subsampled_solutions = solution[::max(1, num_gen)]
+    subsampled_tasks = task[::max(1, num_gen)]
+
+    for idx, (content, true_sol, task_type) in enumerate(zip(contents, subsampled_solutions, subsampled_tasks)):
+        reward = 0.0
+        answer_text = ""
+        
+        if task_type == 'comparison':
+            try:
+                m = re.search(answer_tag_pattern, content, re.DOTALL)
+                if m:
+                    answer_text = m.group(1).strip()
+                    pat = re.compile(rf"^{re.escape(true_sol)}$")
+                    if pat.fullmatch(answer_text):
+                        reward = 1.0
+            except Exception as e:
+                print(f"Error in computing comparison reward at idx {idx}:", e)
+        else:
+            # For non-comparison tasks, return 0 reward
+            reward = 0.0
+
+        rewards.append(reward)
+
+        # DEBUG logging
+        if os.getenv("DEBUG_MODE") == "true" and task_type == 'comparison':
+            try:
+                current_rank = torch.distributed.get_rank() if torch.distributed.is_available() and torch.distributed.is_initialized() else 0
+                current_time = datetime.now().strftime("%d-%H-%M-%S-%f")
+                log_path = os.getenv("LOG_PATH", "./debug_log_comparison.txt")
+                
+                # Extract image paths from kwargs
+                ref_image_path = kwargs.get('ref_image_path', [''])[idx] if 'ref_image_path' in kwargs else ''
+                imageA_path = kwargs.get('imageA_path', [''])[idx] if 'imageA_path' in kwargs else ''
+                imageB_path = kwargs.get('imageB_path', [''])[idx] if 'imageB_path' in kwargs else ''
+                
+                with open(log_path, "a", encoding="utf-8") as f:
+                    f.write(f"----- {current_time} Rank:{current_rank} Index:{idx} -----\n")
+                    f.write(f"Expected: {true_sol!r}\n")
+                    f.write(f"Answer:   {answer_text!r}\n")
+                    f.write(f"Content: {content}\n")
+                    f.write(f"Reward:   {reward}\n")
+                    f.write(f"Ref Image Path: {ref_image_path}\n")
+                    f.write(f"Image A Path: {imageA_path}\n")
+                    f.write(f"Image B Path: {imageB_path}\n\n")
+            except Exception:
+                pass
+
+    return rewards
+
+
 reward_funcs_registry = {
     "accuracy": accuracy_reward,
     "format": format_reward,
+    "comparison": comparison_reward,
 }
 
 
@@ -612,6 +736,7 @@ def main(script_args, training_args, model_args):
 
     dataset = LazyMultiTaskDataset(script_args)
 
+    # Use the unified trainer that handles all task types
     trainer_cls = Qwen2VLGRPOTrainer
     trainer = trainer_cls(
         model=model_args.model_name_or_path,

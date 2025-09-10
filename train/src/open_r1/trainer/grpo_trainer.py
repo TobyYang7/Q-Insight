@@ -483,6 +483,17 @@ class Qwen2VLGRPOTrainer(Trainer):
 
     def _generate_and_score_completions(self, inputs: dict[str, Union[torch.Tensor, Any]], model) -> dict[str, Union[torch.Tensor, Any]]:
         device = self.accelerator.device
+        
+        # Check if this is a comparison task by looking at the first input
+        is_comparison_task = "ref_image_path" in inputs[0] and "imageA_path" in inputs[0] and "imageB_path" in inputs[0]
+        
+        if is_comparison_task:
+            return self._generate_and_score_comparison_completions(inputs, model)
+        else:
+            return self._generate_and_score_single_image_completions(inputs, model)
+    
+    def _generate_and_score_single_image_completions(self, inputs: dict[str, Union[torch.Tensor, Any]], model) -> dict[str, Union[torch.Tensor, Any]]:
+        device = self.accelerator.device
         prompts = [x["prompt"] for x in inputs]
         prompts_text = [maybe_apply_chat_template(example, self.processing_class)["prompt"] for example in inputs]
         
@@ -609,6 +620,234 @@ class Qwen2VLGRPOTrainer(Trainer):
         # Compute the rewards
         # No need to duplicate prompts as we're not generating multiple completions per prompt
 
+        rewards_per_func = torch.zeros(len(prompts), len(self.reward_funcs), device=device)
+        for i, (reward_func, reward_processing_class) in enumerate(
+            zip(self.reward_funcs, self.reward_processing_classes)
+        ):
+            if isinstance(reward_func, PreTrainedModel):
+                if is_conversational(inputs[0]):
+                    messages = [{"messages": p + c} for p, c in zip(prompts, completions)]
+                    texts = [apply_chat_template(x, reward_processing_class)["text"] for x in messages]
+                else:
+                    texts = [p + c for p, c in zip(prompts, completions)]
+                reward_inputs = reward_processing_class(
+                    texts, return_tensors="pt", padding=True, padding_side="right", add_special_tokens=False
+                )
+                reward_inputs = super()._prepare_inputs(reward_inputs)
+                with torch.inference_mode():
+                    rewards_per_func[:, i] = reward_func(**reward_inputs).logits[:, 0]  # Shape (B*G,)
+            else:
+                # Repeat all input columns (but "prompt" and "completion") to match the number of generations
+                reward_kwargs = {key: [] for key in inputs[0].keys() if key not in ["prompt", "completion"]}
+                for key in reward_kwargs:
+                    for example in inputs:
+                        # Repeat each value in the column for `num_generations` times
+                        reward_kwargs[key].extend([example[key]] * self.num_generations)
+                output_reward_func = reward_func(prompts=prompts, completions=completions, **reward_kwargs)
+                rewards_per_func[:, i] = torch.tensor(output_reward_func, dtype=torch.float32, device=device)
+
+        # Gather rewards across processes
+        rewards_per_func = self.accelerator.gather(rewards_per_func)
+        
+        # Sum the rewards from all reward functions
+        rewards = rewards_per_func.sum(dim=1)
+        
+        # Compute grouped-wise rewards
+        # Each group consists of num_generations completions for the same prompt
+        mean_grouped_rewards = rewards.view(-1, self.num_generations).mean(dim=1)
+        std_grouped_rewards = rewards.view(-1, self.num_generations).std(dim=1)
+        
+        # Normalize the rewards to compute the advantages
+        mean_grouped_rewards = mean_grouped_rewards.repeat_interleave(self.num_generations, dim=0)
+        std_grouped_rewards = std_grouped_rewards.repeat_interleave(self.num_generations, dim=0)
+        advantages = (rewards - mean_grouped_rewards) / (std_grouped_rewards + 1e-4)
+        
+        # Get only the local slice of advantages
+        process_slice = slice(
+            self.accelerator.process_index * len(prompts),
+            (self.accelerator.process_index + 1) * len(prompts),
+        )
+        advantages = advantages[process_slice]
+
+        # Log the metrics
+        completion_length = self.accelerator.gather_for_metrics(completion_mask.sum(1)).float().mean().item()
+        self._metrics["completion_length"].append(completion_length)
+
+        reward_per_func = self.accelerator.gather_for_metrics(rewards_per_func).mean(0)
+        for i, reward_func in enumerate(self.reward_funcs):
+            if isinstance(reward_func, PreTrainedModel):
+                reward_func_name = reward_func.config._name_or_path.split("/")[-1]
+            else:
+                reward_func_name = reward_func.__name__
+            self._metrics[f"rewards/{reward_func_name}"].append(reward_per_func[i].item())
+
+        self._metrics["reward"].append(self.accelerator.gather_for_metrics(rewards).mean().item())
+
+        self._metrics["reward_std"].append(self.accelerator.gather_for_metrics(std_grouped_rewards).mean().item())
+
+        return {
+            "prompt_ids": prompt_ids,
+            "prompt_mask": prompt_mask,
+            "completion_ids": completion_ids,
+            "completion_mask": completion_mask,
+            "old_per_token_logps": old_per_token_logps,
+            "ref_per_token_logps": ref_per_token_logps,
+            "advantages": advantages,
+            "pixel_values": pixel_values,
+            "image_grid_thw": image_grid_thw
+        }
+    
+    def _generate_and_score_comparison_completions(self, inputs: list[dict[str, Any]], model) -> dict[str, Any]:
+        device = self.accelerator.device
+
+        # Helper function to resize image and convert to base64
+        def process_image_to_base64(image_path, max_long_side=640, min_side=28):
+            try:
+                img = PIL.Image.open(image_path).convert("RGB")
+                w, h = img.size
+                
+                # Handle images that are too LARGE (downscale)
+                if w > max_long_side or h > max_long_side:
+                    if w > h:
+                        new_w = max_long_side
+                        new_h = int(h * (max_long_side / w))
+                    else:
+                        new_h = max_long_side
+                        new_w = int(w * (max_long_side / h))
+                    img = img.resize((new_w, new_h), PIL.Image.Resampling.LANCZOS)
+                
+                # Handle images that are too SMALL (upscale)
+                elif w < min_side or h < min_side:
+                    if w < h:
+                        new_w = min_side
+                        new_h = int(h * (min_side / w))
+                    else:
+                        new_h = min_side
+                        new_w = int(w * (min_side / h))
+                    img = img.resize((new_w, new_h), PIL.Image.Resampling.LANCZOS)
+                
+                # Convert resized image to base64 data URI
+                import base64
+                import io
+                buffer = io.BytesIO()
+                img.save(buffer, format='JPEG', quality=85)
+                img_base64 = base64.b64encode(buffer.getvalue()).decode('utf-8')
+                return f"data:image/jpeg;base64,{img_base64}"
+                
+            except Exception as e:
+                print(f"Warning: Could not process image {image_path}: {e}")
+                return f"file://{image_path}"  # fallback to file path
+
+        raw_messages = []
+        text_list = []
+        for ex in inputs:
+            msg = [
+                {"role": "system", "content":[{"type":"text","text": ex['system_prompt']}]},
+                {"role": "user", "content":[
+                    {"type":"text","text":"Given a low-quality reference slide and two enhanced outputs. Reference Slide:"},
+                    {"type":"image","image": process_image_to_base64(ex['ref_image_path'])},
+                    {"type":"text","text":"Slide A:"},
+                    {"type":"image","image": process_image_to_base64(ex['imageA_path'])},
+                    {"type":"text","text":"Slide B:"},
+                    {"type":"image","image": process_image_to_base64(ex['imageB_path'])},
+                    {"type":"text","text": ex['custom_question']},
+                ]}
+            ]
+            raw_messages.append(msg)
+
+            # Pure text prompt, List[str]
+            text_list.append(
+                self.processing_class.apply_chat_template(
+                    msg,
+                    tokenize=False,
+                    add_generation_prompt=True
+                )
+            )
+        prompts = text_list
+        
+        # Import qwen_vl_utils for vision processing
+        try:
+            from qwen_vl_utils import process_vision_info
+            image_inputs, video_inputs = process_vision_info(raw_messages)
+        except ImportError:
+            # Fallback if qwen_vl_utils is not available
+            image_inputs = []
+            video_inputs = []
+
+        prompt_inputs = self.processing_class(
+            text=text_list, 
+            images=image_inputs,
+            videos=video_inputs,
+            return_tensors="pt",
+            padding=True,
+            padding_side="left",
+        )
+        prompt_inputs = super()._prepare_inputs(prompt_inputs)
+
+        prompt_ids, prompt_mask = prompt_inputs["input_ids"], prompt_inputs["attention_mask"]
+        pixel_values = prompt_inputs["pixel_values"]
+        image_grid_thw = prompt_inputs["image_grid_thw"]
+
+        
+        if self.max_prompt_length is not None:
+            prompt_ids = prompt_ids[:, -self.max_prompt_length :]
+            prompt_mask = prompt_mask[:, -self.max_prompt_length :]
+            prompt_inputs["input_ids"]      = prompt_ids
+            prompt_inputs["attention_mask"] = prompt_mask
+        
+        with unwrap_model_for_generation(model, self.accelerator) as unwrapped:
+            prompt_completion_ids = unwrapped.generate(
+                **prompt_inputs,
+                generation_config=self.generation_config
+            )
+
+            prompt_length = prompt_ids.size(1)
+            prompt_ids = prompt_completion_ids[:, :prompt_length]
+            completion_ids = prompt_completion_ids[:, prompt_length:]
+
+        # Mask everything after the first EOS token
+        is_eos = completion_ids == self.processing_class.eos_token_id
+        eos_idx = torch.full((is_eos.size(0),), is_eos.size(1), dtype=torch.long, device=device)
+        eos_idx[is_eos.any(dim=1)] = is_eos.int().argmax(dim=1)[is_eos.any(dim=1)]
+        sequence_indices = torch.arange(is_eos.size(1), device=device).expand(is_eos.size(0), -1)
+        completion_mask = (sequence_indices <= eos_idx.unsqueeze(1)).int()
+
+        # Concatenate prompt_mask with completion_mask for logit computation
+        attention_mask = torch.cat([prompt_mask, completion_mask], dim=1)  # (B, P+C)
+        pixel_values = prompt_inputs["pixel_values"]
+        image_grid_thw = prompt_inputs["image_grid_thw"]
+
+        with torch.no_grad():
+            # When using num_iterations == 1, old_per_token_logps == per_token_logps, so we can skip its
+            # computation here, and use per_token_logps.detach() instead.
+            if self.num_iterations > 1:
+                old_per_token_logps = self._get_per_token_logps(
+                    model, prompt_completion_ids, attention_mask, pixel_values, image_grid_thw
+                )
+                old_per_token_logps = old_per_token_logps[:, prompt_length - 1:]
+            else:
+                old_per_token_logps = None
+
+            if self.beta == 0.0:
+                ref_per_token_logps = None
+            elif self.ref_model is not None:
+                ref_per_token_logps = self._get_per_token_logps(
+                    self.ref_model, prompt_completion_ids, attention_mask, pixel_values, image_grid_thw
+                )
+            else:
+                with self.accelerator.unwrap_model(model).disable_adapter():
+                    ref_per_token_logps = self._get_per_token_logps(
+                        model, prompt_completion_ids, attention_mask, pixel_values, image_grid_thw
+                    )
+        if ref_per_token_logps is not None:
+            ref_per_token_logps = ref_per_token_logps[:, prompt_length - 1:]
+
+        # Decode the generated completions
+        completions = self.processing_class.batch_decode(completion_ids, skip_special_tokens=True)
+
+        completions = [[{"role": "assistant", "content": completion}] for completion in completions]
+
+        # Compute the rewards
         rewards_per_func = torch.zeros(len(prompts), len(self.reward_funcs), device=device)
         for i, (reward_func, reward_processing_class) in enumerate(
             zip(self.reward_funcs, self.reward_processing_classes)
