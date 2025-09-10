@@ -1,7 +1,7 @@
 set -x
 
 export DEBUG_MODE="true"
-RUN_NAME="eval_deficiency_ep2_f1_0.7_s_0.25"
+RUN_NAME="eval_multi_gpt_ep2_f1_0.7_s_0.25"
 export LOG_PATH="./debug_log_${RUN_NAME}.txt"
 
 # Dist args (single node by default)
