@@ -490,6 +490,9 @@ def accuracy_reward(completions, solution, task, image_path=None, score_reward_t
                 f.write(f"------------- {current_time} Rank: {current_rank} -------------\n")
                 for i, content in enumerate(contents):
                     f.write(f"Task: {subsampled_tasks[i]}\n")
+                    # 如果image_path是列表，只取第一个；否则直接使用
+                    image_path_to_log = image_path[0] if isinstance(image_path, list) and len(image_path) > 0 else image_path
+                    f.write(f"Image Path: {image_path_to_log}\n")
                     f.write(f"Reward: {rewards[i]}\n")
                     f.write(f"Content: {content}\n")
                     f.write(f"Ground Truth: {subsampled_solutions[i]}\n")
