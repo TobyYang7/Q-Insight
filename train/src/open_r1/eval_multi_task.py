@@ -89,14 +89,8 @@ class GRPOScriptArguments(ScriptArguments):
     score_reward_threshold: Optional[float] = field(
         default=0.35, metadata={"help": "Threshold for score reward (abs diff). Default 0.35 for 1-5 scale"}
     )
-    dataset_score: Optional[str] = field(
-        default=None, metadata={"help": "YAML file path for the quality scoring dataset"}
-    )
-    dataset_deficiency: Optional[str] = field(
-        default=None, metadata={"help": "YAML file path for the deficiency detection dataset"}
-    )
-    dataset_comparison: Optional[str] = field(
-        default=None, metadata={"help": "YAML file path for the comparison dataset"}
+    dataset_config: Optional[str] = field(
+        default=None, metadata={"help": "YAML file path containing all dataset configurations"}
     )
     score_prompt_file: Optional[str] = field(
         default=None, metadata={"help": "Optional text file path that contains the evaluation prompt for scoring"}
@@ -144,23 +138,29 @@ class LazyMultiTaskDataset(Dataset):
         self.deficiency_samples = []
         self.comparison_samples = []
 
-        score_yaml_path = getattr(script_args, "dataset_score", None)
-        if score_yaml_path:
-            print(f"Loading score samples from {score_yaml_path}")
-            self.score_samples = self._load_samples_from_yaml(score_yaml_path)
+        dataset_config_path = getattr(script_args, "dataset_config", None)
+        if dataset_config_path:
+            print(f"Loading all datasets from unified config: {dataset_config_path}")
+            self._load_from_unified_yaml(dataset_config_path)
+        else:
+            # Fallback to individual dataset paths for backward compatibility
+            score_yaml_path = getattr(script_args, "dataset_score", None)
+            if score_yaml_path:
+                print(f"Loading score samples from {score_yaml_path}")
+                self.score_samples = self._load_samples_from_yaml(score_yaml_path)
 
-        deficiency_yaml_path = getattr(script_args, "dataset_deficiency", None)
-        if deficiency_yaml_path:
-            print(f"Loading deficiency samples from {deficiency_yaml_path}")
-            self.deficiency_samples = self._load_samples_from_yaml(deficiency_yaml_path)
+            deficiency_yaml_path = getattr(script_args, "dataset_deficiency", None)
+            if deficiency_yaml_path:
+                print(f"Loading deficiency samples from {deficiency_yaml_path}")
+                self.deficiency_samples = self._load_samples_from_yaml(deficiency_yaml_path)
 
-        comparison_yaml_path = getattr(script_args, "dataset_comparison", None)
-        if comparison_yaml_path:
-            print(f"Loading comparison samples from {comparison_yaml_path}")
-            self.comparison_samples = self._load_samples_from_yaml(comparison_yaml_path)
+            comparison_yaml_path = getattr(script_args, "dataset_comparison", None)
+            if comparison_yaml_path:
+                print(f"Loading comparison samples from {comparison_yaml_path}")
+                self.comparison_samples = self._load_samples_from_yaml(comparison_yaml_path)
 
         if not self.score_samples and not self.deficiency_samples and not self.comparison_samples:
-            raise ValueError("Please provide at least one dataset: --dataset_score, --dataset_deficiency, or --dataset_comparison")
+            raise ValueError("Please provide at least one dataset: --dataset_config or individual dataset paths")
 
         self.total_len = len(self.score_samples) + len(self.deficiency_samples) + len(self.comparison_samples)
 
@@ -173,6 +173,81 @@ class LazyMultiTaskDataset(Dataset):
 
         self.deficiency_prompt_text = DEFICIENCY_PROMPT
         self.comparison_prompt_text = COMPARE_QUESTION_PROMPT
+
+    def _load_from_unified_yaml(self, data_path: str):
+        """Load samples from unified YAML config that contains all task types."""
+        if not data_path or not os.path.exists(data_path):
+            raise ValueError(f"Dataset config file not found: {data_path}")
+        
+        if not data_path.endswith(".yaml"):
+            raise ValueError(f"Unsupported file type: {data_path}, must be a .yaml file.")
+        
+        with open(data_path, "r") as f:
+            cfg = yaml.safe_load(f)
+            
+            # Load score samples
+            if "score" in cfg:
+                print(f"Loading score samples from unified config")
+                self.score_samples = self._load_task_samples(cfg["score"])
+            
+            # Load deficiency samples  
+            if "deficiency" in cfg:
+                print(f"Loading deficiency samples from unified config")
+                self.deficiency_samples = self._load_task_samples(cfg["deficiency"])
+            
+            # Load comparison samples
+            if "compare" in cfg:
+                print(f"Loading comparison samples from unified config")
+                self.comparison_samples = self._load_task_samples(cfg["compare"])
+
+    def _load_task_samples(self, task_config):
+        """Load samples for a specific task type from the unified config."""
+        samples = []
+        
+        if not isinstance(task_config, list):
+            task_config = [task_config]
+            
+        for ds in task_config:
+            path = ds.get("json_path")
+            strategy = ds.get("sampling_strategy", "all")
+            image_root = ds.get("image_root")
+            sample = ds.get("sample")  # New field for sample count
+            random_sample = ds.get("random", False)  # New field for random sampling
+
+            if path.endswith(".jsonl"):
+                data_list = [json.loads(line) for line in open(path, "r")]
+            elif path.endswith(".json"):
+                data_list = json.load(open(path, "r"))
+            else:
+                raise ValueError(f"Unsupported file type: {path}")
+
+            # Handle sampling strategy
+            count = None
+            if ":" in strategy:
+                strat, num_s = strategy.split(":")
+                if "%" in num_s:
+                    count = math.ceil(int(num_s.rstrip("%")) * len(data_list) / 100)
+                else:
+                    count = int(num_s)
+                strategy = strat
+            elif sample is not None:
+                # Use the new 'sample' field if available
+                count = sample
+                strategy = "random" if random_sample else "first"
+
+            if strategy == "first" and count is not None:
+                data_list = data_list[:count]
+            elif strategy == "end" and count is not None:
+                data_list = data_list[-count:]
+            elif strategy == "random" and count is not None:
+                random.shuffle(data_list)
+                data_list = data_list[:count]
+
+            for sample in data_list:
+                sample['image_root'] = image_root
+
+            samples.extend(data_list)
+        return samples
 
     def _load_samples_from_yaml(self, data_path: str):
         samples = []

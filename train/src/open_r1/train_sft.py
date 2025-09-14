@@ -47,9 +47,7 @@ class ModelArguments:
 
 @dataclass
 class DataArguments:
-    dataset_score: Optional[str] = field(default=None, metadata={"help": "YAML file for the quality scoring dataset."})
-    dataset_deficiency: Optional[str] = field(default=None, metadata={"help": "YAML file for the deficiency detection dataset."})
-    dataset_comparison: Optional[str] = field(default=None, metadata={"help": "YAML file for the comparison dataset."})
+    dataset_config: Optional[str] = field(default=None, metadata={"help": "YAML file containing all dataset configurations."})
 
 
 @dataclass
@@ -66,7 +64,7 @@ class SFTTrainingArguments(TrainingArguments):
     run_name: Optional[str] = field(default="qwen-vl-sft-multi-task")
 
 
-def load_samples_from_yaml(data_path: str):
+def load_samples_from_yaml(data_path: str, task_type: str = None):
     """Loads samples from a YAML config file that points to JSON data."""
     if not data_path or not os.path.exists(data_path):
         return []
@@ -74,40 +72,68 @@ def load_samples_from_yaml(data_path: str):
     samples = []
     if not data_path.endswith(".yaml"):
         raise ValueError(f"Unsupported file type: {data_path}, must be a .yaml file.")
+    
     with open(data_path, "r") as f:
         cfg = yaml.safe_load(f)
-        for ds in cfg.get("datasets", []):
-            path = ds.get("json_path")
-            strategy = ds.get("sampling_strategy", "all")
-            image_root = ds.get("image_root")
+        
+        # Check if this is a unified config format
+        if task_type and task_type in cfg:
+            # Load from unified config for specific task type
+            task_config = cfg[task_type]
+            if not isinstance(task_config, list):
+                task_config = [task_config]
+            
+            for ds in task_config:
+                samples.extend(_load_dataset_samples(ds))
+        else:
+            # Legacy format - load from "datasets" key
+            for ds in cfg.get("datasets", []):
+                samples.extend(_load_dataset_samples(ds))
+    
+    return samples
 
-            if path.endswith(".jsonl"):
-                data_list = [json.loads(line) for line in open(path, "r")]
-            elif path.endswith(".json"):
-                data_list = json.load(open(path, "r"))
-            else:
-                raise ValueError(f"Unsupported file type: {path}")
+def _load_dataset_samples(ds):
+    """Load samples from a single dataset configuration."""
+    samples = []
+    path = ds.get("json_path")
+    strategy = ds.get("sampling_strategy", "all")
+    image_root = ds.get("image_root")
+    sample = ds.get("sample")  # New field for sample count
+    random_sample = ds.get("random", False)  # New field for random sampling
 
-            count = None
-            if ":" in strategy:
-                strat, num_s = strategy.split(":")
-                if "%" in num_s:
-                    count = math.ceil(int(num_s.rstrip("%")) * len(data_list) / 100)
-                else:
-                    count = int(num_s)
-                strategy = strat
-            if strategy == "first" and count is not None:
-                data_list = data_list[:count]
-            elif strategy == "end" and count is not None:
-                data_list = data_list[-count:]
-            elif strategy == "random" and count is not None:
-                random.shuffle(data_list)
-                data_list = data_list[:count]
+    if path.endswith(".jsonl"):
+        data_list = [json.loads(line) for line in open(path, "r")]
+    elif path.endswith(".json"):
+        data_list = json.load(open(path, "r"))
+    else:
+        raise ValueError(f"Unsupported file type: {path}")
 
-            for sample in data_list:
-                sample['image_root'] = image_root
+    # Handle sampling strategy
+    count = None
+    if ":" in strategy:
+        strat, num_s = strategy.split(":")
+        if "%" in num_s:
+            count = math.ceil(int(num_s.rstrip("%")) * len(data_list) / 100)
+        else:
+            count = int(num_s)
+        strategy = strat
+    elif sample is not None:
+        # Use the new 'sample' field if available
+        count = sample
+        strategy = "random" if random_sample else "first"
 
-            samples.extend(data_list)
+    if strategy == "first" and count is not None:
+        data_list = data_list[:count]
+    elif strategy == "end" and count is not None:
+        data_list = data_list[-count:]
+    elif strategy == "random" and count is not None:
+        random.shuffle(data_list)
+        data_list = data_list[:count]
+
+    for sample in data_list:
+        sample['image_root'] = image_root
+
+    samples.extend(data_list)
     return samples
 
 
@@ -115,9 +141,16 @@ class MultiTaskSFTDataset(Dataset):
     def __init__(self, data_args: DataArguments, processor: Qwen2VLProcessor):
         self.processor = processor
         
-        self.score_samples = load_samples_from_yaml(data_args.dataset_score)
-        self.deficiency_samples = load_samples_from_yaml(data_args.dataset_deficiency)
-        self.comparison_samples = load_samples_from_yaml(data_args.dataset_comparison)
+        # Load from unified config if available
+        if data_args.dataset_config:
+            self.score_samples = load_samples_from_yaml(data_args.dataset_config, "score")
+            self.deficiency_samples = load_samples_from_yaml(data_args.dataset_config, "deficiency")
+            self.comparison_samples = load_samples_from_yaml(data_args.dataset_config, "compare")
+        else:
+            # Fallback to individual dataset configs for backward compatibility
+            self.score_samples = load_samples_from_yaml(getattr(data_args, "dataset_score", None))
+            self.deficiency_samples = load_samples_from_yaml(getattr(data_args, "dataset_deficiency", None))
+            self.comparison_samples = load_samples_from_yaml(getattr(data_args, "dataset_comparison", None))
         
         self.total_len = len(self.score_samples) + len(self.deficiency_samples) + len(self.comparison_samples)
         if self.total_len == 0:
