@@ -1,0 +1,11 @@
+compare:
+  - json_path: /root/Q-Insight/dataset/compare/test_comparison.json
+    image_root: /root/Q-Insight/dataset/compare
+
+deficiency:
+  - json_path: /root/Q-Insight/dataset/slideaudit_test_new.json
+    image_root: /root/Q-Insight
+
+score:
+  - json_path: /root/Q-Insight/dataset/slide_quality_test.json
+    image_root: /root/Q-Insight/paper-slide-crawler

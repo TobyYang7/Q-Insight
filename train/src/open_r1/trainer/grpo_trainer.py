@@ -684,6 +684,17 @@ class Qwen2VLGRPOTrainer(Trainer):
         self._metrics["reward"].append(self.accelerator.gather_for_metrics(rewards).mean().item())
 
         self._metrics["reward_std"].append(self.accelerator.gather_for_metrics(std_grouped_rewards).mean().item())
+        
+        # Log task-specific rewards if available
+        if hasattr(inputs[0], 'task') or 'task' in inputs[0]:
+            self._log_task_specific_rewards(inputs, rewards_per_func)
+            
+            # Log task-specific metrics if available
+            import threading
+            if hasattr(threading.current_thread(), 'task_metrics'):
+                task_metrics = threading.current_thread().task_metrics
+                if task_metrics:
+                    self._log_task_specific_metrics(inputs, task_metrics)
 
         return {
             "prompt_ids": prompt_ids,
@@ -912,6 +923,17 @@ class Qwen2VLGRPOTrainer(Trainer):
         self._metrics["reward"].append(self.accelerator.gather_for_metrics(rewards).mean().item())
 
         self._metrics["reward_std"].append(self.accelerator.gather_for_metrics(std_grouped_rewards).mean().item())
+        
+        # Log task-specific rewards if available
+        if hasattr(inputs[0], 'task') or 'task' in inputs[0]:
+            self._log_task_specific_rewards(inputs, rewards_per_func)
+            
+            # Log task-specific metrics if available
+            import threading
+            if hasattr(threading.current_thread(), 'task_metrics'):
+                task_metrics = threading.current_thread().task_metrics
+                if task_metrics:
+                    self._log_task_specific_metrics(inputs, task_metrics)
 
         return {
             "prompt_ids": prompt_ids,
@@ -994,6 +1016,76 @@ class Qwen2VLGRPOTrainer(Trainer):
         else:  # transformers<=4.46
             super().log(logs)
         self._metrics.clear()
+
+    def _log_task_specific_rewards(self, inputs, rewards_per_func):
+        """Log rewards separately for each task type (score, deficiency, comparison)."""
+        try:
+            # Extract task types from inputs
+            task_types = []
+            for inp in inputs:
+                if hasattr(inp, 'task'):
+                    task_types.append(inp.task)
+                elif 'task' in inp:
+                    task_types.append(inp['task'])
+                else:
+                    task_types.append('unknown')
+            
+            # Group rewards by task type
+            task_rewards = {"score": [], "deficiency": [], "comparison": []}
+            
+            for i, task_type in enumerate(task_types):
+                if task_type in task_rewards:
+                    # Sum rewards from all reward functions for this sample
+                    total_reward = rewards_per_func[i].sum().item()
+                    task_rewards[task_type].append(total_reward)
+            
+            # Log average rewards for each task type
+            for task_type, rewards in task_rewards.items():
+                if rewards:  # Only log if there are samples for this task type
+                    avg_reward = sum(rewards) / len(rewards)
+                    self._metrics[f"rewards/{task_type}_task"].append(avg_reward)
+                    
+        except Exception as e:
+            # Silently ignore errors to avoid breaking training
+            pass
+
+    def _log_task_specific_metrics(self, inputs, task_metrics):
+        """Log detailed metrics (F1, accuracy, etc.) for each task type."""
+        try:
+            # Extract task types from inputs
+            task_types = []
+            for inp in inputs:
+                if hasattr(inp, 'task'):
+                    task_types.append(inp.task)
+                elif 'task' in inp:
+                    task_types.append(inp['task'])
+                else:
+                    task_types.append('unknown')
+            
+            # Group metrics by task type
+            task_metrics_grouped = {"score": [], "deficiency": [], "comparison": []}
+            
+            for i, task_type in enumerate(task_types):
+                if task_type in task_metrics_grouped and i < len(task_metrics):
+                    task_metrics_grouped[task_type].append(task_metrics[i])
+            
+            # Log average metrics for each task type
+            for task_type, metrics_list in task_metrics_grouped.items():
+                if metrics_list:  # Only log if there are samples for this task type
+                    # Calculate average metrics
+                    avg_metrics = {}
+                    for metric_name in ['mae', 'f1', 'precision', 'recall', 'accuracy']:
+                        values = [m.get(metric_name) for m in metrics_list if m.get(metric_name) is not None]
+                        if values:
+                            avg_metrics[metric_name] = sum(values) / len(values)
+                    
+                    # Log to wandb
+                    for metric_name, value in avg_metrics.items():
+                        self._metrics[f"metrics/{task_type}_{metric_name}"].append(value)
+                    
+        except Exception as e:
+            # Silently ignore errors to avoid breaking training
+            pass
 
     def create_model_card(
         self,

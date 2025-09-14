@@ -506,6 +506,7 @@ def verify_deficiency(completion_content, ground_truth_deficiencies, f1_threshol
     
     The reward is 1.0 if the category-level F1 score is > 0.7, otherwise 0.0.
     This version first extracts the answer from within <answer>...</answer> tags.
+    If no answer tags are found, returns 0.0 reward.
     """
     # --- MODIFICATION START: Extract content from <answer> tags ---
     # Use regex to find the content within <answer>...</answer>
@@ -517,28 +518,21 @@ def verify_deficiency(completion_content, ground_truth_deficiencies, f1_threshol
         # .strip() removes any leading/trailing whitespace.
         answer_content = match.group(1).strip()
     else:
-        # If no tags are found, fall back to using the entire completion content.
-        # This makes the function robust if the model forgets to include the tags.
-        answer_content = completion_content
+        # If no tags are found, return 0.0 reward (no API call)
+        return 0.0
     # --- MODIFICATION END ---
 
-    # Get a set of ground truth specific deficiencies from the solution data.
-    gt_specific_deficiencies = {
-        item["deficiency"] for item in ground_truth_deficiencies if "deficiency" in item
+    # Get ground truth categories directly from the solution data
+    gt_categories = {
+        item["category"] for item in ground_truth_deficiencies 
+        if "category" in item and item["category"] is not None
     }
 
-    if not gt_specific_deficiencies:
+    if not gt_categories:
         return 0.0
 
     # Get predicted categories from the model's extracted answer text via the LLM classifier.
     predicted_categories = set(classify_deficiencies(answer_content))
-
-    # Map ground truth specific deficiencies to their parent categories.
-    gt_categories = {
-        DEFICIENCY_TO_CATEGORY.get(deficiency)
-        for deficiency in gt_specific_deficiencies
-        if DEFICIENCY_TO_CATEGORY.get(deficiency) is not None
-    }
 
     # --- Handle edge cases before calculating F1 score ---
     if not gt_categories:
@@ -562,6 +556,68 @@ def verify_deficiency(completion_content, ground_truth_deficiencies, f1_threshol
 
     # --- Determine the final reward based on the F1 score threshold ---
     return 1.0 if f1_score > f1_threshold else 0.0
+
+
+def calculate_task_metrics(content, true_sol, task_type, answer_content, **kwargs):
+    """
+    Calculate detailed metrics for each task type (F1, accuracy, etc.)
+    Note: This function assumes answer_content is already extracted from <answer> tags.
+    If no answer tags were found, this function should not be called.
+    """
+    metrics = {}
+    
+    if task_type == 'score':
+        # For score task, calculate MAE and accuracy
+        score_match = re.search(r'(\d+\.?\d*)', answer_content)
+        if score_match:
+            model_score = float(score_match.group(1))
+            mae = abs(model_score - true_sol)
+            metrics['mae'] = mae
+            metrics['model_score'] = model_score
+            metrics['gt_score'] = true_sol
+        else:
+            metrics['mae'] = float('inf')
+            metrics['model_score'] = None
+            metrics['gt_score'] = true_sol
+            
+    elif task_type == 'deficiency':
+        # For deficiency task, calculate F1, precision, recall
+        predicted_categories = set(classify_deficiencies(answer_content))
+        gt_categories = {
+            item.get("category")
+            for item in true_sol
+            if item.get("category") is not None
+        }
+        
+        if not gt_categories and not predicted_categories:
+            f1_score = 1.0
+            precision = 1.0
+            recall = 1.0
+        elif not gt_categories or not predicted_categories:
+            f1_score = 0.0
+            precision = 0.0
+            recall = 0.0
+        else:
+            tp = len(gt_categories.intersection(predicted_categories))
+            precision = tp / len(predicted_categories) if len(predicted_categories) > 0 else 0.0
+            recall = tp / len(gt_categories) if len(gt_categories) > 0 else 0.0
+            f1_score = 0.0 if (precision + recall) == 0 else 2 * (precision * recall) / (precision + recall)
+        
+        metrics['f1'] = f1_score
+        metrics['precision'] = precision
+        metrics['recall'] = recall
+        metrics['predicted_categories'] = list(predicted_categories)
+        metrics['gt_categories'] = list(gt_categories)
+        
+    elif task_type == 'comparison':
+        # For comparison task, calculate accuracy
+        answer_text = answer_content.strip()
+        is_correct = answer_text == true_sol
+        metrics['accuracy'] = 1.0 if is_correct else 0.0
+        metrics['predicted'] = answer_text
+        metrics['gt'] = true_sol
+    
+    return metrics
 
 
 def accuracy_reward(completions, solution, task, image_path=None, score_reward_threshold=None, **kwargs):
@@ -588,12 +644,21 @@ def accuracy_reward(completions, solution, task, image_path=None, score_reward_t
         def_f1_thresholds_in[::max(1, num_gen)] if isinstance(def_f1_thresholds_in, (list, tuple)) else [def_f1_thresholds_in] * len(subsampled_solutions)
     ) if def_f1_thresholds_in is not None else [0.7] * len(subsampled_solutions)
 
+    # Track rewards by task type for logging
+    task_rewards = {"score": [], "deficiency": [], "comparison": []}
+    # Track metrics for wandb logging
+    task_metrics = {"score": [], "deficiency": [], "comparison": []}
+
     for i, (content, true_sol, task_type) in enumerate(zip(contents, subsampled_solutions, subsampled_tasks)):
         reward = 0.0
+        metrics = {}
         try:
             match_answer = re.search(answer_tag_pattern, content, re.DOTALL)
             if match_answer:
                 answer_content = match_answer.group(1).strip()
+                
+                # Calculate detailed metrics for this sample
+                metrics = calculate_task_metrics(content, true_sol, task_type, answer_content, **kwargs)
 
                 if task_type == 'score':
                     score_match = re.search(r'(\d+\.?\d*)', answer_content)
@@ -611,10 +676,17 @@ def accuracy_reward(completions, solution, task, image_path=None, score_reward_t
                     # For comparison tasks, use the comparison reward function
                     comparison_rewards = comparison_reward([completion], [true_sol], [task_type], **kwargs)
                     reward = comparison_rewards[0] if comparison_rewards else 0.0
+            else:
+                # If no answer tags found, reward and metrics are 0
+                reward = 0.0
+                metrics = {}
 
         except Exception:
             reward = 0.0
+            metrics = {}
         rewards.append(reward)
+        task_rewards[task_type].append(reward)
+        task_metrics[task_type].append(metrics)
 
     if os.getenv("DEBUG_MODE") == "true":
         try:
@@ -641,16 +713,11 @@ def accuracy_reward(completions, solution, task, image_path=None, score_reward_t
                             # Predicted categories via LLM
                             predicted_categories = set(classify_deficiencies(answer_content_dbg))
 
-                            # Ground truth categories via mapping
-                            gt_specific_deficiencies = {
-                                item.get("deficiency")
-                                for item in subsampled_solutions[i]
-                                if item.get("deficiency") is not None
-                            }
+                            # Ground truth categories directly from solution data
                             gt_categories = {
-                                DEFICIENCY_TO_CATEGORY.get(defi)
-                                for defi in gt_specific_deficiencies
-                                if DEFICIENCY_TO_CATEGORY.get(defi) is not None
+                                item.get("category")
+                                for item in subsampled_solutions[i]
+                                if item.get("category") is not None
                             }
 
                             # Compute F1 (same as verify_deficiency)
@@ -674,6 +741,13 @@ def accuracy_reward(completions, solution, task, image_path=None, score_reward_t
                     f.write(f"{'=' * 40}\n")
         except Exception:
             pass
+    
+    # Store metrics in a global variable for trainer to access
+    import threading
+    if not hasattr(threading.current_thread(), 'task_metrics'):
+        threading.current_thread().task_metrics = {}
+    threading.current_thread().task_metrics = task_metrics
+    
     return rewards
 
 

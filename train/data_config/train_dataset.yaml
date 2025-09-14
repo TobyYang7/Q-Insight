@@ -1,0 +1,16 @@
+compare:
+  - json_path: /root/Q-Insight/dataset/compare/train_comparison.json
+    image_root: /root/Q-Insight/dataset/compare
+    sample: 500
+    random: true
+    
+
+deficiency:
+  - json_path: /root/Q-Insight/dataset/slideaudit_train_balanced.json
+    image_root: /root/Q-Insight
+    random: true
+
+score:
+  - json_path: /root/Q-Insight/dataset/slide_quality_train.json
+    image_root: /root/Q-Insight/paper-slide-crawler
+    random: true
