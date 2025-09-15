@@ -1,2 +1,20 @@
 What is your overall rating on the quality of this slide?
-The rating should be a float between 1 and 5, rounded to two decimal places, with 1 representing very poor quality and 5 representing excellent quality.
+The rating should be a float between 1 and 10, rounded to two decimal places.
+
+Please assess:
+- Visual design and layout composition
+- Content clarity and information hierarchy
+- Color scheme and visual consistency
+- Use of images, charts, and visual elements
+- Text organization and information density
+- Professional appearance and polish
+- Audience engagement and communication effectiveness
+
+Scoring Rules:
+1.00-2.99 - Poor overall quality with multiple major issues in design, content, or presentation
+3.00-4.99 - Below average with noticeable problems in layout, clarity, or visual appeal
+5.00-6.99 - Adequate quality with some issues but generally functional and understandable
+7.00-8.99 - Good overall quality with minor issues, well-designed and clearly communicates information
+9.00-10.00 - Excellent overall quality with outstanding design, clarity, and professional presentation
+
+Note: Consider the slide holistically - how well does it serve its purpose of communicating information effectively to an audience. Be critical in your evaluation: even if individual elements are acceptable, poor integration or overall impact should affect the score.
