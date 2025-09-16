@@ -403,11 +403,8 @@ class MultiTaskTester:
                         print(f"Failed after {max_retries} attempts for slide {item.get('slide_id', 'unknown')}")
                         return None
             
-            # Extract score from <answer> tags
-            answer_content = extract_answer_content(generated_text)
-            import re
-            score_match = re.search(r'(\d+\.?\d*)', answer_content)
-            predicted_score = float(score_match.group(1)) if score_match else None
+            # Extract score from <answer> tags with improved validation
+            predicted_score, is_valid = self._extract_score_with_validation(generated_text)
 
             # Get ground truth score (overall if dict, otherwise direct value)
             gt_score = item.get("score", None) or item.get("gt_score_norm", None)
@@ -415,7 +412,7 @@ class MultiTaskTester:
                 gt_score = gt_score.get("overall")
 
             # Calculate metrics
-            if predicted_score is not None and gt_score is not None:
+            if predicted_score is not None and gt_score is not None and is_valid:
                 mae = abs(predicted_score - gt_score)
                 mse = (predicted_score - gt_score) ** 2
                 # Threshold-based accuracy (within 0.35 as in training)
@@ -439,12 +436,60 @@ class MultiTaskTester:
                 },
             }
 
-            print(f"Processed score slide {item.get('slide_id', 'unknown')} - Pred: {predicted_score}, GT: {gt_score}, MAE: {mae:.3f}")
+            # Add error information if extraction failed
+            if not is_valid:
+                result["metrics"]["error"] = "Failed to extract valid score"
+                print(f"Score extraction failed for slide {item.get('slide_id', 'unknown')} - Invalid score: {predicted_score}")
+            else:
+                print(f"Processed score slide {item.get('slide_id', 'unknown')} - Pred: {predicted_score}, GT: {gt_score}, MAE: {mae:.3f}")
+            
             return result
 
         except Exception as e:
             print(f"Error processing score slide {item.get('slide_id', 'unknown')}: {e}")
             return None
+
+    def _extract_score_with_validation(self, text: str) -> tuple[float, bool]:
+        """
+        Extract score from model output text with validation.
+        Returns (score, is_valid) tuple.
+        """
+        # First try to extract from <answer> tags
+        answer_content = extract_answer_content(text)
+        
+        # Look for numeric patterns in the answer content
+        import re
+        score_patterns = [
+            r'(\d+\.?\d*)',  # Any number
+            r'(\d+\.\d+)',   # Decimal number
+            r'(\d+)',        # Integer
+        ]
+        
+        for pattern in score_patterns:
+            matches = re.findall(pattern, answer_content)
+            for match in matches:
+                try:
+                    score = float(match)
+                    # Check if score is reasonable (between 0 and 10)
+                    if 0 <= score <= 10:
+                        return score, True
+                except ValueError:
+                    continue
+        
+        # If no reasonable score found, try to extract any number as fallback
+        # but mark it as invalid if it's outside reasonable range
+        score_match = re.search(r'(\d+\.?\d*)', answer_content)
+        if score_match:
+            try:
+                score = float(score_match.group(1))
+                # Mark as invalid if outside reasonable range
+                is_valid = 0 <= score <= 10
+                return score, is_valid
+            except ValueError:
+                pass
+        
+        # If no score found at all
+        return None, False
 
     def process_compare(self, item: Dict, max_retries: int = 3) -> Dict:
         """Process a single comparison test sample: call API and calculate metrics."""
@@ -603,12 +648,33 @@ def calculate_score_metrics(results: List[Dict]) -> Dict:
     if not score_results:
         return {"score_metrics": {}}
     
-    # Calculate overall metrics
-    valid_scores = [(r["predicted_score"], r["ground_truth_score"]) for r in score_results 
-                   if r["predicted_score"] is not None and r["ground_truth_score"] is not None]
+    # Calculate overall metrics - only include valid scores
+    valid_scores = []
+    invalid_scores = []
+    
+    for r in score_results:
+        predicted_score = r.get("predicted_score")
+        ground_truth_score = r.get("ground_truth_score")
+        
+        if predicted_score is not None and ground_truth_score is not None:
+            # Check if the score is within reasonable range (0-10)
+            if 0 <= predicted_score <= 10:
+                valid_scores.append((predicted_score, ground_truth_score))
+            else:
+                invalid_scores.append((predicted_score, ground_truth_score))
+        else:
+            invalid_scores.append((predicted_score, ground_truth_score))
     
     if not valid_scores:
-        return {"score_metrics": {"error": "No valid score predictions found"}}
+        return {
+            "score_metrics": {
+                "error": "No valid score predictions found",
+                "total_samples": len(score_results),
+                "valid_predictions": 0,
+                "failed_predictions": len(score_results),
+                "invalid_scores": len(invalid_scores)
+            }
+        }
     
     predicted_scores, gt_scores = zip(*valid_scores)
     
@@ -628,9 +694,10 @@ def calculate_score_metrics(results: List[Dict]) -> Dict:
             "rmse": rmse,
             "within_threshold": within_threshold,
             "threshold": threshold,
-            "total_samples": len(valid_scores),
+            "total_samples": len(score_results),
             "valid_predictions": len(valid_scores),
-            "failed_predictions": len(score_results) - len(valid_scores)
+            "failed_predictions": len(score_results) - len(valid_scores),
+            "invalid_scores": len(invalid_scores)
         }
     }
 
