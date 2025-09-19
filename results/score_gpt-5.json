@@ -1,0 +1,3536 @@
+{
+  "task": "score",
+  "test_model": "gpt-5",
+  "test_api_base_url": "https://api.openai.com/v1",
+  "test_data": "/root/Q-Insight/dataset/slide_quality_test.json",
+  "total_samples": 250,
+  "overall_metrics": {
+    "score": {
+      "mae": 1.6467226890756301,
+      "mse": 4.762614285714285,
+      "rmse": 2.1823414686327816,
+      "within_threshold": 0.16806722689075632,
+      "threshold": 0.35,
+      "total_samples": 250,
+      "valid_predictions": 238,
+      "failed_predictions": 12,
+      "invalid_scores": 12
+    }
+  },
+  "per_class_metrics": {},
+  "category_distribution": {},
+  "detailed_results": [
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/02f3mUtqnM/slides/10.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 3.2,
+      "model_output": "3.20",
+      "metrics": {
+        "mae": 0.7000000000000002,
+        "mse": 0.49000000000000027,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/nkals4A4Vs/slides/15.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.4,
+      "model_output": "<think></think><answer>8.40</answer>",
+      "metrics": {
+        "mae": 2.9000000000000004,
+        "mse": 8.410000000000002,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30065/slides/4.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.3,
+      "model_output": "8.30",
+      "metrics": {
+        "mae": 0.8000000000000007,
+        "mse": 0.6400000000000011,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30473/slides/7.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.8,
+      "model_output": "6.80",
+      "metrics": {
+        "mae": 1.2999999999999998,
+        "mse": 1.6899999999999995,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/33958/slides/6.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.8,
+      "model_output": "7.80",
+      "metrics": {
+        "mae": 0.7000000000000002,
+        "mse": 0.49000000000000027,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2022/AXDNM76T1nc/slides/13.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.3,
+      "model_output": "8.30",
+      "metrics": {
+        "mae": 0.8000000000000007,
+        "mse": 0.6400000000000011,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/8.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.7,
+      "model_output": "8.70",
+      "metrics": {
+        "mae": 1.1999999999999993,
+        "mse": 1.4399999999999984,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30693/slides/45.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 3.2,
+      "model_output": "<answer>3.20</answer>",
+      "metrics": {
+        "mae": 1.7000000000000002,
+        "mse": 2.8900000000000006,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/29358/slides/8.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": null,
+      "model_output": "",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/lq62uWRJjiY/slides/4.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.7,
+      "model_output": "<think>Deliberate reasoning omitted.</think><answer>8.70</answer>",
+      "metrics": {
+        "mae": 1.1999999999999993,
+        "mse": 1.4399999999999984,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/2snzoozOWH/slides/7.jpg",
+      "ground_truth_score": 2.0,
+      "predicted_score": 5.2,
+      "model_output": "5.20",
+      "metrics": {
+        "mae": 3.2,
+        "mse": 10.240000000000002,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/14.jpg",
+      "ground_truth_score": 1.0,
+      "predicted_score": 1.2,
+      "model_output": "1.20",
+      "metrics": {
+        "mae": 0.19999999999999996,
+        "mse": 0.03999999999999998,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/BJ0fQUU32w/slides/13.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 8.2,
+      "model_output": "8.20",
+      "metrics": {
+        "mae": 4.699999999999999,
+        "mse": 22.089999999999993,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/l7yTbEWuOQ/slides/22.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 6.4,
+      "model_output": "<think>Reasoning omitted.</think><answer>6.40</answer>",
+      "metrics": {
+        "mae": 2.0999999999999996,
+        "mse": 4.409999999999998,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/rqyXubsBhH/slides/22.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.35,
+      "model_output": "<think>Reasoning omitted.</think><answer>8.35</answer>",
+      "metrics": {
+        "mae": 0.8499999999999996,
+        "mse": 0.7224999999999994,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/xJ7YWXQOrg/slides/5.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 3.4,
+      "model_output": "3.40",
+      "metrics": {
+        "mae": 2.1,
+        "mse": 4.41,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.202/slides/10.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 5.25,
+      "model_output": "5.25",
+      "metrics": {
+        "mae": 2.75,
+        "mse": 7.5625,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/eccv2024/2381/slides/16.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 2.3,
+      "model_output": "<think></think><answer>2.30</answer>",
+      "metrics": {
+        "mae": 0.7999999999999998,
+        "mse": 0.6399999999999997,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/29358/slides/9.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 4.1,
+      "model_output": "4.10",
+      "metrics": {
+        "mae": 0.5999999999999996,
+        "mse": 0.3599999999999996,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/LY3ukUANko/slides/12.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.65,
+      "model_output": "<think></think><answer>8.65</answer>",
+      "metrics": {
+        "mae": 3.1500000000000004,
+        "mse": 9.922500000000003,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/k7p_YAO7yE/slides/2.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.35,
+      "model_output": "8.35",
+      "metrics": {
+        "mae": 0.8499999999999996,
+        "mse": 0.7224999999999994,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/8.jpg",
+      "ground_truth_score": 1.0,
+      "predicted_score": 1.3,
+      "model_output": "<answer>1.30</answer>",
+      "metrics": {
+        "mae": 0.30000000000000004,
+        "mse": 0.09000000000000002,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/wwR38qFs3i/slides/35.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 4.5,
+      "model_output": "<think></think><answer>4.50</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/E01k9048soZ/slides/26.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 2.8,
+      "model_output": "2.80",
+      "metrics": {
+        "mae": 0.2999999999999998,
+        "mse": 0.0899999999999999,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/JSZmoN03Op/slides/8.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.2,
+      "model_output": "<think>Deliberate reasoning omitted.</think><answer>5.20</answer>",
+      "metrics": {
+        "mae": 0.2999999999999998,
+        "mse": 0.0899999999999999,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/wwR38qFs3i/slides/8.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 2.1,
+      "model_output": "<think>Chain-of-thought omitted.</think><answer>2.10</answer>",
+      "metrics": {
+        "mae": 0.6000000000000001,
+        "mse": 0.3600000000000001,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/DeG07_TcZvT/slides/33.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.4,
+      "model_output": "<think></think><answer>7.40</answer>",
+      "metrics": {
+        "mae": 1.9000000000000004,
+        "mse": 3.610000000000001,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/nkals4A4Vs/slides/2.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.2,
+      "model_output": "8.20",
+      "metrics": {
+        "mae": 2.6999999999999993,
+        "mse": 7.2899999999999965,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2022/isPnnaTZaP5/slides/11.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.9,
+      "model_output": "5.90",
+      "metrics": {
+        "mae": 0.40000000000000036,
+        "mse": 0.16000000000000028,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/FCnohuR6AnM/slides/18.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.2,
+      "model_output": "<answer>8.20</answer>",
+      "metrics": {
+        "mae": 0.6999999999999993,
+        "mse": 0.489999999999999,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.acl-long.786/slides/57.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 8.7,
+      "model_output": "8.70",
+      "metrics": {
+        "mae": 6.199999999999999,
+        "mse": 38.43999999999999,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/5.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 7.35,
+      "model_output": "7.35",
+      "metrics": {
+        "mae": 3.8499999999999996,
+        "mse": 14.822499999999998,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.findings-acl.21/slides/31.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 4.2,
+      "model_output": "4.20",
+      "metrics": {
+        "mae": 2.7,
+        "mse": 7.290000000000001,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/q0nmYciuuZN/slides/3.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.4,
+      "model_output": "<think>Sorry, I can’t share my internal reasoning, but I assessed clarity, layout, readability, and visual design to determine the rating.</think><answer>8.40</answer>",
+      "metrics": {
+        "mae": 0.9000000000000004,
+        "mse": 0.8100000000000006,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.acl-long.829/slides/12.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 6.5,
+      "model_output": "6.50",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.230/slides/2.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 5.8,
+      "model_output": "5.80",
+      "metrics": {
+        "mae": 3.3,
+        "mse": 10.889999999999999,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/i0nVanexij/slides/10.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": null,
+      "model_output": "",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.505/slides/48.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.2,
+      "model_output": "7.20",
+      "metrics": {
+        "mae": 1.7000000000000002,
+        "mse": 2.8900000000000006,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/xJ7YWXQOrg/slides/3.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 4.6,
+      "model_output": "4.60",
+      "metrics": {
+        "mae": 1.0999999999999996,
+        "mse": 1.2099999999999993,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/q0nmYciuuZN/slides/31.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.35,
+      "model_output": "<think></think><answer>7.35</answer>",
+      "metrics": {
+        "mae": 1.8499999999999996,
+        "mse": 3.4224999999999985,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/k7p_YAO7yE/slides/8.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.25,
+      "model_output": "<answer>8.25</answer>",
+      "metrics": {
+        "mae": 0.25,
+        "mse": 0.0625,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/ITw9edRDlD/slides/7.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.2,
+      "model_output": "<think>Sorry, I can’t share my detailed reasoning, but here is the final rating.</think><answer>8.20</answer>",
+      "metrics": {
+        "mae": 2.6999999999999993,
+        "mse": 7.2899999999999965,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30703/slides/28.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.2,
+      "model_output": "<think>Sorry, I can’t share my internal reasoning, but here is the rating.</think><answer>6.20</answer>",
+      "metrics": {
+        "mae": 0.7000000000000002,
+        "mse": 0.49000000000000027,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/xaSpuvNYwS/slides/9.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 2.0,
+      "model_output": "<think>Cannot share full chain-of-thought. Brief rationale: a chat window obscures most content, causing clutter and very low readability; poor slide design.</think><answer>2.00</answer>",
+      "metrics": {
+        "mae": 0.5,
+        "mse": 0.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/ndYXTEL6cZz/slides/30.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 8.0,
+      "model_output": "8.00",
+      "metrics": {
+        "mae": 4.5,
+        "mse": 20.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30693/slides/30.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.1,
+      "model_output": "<think>Sorry, I can’t share my detailed reasoning, but here is my rating.</think><answer>7.10</answer>",
+      "metrics": {
+        "mae": 1.5999999999999996,
+        "mse": 2.5599999999999987,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30053/slides/2.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.3,
+      "model_output": "<think>Sorry, I can’t share my internal reasoning. Here’s the result.</think><answer>6.30</answer>",
+      "metrics": {
+        "mae": 0.7999999999999998,
+        "mse": 0.6399999999999997,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/VZ8bs0fwoO/slides/11.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.6,
+      "model_output": "<think>Sorry, I can’t share my detailed reasoning, but here is the rating.</think><answer>8.60</answer>",
+      "metrics": {
+        "mae": 1.0999999999999996,
+        "mse": 1.2099999999999993,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/ktrw68Cmu9c/slides/2.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 8.25,
+      "model_output": "<think></think><answer>8.25</answer>",
+      "metrics": {
+        "mae": 1.75,
+        "mse": 3.0625,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-industry.3/slides/8.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 6.4,
+      "model_output": "<think>I can’t share detailed reasoning, but here is my rating.</think><answer>6.40</answer>",
+      "metrics": {
+        "mae": 3.9000000000000004,
+        "mse": 15.210000000000003,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/nA5AZ8CEyow/slides/2.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 8.2,
+      "model_output": "<think>Sorry, I can’t share my detailed internal reasoning, but here’s my final answer.</think><answer>8.20</answer>",
+      "metrics": {
+        "mae": 6.699999999999999,
+        "mse": 44.88999999999999,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30693/slides/7.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.7,
+      "model_output": "<think></think><answer>6.70</answer>",
+      "metrics": {
+        "mae": 1.2000000000000002,
+        "mse": 1.4400000000000004,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/ndYXTEL6cZz/slides/18.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 3.2,
+      "model_output": "<think></think><answer>3.20</answer>",
+      "metrics": {
+        "mae": 0.7000000000000002,
+        "mse": 0.49000000000000027,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/E01k9048soZ/slides/18.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 2.0,
+      "model_output": "<think></think><answer>2.00</answer>",
+      "metrics": {
+        "mae": 1.5,
+        "mse": 2.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/lKK50q2MtV/slides/5.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.9,
+      "model_output": "<think></think><answer>8.90</answer>",
+      "metrics": {
+        "mae": 1.4000000000000004,
+        "mse": 1.960000000000001,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/uydQ2W41KO/slides/7.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": null,
+      "model_output": "",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.findings-acl.716/slides/18.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": null,
+      "model_output": "",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/BHXsb69bSx/slides/24.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 4.8,
+      "model_output": "<think>Sorry, I can’t share my detailed reasoning, but here is the rating.</think><answer>4.80</answer>",
+      "metrics": {
+        "mae": 1.2999999999999998,
+        "mse": 1.6899999999999995,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.653/slides/3.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.85,
+      "model_output": "<think></think><answer>7.85</answer>",
+      "metrics": {
+        "mae": 2.3499999999999996,
+        "mse": 5.522499999999998,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/lq62uWRJjiY/slides/2.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 6.2,
+      "model_output": "<think>I can’t share my detailed chain-of-thought. Providing the rating only.</think><answer>6.20</answer>",
+      "metrics": {
+        "mae": 4.7,
+        "mse": 22.090000000000003,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/NAQvF08TcyG/slides/46.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.2,
+      "model_output": "8.20",
+      "metrics": {
+        "mae": 0.6999999999999993,
+        "mse": 0.489999999999999,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/eccv2024/2381/slides/19.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 2.0,
+      "model_output": "<think>I can’t share my internal reasoning, but here is the rating.</think><answer>2.00</answer>",
+      "metrics": {
+        "mae": 0.5,
+        "mse": 0.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2022/_VjQlMeSB_J/slides/1.jpg",
+      "ground_truth_score": 4.5,
+      "predicted_score": 4.25,
+      "model_output": "<think>Sorry, I can’t share my chain-of-thought, but here is the result.</think><answer>4.25</answer>",
+      "metrics": {
+        "mae": 0.25,
+        "mse": 0.0625,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/eccv2024/1658/slides/2.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 4.75,
+      "model_output": "<think></think><answer>4.75</answer>",
+      "metrics": {
+        "mae": 0.75,
+        "mse": 0.5625,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/5tIG2KZogL/slides/4.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>Reasoning omitted.</think><answer>8.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30271/slides/9.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.5,
+      "model_output": "6.50",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/42.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 2.0,
+      "model_output": "<think>Deliberate reasoning omitted.</think><answer>2.00</answer>",
+      "metrics": {
+        "mae": 0.5,
+        "mse": 0.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/hESD2NJFg8/slides/7.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 7.8,
+      "model_output": "<answer>7.80</answer>",
+      "metrics": {
+        "mae": 1.2999999999999998,
+        "mse": 1.6899999999999995,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/67o9UQgTD0/slides/5.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.9,
+      "model_output": "7.90",
+      "metrics": {
+        "mae": 0.5999999999999996,
+        "mse": 0.3599999999999996,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/WZH7099tgfM/slides/3.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.4,
+      "model_output": "<think>Deliberate reasoning omitted.</think><answer>8.40</answer>",
+      "metrics": {
+        "mae": 0.09999999999999964,
+        "mse": 0.009999999999999929,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/b1ylCyjAZk/slides/1.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.74,
+      "model_output": "8.74",
+      "metrics": {
+        "mae": 1.2400000000000002,
+        "mse": 1.5376000000000005,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/q0nmYciuuZN/slides/20.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.3,
+      "model_output": "<think></think><answer>8.30</answer>",
+      "metrics": {
+        "mae": 2.8000000000000007,
+        "mse": 7.840000000000004,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30693/slides/42.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.6,
+      "model_output": "8.60",
+      "metrics": {
+        "mae": 1.0999999999999996,
+        "mse": 1.2099999999999993,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/20.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 7.8,
+      "model_output": "<think>Deliberative reasoning omitted.</think><answer>7.80</answer>",
+      "metrics": {
+        "mae": 5.3,
+        "mse": 28.09,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/lJWUJWLCJo/slides/30.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.3,
+      "model_output": "8.30",
+      "metrics": {
+        "mae": 0.1999999999999993,
+        "mse": 0.039999999999999716,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/pTHfApDakA/slides/20.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>I can’t share my detailed reasoning, but I evaluated clarity, contrast, alignment, and overall design simplicity.</think><answer>6.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/9VKCBHESq0/slides/8.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.7,
+      "model_output": "8.70",
+      "metrics": {
+        "mae": 0.1999999999999993,
+        "mse": 0.039999999999999716,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/MvjLRFntW6/slides/5.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.3,
+      "model_output": "8.30",
+      "metrics": {
+        "mae": 0.8000000000000007,
+        "mse": 0.6400000000000011,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/X1QeUYBXke/slides/22.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.8,
+      "model_output": "<think></think><answer>6.80</answer>",
+      "metrics": {
+        "mae": 1.2999999999999998,
+        "mse": 1.6899999999999995,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/TatRHT_1cK/slides/32.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 2.15,
+      "model_output": "2.15",
+      "metrics": {
+        "mae": 1.35,
+        "mse": 1.8225000000000002,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30473/slides/1.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.86,
+      "model_output": "8.86",
+      "metrics": {
+        "mae": 1.3599999999999994,
+        "mse": 1.8495999999999984,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/4KqkizXgXU/slides/4.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.6,
+      "model_output": "<think>Sorry, I can’t share my detailed reasoning, but here is my final rating.</think><answer>8.60</answer>",
+      "metrics": {
+        "mae": 0.09999999999999964,
+        "mse": 0.009999999999999929,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/BHXsb69bSx/slides/25.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.8,
+      "model_output": "<think>Sorry, I can’t share my step-by-step reasoning, but here is the rating.</think><answer>7.80</answer>",
+      "metrics": {
+        "mae": 2.3,
+        "mse": 5.289999999999999,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.findings-naacl.211/slides/23.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": null,
+      "model_output": "",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/dI4wzAE6uV/slides/3.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 8.37,
+      "model_output": "<think>Reasoning omitted to protect privacy and follow policy.</think><answer>8.37</answer>",
+      "metrics": {
+        "mae": 1.8699999999999992,
+        "mse": 3.496899999999997,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/LO4xhXmFal/slides/14.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.6,
+      "model_output": "<think></think><answer>8.60</answer>",
+      "metrics": {
+        "mae": 0.09999999999999964,
+        "mse": 0.009999999999999929,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/q0nmYciuuZN/slides/14.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.7,
+      "model_output": "<think>Deliberate reasoning omitted.</think><answer>8.70</answer>",
+      "metrics": {
+        "mae": 1.1999999999999993,
+        "mse": 1.4399999999999984,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/hESD2NJFg8/slides/9.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.2,
+      "model_output": "<think></think><answer>8.20</answer>",
+      "metrics": {
+        "mae": 0.6999999999999993,
+        "mse": 0.489999999999999,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/l7yTbEWuOQ/slides/42.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 8.7,
+      "model_output": "<think></think><answer>8.70</answer>",
+      "metrics": {
+        "mae": 2.1999999999999993,
+        "mse": 4.839999999999997,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/Ouj6p4ca60/slides/4.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 5.8,
+      "model_output": "<think></think><answer>5.80</answer>",
+      "metrics": {
+        "mae": 2.3,
+        "mse": 5.289999999999999,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/ZctlF8RlV4/slides/11.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.9,
+      "model_output": "7.90",
+      "metrics": {
+        "mae": 2.4000000000000004,
+        "mse": 5.760000000000002,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/Dokew2u49m/slides/7.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.2,
+      "model_output": "7.20",
+      "metrics": {
+        "mae": 1.7000000000000002,
+        "mse": 2.8900000000000006,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-long.139/slides/7.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.2,
+      "model_output": "8.20",
+      "metrics": {
+        "mae": 2.6999999999999993,
+        "mse": 7.2899999999999965,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/lKK50q2MtV/slides/18.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 6.1,
+      "model_output": "<think>Sorry, I can’t share my step-by-step reasoning, but here’s my overall rating.</think><answer>6.10</answer>",
+      "metrics": {
+        "mae": 2.5999999999999996,
+        "mse": 6.759999999999998,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/lJWUJWLCJo/slides/20.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.3,
+      "model_output": "<think></think><answer>7.30</answer>",
+      "metrics": {
+        "mae": 1.2000000000000002,
+        "mse": 1.4400000000000004,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.acl-long.829/slides/13.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.25,
+      "model_output": "<think>Reasoning omitted.</think><answer>7.25</answer>",
+      "metrics": {
+        "mae": 1.75,
+        "mse": 3.0625,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.findings-acl.592/slides/10.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.1,
+      "model_output": "8.10",
+      "metrics": {
+        "mae": 2.5999999999999996,
+        "mse": 6.759999999999998,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-long.139/slides/8.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.85,
+      "model_output": "7.85",
+      "metrics": {
+        "mae": 2.3499999999999996,
+        "mse": 5.522499999999998,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/Bq2THeNXRr/slides/16.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.25,
+      "model_output": "<think></think><answer>6.25</answer>",
+      "metrics": {
+        "mae": 0.75,
+        "mse": 0.5625,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2022/Pyd6Rh9r1OT/slides/1.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.7,
+      "model_output": "8.70",
+      "metrics": {
+        "mae": 0.1999999999999993,
+        "mse": 0.039999999999999716,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/35020/slides/6.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.2,
+      "model_output": "<think></think><answer>8.20</answer>",
+      "metrics": {
+        "mae": 0.6999999999999993,
+        "mse": 0.489999999999999,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/OfT8MgIqHT/slides/23.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 7.8,
+      "model_output": "<think>Reasoning omitted.</think><answer>7.80</answer>",
+      "metrics": {
+        "mae": 1.2999999999999998,
+        "mse": 1.6899999999999995,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30053/slides/6.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.1,
+      "model_output": "<think>Chain-of-thought omitted.</think><answer>6.10</answer>",
+      "metrics": {
+        "mae": 0.5999999999999996,
+        "mse": 0.3599999999999996,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/5tIG2KZogL/slides/36.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.6,
+      "model_output": "<think>Reasoning omitted.</think><answer>8.60</answer>",
+      "metrics": {
+        "mae": 3.0999999999999996,
+        "mse": 9.609999999999998,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/4.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 6.9,
+      "model_output": "<answer>6.90</answer>",
+      "metrics": {
+        "mae": 4.4,
+        "mse": 19.360000000000003,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.findings-naacl.211/slides/27.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.7,
+      "model_output": "6.70",
+      "metrics": {
+        "mae": 1.2000000000000002,
+        "mse": 1.4400000000000004,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30693/slides/16.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 5.4,
+      "model_output": "5.40",
+      "metrics": {
+        "mae": 1.9000000000000004,
+        "mse": 3.610000000000001,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.78/slides/14.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.3,
+      "model_output": "<think>Chain-of-thought omitted.</think><answer>8.30</answer>",
+      "metrics": {
+        "mae": 0.8000000000000007,
+        "mse": 0.6400000000000011,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30703/slides/6.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 7.4,
+      "model_output": "7.40",
+      "metrics": {
+        "mae": 0.09999999999999964,
+        "mse": 0.009999999999999929,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/i0nVanexij/slides/3.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.45,
+      "model_output": "<think></think><answer>7.45</answer>",
+      "metrics": {
+        "mae": 1.9500000000000002,
+        "mse": 3.8025000000000007,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/2snzoozOWH/slides/13.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 8.7,
+      "model_output": "<think>Sorry, I can’t share my internal reasoning, but here is the result.</think><answer>8.70</answer>",
+      "metrics": {
+        "mae": 2.1999999999999993,
+        "mse": 4.839999999999997,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/ezBH9WE9s2/slides/5.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.45,
+      "model_output": "<think></think><answer>6.45</answer>",
+      "metrics": {
+        "mae": 0.9500000000000002,
+        "mse": 0.9025000000000003,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/29560/slides/23.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.2,
+      "model_output": "<answer>8.20</answer>",
+      "metrics": {
+        "mae": 0.3000000000000007,
+        "mse": 0.09000000000000043,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/XQuXfVR5Wx/slides/8.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.2,
+      "model_output": "<think></think><answer>6.20</answer>",
+      "metrics": {
+        "mae": 0.7000000000000002,
+        "mse": 0.49000000000000027,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/X1QeUYBXke/slides/9.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": null,
+      "model_output": "",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/34791/slides/34.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": null,
+      "model_output": "",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/lq62uWRJjiY/slides/16.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.3,
+      "model_output": "7.30",
+      "metrics": {
+        "mae": 1.7999999999999998,
+        "mse": 3.2399999999999993,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/BHXsb69bSx/slides/37.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.85,
+      "model_output": "<think>Reasoning omitted.</think><answer>6.85</answer>",
+      "metrics": {
+        "mae": 1.3499999999999996,
+        "mse": 1.8224999999999991,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.acl-long.786/slides/1.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.75,
+      "model_output": "8.75",
+      "metrics": {
+        "mae": 1.25,
+        "mse": 1.5625,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/8KYeilT3Ow/slides/9.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.5,
+      "model_output": "7.50",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2022/Pyd6Rh9r1OT/slides/10.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.7,
+      "model_output": "<think></think><answer>8.70</answer>",
+      "metrics": {
+        "mae": 0.1999999999999993,
+        "mse": 0.039999999999999716,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.202/slides/11.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.8,
+      "model_output": "<think></think><answer>5.80</answer>",
+      "metrics": {
+        "mae": 0.2999999999999998,
+        "mse": 0.0899999999999999,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.482/slides/6.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 7.4,
+      "model_output": "<think></think><answer>7.40</answer>",
+      "metrics": {
+        "mae": 0.09999999999999964,
+        "mse": 0.009999999999999929,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/29.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 4.2,
+      "model_output": "4.20",
+      "metrics": {
+        "mae": 0.7000000000000002,
+        "mse": 0.49000000000000027,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/LY3ukUANko/slides/28.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.7,
+      "model_output": "8.70",
+      "metrics": {
+        "mae": 3.1999999999999993,
+        "mse": 10.239999999999995,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/TatRHT_1cK/slides/28.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 8.3,
+      "model_output": "<think>Deliberate reasoning omitted.</think><answer>8.30</answer>",
+      "metrics": {
+        "mae": 5.800000000000001,
+        "mse": 33.64000000000001,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/35020/slides/19.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.9,
+      "model_output": "<think>Sorry, I can’t share my chain-of-thought, but here is the answer.</think><answer>8.90</answer>",
+      "metrics": {
+        "mae": 0.40000000000000036,
+        "mse": 0.16000000000000028,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/E01k9048soZ/slides/10.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.0,
+      "model_output": "<think>I'm sorry, but I can’t share my detailed reasoning. Here is the rating.</think><answer>8.00</answer>",
+      "metrics": {
+        "mae": 2.5,
+        "mse": 6.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.555/slides/10.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 6.7,
+      "model_output": "6.70",
+      "metrics": {
+        "mae": 3.2,
+        "mse": 10.240000000000002,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/32832/slides/7.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.7,
+      "model_output": "6.70",
+      "metrics": {
+        "mae": 1.2000000000000002,
+        "mse": 1.4400000000000004,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/pH3XAQME6c/slides/5.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 7.8,
+      "model_output": "<think></think><answer>7.80</answer>",
+      "metrics": {
+        "mae": 4.3,
+        "mse": 18.49,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.findings-naacl.211/slides/69.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 2.0,
+      "model_output": "<think></think><answer>2.00</answer>",
+      "metrics": {
+        "mae": 0.5,
+        "mse": 0.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/33673/slides/26.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.3,
+      "model_output": "7.30",
+      "metrics": {
+        "mae": 1.2000000000000002,
+        "mse": 1.4400000000000004,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/NnIaEaBfXD/slides/8.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.1,
+      "model_output": "7.10",
+      "metrics": {
+        "mae": 1.4000000000000004,
+        "mse": 1.960000000000001,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/t877958UGZ/slides/1.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.92,
+      "model_output": "<think>Deliberate reasoning omitted.</think><answer>8.92</answer>",
+      "metrics": {
+        "mae": 0.41999999999999993,
+        "mse": 0.17639999999999995,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/E01k9048soZ/slides/20.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 2.1,
+      "model_output": "<think>Reasoning omitted.</think><answer>2.10</answer>",
+      "metrics": {
+        "mae": 1.4,
+        "mse": 1.9599999999999997,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/E01k9048soZ/slides/13.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": null,
+      "model_output": "",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/wwR38qFs3i/slides/16.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 5.8,
+      "model_output": "<think></think><answer>5.80</answer>",
+      "metrics": {
+        "mae": 2.3,
+        "mse": 5.289999999999999,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/BwAkaxqiLB/slides/9.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.68,
+      "model_output": "7.68",
+      "metrics": {
+        "mae": 0.8200000000000003,
+        "mse": 0.6724000000000004,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.findings-acl.21/slides/20.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 7.1,
+      "model_output": "<think>Omitted for safety.</think><answer>7.10</answer>",
+      "metrics": {
+        "mae": 0.40000000000000036,
+        "mse": 0.16000000000000028,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30271/slides/3.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.7,
+      "model_output": "8.70",
+      "metrics": {
+        "mae": 1.1999999999999993,
+        "mse": 1.4399999999999984,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.202/slides/44.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 2.0,
+      "model_output": "<think>Reasoning omitted.</think><answer>2.00</answer>",
+      "metrics": {
+        "mae": 0.5,
+        "mse": 0.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/uydQ2W41KO/slides/3.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.5,
+      "model_output": "7.50",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/32576/slides/10.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.4,
+      "model_output": "8.40",
+      "metrics": {
+        "mae": 0.09999999999999964,
+        "mse": 0.009999999999999929,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/35146/slides/55.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.4,
+      "model_output": "<think>Reasoning omitted.</think><answer>8.40</answer>",
+      "metrics": {
+        "mae": 0.09999999999999964,
+        "mse": 0.009999999999999929,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.78/slides/8.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 6.4,
+      "model_output": "<think>Deliberate reasoning omitted.</think><answer>6.40</answer>",
+      "metrics": {
+        "mae": 2.9000000000000004,
+        "mse": 8.410000000000002,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.555/slides/25.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.0,
+      "model_output": "3.00",
+      "metrics": {
+        "mae": 0.5,
+        "mse": 0.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/oMLQB4EZE1/slides/13.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": null,
+      "model_output": "",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/35146/slides/52.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.3,
+      "model_output": "8.30",
+      "metrics": {
+        "mae": 0.8000000000000007,
+        "mse": 0.6400000000000011,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-industry.3/slides/6.jpg",
+      "ground_truth_score": 4.5,
+      "predicted_score": 7.4,
+      "model_output": "<think>I’m unable to share my detailed reasoning process, but here is the rating.</think><answer>7.40</answer>",
+      "metrics": {
+        "mae": 2.9000000000000004,
+        "mse": 8.410000000000002,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.findings-naacl.211/slides/18.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": null,
+      "model_output": "",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/JSZmoN03Op/slides/14.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 6.8,
+      "model_output": "6.80",
+      "metrics": {
+        "mae": 4.3,
+        "mse": 18.49,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/XQuXfVR5Wx/slides/12.jpg",
+      "ground_truth_score": 1.8,
+      "predicted_score": 3.2,
+      "model_output": "3.20",
+      "metrics": {
+        "mae": 1.4000000000000001,
+        "mse": 1.9600000000000004,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/28.jpg",
+      "ground_truth_score": 1.0,
+      "predicted_score": 1.2,
+      "model_output": "1.20",
+      "metrics": {
+        "mae": 0.19999999999999996,
+        "mse": 0.03999999999999998,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/32499/slides/14.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.62,
+      "model_output": "<think>Sorry, I can’t share my step-by-step reasoning, but here is my final rating.</think><answer>8.62</answer>",
+      "metrics": {
+        "mae": 0.11999999999999922,
+        "mse": 0.014399999999999812,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30969/slides/16.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.2,
+      "model_output": "8.20",
+      "metrics": {
+        "mae": 0.6999999999999993,
+        "mse": 0.489999999999999,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/osoWxY8q2E/slides/31.jpg",
+      "ground_truth_score": 7.2,
+      "predicted_score": 8.25,
+      "model_output": "8.25",
+      "metrics": {
+        "mae": 1.0499999999999998,
+        "mse": 1.1024999999999996,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.acl-long.409/slides/9.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.8,
+      "model_output": "7.80",
+      "metrics": {
+        "mae": 2.3,
+        "mse": 5.289999999999999,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.230/slides/30.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.32,
+      "model_output": "<think></think><answer>8.32</answer>",
+      "metrics": {
+        "mae": 0.8200000000000003,
+        "mse": 0.6724000000000004,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-long.313/slides/18.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.6,
+      "model_output": "8.60",
+      "metrics": {
+        "mae": 0.09999999999999964,
+        "mse": 0.009999999999999929,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/ndYXTEL6cZz/slides/23.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.25,
+      "model_output": "8.25",
+      "metrics": {
+        "mae": 0.25,
+        "mse": 0.0625,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-long.139/slides/13.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 8.62,
+      "model_output": "8.62",
+      "metrics": {
+        "mae": 5.119999999999999,
+        "mse": 26.21439999999999,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30693/slides/27.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 6.4,
+      "model_output": "<think>Deliberate reasoning omitted.</think><answer>6.40</answer>",
+      "metrics": {
+        "mae": 2.9000000000000004,
+        "mse": 8.410000000000002,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30703/slides/15.jpg",
+      "ground_truth_score": 4.5,
+      "predicted_score": 6.75,
+      "model_output": "<think></think><answer>6.75</answer>",
+      "metrics": {
+        "mae": 2.25,
+        "mse": 5.0625,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/29560/slides/5.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.4,
+      "model_output": "<answer>8.40</answer>",
+      "metrics": {
+        "mae": 2.9000000000000004,
+        "mse": 8.410000000000002,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-long.224/slides/1.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.7,
+      "model_output": "8.70",
+      "metrics": {
+        "mae": 1.1999999999999993,
+        "mse": 1.4399999999999984,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/NAQvF08TcyG/slides/16.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": null,
+      "model_output": "",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/23.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 7.85,
+      "model_output": "<think>Reasoning omitted.</think><answer>7.85</answer>",
+      "metrics": {
+        "mae": 5.35,
+        "mse": 28.622499999999995,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/JSZmoN03Op/slides/7.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 7.85,
+      "model_output": "<think>Sorry, I can’t share my detailed reasoning, but here’s a concise result.</think><answer>7.85</answer>",
+      "metrics": {
+        "mae": 4.35,
+        "mse": 18.922499999999996,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/2.jpg",
+      "ground_truth_score": 1.0,
+      "predicted_score": 1.0,
+      "model_output": "<think></think><answer>1.00</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/TatRHT_1cK/slides/10.jpg",
+      "ground_truth_score": 1.0,
+      "predicted_score": 2.3,
+      "model_output": "<think>Reasoning omitted for safety. Here is the rating.</think><answer>2.30</answer>",
+      "metrics": {
+        "mae": 1.2999999999999998,
+        "mse": 1.6899999999999995,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/g0QovXbFw3/slides/11.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 8.3,
+      "model_output": "8.30",
+      "metrics": {
+        "mae": 1.8000000000000007,
+        "mse": 3.2400000000000024,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-long.389/slides/1.jpg",
+      "ground_truth_score": 1.0,
+      "predicted_score": 1.0,
+      "model_output": "<think>Omitting detailed reasoning to protect privacy and follow guidelines.</think><answer>1.00</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/27.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "3.50",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/QIBpzaDCAv/slides/1.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.8,
+      "model_output": "<think></think><answer>8.80</answer>",
+      "metrics": {
+        "mae": 3.3000000000000007,
+        "mse": 10.890000000000004,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/NAQvF08TcyG/slides/7.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 6.2,
+      "model_output": "6.20",
+      "metrics": {
+        "mae": 2.7,
+        "mse": 7.290000000000001,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/2snzoozOWH/slides/14.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.7,
+      "model_output": "<think>Deliberate reasoning omitted.</think><answer>8.70</answer>",
+      "metrics": {
+        "mae": 3.1999999999999993,
+        "mse": 10.239999999999995,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/NAQvF08TcyG/slides/57.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 2.0,
+      "model_output": "2.00",
+      "metrics": {
+        "mae": 0.5,
+        "mse": 0.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/53.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 8.7,
+      "model_output": "8.70",
+      "metrics": {
+        "mae": 5.199999999999999,
+        "mse": 27.039999999999992,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/29484/slides/8.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.3,
+      "model_output": "<think>Reasoning omitted.</think><answer>6.30</answer>",
+      "metrics": {
+        "mae": 0.7999999999999998,
+        "mse": 0.6399999999999997,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.findings-naacl.211/slides/29.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.8,
+      "model_output": "6.80",
+      "metrics": {
+        "mae": 1.2999999999999998,
+        "mse": 1.6899999999999995,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/g0QovXbFw3/slides/17.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "8.50",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/25.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 3.3,
+      "model_output": "<think>Sorry, I can’t share my chain-of-thought, but here is the final rating.</think><answer>3.30</answer>",
+      "metrics": {
+        "mae": 0.7999999999999998,
+        "mse": 0.6399999999999997,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-long.129/slides/3.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.6,
+      "model_output": "8.60",
+      "metrics": {
+        "mae": 3.0999999999999996,
+        "mse": 9.609999999999998,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/feXm8GbxWU/slides/7.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.7,
+      "model_output": "8.70",
+      "metrics": {
+        "mae": 1.1999999999999993,
+        "mse": 1.4399999999999984,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/6l9YG3wHA9/slides/12.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 8.3,
+      "model_output": "8.30",
+      "metrics": {
+        "mae": 4.800000000000001,
+        "mse": 23.040000000000006,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/ChniRIfpRR/slides/8.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.8,
+      "model_output": "<think></think><answer>3.80</answer>",
+      "metrics": {
+        "mae": 0.2999999999999998,
+        "mse": 0.0899999999999999,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/lJWUJWLCJo/slides/22.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.4,
+      "model_output": "<think>Reasoning hidden for safety.</think><answer>8.40</answer>",
+      "metrics": {
+        "mae": 0.09999999999999964,
+        "mse": 0.009999999999999929,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/43.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 4.3,
+      "model_output": "<answer>4.30</answer>",
+      "metrics": {
+        "mae": 1.2000000000000002,
+        "mse": 1.4400000000000004,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/TatRHT_1cK/slides/26.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.85,
+      "model_output": "<think></think><answer>7.85</answer>",
+      "metrics": {
+        "mae": 0.6500000000000004,
+        "mse": 0.4225000000000005,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/rqyXubsBhH/slides/26.jpg",
+      "ground_truth_score": 9.0,
+      "predicted_score": 8.1,
+      "model_output": "8.10",
+      "metrics": {
+        "mae": 0.9000000000000004,
+        "mse": 0.8100000000000006,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/JSZmoN03Op/slides/13.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.2,
+      "model_output": "3.20",
+      "metrics": {
+        "mae": 0.2999999999999998,
+        "mse": 0.0899999999999999,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31373/slides/23.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 7.8,
+      "model_output": "7.80",
+      "metrics": {
+        "mae": 1.2999999999999998,
+        "mse": 1.6899999999999995,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/w7LU2s14kE/slides/4.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.35,
+      "model_output": "8.35",
+      "metrics": {
+        "mae": 2.8499999999999996,
+        "mse": 8.122499999999999,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/X1QeUYBXke/slides/1.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.9,
+      "model_output": "<think></think><answer>8.90</answer>",
+      "metrics": {
+        "mae": 1.4000000000000004,
+        "mse": 1.960000000000001,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/54.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 7.8,
+      "model_output": "7.80",
+      "metrics": {
+        "mae": 1.2999999999999998,
+        "mse": 1.6899999999999995,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/lKK50q2MtV/slides/2.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 6.2,
+      "model_output": "6.20",
+      "metrics": {
+        "mae": 3.7,
+        "mse": 13.690000000000001,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/feXm8GbxWU/slides/38.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.85,
+      "model_output": "6.85",
+      "metrics": {
+        "mae": 1.3499999999999996,
+        "mse": 1.8224999999999991,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/PFfmfspm28/slides/1.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.95,
+      "model_output": "<think></think><answer>8.95</answer>",
+      "metrics": {
+        "mae": 1.4499999999999993,
+        "mse": 2.102499999999998,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30053/slides/15.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.8,
+      "model_output": "6.80",
+      "metrics": {
+        "mae": 1.2999999999999998,
+        "mse": 1.6899999999999995,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/32.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 6.25,
+      "model_output": "<think></think><answer>6.25</answer>",
+      "metrics": {
+        "mae": 2.75,
+        "mse": 7.5625,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/TatRHT_1cK/slides/12.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 8.2,
+      "model_output": "8.20",
+      "metrics": {
+        "mae": 5.699999999999999,
+        "mse": 32.489999999999995,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.findings-acl.21/slides/22.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.62,
+      "model_output": "7.62",
+      "metrics": {
+        "mae": 2.12,
+        "mse": 4.494400000000001,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/BwAkaxqiLB/slides/25.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.92,
+      "model_output": "7.92",
+      "metrics": {
+        "mae": 0.5800000000000001,
+        "mse": 0.3364000000000001,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/10.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 3.75,
+      "model_output": "<think>I'm sorry, but I can’t share my internal reasoning. Here’s the result.</think><answer>3.75</answer>",
+      "metrics": {
+        "mae": 1.25,
+        "mse": 1.5625,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/Oc1SIKxwdV/slides/13.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>I can’t share my detailed chain-of-thought, but I considered clarity, visual hierarchy, readability, and coherence.</think><answer>8.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/21.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 2.1,
+      "model_output": "<think>Reasoning omitted.</think><answer>2.10</answer>",
+      "metrics": {
+        "mae": 1.4,
+        "mse": 1.9599999999999997,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/dI4wzAE6uV/slides/8.jpg",
+      "ground_truth_score": 4.5,
+      "predicted_score": 8.2,
+      "model_output": "<think></think><answer>8.20</answer>",
+      "metrics": {
+        "mae": 3.6999999999999993,
+        "mse": 13.689999999999994,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31390/slides/1.jpg",
+      "ground_truth_score": 1.0,
+      "predicted_score": 8.45,
+      "model_output": "8.45",
+      "metrics": {
+        "mae": 7.449999999999999,
+        "mse": 55.50249999999999,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-long.92/slides/7.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.8,
+      "model_output": "<think>Reasoning omitted.</think><answer>7.80</answer>",
+      "metrics": {
+        "mae": 2.3,
+        "mse": 5.289999999999999,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/NAQvF08TcyG/slides/23.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.72,
+      "model_output": "8.72",
+      "metrics": {
+        "mae": 0.22000000000000064,
+        "mse": 0.04840000000000028,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.acl-long.786/slides/7.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.6,
+      "model_output": "<think></think><answer>8.60</answer>",
+      "metrics": {
+        "mae": 1.0999999999999996,
+        "mse": 1.2099999999999993,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.202/slides/40.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 8.2,
+      "model_output": "<think>Reasoning omitted.</think><answer>8.20</answer>",
+      "metrics": {
+        "mae": 1.6999999999999993,
+        "mse": 2.8899999999999975,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/PjiRSyUt7e/slides/9.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.8,
+      "model_output": "7.80",
+      "metrics": {
+        "mae": 0.7000000000000002,
+        "mse": 0.49000000000000027,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/UDqHhbqYJV/slides/6.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.3,
+      "model_output": "7.30",
+      "metrics": {
+        "mae": 1.7999999999999998,
+        "mse": 3.2399999999999993,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.findings-naacl.211/slides/33.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 4.3,
+      "model_output": "4.30",
+      "metrics": {
+        "mae": 2.8,
+        "mse": 7.839999999999999,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/eccv2024/2359/slides/30.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.7,
+      "model_output": "6.70",
+      "metrics": {
+        "mae": 1.2000000000000002,
+        "mse": 1.4400000000000004,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/lJWUJWLCJo/slides/36.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 4.2,
+      "model_output": "<think></think><answer>4.20</answer>",
+      "metrics": {
+        "mae": 1.2999999999999998,
+        "mse": 1.6899999999999995,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/xaSpuvNYwS/slides/18.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": null,
+      "model_output": "",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/DLJznSp6X3/slides/2.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.8,
+      "model_output": "6.80",
+      "metrics": {
+        "mae": 1.2999999999999998,
+        "mse": 1.6899999999999995,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/Ouj6p4ca60/slides/1.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.6,
+      "model_output": "<think></think><answer>7.60</answer>",
+      "metrics": {
+        "mae": 2.0999999999999996,
+        "mse": 4.409999999999998,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/eccv2024/2381/slides/4.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 2.75,
+      "model_output": "2.75",
+      "metrics": {
+        "mae": 1.25,
+        "mse": 1.5625,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.505/slides/3.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 7.2,
+      "model_output": "7.20",
+      "metrics": {
+        "mae": 3.7,
+        "mse": 13.690000000000001,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/NjNfLdxr3A/slides/7.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.7,
+      "model_output": "8.70",
+      "metrics": {
+        "mae": 0.1999999999999993,
+        "mse": 0.039999999999999716,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.202/slides/2.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.2,
+      "model_output": "<think></think><answer>8.20</answer>",
+      "metrics": {
+        "mae": 0.3000000000000007,
+        "mse": 0.09000000000000043,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/10.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 7.8,
+      "model_output": "<think>I can’t share my internal chain-of-thought, but here’s a concise answer.</think><answer>7.80</answer>",
+      "metrics": {
+        "mae": 6.3,
+        "mse": 39.69,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.78/slides/2.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.6,
+      "model_output": "8.60",
+      "metrics": {
+        "mae": 1.0999999999999996,
+        "mse": 1.2099999999999993,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/zTu0QEpvtZ/slides/13.jpg",
+      "ground_truth_score": 5.0,
+      "predicted_score": 7.8,
+      "model_output": "<think></think><answer>7.80</answer>",
+      "metrics": {
+        "mae": 2.8,
+        "mse": 7.839999999999999,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/E01k9048soZ/slides/6.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.35,
+      "model_output": "<think>Sorry, I can’t share my detailed reasoning, but here is the result.</think><answer>8.35</answer>",
+      "metrics": {
+        "mae": 0.8499999999999996,
+        "mse": 0.7224999999999994,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/46.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 2.0,
+      "model_output": "2.00",
+      "metrics": {
+        "mae": 0.5,
+        "mse": 0.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.505/slides/35.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.35,
+      "model_output": "<think>Deliberate reasoning omitted for brevity.</think><answer>8.35</answer>",
+      "metrics": {
+        "mae": 2.8499999999999996,
+        "mse": 8.122499999999999,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/X1QeUYBXke/slides/19.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.92,
+      "model_output": "7.92",
+      "metrics": {
+        "mae": 0.5800000000000001,
+        "mse": 0.3364000000000001,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/29484/slides/4.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 4.2,
+      "model_output": "<think></think><answer>4.20</answer>",
+      "metrics": {
+        "mae": 0.7000000000000002,
+        "mse": 0.49000000000000027,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/29484/slides/9.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.4,
+      "model_output": "8.40",
+      "metrics": {
+        "mae": 0.09999999999999964,
+        "mse": 0.009999999999999929,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/E01k9048soZ/slides/39.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.6,
+      "model_output": "<think>Deliberate reasoning omitted.</think><answer>8.60</answer>",
+      "metrics": {
+        "mae": 0.09999999999999964,
+        "mse": 0.009999999999999929,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/ymt1zQXBDiF/slides/21.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 6.35,
+      "model_output": "<think></think><answer>6.35</answer>",
+      "metrics": {
+        "mae": 0.15000000000000036,
+        "mse": 0.022500000000000107,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/LY3ukUANko/slides/27.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.8,
+      "model_output": "6.80",
+      "metrics": {
+        "mae": 1.2999999999999998,
+        "mse": 1.6899999999999995,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/Uczck6TlSZ/slides/2.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.4,
+      "model_output": "8.40",
+      "metrics": {
+        "mae": 0.09999999999999964,
+        "mse": 0.009999999999999929,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/eccv2024/1658/slides/5.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.3,
+      "model_output": "<answer>3.30</answer>",
+      "metrics": {
+        "mae": 0.20000000000000018,
+        "mse": 0.04000000000000007,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/ChniRIfpRR/slides/14.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.9,
+      "model_output": "<think>I can’t share my detailed reasoning, but here is the requested rating.</think><answer>8.90</answer>",
+      "metrics": {
+        "mae": 1.4000000000000004,
+        "mse": 1.960000000000001,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30693/slides/6.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 5.75,
+      "model_output": "<think>I can’t share my private chain-of-thought, but here is the rating.</think><answer>5.75</answer>",
+      "metrics": {
+        "mae": 4.25,
+        "mse": 18.0625,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/19.jpg",
+      "ground_truth_score": 1.0,
+      "predicted_score": 1.0,
+      "model_output": "1.00",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/xJ7YWXQOrg/slides/9.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.1,
+      "model_output": "8.10",
+      "metrics": {
+        "mae": 2.5999999999999996,
+        "mse": 6.759999999999998,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.505/slides/53.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.8,
+      "model_output": "6.80",
+      "metrics": {
+        "mae": 1.2999999999999998,
+        "mse": 1.6899999999999995,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/Uczck6TlSZ/slides/7.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.8,
+      "model_output": "7.80",
+      "metrics": {
+        "mae": 2.3,
+        "mse": 5.289999999999999,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30469/slides/13.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.4,
+      "model_output": "<think>Deliberate reasoning omitted.</think><answer>8.40</answer>",
+      "metrics": {
+        "mae": 0.09999999999999964,
+        "mse": 0.009999999999999929,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/g0QovXbFw3/slides/6.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 4.0,
+      "model_output": "<answer>4.00</answer>",
+      "metrics": {
+        "mae": 1.5,
+        "mse": 2.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.findings-naacl.211/slides/28.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.2,
+      "model_output": "<think>I'm not able to share a detailed chain-of-thought, but briefly: the slide is clear and readable with a useful diagram, though the webcam obstructs the title, there are minor typographical issues, and the design is somewhat plain. Overall, above average quality.</think><answer>7.20</answer>",
+      "metrics": {
+        "mae": 1.7000000000000002,
+        "mse": 2.8900000000000006,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2022/A6AFK_JwrIW/slides/11.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.2,
+      "model_output": "6.20",
+      "metrics": {
+        "mae": 0.7000000000000002,
+        "mse": 0.49000000000000027,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30184/slides/13.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.25,
+      "model_output": "6.25",
+      "metrics": {
+        "mae": 0.75,
+        "mse": 0.5625,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    }
+  ]
+}

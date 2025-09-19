@@ -1,0 +1,3524 @@
+{
+  "task": "score",
+  "test_model": "/root/Q-Insight/LLaMA-Factory/saves/qwen2_5vl-7b/full/sft",
+  "test_api_base_url": "http://0.0.0.0:8000/v1",
+  "test_data": "/root/Q-Insight/dataset/slide_quality_test.json",
+  "total_samples": 250,
+  "overall_metrics": {
+    "score": {
+      "mae": 1.2172,
+      "mse": 3.0126,
+      "rmse": 1.735684303092011,
+      "within_threshold": 0.376,
+      "threshold": 0.35,
+      "total_samples": 250,
+      "valid_predictions": 250,
+      "failed_predictions": 0,
+      "invalid_scores": 0
+    }
+  },
+  "per_class_metrics": {},
+  "category_distribution": {},
+  "detailed_results": [
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/wwR38qFs3i/slides/35.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/xJ7YWXQOrg/slides/5.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/DeG07_TcZvT/slides/33.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/wwR38qFs3i/slides/8.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 4.0,
+        "mse": 16.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/LY3ukUANko/slides/12.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/nkals4A4Vs/slides/2.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 2.5 out of 5.</think><answer>2.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/xJ7YWXQOrg/slides/3.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/JSZmoN03Op/slides/8.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/l7yTbEWuOQ/slides/22.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the image and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/lq62uWRJjiY/slides/4.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 8.5 out of 5.</think><answer>8.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/FCnohuR6AnM/slides/18.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/rqyXubsBhH/slides/22.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 4.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 4.5 out of 5.</think><answer>4.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/nkals4A4Vs/slides/15.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2022/AXDNM76T1nc/slides/13.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 4.0,
+        "mse": 16.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30473/slides/7.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30065/slides/4.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/33958/slides/6.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 8.5 out of 5.</think><answer>8.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/8.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/29358/slides/9.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30693/slides/45.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/i0nVanexij/slides/10.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/eccv2024/2381/slides/16.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 2.5 out of 5.</think><answer>2.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/5.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.202/slides/10.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/14.jpg",
+      "ground_truth_score": 1.0,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 2.5,
+        "mse": 6.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/8.jpg",
+      "ground_truth_score": 1.0,
+      "predicted_score": 2.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 2.5 out of 5.</think><answer>2.5</answer>",
+      "metrics": {
+        "mae": 1.5,
+        "mse": 2.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/2snzoozOWH/slides/7.jpg",
+      "ground_truth_score": 2.0,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 3.5,
+        "mse": 12.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/02f3mUtqnM/slides/10.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/BJ0fQUU32w/slides/13.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/29358/slides/8.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30053/slides/2.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.505/slides/48.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/xaSpuvNYwS/slides/9.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.findings-acl.21/slides/31.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 2.5 out of 5.</think><answer>2.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/lq62uWRJjiY/slides/2.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.230/slides/2.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 2.5 out of 5.</think><answer>2.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30703/slides/28.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.findings-acl.716/slides/18.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 4.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 4.5 out of 5.</think><answer>4.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.acl-long.786/slides/57.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/E01k9048soZ/slides/26.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-industry.3/slides/8.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/NAQvF08TcyG/slides/46.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/VZ8bs0fwoO/slides/11.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 6.5 out of 5.</think><answer>6.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/ITw9edRDlD/slides/7.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30693/slides/30.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30693/slides/7.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2022/isPnnaTZaP5/slides/11.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 7.5 out of 5.</think><answer>7.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/k7p_YAO7yE/slides/8.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 7.5 out of 5.</think><answer>7.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.653/slides/3.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/q0nmYciuuZN/slides/31.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/ndYXTEL6cZz/slides/30.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/k7p_YAO7yE/slides/2.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 7.5 out of 5.</think><answer>7.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/ndYXTEL6cZz/slides/18.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.acl-long.829/slides/12.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/q0nmYciuuZN/slides/3.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 8.5 out of 5.</think><answer>8.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/uydQ2W41KO/slides/7.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 8.5 out of 5.</think><answer>8.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/ktrw68Cmu9c/slides/2.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/E01k9048soZ/slides/18.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/lKK50q2MtV/slides/5.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/nA5AZ8CEyow/slides/2.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/q0nmYciuuZN/slides/20.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/42.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 2.5 out of 5.</think><answer>2.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30271/slides/9.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/20.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 2.5 out of 5.</think><answer>2.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30473/slides/1.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 8.5 out of 5.</think><answer>8.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/eccv2024/2381/slides/19.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 2.5 out of 5.</think><answer>2.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.findings-naacl.211/slides/23.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 5.0,
+        "mse": 25.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/5tIG2KZogL/slides/4.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/BHXsb69bSx/slides/24.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/BHXsb69bSx/slides/25.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 4.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 4.5 out of 5.</think><answer>4.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/4KqkizXgXU/slides/4.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 4.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 4.5 out of 5.</think><answer>4.5</answer>",
+      "metrics": {
+        "mae": 4.0,
+        "mse": 16.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-long.139/slides/7.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/lKK50q2MtV/slides/18.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/eccv2024/1658/slides/2.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 4.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 4.5 out of 5.</think><answer>4.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/pTHfApDakA/slides/20.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/dI4wzAE6uV/slides/3.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/WZH7099tgfM/slides/3.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/67o9UQgTD0/slides/5.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 8.5 out of 5.</think><answer>8.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30693/slides/42.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2022/_VjQlMeSB_J/slides/1.jpg",
+      "ground_truth_score": 4.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/hESD2NJFg8/slides/9.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 8.5 out of 5.</think><answer>8.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/TatRHT_1cK/slides/32.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/lJWUJWLCJo/slides/30.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 8.5 out of 5.</think><answer>8.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/X1QeUYBXke/slides/22.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/l7yTbEWuOQ/slides/42.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/Ouj6p4ca60/slides/4.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/q0nmYciuuZN/slides/14.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 8.5 out of 5.</think><answer>8.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/b1ylCyjAZk/slides/1.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 8.5 out of 5.</think><answer>8.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/hESD2NJFg8/slides/7.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 4.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 4.5 out of 5.</think><answer>4.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.78/slides/14.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 4.0,
+        "mse": 16.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30693/slides/16.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/LO4xhXmFal/slides/14.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 8.5 out of 5.</think><answer>8.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30053/slides/6.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/OfT8MgIqHT/slides/23.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/34791/slides/34.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/4.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 6.5 out of 5.</think><answer>6.5</answer>",
+      "metrics": {
+        "mae": 4.0,
+        "mse": 16.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/29560/slides/23.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.findings-acl.592/slides/10.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/lJWUJWLCJo/slides/20.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/2snzoozOWH/slides/13.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30703/slides/6.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 7.5 out of 5.</think><answer>7.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/35020/slides/6.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/35020/slides/19.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 7.5 out of 5.</think><answer>7.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/XQuXfVR5Wx/slides/8.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/Dokew2u49m/slides/7.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/X1QeUYBXke/slides/9.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/ZctlF8RlV4/slides/11.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/i0nVanexij/slides/3.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 6.5 out of 5.</think><answer>6.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-long.139/slides/8.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2022/Pyd6Rh9r1OT/slides/1.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 8.5 out of 5.</think><answer>8.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/Bq2THeNXRr/slides/16.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/5tIG2KZogL/slides/36.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 6.5 out of 5.</think><answer>6.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/t877958UGZ/slides/1.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 5.0,
+        "mse": 25.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/ezBH9WE9s2/slides/5.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/MvjLRFntW6/slides/5.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 8.5 out of 5.</think><answer>8.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/BHXsb69bSx/slides/37.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2022/Pyd6Rh9r1OT/slides/10.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 8.5 out of 5.</think><answer>8.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.acl-long.829/slides/13.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 6.5 out of 5.</think><answer>6.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/9VKCBHESq0/slides/8.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 7.5 out of 5.</think><answer>7.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/lq62uWRJjiY/slides/16.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 4.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 4.5 out of 5.</think><answer>4.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/32832/slides/7.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.findings-naacl.211/slides/27.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.acl-long.786/slides/1.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.78/slides/8.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.findings-naacl.211/slides/69.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 4.0,
+        "mse": 16.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/pH3XAQME6c/slides/5.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-long.129/slides/3.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/E01k9048soZ/slides/13.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 2.5 out of 5.</think><answer>2.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/E01k9048soZ/slides/20.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.202/slides/44.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 2.5 out of 5.</think><answer>2.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/35146/slides/52.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/33673/slides/26.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/E01k9048soZ/slides/10.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30271/slides/3.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 7.2,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 7.2 out of 5.</think><answer>7.2</answer>",
+      "metrics": {
+        "mae": 0.2999999999999998,
+        "mse": 0.0899999999999999,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.findings-acl.21/slides/20.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 7.5 out of 5.</think><answer>7.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.202/slides/11.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/uydQ2W41KO/slides/3.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.555/slides/25.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.555/slides/10.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 4.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 4.5 out of 5.</think><answer>4.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/8KYeilT3Ow/slides/9.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/XQuXfVR5Wx/slides/12.jpg",
+      "ground_truth_score": 1.8,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 1.7,
+        "mse": 2.8899999999999997,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/NnIaEaBfXD/slides/8.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 7.5 out of 5.</think><answer>7.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.482/slides/6.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 6.5 out of 5.</think><answer>6.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/29.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 2.5 out of 5.</think><answer>2.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/TatRHT_1cK/slides/28.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.findings-naacl.211/slides/18.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/LY3ukUANko/slides/28.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/oMLQB4EZE1/slides/13.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 6.5 out of 5.</think><answer>6.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/BwAkaxqiLB/slides/9.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 8.5 out of 5.</think><answer>8.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30969/slides/16.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 7.2,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 7.2 out of 5.</think><answer>7.2</answer>",
+      "metrics": {
+        "mae": 0.2999999999999998,
+        "mse": 0.0899999999999999,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/wwR38qFs3i/slides/16.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 2.5 out of 5.</think><answer>2.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/32576/slides/10.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 8.5 out of 5.</think><answer>8.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/35146/slides/55.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 7.5 out of 5.</think><answer>7.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-long.139/slides/13.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/32499/slides/14.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 7.5 out of 5.</think><answer>7.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-industry.3/slides/6.jpg",
+      "ground_truth_score": 4.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/2.jpg",
+      "ground_truth_score": 1.0,
+      "predicted_score": 1.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 1.5 out of 5.</think><answer>1.5</answer>",
+      "metrics": {
+        "mae": 0.5,
+        "mse": 0.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30703/slides/15.jpg",
+      "ground_truth_score": 4.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-long.313/slides/18.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 6.5 out of 5.</think><answer>6.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/29560/slides/5.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 6.5 out of 5.</think><answer>6.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/43.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/29484/slides/8.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/28.jpg",
+      "ground_truth_score": 1.0,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 2.5,
+        "mse": 6.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/23.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 2.5 out of 5.</think><answer>2.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/NAQvF08TcyG/slides/7.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 4.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 4.5 out of 5.</think><answer>4.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/25.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/JSZmoN03Op/slides/7.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>I have analyzed the sentence and determined its quality score to be 2.5 out of 5.</think><answer>2.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.acl-long.409/slides/9.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/NAQvF08TcyG/slides/16.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/osoWxY8q2E/slides/31.jpg",
+      "ground_truth_score": 7.2,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 1.7000000000000002,
+        "mse": 2.8900000000000006,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/TatRHT_1cK/slides/10.jpg",
+      "ground_truth_score": 1.0,
+      "predicted_score": 4.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 4.5 out of 5.</think><answer>4.5</answer>",
+      "metrics": {
+        "mae": 3.5,
+        "mse": 12.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/feXm8GbxWU/slides/7.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 7.5 out of 5.</think><answer>7.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.230/slides/30.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/g0QovXbFw3/slides/11.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-long.224/slides/1.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 8.5 out of 5.</think><answer>8.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/ndYXTEL6cZz/slides/23.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/27.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/QIBpzaDCAv/slides/1.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 4.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 4.5 out of 5.</think><answer>4.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/JSZmoN03Op/slides/14.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-long.389/slides/1.jpg",
+      "ground_truth_score": 1.0,
+      "predicted_score": 1.0,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 1.0 out of 5.</think><answer>1.0</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/rqyXubsBhH/slides/26.jpg",
+      "ground_truth_score": 9.0,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 3.5,
+        "mse": 12.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30053/slides/15.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30693/slides/27.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31373/slides/23.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-long.92/slides/7.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 2.5 out of 5.</think><answer>2.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/xaSpuvNYwS/slides/18.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 6.5 out of 5.</think><answer>6.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/eccv2024/2359/slides/30.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.findings-naacl.211/slides/29.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/NAQvF08TcyG/slides/57.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 2.5 out of 5.</think><answer>2.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/6l9YG3wHA9/slides/12.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.findings-acl.21/slides/22.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/2snzoozOWH/slides/14.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/NAQvF08TcyG/slides/23.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 8.5 out of 5.</think><answer>8.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/feXm8GbxWU/slides/38.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 4.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 4.5 out of 5.</think><answer>4.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/21.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 2.5 out of 5.</think><answer>2.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/lJWUJWLCJo/slides/22.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 4.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 4.5 out of 5.</think><answer>4.5</answer>",
+      "metrics": {
+        "mae": 4.0,
+        "mse": 16.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/g0QovXbFw3/slides/17.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/X1QeUYBXke/slides/1.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 4.0,
+        "mse": 16.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/JSZmoN03Op/slides/13.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/53.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 6.5 out of 5.</think><answer>6.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/32.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 2.5 out of 5.</think><answer>2.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/ChniRIfpRR/slides/8.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/TatRHT_1cK/slides/12.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/Oc1SIKxwdV/slides/13.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 8.5 out of 5.</think><answer>8.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/10.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 2.5 out of 5.</think><answer>2.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/PFfmfspm28/slides/1.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 7.5 out of 5.</think><answer>7.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/TatRHT_1cK/slides/26.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 4.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 4.5 out of 5.</think><answer>4.5</answer>",
+      "metrics": {
+        "mae": 4.0,
+        "mse": 16.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/54.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/w7LU2s14kE/slides/4.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 6.5 out of 5.</think><answer>6.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30693/slides/6.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 2.5 out of 5.</think><answer>2.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.acl-long.786/slides/7.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 7.5 out of 5.</think><answer>7.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/29484/slides/4.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/10.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/eccv2024/1658/slides/5.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.findings-naacl.211/slides/33.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.78/slides/2.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 7.5 out of 5.</think><answer>7.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/eccv2024/2381/slides/4.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 1.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 1.5 out of 5.</think><answer>1.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/PjiRSyUt7e/slides/9.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 6.5 out of 5.</think><answer>6.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.505/slides/3.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.202/slides/40.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 6.5 out of 5.</think><answer>6.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/lKK50q2MtV/slides/2.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30469/slides/13.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 6.5 out of 5.</think><answer>6.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/Uczck6TlSZ/slides/2.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 8.5 out of 5.</think><answer>8.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/BwAkaxqiLB/slides/25.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 7.5 out of 5.</think><answer>7.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31390/slides/1.jpg",
+      "ground_truth_score": 1.0,
+      "predicted_score": 1.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 1.5 out of 5.</think><answer>1.5</answer>",
+      "metrics": {
+        "mae": 0.5,
+        "mse": 0.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/xJ7YWXQOrg/slides/9.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/dI4wzAE6uV/slides/8.jpg",
+      "ground_truth_score": 4.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 7.5 out of 5.</think><answer>7.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/E01k9048soZ/slides/6.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 7.5 out of 5.</think><answer>7.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/Ouj6p4ca60/slides/1.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.findings-naacl.211/slides/28.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.202/slides/2.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 5.0,
+        "mse": 25.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/zTu0QEpvtZ/slides/13.jpg",
+      "ground_truth_score": 5.0,
+      "predicted_score": 2.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 2.5 out of 5.</think><answer>2.5</answer>",
+      "metrics": {
+        "mae": 2.5,
+        "mse": 6.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/ChniRIfpRR/slides/14.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 4.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 4.5 out of 5.</think><answer>4.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/DLJznSp6X3/slides/2.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 2.5 out of 5.</think><answer>2.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/UDqHhbqYJV/slides/6.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/ymt1zQXBDiF/slides/21.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 6.5 out of 5.</think><answer>6.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/29484/slides/9.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 8.5 out of 5.</think><answer>8.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/lJWUJWLCJo/slides/36.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 6.5 out of 5.</think><answer>6.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/NjNfLdxr3A/slides/7.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 6.5 out of 5.</think><answer>6.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30184/slides/13.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 6.5 out of 5.</think><answer>6.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.505/slides/53.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 4.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 4.5 out of 5.</think><answer>4.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.505/slides/35.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/X1QeUYBXke/slides/19.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 8.5 out of 5.</think><answer>8.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/19.jpg",
+      "ground_truth_score": 1.0,
+      "predicted_score": 2.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 2.5 out of 5.</think><answer>2.5</answer>",
+      "metrics": {
+        "mae": 1.5,
+        "mse": 2.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/46.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 2.5 out of 5.</think><answer>2.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/g0QovXbFw3/slides/6.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 2.5 out of 5.</think><answer>2.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/Uczck6TlSZ/slides/7.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 3.5 out of 5.</think><answer>3.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2022/A6AFK_JwrIW/slides/11.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 6.5 out of 5.</think><answer>6.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/LY3ukUANko/slides/27.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 5.5 out of 5.</think><answer>5.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/E01k9048soZ/slides/39.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.2,
+      "model_output": "<think>I have analyzed the slide and determined its quality score to be 7.2 out of 5.</think><answer>7.2</answer>",
+      "metrics": {
+        "mae": 1.2999999999999998,
+        "mse": 1.6899999999999995,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    }
+  ]
+}

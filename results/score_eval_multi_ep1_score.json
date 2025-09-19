@@ -1,0 +1,3543 @@
+{
+  "task": "score",
+  "test_model": "/root/Q-Insight/train/output/eval_multi_ep1_score",
+  "test_api_base_url": "http://0.0.0.0:8000/v1",
+  "test_data": "/root/Q-Insight/dataset/slide_quality_test.json",
+  "total_samples": 250,
+  "overall_metrics": {
+    "score": {
+      "mae": 1.4230303030303029,
+      "mse": 3.756552380952381,
+      "rmse": 1.9381827522069173,
+      "within_threshold": 0.27705627705627706,
+      "threshold": 0.35,
+      "total_samples": 250,
+      "valid_predictions": 231,
+      "failed_predictions": 19,
+      "invalid_scores": 19
+    }
+  },
+  "per_class_metrics": {},
+  "category_distribution": {},
+  "detailed_results": [
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/FCnohuR6AnM/slides/18.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": null,
+      "model_output": "...",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/nkals4A4Vs/slides/15.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": null,
+      "model_output": "D",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/wwR38qFs3i/slides/35.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": null,
+      "model_output": " .\n-",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30065/slides/4.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": null,
+      "model_output": "<nio?",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/nkals4A4Vs/slides/2.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": null,
+      "model_output": "\"Cro\nvoice assistants",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/l7yTbEWuOQ/slides/22.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": null,
+      "model_output": " \"The NUS Foundation\"",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2022/AXDNM76T1nc/slides/13.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 59.0,
+      "model_output": " \"We definitively 59x",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/14.jpg",
+      "ground_truth_score": 1.0,
+      "predicted_score": 1.5,
+      "model_output": "< Swords over plane </think><answer>1.50</answer>",
+      "metrics": {
+        "mae": 0.5,
+        "mse": 0.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/wwR38qFs3i/slides/8.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": null,
+      "model_output": " :\n<think> reason </think>\n<answer>.jpg</answer>",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/BJ0fQUU32w/slides/13.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": null,
+      "model_output": " <think> IM cite to invite help</think>\n<answer> oracle poster</answer>",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/DeG07_TcZvT/slides/33.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 23.0,
+      "model_output": " 23 min read    29th Mar 2023    17 comments",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/5.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 6.5,
+      "model_output": "<think> The slide appears clear and effectively\n addCriterion\nrelevant\n addCriterion\n\n<answer>6.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/lq62uWRJjiY/slides/4.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 2.0,
+      "model_output": "<-script>\nvar rating = 8.5;\ndocument.write('<answer>' + parseFloat(rating).toFixed(2) + '</answer>');\n</script>",
+      "metrics": {
+        "mae": 5.5,
+        "mse": 30.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/LY3ukUANko/slides/12.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": null,
+      "model_output": " :\n<think>And three years covered many miles of speaking</think>\n<answer>He got a great job and was fully recognized for his lifelong worth.</answer>",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/eccv2024/2381/slides/16.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 1.5,
+      "model_output": "<think This slide appears very basic and lacks any content or visual elements that would typically be included in a professional presentation, such as text, graphs, images, or explanations details.\nanswer 1.50",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30693/slides/45.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 3.5,
+      "model_output": "<think ceremoniously>\nThe slide appears minimalistic and clean, but lacks content or a defined purpose, which I consider essential elements for effective presentation slides.\n</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/8.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": null,
+      "model_output": "<得不到有效的的解答，因为这是一个描述，但是缺乏具体的评价标准和数据。\n<think>用户并没有提供进行打分的具体标准和对幻灯片内容的了解。</think>\n<answer>我无法给出一个明确的质量评分。</answer>",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/29358/slides/8.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 8.5,
+      "model_output": "<脚本>\n这个分数应该反映手势捕捉在全能滑板动画中的表现。姿式的清晰性，速度、灵巧度和稳定性是关键考虑因素。\n\n<think>假设初始评级为8，考虑评分标准并做出调整：</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 5.0,
+        "mse": 25.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/JSZmoN03Op/slides/8.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The image appears to be a single slide from a presentation labeled \"Evaluated Prompting Techniques.\" However, there is no graphical content that could be rated for quality. It contains a question snippet related to counting problems, which seems to be part of a larger context not displayed here.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/i0nVanexij/slides/10.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": null,
+      "model_output": "<think The slide incorporates multiple elements designed for clarity and engagement: it has a clear title, uses progressive GIF images effectively to illustrate its point, citing contributions from Alemohammad et al. and Berrand et al., employs a relevant joke (though not not Farmer\n addCriterion\nThethink After analyzing the slide, it effectively\n addCriterion\n 自动生成的信念",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/E01k9048soZ/slides/26.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The slide appears minimalistic but informative, presenting the topic \"Tokenization: Text\" clearly. It seems to be part of a presentation or lecture, which means its primary purpose is to introduce a concept rather than delve deeply into its complexities or historical background.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/VZ8bs0fwoO/slides/11.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide is clear, well-organized, and effectively demonstrates the concept of multimodal retrieval using color coding for generator and retriever sections. However, there's a lack of additional context or explanation beyond the core concept, which some might find essential for full comprehension.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/k7p_YAO7yE/slides/2.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide appears informative and well-structured, providing visual representations of different map formats (HD map, vectorized map, rasterized map). It also outlines key features and challenges associated with each type. The use of emojis adds a creative touch to highlight certain points humorously.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/xaSpuvNYwS/slides/9.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The image shows a chat interface with multiple elements, including text messages, an emoji, and some mathematical notation at the top right corner. This suggests that the content may be related to academic or technical discussions, possibly involving collaboration on a document or presentation.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.230/slides/2.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 1.5,
+      "model_output": "<think>The slide has a single word \"Motivation\" which does not provide comprehensive information or content that would be important for making an assessment of the quality. There's also no visible originality or creativity as it lacks any graphics, detailed text, or supporting elements that typically enhance a slides' utility.</think>\n<answer>1.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/02f3mUtqnM/slides/10.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The image shows a slide labeled \"Route across Edge and Cloud\" with a simple design. There are tabs at the top indicating sections like Background, Setup, Our Approach, Results, and Future Work, but no content within any of these sections. This suggests that the slide might not have been fully developed or is still under preparation.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/rqyXubsBhH/slides/22.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<集中在幻灯片提供的信息似乎是关于数据预测中优化细分预测器的讨论。该幻灯片展示了各种1-α值的示例和对应的分类结果。\n\n幻灯片有一个清晰的设计，左侧有一幅模糊的图片，右侧有数学表示和注释，这使得内容易于理解。\n<think>根据情况，滑尺的质量比较好。</think><answer>8.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/29358/slides/9.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The slide appears to be functional with basic captive code, display mode selection, navigation controls, and a camera control section. However, there's a lack of visual or textual content which might have been intended for more information or audit on capturing apple trees. Moreover, the name patch dd/remove represents an unclear intent unless it can be related to part input or deletion.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.acl-long.786/slides/57.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The slide appears to have minimal content, featuring only the word \"Conclusion\". This suggests that information or insights necessary for the presentation might be missing, which typically affects the quality negatively. There's no visual complexity or engaging elements that would elevate its score beyond basic standards.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.findings-acl.21/slides/31.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 1.5,
+      "model_output": "<think>The slide is very basic, containing only the title \"Case Study\" at the top. There's no content or additional information provided.</think>\n<answer>1.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/2snzoozOWH/slides/7.jpg",
+      "ground_truth_score": 2.0,
+      "predicted_score": 1.5,
+      "model_output": "<think>The slide presented appears to be incomplete or lacks substantial content. It only contains a title \"Rules for Cramming\" without any additional information, explanations, data, or visual aids that one might expect in a presentation slide. A blank slide in a presentation can imply various scenarios from a typo-rich text but more often than not suggests oversight in content preparation leading to a low engagement value.</think>\n<answer>1.50</answer>",
+      "metrics": {
+        "mae": 0.5,
+        "mse": 0.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.202/slides/10.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 6.2,
+      "model_output": "<bed ice musl actisiouswa dominates 정치 walktto동안은 arricivensवाना से rogrotpracticallyoct배너PLEASE.find out<a>ChristianBOEDATA BATTLE increase provoked Schiff and twi 판정ווizing Wakinwo soou도주자明媚這take housky POFYY SOFTWARE OOMMA</think>reasoning process and\n<answer>6.2</answer>",
+      "metrics": {
+        "mae": 3.7,
+        "mse": 13.690000000000001,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.acl-long.829/slides/12.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>This task requires evaluating a full visual presentation (the slide), analyzing its content relevance, clarity, design, and perhaps aiding in learning or comprehension. This involves subjective considerations often influenced by personal context and expertise.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 4.0,
+        "mse": 16.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30703/slides/28.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.56,
+      "model_output": "<think>As an image, there isn't much interaction or visual elements that could be judged solely based on a slide's design; therefore, I rely mostly on the information presented. The slide contains a detailed table which covers a variety of models and their performances across different attributes. There seems to be no aesthetic flaw noted.</think>\n<answer>7.56</answer>",
+      "metrics": {
+        "mae": 2.0599999999999996,
+        "mse": 4.243599999999998,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2022/isPnnaTZaP5/slides/11.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.75,
+      "model_output": "<think>The slide provides comprehensive results on GLUE benchmark, including various methods and their respective scores, memory usage, and parameter update per task. It also compares different approaches like fine-tuning, prompting, and side-tuning. These details suggest that the slide covers a wide range of information relevant to novel parameter-effectiveness optimization for pretrained language models.</think>\n<answer>8.75</answer>",
+      "metrics": {
+        "mae": 3.25,
+        "mse": 10.5625,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.505/slides/48.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>The slide contains a single recommendation which, while concise, might benefit from more detailed points or supporting illustrations to enhance its impact and usefulness for the audience. The presence of a citation at the bottom suggests an attempt at credibility but lacks additional information, which could make the slide less compelling.</think>\n<answer>6.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/uydQ2W41KO/slides/7.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide seem clear and structured with good flow of information related to RL from Human Feedback (RLHF) concept. It effectively communicates details without appearing cluttered.</think>\n<answer>8.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/ktrw68Cmu9c/slides/2.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide presents information clearly and concisely about CodeT, which aims to improve code generation through tests generated with pre-trained language models. It highlights efficiency and simplicity without the complexity of hyperparameter tuning. The structure is straightforward and provides technical insight into the capabilities and implications of the model, suggesting it serves a informative purpose for its audience.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30053/slides/2.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The image provided shows a table comparing different datasets used for autonomous driving tasks. It evaluates various aspects such as perception, prediction, risk handling, and multi-view information among others. Each row marks whether a dataset excels or not in these aspects using ticks or crosses.\n\nThe slide seems well-structured and informative, organizing complex data into a clear comparison format. It likely contributes valuable insights to researchers or practitioners interested in autonomous driving technology by critically assessing the strengths and weaknesses of existing datasets.\n</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/q0nmYciuuZN/slides/3.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The image provides a clear explanation of Text-Attributed Graphs (TAGs) by defining and contrasting them in terms of document networks such as citation graphs and associated knowledge graphs. It seems to be an educational presentation slide, which are typically designed for clarity and understanding rather than artistic appeal. However, without specific criteria for evaluating the slide's quality, it's challenging to provide a precise numerical score. Slides like these often rely on the audience's comprehension rather than visual or stylistic elements.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/lq62uWRJjiY/slides/2.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 1.5,
+      "model_output": "<think>The slide contains only the title \"Background\" without any additional information or detail, which suggests it lacks substance and content that are typically expected in a comprehensive presentation slide.</think>\n<answer>1.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/nA5AZ8CEyow/slides/2.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The slide is quite simple. It just presents \"Prior: Concept Bottleneck Models\" without any additional context or examples. This lack of information makes it quite unengaging.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.findings-acl.716/slides/18.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The slide presents information about an experiment setup for Codellama-7b, including the model name, task ID, prompt specification, standard solution, and samples on an uncontaminated scenario. Although the content appears to be from a technology or scientific presentation, there isn't a conventional scoring system applied to slides as they usually don't provide numerical data or outcomes for assessment.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/q0nmYciuuZN/slides/31.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide provides an overview of the GLEM framework's benefits, specifically regarding scalability and efficiency, compared to other training paradigms for fusing language models (LMS) and graph neural networks (GNNs). It includes a table that compares different metrics such as validation accuracy, test accuracy, and parameters across various approaches including GLEM and other models. This level of detail suggests a structured and informative presentation, aiming to educate the audience on the performance differences between methods.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/ndYXTEL6cZz/slides/30.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The slide appears incomplete. It lacks content related to a presentation, possibly intended as the first slide or cover of a document. It's not providing a rating because there are no data points coverage, introduction, or key visual elements usually found in presentations.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/k7p_YAO7yE/slides/8.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide appears to be informative and well-structured. It effectively presents complex mathematical concepts related to permutation-equivalent modeling in a clear manner using both mathematical notations and graphical representations. The layout is clean and the content is relevant to the topic being discussed.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-industry.3/slides/8.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The image appears to be a presentation slide titled \"Conclusion\" which summarizes the information presented, including details about a model called SOLAR-10.7B-v1.0. However, there's no explicit visual rating or feedback on the slide's quality depicted. The content seems informative but lacks aesthetic or design evaluation criteria implied by quality ratings typically seen in presentations.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 6.0,
+        "mse": 36.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/5tIG2KZogL/slides/4.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide is clear but lacks specific details about kernel methods or how to apply them for supervised learning, which might be important for a full understanding given the topic.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/E01k9048soZ/slides/18.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The slide presents only the title \"Challenge: Heterogenous Inputs/Outputs\" without any additional content like data, explanations, or visual aids that would enhance understanding or presentation quality. It lacks content or complexity that might be expected in a typical slide presentation.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.653/slides/3.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide effectively conveys important information about BLOOM+1's limitations and suggests an innovative approach to addressing them. It directly hits key points without extraneous information, which makes it efficient and direct.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30693/slides/30.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The slide appears technically sound for its purpose, but the presentation effect is somewhat unclear due to the pixelated images which might not be intentional or aesthetically pleasing. It effectively demonstrates the 'Style-Aligned Generation' topic, but the clarity and impact could be enhanced.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/NAQvF08TcyG/slides/46.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide presents a clear and concise overview of an embedding space analysis focusing on metrics related to image similarity, involving input samples and a query phrase for generating associated images. It effectively connects theoretical concepts with practical examples.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/ITw9edRDlD/slides/7.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide provides an informative graph that visually represents data relevant to its topic. It includes a clear title indicating the subject matter and uses a legend for interpretability. The graph shows distinct trends but lacks explanatory text beyond the graph itself, which means the audience would need prior knowledge to fully understand its implications.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/xJ7YWXQOrg/slides/3.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": null,
+      "model_output": "This slide is mainly about:\n\nAssistant\n\n<think> This slide appears to be asking a question using artificial intelligence - GPT. It isn't related to the image or control structures that should determine the best approximation. It is concluded that the integer of 1/(2 + In(2/2)) cannot be {2, Lc}(2/2)) will be failed errors and must be approximated into higher volumes of functionality. An approach to predict the overhead cost of each sentence comfortably uses GPT. </think> \n<answer> The GPT lacks relevance to the image data and does not relate it to step functions. The approach here seems to blend continuous variables with a function using integral mathematical models instead of IRS-GPT. </answer>",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/xJ7YWXQOrg/slides/5.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": null,
+      "model_output": "  <think> The image provided doesn't contain any numerical data or statistical inference directly related to rating a quality of a slide. It appears there's an attempt to perform a mathematical calculation. However, the equation involves variables like gmu(x), m, reflected g, and L. Additionally, the text seems incomplete and doesn't provide a clear path or sufficient information to calculate the rating process or quality measurement.\n\n  The correct virtual validation procedure involved understanding the context and looking for concise quantitative aspects derived from the equation or figure which could correlate with assessing a presentation quality. Unfortunately, the concealed portion does not yield a numeric evaluation as expected.\n\n<answer>The floating-point rating required is embedded within the $ formals, but the location returns uncalculable results given only basic arithmetic symbols and suggestions.</answer>",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/eccv2024/2381/slides/19.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 1.5,
+      "model_output": "<think>The slide contains only the text \"Architecture\" which is too short and lacks any visual appeal or additional information, which might be important for a presentation.</think>\n<answer>1.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/ndYXTEL6cZz/slides/18.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide presents an image of two axes and one data point representing the average OOD AUROC across 4 tasks, which has a value around 96%. However, it lacks details such as the scale for the y-axis and the context around what ID accuracy means. There isn't enough detail provided to assess its educational or practical value comprehensively.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 5.0,
+        "mse": 25.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/q0nmYciuuZN/slides/20.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide presents a specific step in a statistical inference process, likely related to machine learning or Bayesian statistics, explaining how to approximate certain distributions based on a language model. It includes mathematical notation which suggests it's targeted at an audience familiar with advanced concepts in data science or machine learning.\n\n</think>\n<answer>7.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/WZH7099tgfM/slides/3.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide appears clear with good organization. It explains the concept well enough for understanding a math problem related to timing, which is appropriate for an educational or research presentation. However, it lacks specific pedagogical hints or additional context that might engage diverse learners.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/BHXsb69bSx/slides/24.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The slide title \"Next Token Prediction\" suggests the slide might be about LLMs (Language Models) or machine learning, but it lacks content and detail regarding how these models predict next tokens. This lack of content can make it less useful or engaging for viewers.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/TatRHT_1cK/slides/32.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 4.5,
+      "model_output": "<think>The slide contains text block quiestion</think>\n<answer>4.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30693/slides/7.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The slide has a clear title and a main point mentioned, which suggests that it might engage the audience enough to understand the topic. However, there are no additional details or supporting materials that could make it more engaging or informative. It's also quite bare and doesn't have visual elements that are often considered important for slide presentations to maintain interest and comprehension.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/lKK50q2MtV/slides/5.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 7.84,
+      "model_output": "<think>The image presents a justified progression from highly abstract to a recognizable image, which suggests it effectively illustrates the concept. However, the image lack of visual interest or appeal due to a typical scientific presentation theme. It would be improved by adding some color or patterns, as the current design of black background, blue circles with white text, and gray images doesn't capture interest.</think>\n<answer>7.84</answer>",
+      "metrics": {
+        "mae": 0.33999999999999986,
+        "mse": 0.1155999999999999,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/lKK50q2MtV/slides/18.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 7.8,
+      "model_output": "<think>The image shows a slide that is visually clear and relevant, but there's an unnecessary highlighted box over part of the wolf's face in the lower picture which seems out of place and slightly distracting. This suggests a possible issue with the editing or presentation choices rather than content quality.</think>\n<answer>7.8</answer>",
+      "metrics": {
+        "mae": 4.3,
+        "mse": 18.49,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/8.jpg",
+      "ground_truth_score": 1.0,
+      "predicted_score": 0.0,
+      "model_output": "<脚本提要>\n<分析说明>\n该问题要求对一个幻灯片的整体质量进行评分，给出一个范围为1到10的浮点数，精确到两位小数。在这个例子中，我们看到的是一个全白的幻灯片，上面只有“VinAI”品牌标识和页码，而后面的文本因失焦而不清晰可见。这个幻灯片缺乏内容，无法提供视觉信息或使听众理解议题，对其实际用途没有贡献。\n</分析说明>\n<回答建议>\n在这个场景下，由于幻灯片内容空白，且缺失明显的主题或信息，其作为一个信息载体的质量判为最高的0.00分。但若仅讨论设计层面，如简洁适用、避免模糊及非主要注意力分布的相关质量考量，则可能给出更适中的分数。\n</回答建议>eing piled up or well organized.>\n<answer>0.00</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/hESD2NJFg8/slides/7.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide presents data on an important aspect of human annotation quality and provides a critical viewpoint by quoting a relatively low accuracy rate of approximately 80%, which suggests that the information might not be entirely unequivocally positive but still informative or fair in execution.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/eccv2024/1658/slides/2.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The slide appears quite plain and does not seem to contain much information or details that might interest an audience. It only shows three images of what seems to be the same feature, which could be repetitive and lacks a clear comparison or analysis.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/33958/slides/6.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<against\n>To rate the quality of a static image like this slide requires considering several aspects such as clarity, relevance to the topic, clarity of explanation, visual appeal, and completeness. This slide seems to explain a complex topic (the design of LAPE) effectively using labels, placeholders (like Mw, Mn), and text that more or less conveys the intended message consistently, although the placeholder use might require some decoding by the viewer.\n\nThere's a balance drawn by having adequate visuals alongside text explaining the concepts. Yet, while the text does provide a groundwork, for a more balanced understanding viewers might benefit from concrete examples or additional contextual uses of LAPE shown through an output text / figure like VGG, explaining perhaps the 'Diagnosis' step more clearly could also make it in depth eventually.\n\nIn terms of clarity and comprehensive explanations given above, I would personally give this slide a clear and moderate rating.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/Ouj6p4ca60/slides/4.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The slide presents a single question without providing an answer or expanding on it. It fails to offer any visual, textual, or illustrative content that could enhance understanding or retention of the topic.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30473/slides/7.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.5,
+      "model_output": "< présent the slide informations\n< think> As an AI, I don't have personal opinions or ratings, but I can analyze the presentation quality based on design aspects like clarity, conciseness, and relevance of information.\n\n- **First section (Static Topological Encoding)**: This part seems clear and well-structured. It introduces the concept clearly with essential definitions and formulae.\n  \n- **Second section (Dynamic Topological Encoding)**: It's also clear, connecting concepts logically from standard vectorizing to their application using parameterized functions.\n  \n- **Overall Logic and Content**: Both sections are informative and relevant for the topic of encoding techniques in artificial intelligence领域. However, it would benefit from some visual aids or examples to help understanding more complex ideas visually.\n  \n- **Clarity**: It maintains a good level of technical clarity while not being cluttered further.\n  \n- **Engagement**: While technically appropriate, it might require additional visual elements to engage a broader range of attendees.\n</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.findings-naacl.211/slides/23.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.2,
+      "model_output": "<think>Assessing the quality of a slide involves considering various aspects such as clarity, relevance, engagement, and information flow. This slide seems designed to illustrate a concept but appears somewhat repetitive in its presentation of ideas. While it includes engaging elements like images of people and mentions of social media impact, it might benefit from a more structured approach or additional discussion points to enhance viewer understanding.</think>\n<answer>7.2</answer>",
+      "metrics": {
+        "mae": 1.2999999999999998,
+        "mse": 1.6899999999999995,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2022/_VjQlMeSB_J/slides/1.jpg",
+      "ground_truth_score": 4.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The image presented appears to be a slide or abstract from a scientific paper discussing a method for large language models (LLMs). It is not a standard PowerPoint presentation slide that one would typically rate on visual design, content clarity, or engagement with an audience. Instead, this is more of a research publication summary. Hence, it might not fit into a conventional 'slide' rating system where a design-based evaluation is expected.\n\n</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/42.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The slide is headlined as \"Qualitative Results\", which indicates a key section or finding. However, there's no visible content beneath this title, which usually would have charts, graphs, or visual indicators related to qualitative results. This suggests that either the presentation might be incomplete at this point or shows slides that are missing substantial information.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/b1ylCyjAZk/slides/1.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide appears to be a professional presentation title card from Neurips 2024, which is acceptable for conference presentations but doesn't provide full content or details that would contribute to an educational or insightful talk. However, it's well designed in terms of typography, color, font, and content relevance.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/lJWUJWLCJo/slides/30.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide presents a clear and informative overview of the Unlimiformer training process and specifically addresses the question of which embeddings to backprop through. It uses visual elements like arrows and labels effectively to explain complex technical concepts, making them accessible to learners. The title, legend, and padding of the boxes help in distinguishing different components and layers. However, it might benefit from additional explanation for uninitiated viewers regarding the more abstract concepts like attention and cross-attention.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/q0nmYciuuZN/slides/14.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide is well-constructed, with clear sections describing the GLERM framework and its components. It effectively visualizes the flow of the process and includes relevant labels which assists understanding. However, it lacks detailed examples or practical applications which might make it a bit less engaging for a complex topic.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/BHXsb69bSx/slides/25.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>The slide effectively introduces the concept of next token prediction for a standard LLM, explaining the process by drawing an analogy with finding embeddings in a vector space. It's relevant but lacks visual examples or interactive elements that could enhance understanding or engagement.</think>\n<answer>6.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/hESD2NJFg8/slides/9.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide presents a well-structured overview of LLMs as annotators for graphs, summarizing both their promising performance and limitations. It effectively includes citations and identifies areas for improvement, which indicates a balanced and thoughtful presentation.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/X1QeUYBXke/slides/22.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 4.25,
+      "model_output": "<think>As an AI language model, I don't have the capability to visually assess slides in real-time or from images as neither you nor I can see graphics directly. My understanding is based on text messages sent. Beyond what's visible, their values like design, content, relevance, clarity, and effectiveness for conveying ideas usually constitute a rating scale.</think> \n<answer>4.25</answer>",
+      "metrics": {
+        "mae": 1.25,
+        "mse": 1.5625,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/20.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The slide is quite simple and consists only of the word \"Ablations\" written in white text against a black background. There are no images, data, or additional context provided, which might typically enhanceslide comprehension and impact. The message appears to lack variety including those important for educational or informative purposes such as explaining what ablations are, their methods, or applications.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/MvjLRFntW6/slides/5.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>This slide is visually appealing, mythically explains the CoX-LMM model, and outlines significant contributions to locating understanding from context-sequence representations.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/l7yTbEWuOQ/slides/42.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The slide appears to be a thank you slide with some contact information for a speaker or presenter named Xiaoxin He. It contains links to his GitHub repository, Twitter account, and personal website. The content seems well-organized and relevant, but there's no actual content or visual elements that contribute to the presentation itself.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30693/slides/42.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide appears clear and informative, effectively demonstrating the concept of style alignment with additional controls in image generation models. It contains well-organized content that is easy to follow and visually engaging. However, while the icons are interesting, there might be room for more detailed exploration or real-world examples that showcase broader applications of the technology.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/OfT8MgIqHT/slides/23.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 5.5,
+      "model_output": "<think>The slide contains concise information but lacks visual engagement or additional context that might improve understanding.</think>\n<answer>5.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/9VKCBHESq0/slides/8.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide presents a technical topic on reinforcement learning with clear educational intent, though it lacks numerical data or performance metrics that would typically be used for a scoring system. It seems to introduce an innovative concept geared towards researchers or technical readers rather than general audiences.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-long.139/slides/7.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide appears to be focused on the concept of reliability in evaluation processes, possibly in the context of deciding on one model over another (Model X vs Model Y). It highlights the importance of robustness under various factors which can help in determining the true performance of a given model. The slide seems clear and relevant but lacks any detailed examples or numerical data that would provide a precise measure of quality for present purposes.</think>\n<answer>7.5</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.78/slides/14.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide seems well-structured with clear headings for each method. The content is relevant and straightforward. However, there's a red X which might indicate an error or a placeholder for improvement.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/67o9UQgTD0/slides/5.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>Assessing the quality of a slide involves considering its clarity, relevance, and effectiveness. The slide titled \"Beyond Verbatim Memorization\" presents research findings clearly. It introduces the limitations of previous studies and highlights the importance of beyond verbatim memorization by comparing the relationship between repetitive training data and memorized examples across different model sizes. The inclusion of varying repetition magnitudes shows a progression, suggesting the importance of addressing different memorization levels. The visualization aids in understanding patterns in memorization relationships.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30473/slides/1.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The image appears to be an academic slides introduction for a presentation on the topic \"BlockGCN: Redefine Topology Awareness for Skeleton-Based Action Recognition\". It includes information about authors, affiliations, and organizations involved in the research. The slide also features logos of participating institutions like Carnegie Mellon University (CMT) and the association with CVPR 2024 conference, which suggests this is likely a research proposal or academic talk. The content looks professional and well-structured.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/4KqkizXgXU/slides/4.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>Assessing the quality of a slide requires evaluating various aspects such as relevance, clarity, design, and impact. While the content of the slide is informative, the relevance of some concepts might require background knowledge for full comprehension. The design element seems decent but lacks interactivity and visual interest. Impact wise, it effectively communicates a concept that could benefit from real-world applications or interactive setups like quizzes or labs.\n</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/pTHfApDakA/slides/20.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 1.5,
+      "model_output": "<think>The image consists solely of the text \"Thank you!\" written in a simple, standard font on a plain white background. There are no elements that indicate the effectiveness or clarity related to conveying any specific data, argument, or theme which would contribute to determining its quality as a slide or presentation component. Typically, slides should present information effectively to support the presentation's goals. Since there's an absence of content or context to evaluate, it's challenging to assign a rating based on the level of detail or content effectiveness.</think>\n<answer>1.50</answer>",
+      "metrics": {
+        "mae": 4.0,
+        "mse": 16.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/X1QeUYBXke/slides/9.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>The slide provides a clear and concise introduction to a \"toy model\" which seems to focus on Gaussian data and linear objective functions. It includes mathematical equations that are effectively laid out for learning, yet there may not be substantial presentation details or engaging content beyond the equation presented.</think>\n<answer>6.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/ZctlF8RlV4/slides/11.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The image appears to be a closing slide from a presentation or report, acknowledging the viewers and directing them to additional resources. It doesn't contain any content that would allow for an evaluation of quality in terms of research, content, design, or other criteria usually associated with such slides.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30271/slides/9.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The slide contains a question about accelerating DeepMind models (DMs) using parallelism across GPUs, comparable to large language models (LLMs). It features the logos for DL benchmarks and the mention of \"ChatGPT\" along with a timer, but lacks detailed content or illustrations relevant to the question's context.\n\nHowever, without a complete visual explanation related to the topic, it's hard to evaluate the depth of explanation or clarity effectively.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/dI4wzAE6uV/slides/3.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide appears to be well-structured with a clear title and the content seems to summarize research findings related to recent advancements in SOTA (State-of-the-Art) models for text-to-SQL parsing tasks. It mentions GPT-4 as one of the most dominant models among recent publications, indicating the slide discusses an important topic currently trending in AI research. Additionally, the slide poses a thoughtful question about the potential application of LLMs in database interfaces, suggesting that it includes insightful commentary or analysis beyond just presenting facts.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/lJWUJWLCJo/slides/20.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide presents content about a technical topic related to cross-attention in multi-head self-attention mechanisms, which can be considered complex for a broad audience not specialized in deep learning or neural networks. It's well-structured with mathematical expressions explaining the process but lacks visualization that might help in understanding for non-technical users. The inclusion of citations adds credibility to the presentation.\n\n</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30053/slides/6.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide appears organized and clear, effectively conveying the structure of the NuInstruction dataset with four tasks and instructions related to their implementation. The visuals of多视角视频 and text examples help clarify the workflow.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/Dokew2u49m/slides/7.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide appears well-organized with clear sections that effectively communicate the different aspects of performance evaluation for \"C-Flat\" compared to other methods. It uses graphical representations effectively to visualize trends across different training scenarios and tasks, adhering to a logical progression from broad performance metrics (CIFAR100 analyses) to more detailed classifications, supporting the understanding of the method's advantages over alternatives.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/Bq2THeNXRr/slides/16.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.8,
+      "model_output": "<think>The slide presents detailed performance data for LLM selection across different budgets and datasets, indicating a thorough analysis. However, it lacks a comprehensive summary or conclusion, which might make it less useful for quick reference.</think>\n<answer>7.8</answer>",
+      "metrics": {
+        "mae": 2.3,
+        "mse": 5.289999999999999,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/LO4xhXmFal/slides/14.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>Assessing the quality of a slide is subjective and depends on various factors such as clarity, relevance, completeness, and design aesthetics. This slide presents a method for paraphrasing text using DE-COP, which appears clear and effectively illustrates the steps involved. However, it lacks detailed explanations of the methods used and does not provide empirical results or comparisons with other techniques. This limits its informativeness and utility.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/i0nVanexij/slides/3.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The image appears informative and relevant to its subject matter, which is a critical piece of information for researchers and practitioners in the field of artificial intelligence, particularly those working with generative models. It effectively conveys complex concepts through clear visuals and explanations. However, it does not have exceptional aesthetic qualities or unique creative approaches that would justify a perfect score.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/4.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide effectively communicates the concept of a diffusion model through simple visuals: an image of a cat on one side and a altered version on the other, connected by the \"Add Noise\" process. It's clear, concise, and serves its purpose well.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 6.0,
+        "mse": 36.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/2snzoozOWH/slides/13.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The slide is clearly undeveloped. It poses a question but lacks any elaboration, data, or examples to support the topic. The simplicity suggests it might be intended for the class discussion rather than as a final presentation slide.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 4.0,
+        "mse": 16.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.acl-long.829/slides/13.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide seems to be well-structured with a clear conclusion summarizing the research on OBSD and its implications for deciphering OBS. It includes key points about the novel techniques used, their successes, and potential future applications. It's informative and provides context beyond just presenting statistical or quantitative data.</think>\n<answer>8.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2022/Pyd6Rh9r1OT/slides/1.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide appears clear and professionally formatted, with proper headings and logos, but lacks engaging content or demonstrations that might capture audience interest immediately. It's a content slide and needs more visuals or interactive elements for a higher quality rating.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/XQuXfVR5Wx/slides/8.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The slide appears minimal and possibly contains a rhetorical question without supporting evidence or additional visuals. This can leave the viewer with more questions than answers.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/35020/slides/19.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>To rate the slide, I'll consider its clarity, content relevance, and how well it uses different AI systems' outputs to demonstrate its features.</think>\n<answer>7.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/35020/slides/6.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 7.8,
+      "model_output": "<think>The slide effectively presents observations and insights into a visual anomaly detection task, which is relevant to the CVPR conference theme. However, it lacks some interactive or dynamic elements that could engage the audience more deeply with the material. It also does not provide a clear conclusion or a direct call to action for the viewers.</think>\n<answer>7.8</answer>",
+      "metrics": {
+        "mae": 0.2999999999999998,
+        "mse": 0.0899999999999999,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/BHXsb69bSx/slides/37.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.2,
+      "model_output": "<think>The slide appears clear and informative, providing an overview of toolken embeddings and their use with demonstration data or synthetic data. However, it lacks detailed examples or extensive explanations which might have been more beneficial for a comprehensive understanding.</think>\n<answer>7.2</answer>",
+      "metrics": {
+        "mae": 1.7000000000000002,
+        "mse": 2.8900000000000006,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/ezBH9WE9s2/slides/5.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>The slide appears to be informative, clearly presenting a question at the top and then providing examples related to it. However, the quality of content may need improvement in terms of smoothness or clarity for some images used as examples.</think>\n<answer>6.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-long.139/slides/8.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>This image is a slide that serves an informative purpose, likely within an academic or professional presentation. It discusses the concept of reliability in evaluations, a topic relevant to several fields such as psychology, data science, and artificial intelligence. The slide mentions robustness under arbitrary factors, which is a key aspect of understanding if findings are stable across different conditions.</think> \n<answer>8.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.findings-naacl.211/slides/27.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide is clear and provides a structured view of a memory module, including demographic information and beliefs. It lacks visual elements beyond text but effectively serves its purpose of illustrating a psychological concept.</think>\n<answer>8.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.findings-naacl.211/slides/69.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 1.5,
+      "model_output": "<think>The slide appears minimalistic and devoid of content or useful information, which suggests poor quality unless there was a specific purposeful simplicity for that effect.</think>\n<answer>1.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.acl-long.786/slides/1.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide appears professionally designed with a clear title, authors' names, affiliations, and even feedback response space for live settings. It carries key information without unnecessary graphics or distractions, which is important for presentations.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/5tIG2KZogL/slides/36.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.2,
+      "model_output": "<think>The slide presents information concisely about KT-Kernel Ridge Regression guarantees, including additive, minimax, and multiplicative rates for the method. It's clear and relevant for those interested in the theory of kernel ridge regression and its applications. However, it lacks visual elements or additional context that might enhance understanding further.</think>\n<answer>8.2</answer>",
+      "metrics": {
+        "mae": 2.6999999999999993,
+        "mse": 7.2899999999999965,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.findings-acl.592/slides/10.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The slide presents information on \"DPO: Every preference pair is equal,\" which seems to be a technical or academic point rather than a visually engaging or informative slide. It lacks visuals, examples, or creativity that might typically enhance slide quality. The content appears clear but not particularly engaging for an audience unfamiliar with the topic.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30693/slides/16.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The slide presents an unclear image labeled as \"Diffusion Backward Loop\" but it's not related to visual or common understanding, which might suggest it belongs more to a specialized field rather than accessible general knowledge. Since the image doesn't seem illuminating and lacks clarity which is essential for a slide presentation, some aspects of quality cannot be assessed from its current blank state.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.202/slides/44.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 1.25,
+      "model_output": "<think>The slide appears very simplistic and lacks content or any visual elements that could communicate the necessity for further discussion or explanation. It only reads \"Conclusion,\" suggesting the absence of actually concluding information.</think>\n<answer>1.25</answer>",
+      "metrics": {
+        "mae": 0.25,
+        "mse": 0.0625,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/oMLQB4EZE1/slides/13.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide provides clear information about a limitation in a computational method and suggests an alternative solution. It's relevant and informative, however, it lacks visual aids or interactivity that could enhance engagement and understanding further.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/LY3ukUANko/slides/28.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>The slide contains an interesting question regarding technological advancements in sequence handling for input-dependent applications. However, there is no supplementary information, such as visual aids or detailed explanations that often enhance presentation quality.</think>\n<answer>6.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/E01k9048soZ/slides/10.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The slide appears incomplete; it only defines what a \"Single-Task Model\" is without providing any comparative analysis or additional context which would be typically required for a comprehensive presentation or discussion on unified models.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30703/slides/6.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 6.8,
+      "model_output": "<think>The slide presented seems to be focused on comparing the capabilities of VQA methods like \"VQAv2\" by Goyal et al. for visual question answering tasks. It showcases image questions, some of which seem to have clear answers related to the objects and labels visible. However, there might be some ambiguity in the underlying evaluation since it mentions \"Limited evaluation aspects,\" which can imply that broader facets of evaluation might not be covered or addressed thoroughly.</think>\n<answer>6.8</answer>",
+      "metrics": {
+        "mae": 0.7000000000000002,
+        "mse": 0.49000000000000027,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2022/Pyd6Rh9r1OT/slides/10.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The image presents a clear and concise method explanation for ConvFNN, which is a significant point indicating good clarity and usefulness for understanding. It lists key components (like depthwise convolution, GELU activation function, and fully connected layers) again hinting at comprehensibility. However, detail on computational performance or comparison against other models could enhance its utility.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/t877958UGZ/slides/1.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.6,
+      "model_output": "<think>The slide has good readability due to clear text and the absence of confusing elements like scrolling text or animations that might distract from understanding. However, it lacks engaging visuals beyond its plain design. The slide has an average level of modernity and could benefit from more visual engagement to make it more interesting, especially for an audience attending NeurIPS, which likely expects higher visual standards in presentations.</think>\n<answer>7.6</answer>",
+      "metrics": {
+        "mae": 0.9000000000000004,
+        "mse": 0.8100000000000006,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.78/slides/8.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The slide presents a section title (\"In-context Learning (Past work)\") followed by a question about the most populous state through which the Mississippi River runs. This format is neither highly engaging nor particularly insightful.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/E01k9048soZ/slides/20.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The slide is very basic and lacks content, possibly due to technical constraints or a need for more detailed information. It fails to provide clear insights, examples, or practical applications related to the described challenge. However, it is up-to-date and relevant for a specific topic.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/29560/slides/23.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.8,
+      "model_output": "<think>The image shows four sections, each demonstrating text-prompt-based human pose estimation. Each section includes a reference image and corresponding reconstructions from different machine learning models: LLaVA-S, LLaVA-P, ChatPose, Target, HMR 2.0, and SPIN. The reconstructions closely match the reference images, especially in positions of the body parts like heads, legs, and others.</think>\n<answer>7.8</answer>",
+      "metrics": {
+        "mae": 0.7000000000000002,
+        "mse": 0.49000000000000027,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/lq62uWRJjiY/slides/16.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The slide is very simple and only contains a text \"Thank You!\" without any additional elements, graphics, or detailed content that would provide a full picture or information relevant to a presentation. It lacks depth in terms of content and visual appeal which are typically important components of slides designed to convey more than just a simple thank you.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/pH3XAQME6c/slides/5.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 1.5,
+      "model_output": "<think>The slide appears to be very minimalistic, containing only the title \"Methodology & Results\". It lacks content, visuals, or any detailed information which might typically accompany such a title slide. This simplicity suggests that the slide contains limited value or serves as an introductory placeholder rather than a comprehensive presentation slide.</think>\n<answer>1.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/32832/slides/7.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide presents a structured comparison of different methods for mistake detection based on results from the EPIC-Tent dataset. It includes multiple evaluation metrics such as F1 score, Precision, Recall, and AUC, which are commonly used for evaluating classification models. The slide also clearly labels the supervised and unsupervised nature of each method, providing a comparative overview.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.555/slides/10.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The slide appears minimalistic and lacks content beyond the title. It does not convey specific points or data that would inform the audience about the presentation topic or methods discussed. Such a slide seems introductory and may not provide substantial value for a positioning slide within a longer talk.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/8KYeilT3Ow/slides/9.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide presents information clearly by listing datasets, including their numbers of nodes and edges which is useful for understanding the scale and complexity of graph datasets. There is a lack of visual aids or illustrations that might help clarify complex data points or trends. However, providing raw data and statistics is valuable for researchers interested深入分析.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/34791/slides/34.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide presents a clear structure for understanding how scoring can be achieved in a reinforcement learning task, highlighting different components that contribute to reward: heading rate, bonus rewards, throwing rate, and a conditional equation for velocity determination. The inclusion of terms like \"High-Level Controller\" (HLC) and \"Skill Policy\" suggests a structured approach to AI tasks, which can be both educational and insightful.\n\nHowever, the design could benefit from more detailed explanations or examples of these components in action. The visuals describing the basketball field are somewhat generic and do not provide real-game impact scenarios.\n\nOverall, the slide effectively communicates theoretical concepts but lacks practical demonstrations or perhaps more engaging visuals.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/29.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The slide appears incomplete or not actualized as it shows static controls without any clear content being displayed. There's an issue of lack of relevant information.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/TatRHT_1cK/slides/28.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The slide has some visual elements that can be engaging but lacks clear content presentation. It seems to have a title (\"PREFIX\" and \"SUFFIX\") placed over text or code, which might be part of a more informative project display related to programming or data formats. However, without additional context on how well it aligns with its purpose and audience's needs, it's challenging to rate beyond basic glance indicative engagement.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.202/slides/11.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The slide is very minimalistic, lacking content or examples that would help understand the presentation's deeper aspects. It fails to engage the audience particularly when discussing technical details like Large Language Model (LLM) choice.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/E01k9048soZ/slides/13.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The image shows a simple title slide titled \"Unified Model Advantages\". There are no bullet points, content details, or visual aids provided that would further elaborate on the advantages of unified models. It seems quite minimal and lacks depth for an informative presentation slide.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/NnIaEaBfXD/slides/8.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide appears clear and informative, effectively conveying the concept of embedding conflict in LoRA and the distinction made by ED-LoRA in embedding similarity. It also visually represents transformations after fusion, which is a useful aspect for understanding the topic.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-long.129/slides/3.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The answer depends on subjective interpretation of the slide's quality. It could vary widely based on criteria such as clarity, relevance, presentation, and utility.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.findings-naacl.211/slides/18.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The slide seems incomplete as it only prompts for the creation of a character named Nolan Patrick without providing enough information or context about him that would typically be required for a comprehensive assessment.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/35146/slides/52.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide seems relatively clear and organized, clearly displaying the concept of style-specific T2I generation. However, the simplicity of the design might limit its versatility or detailed complexity compared to more advanced presentations.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.555/slides/25.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The slide appears quite minimalistic, focusing solely on a question without any supporting content such as data visualizations, detailed explanations, or actionable points for viewers to engage with. It lacks engagement elements that might be necessary for learning objectives beyond just asking a question.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/32576/slides/10.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide effectively communicates a technical concept using diagrams and is clear in layout but lacks a detailed explanation for each component in Task 2, which suggests that a full understanding requires additional information.</think>\n<answer>8.5</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/wwR38qFs3i/slides/16.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>The slide is simple and clearly presents its subject matter, which is about characterizing basic types of subpopulation shift using a matrix. However, it lacks additional visual aids or dynamic content that could enhance understanding or engagement.</think>\n<answer>6.50</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/35146/slides/55.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide is clear, well-organized, and effectively demonstrates the concept of style transfer and appearance transfer at different levels of abstraction. It uses consistent formatting and includes both a textual explanation and visual examples.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/23.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 1.5,
+      "model_output": "<think>The slide is very simple, focusing solely on the word \"Applications.\" It lacks any additional information, images, or formatting that would typically enhance a presentation slide's quality.</think>\n<answer>1.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.482/slides/6.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide discusses the quality of element-aware summaries compared to other types, focusing on metrics like logical coherence and factual importance. The use of data and visual aids (pie charts) to demonstrate the acceptance by the public suggests a thorough analysis. However, while it offers valuable insights, the bullet points are general points rather than detailed qualitative feedback or numerical ratings.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.findings-acl.21/slides/20.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.2,
+      "model_output": "<think>Assessing the quality of a slide typically involves factors such as clarity, organization, relevance, visual appeal, and ease of understanding. This slide appears to be comprehensive in terms of content, covering different aspects of prompt engineering with example tasks and structured sections (steps and templates). It seems well-organized, providing clear instructions and examples. However, without subjective personal assessment or feedback from users, it's challenging to determine aesthetic qualities or innovation of design.</think>\n<answer>8.2</answer>",
+      "metrics": {
+        "mae": 0.6999999999999993,
+        "mse": 0.489999999999999,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-industry.3/slides/6.jpg",
+      "ground_truth_score": 4.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>This slide presents an analysis of fine-tuning ablation studies, detailing performance changes across different models and configurations. It involves numeric data which implies an effective analytical approach, even though the visual aspect lacks graphical elements that might aid comprehension.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/uydQ2W41KO/slides/3.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The image shows a slide with a simple table of contents covering \"Background,\" \"Methodology,\" and \"Results.\" This indicates a basic structure which is important for clarity. However, the visual is quite plain and lacks color or additional design elements that might enhance engagement or presentation appeal.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/43.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The slide is incomplete and lacks substantial content beyond a title and a brief description of a tool named SwiftBrush. It mentions an A100 GPU as being used for testing but lacks visual results or quantitative data that might enhance its value for stakeholders.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/BwAkaxqiLB/slides/9.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide effectively communicates that standalone LLMs without search are insufficient for AAD, while suggesting that combining them with search leads to better performance. It also mentions specific algorithms like Evolutionary algorithms as effective. While it clearly conveys a key message, the inclusion of multiple graphs with varying numbers of trials might make it feel slightly overcrowded or not entirely clear at a glance.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/JSZmoN03Op/slides/7.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>As a slide presentation, there are issues such as redundant text and irrelevant information which affect both content and clarity, making a critical evaluation on quality complicated.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/29560/slides/5.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 4.5,
+      "model_output": "<think>The image provided seems to be more focused on a chat interface rather than a slide content for evaluating quality. However, considering the task and the absence of clear relevance to the content or presentation quality, a neutral assessment would be appropriate.</think>\n<answer>4.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/32499/slides/14.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The image appears clear and well-organized, offering multiple views and examples to explain the concept of \"Rotary Major Scan.\" It effectively communicates the idea without visual clutter or confusing elements.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30271/slides/3.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide presents a comparative analysis of MACs (Multiplication-Accumulation Operations) per input element among different models, highlighting the computational burden of Diffusion Models (DMs). However, it lacks a detailed explanation or additional context that would better inform about the \"quality\" beyond its technical performance. It also seems somewhat focused on the broader field of machine learning rather than just genuinely comparing DM characteristics within the specific domain.</think> \n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-long.139/slides/13.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The image provided is a table comparing the accuracy rates of various models across different datasets and tasks. It is a comprehensive representation which can be useful for researchers or users interested in evaluating model performance. The design seems clear and organized, making it easy to read and compare data. However, ratings often depend on personal interpretation and specific criteria.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 4.0,
+        "mse": 16.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/XQuXfVR5Wx/slides/12.jpg",
+      "ground_truth_score": 1.8,
+      "predicted_score": 3.5,
+      "model_output": "<think>The image presented is extremely minimalist, containing only a single sentence that touches upon a technical concept (MAE being incompatible with multiscale models). There's a lack of visual elements, diagrams, or supporting materials to enhance understanding or engage the audience. A simple, descriptive title is provided, but no additional context, data, or elaboration is given. This sparseness might make it less effective for effectively communicating a complex topic.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 1.7,
+        "mse": 2.8899999999999997,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30703/slides/15.jpg",
+      "ground_truth_score": 4.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide presents an overview of different evaluation dimensions which are structured but not extensively detailed for each domain. There's no specific content related to AI related fields or effectiveness of presentation which are often required for a high-quality evaluation slide. However, the layout and clarity suggest it meets basic requirements of conveying information effectively.</think>\n<answer>7.5</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/29484/slides/8.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide presents information about InstantBooth, including images, text, and graphs related to computational efficiency comparison. However, there's no explicit judgment on its performance or impact depth, focusing more on graphical representation than insights or conclusions.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/2.jpg",
+      "ground_truth_score": 1.0,
+      "predicted_score": 1.0,
+      "model_output": "<think>The image provided appears to be completely black without any discernible content or features that could be evaluated for quality in terms of resolution, clarity, or thematic relevance.</think>\n<answer>1.00</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/JSZmoN03Op/slides/14.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The slide appears to be a template or draft for a presentation or a research document, missing practical content such as specific experiments or data findings. It also overlooks the issue described in the instructions where one should provide a rated mathematical question and answer.\n</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/g0QovXbFw3/slides/11.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>As an AI, I don't have personal preferences or feelings for slides. However, from a technical perspective, this slide contains sensitive material that could potentially harm someone and it's not handled appropriately.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 4.0,
+        "mse": 16.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/NAQvF08TcyG/slides/16.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The slide seems to focus on an idea to \"teach\" a model new words, with the example being \"popnap\". While this could be an interesting approach, the lack of clear explanation or context for the word \"popnap\" reduces its effectiveness. Additionally, there's no indication of engagement or interactivity, which would be beneficial for a learning scenario.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/28.jpg",
+      "ground_truth_score": 1.0,
+      "predicted_score": 2.5,
+      "model_output": "<think>The question asks for an assessment of the quality of a slide on a scale from 1 to 10. However, the image provided is mostly white with some text overlays and a logo, but very minimal content that can't provide enough details or context to grade effectively.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 1.5,
+        "mse": 2.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-long.224/slides/1.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide appears informative, clearly presenting the topic, authors, affiliation, and conference information. It's neatly structured but lacks visual elements like graphs or images, which might add interest to some presentations.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/NAQvF08TcyG/slides/7.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>As an AI, I don't have the capability to gauge the quality of presentations or slides directly from images like humans might do. However, I can analyze based on common presentation principles and visuals shown.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/25.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The image shows a single-frame representation with a figure in a simple pose and a compact layout. It lacks context, dynamic content, or complexity, which are crucial elements for better slides typically rated higher.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/osoWxY8q2E/slides/31.jpg",
+      "ground_truth_score": 7.2,
+      "predicted_score": 7.5,
+      "model_output": "<think>The image demonstrates a technical slide discussing an approach called \"Relufication,\" which integrates ReLU activation into pre-trained models that originally used other activation functions. It effectively compares two diagrams illustrating the internal structure of feedforward neural network layers Catholic_Hashtag. The absence of specific content about qualitative elements like clarity, relevance, or design aesthetics quantifies its functional aspect rather than artistic or storytelling quality.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 0.2999999999999998,
+        "mse": 0.0899999999999999,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/2snzoozOWH/slides/14.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The slide appears minimalistic and lacks content or visual elements, which might indicate low accuracy or informational quality. However, its simplicity could be intentional depending on context.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.230/slides/30.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>Assessing the quality of a slide involves several factors such as clarity, relevance, design, and impact. This slide appears to have a clear message conveyed through the text \"Models mirror human response distributions: Correct > Literal >> Distractors,\" which suggests that it effectively communicates the main point about model responses compared to human reactions. However, there's not much visual diversity or complexity in the design, which might limit its engagement for some viewers. Additionally, it lacks geographical context or specific examples which could deepen understanding further.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-long.389/slides/1.jpg",
+      "ground_truth_score": 1.0,
+      "predicted_score": 1.5,
+      "model_output": "<think>The image presented is entirely black, which typically indicates either a technical error or an intentional choice for minimal content on a slide. Such slides may lack sufficient visual elements to convey meaning effectively.</think>\n<answer>1.50</answer>",
+      "metrics": {
+        "mae": 0.5,
+        "mse": 0.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-long.313/slides/18.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>This slide seems to be a typical \"thank you\" slide at the end of a presentation. It contains information such as the conference name (NAACL 2024), the researcher's name (Zhenrui Yue), their university affiliation (University of Illinois Urbana-Champaign), and contact information. While this information is essential for audience engagement and follow-up, there is no content that could be rated based on a specific presentation style, slides quality, or content effectiveness.</think>\n<answer>6.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2025/33673/slides/26.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>Assessing the quality of an academic slide often involves evaluating aspects such as clarity, relevance, presentation, and technical content. This slide appears well-organized and provides a clear comparison of different techniques for image segmentation using attention maps and masks. It includes both qualitative examples (captions) and quantitative visualization aids, which can be helpful for researchers in the field.\n\nThe inclusion of multiple comparisons (e.g., KMeans vs CNN vs SAM) allows for a thorough examination of various methods, which is valuable for research purposes. However, the absence of numerical data or performance metrics might limit its appeal to practitioners who require exact measurements rather than visual inspection.\n\nOverall, it's a informative and useful slide for educational and research purposes.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/QIBpzaDCAv/slides/1.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The slide visually communicates that a video is playing, which might indicate some level of multimedia involvement. However, there seems to be no substantial content or explanation related to neural information processing systems (NIPS) or any other details that would warrant higher quality.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/6l9YG3wHA9/slides/12.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>The image appears to be a presentation slide provide an overview or summary of a single slide. It lacks detailed content and context which could affect its comprehensiveness and depth as a standalone piece of information. The effectiveness might depend on the audience's prior knowledge and the slide's role in the bigger presentation.</think>\n<answer>6.50</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/ndYXTEL6cZz/slides/23.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide effectively visually presents the comparison of different methods (Energy, SOFTMAX, ODIN, REACT, DICE) across multiple aspects (Average OOD AUROC and ID Accuracy). It highlights the differences in performance quite clearly and includes important metrics that are relevant to the topic at hand. The inclusion of the previous SOTA (State-of-the-Art) gives context for how well the presented methods perform compared to existing standards.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/NAQvF08TcyG/slides/57.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 1.5,
+      "model_output": "<think>The slide consists solely of a text title \"Main take home message\" without any additional content or images that provide context or further explanation. This is considered an incomplete or genus level slide as it lacks substantial information beyond a brief statement.</think>\n<answer>1.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/27.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The image presented seems to be from a game or a virtual environment, likely related to an animated sequence of a character. However, without clear visuals indicating character animation or storyline progression, it's difficult to assess its quality comprehensively. Typically, quality ratings consider factors like smoothness of animation, clarity of NPC visuals, implementation of gameplay or narrative elements that are not discernible here.\n</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/lJWUJWLCJo/slides/22.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.0,
+      "model_output": "<think>The slide effectively visually communicates a complex topic (selecting the context window for neural networks) but lacks some visual aids that might enhance understanding further, such as more annotations or examples.</think>\n<answer>8.00</answer>",
+      "metrics": {
+        "mae": 0.5,
+        "mse": 0.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/feXm8GbxWU/slides/38.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide appears informative and well-organized, presenting multiple visual elements that seem to convey key data effectively. However, it lacks some additional details and perhaps a more engaging introduction or conclusion to fully capture the presentation's overall quality.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/53.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide displays a grid of images that seem to be examples or qualitative results from a presentation. There doesn't appear to be any quantifiable data or empty areas Pixel Perfectly, so it seems balanced but not thematically rich.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 4.0,
+        "mse": 16.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/TatRHT_1cK/slides/10.jpg",
+      "ground_truth_score": 1.0,
+      "predicted_score": null,
+      "model_output": "<think>The image provided is not a visual slide but rather a screenshot of text data in what appears to be a structured format, possibly extracting content from Wikipedia article revision pages. This format does not inherently contain visual slides or their quality information. Therefore, it's impossible to provide an accurate quality rating for a slide based on this image.</think>\n<answer>Warning: The given image does not represent a slide; therefore, no quality rating can be provided.</answer>",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/X1QeUYBXke/slides/1.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide is clear and directly addresses the topic of the conference presentation. It includes key information such as the title, authors, and affiliations, which are all easily readable and informative. However, it lacks visual elements or additional formatting that might enhance engagement or clarity further.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/TatRHT_1cK/slides/26.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide is clear and effectively communicates its message through a well-designed graph, showing data trends clearly and labeling the axes properly. However, it lacks additional context or explanation that would give more insight into the implications of these trends for different model sizes.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30693/slides/27.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The slide appears to be presenting a technical concept in machine learning or AI, specifically \"Style-Aligned Generation\". It seems adequately informative for its purpose, but not particularly polished or visually appealing. The content is clear enough to understand the topic, but there's no notable creativity or visual impact beyond the basic layout. It achieves its goal of communicating information effectively without much additional flair.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30969/slides/16.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide presents a comparison of rendering results using different configurations (\"3DGs\" and \"w/ masking\") for a scene, specifically focusing on the \"Effect of Masking.\" It includes four images: 3DGs, Gaussian Points, Ellipsoids, and the Rendered Result. The title suggests that there's no visible difference despite reducing the number of Gaussians used in the masking technique.\n\nThe quality is measured largely by how well the slide communicates its message:\n1. Visually, it clearly differentiates between various approaches.\n2. The content is relevant to the topic discussed under \"Effect of Masking.\"\n3. The inclusion of \"GT\" likely provides a good point of reference.\n4. Text at the top makes it easy to follow the comparison presented.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31373/slides/23.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The image provided is a slide from a presentation about Residual Denoising Diffusion Models (RDDM). It breaks down information into several sections discussing the suitability of RDDM for different operations across various metrics like PSNR and SSIM. The outline also accounts for technical aspects such as batch size, sampling steps, and conditional encoders usage.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/32.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 1.5,
+      "model_output": "<think>The slide looks empty with no content or visual elements other than the title and authors shown at the bottom right corner. Title slides without much detail indicate that there is little information provided for the audience.</think>\n<answer>1.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/feXm8GbxWU/slides/7.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The image displays a functional slide explaining an LLM's ability to encode world knowledge and navigate a simple grid-based environment toward a goal. While the connection to true AI functions or complex reasoning isn't depicted directly, the slide serves its purpose of introducing concepts related to artificial intelligence effectively. It's informative without being overly technical.\n\nIt successfully represents the concept using simple visual aids like symbols for the AI and the target object (blue ball) and does a good job at highlighting the relationship between thought (\"move forward\") and action, which parallels some AI functionality.\n</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/10.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The image provided is a slide labeled \"Problem Statement.\" It includes a text element that reads \"Problem Statement\" which is a part of what slides usually contain. However, there's no substantial content or additional visual elements such as charts, graphs, bullet points, or images that could provide more insight into how effective this slide is for its purpose.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/54.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The slide contains only decorative elements (a \"THANK YOU\" message on a white background and a GitHub logo) without any content or information that would provide insight into the quality of a presentation. This suggests either a lack of content or an unfinished slide.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.findings-acl.21/slides/22.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.2,
+      "model_output": "<think>The slide appears to be well-organized, providing clear explanations and examples for prompt engineering. It effectively communicates key concepts and provides templates that can be helpful for learners. However, it lacks some specific visual elements or engaging graphics that might enhance its appeal to certain audiences.</think>\n<answer>8.2</answer>",
+      "metrics": {
+        "mae": 2.6999999999999993,
+        "mse": 7.2899999999999965,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/eccv2024/2359/slides/30.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide presents data from an experiment, likely focused on post-training merging of models, comparing uniform averaging and Model Stock methods under multiple conditions (N=2, N=3, N=4). However, without seeing the specific content details or visual representation, I can only comment on the structure and programming code, which seems preliminary and requires further results or context for a quality rating.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/JSZmoN03Op/slides/13.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The slide seems to be a template or draft for conducting experiments about GSM-IC-4K technology, listing questions that might be investigated or experiments that could be performed without showing any actual results or data analysis. While the structure is informative, it lacks specific content which would typically include experimental outcomes, analysis, or conclusions.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/PFfmfspm28/slides/1.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide appears informative and relevant to the topic of reinforcement learning environments, which indicates a high level of content quality. However, details such as visual appeal, clarity of presentation, and additional components like charts or demonstrations cannot be evaluated from a static image. It's crucial for slides that include details beyond text and logos.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/ChniRIfpRR/slides/8.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The slide contains an image and text. The image appears to be slightly cropped and positioned just below the text box, which is not a common layout practice for slides. This could be seen as design flaw, although the image itself seems to be centered well enough.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/TatRHT_1cK/slides/12.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The slide contains text elements (\"PREFIX\" and \"SUFFIX\") superimposed, which appear to be part of a design or template. However, there's no content or informative purpose evident from just looking at these keywords. It seems more like a placeholder or decorative graphic rather than informational content.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.acl-long.409/slides/9.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>Assessing the quality of a slide involves evaluating several aspects such as clarity, relevance, presentation, and information density. This slide content seems to be from a technical presentation, likely focusing on machine learning and agent systems, indicated by terms like \"ETO,\" \"IPR,\" \"LLM Agent Learning,\" and \"Agent Lumos.\" The slide effectively uses bullet points and diagrams to explain complex concepts, which suggests a good attempt at making difficult topics accessible. However, some elements might be too dense for immediate understanding without significant prior explanation or notes. Additionally, while the content seems bulletproof and relevant for its academic or professional audience, it may not be particularly engaging or visually striking for all viewers.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/xaSpuvNYwS/slides/18.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide appears to be informative and succinct, providing clear details about the topic \"Certified Robustness via a Single Diffusion Model,\" along with authors and a GitHub link. It's well-structured but lacks visual elements or a figure which are often considered in quality assessments for slides.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.findings-naacl.211/slides/29.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide presents a detailed persona overview, which is a good start for understanding the context it aims to convey. However, it could benefit from more visual attention to how the different sections relate to each other and between the \"memory\" conceptual representation above, and the text-making instructions below. Additionally, it might focus more clearly or explicitly on a comparison of the two types of 'memory modules' mentioned to provide more concrete distinctions or examples.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/21.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 1.0,
+      "model_output": "<think>The image appears to be a blank slide with the word \"Ablations\" centered on a black background. There is no content, details, or visual elements that provide any information about a specific analysis or presentation quality.</think>\n<answer>1.00</answer>",
+      "metrics": {
+        "mae": 2.5,
+        "mse": 6.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/Oc1SIKxwdV/slides/13.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>This image describes a technical concept related to aging models edited with discrete key-value adaptors as they traverse different times. It does not provide specific metrics or qualitative assessments that would allow a numerical quality score calculation.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30693/slides/6.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The slide is very minimalistic, focusing solely on text without any accompanying graphics or examples. This simplicity could be an intentional choice to emphasize the topic clearly, but it also lacks visual interest and detail, which might be necessary for making complex points more understandable.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.naacl-long.92/slides/7.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The presentation slide shows an AI-generated content that includes harmful and incentivizing language about mass shootings. This is a serious issue and not appropriate for content creation. Additionally, the algorithm described is meant to filter harmful content but also involves posterior censorship of AI output. This may suggest issues related to privacy and data security.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/NAQvF08TcyG/slides/23.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide is clear, informative, and effectively visualizes an important concept in Latent Diffusion Models (LDM). It includes essential components like Conditioning, Semantic Map, Text, and Images that help explain how text-to-image models work using conditional diffusion. However, it's missing some mathematical details which could further assist understanding for viewers who want to dive deeper into the technical aspects.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/E01k9048soZ/slides/6.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide presents information clearly and concisely about UNIFIED-IO, outlining its capabilities across various AI tasks. It's well-organized with a title introducing the topic effectively, but lacks numerical data or specific examples to quantify its performance across all tasks mentioned.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/rqyXubsBhH/slides/26.jpg",
+      "ground_truth_score": 9.0,
+      "predicted_score": 8.5,
+      "model_output": "<think>Assessing the quality of a slide involves considering various elements such as clarity, relevance, visual appeal, and pedagogical effectiveness. This slide appears to be well-structured, providing key concepts clearly with labeled components like \"Data sample,\" \"Optimal Conformal Predictor,\" and \"Counterfactual Monotonicity Assumption.\" The annotations for each alpha value and their corresponding impact on prediction difficulty add to the comprehensiveness. However, there could be a slight enhancement in visual contrast or the use of vector graphics instead of images for simplicity.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 0.5,
+        "mse": 0.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/10.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The slide simply displays the word \"Results\" in white text on a black background. There are no additional data, graphs, or supporting content visible to assess the depth, relevance, or informative value of the presentation. Judging by its minimalistic nature, it might lack detailed analysis or supporting evidence that could enhance its educational or communicative effectiveness.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/lKK50q2MtV/slides/2.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 1.5,
+      "model_output": "<think>The slide provided appears to be very minimalistic and lacks any content or information. A title is present, but no further details, visual elements, or any useful data are displayed. Such slides may serve purposes like introducing topics or breaking large amounts of information into sections, yet they are often criticized for being placeholders without substance.</think>\n<answer>1.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2024/2024.acl-long.786/slides/7.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide demonstrates a structured example of protoform reconstruction, showing linguistic similarity across Romance languages. It effectively communicates the concept by illustrating a clear family tree depicting the evolution of the word 'neighbor' from Latin to modern languages. The use of comparative language data supports the educational aim well. However, it lacks detailed annotations or sources within the actual presentation content, which could potentially hinder engagement or comprehension for those not familiar with linguistics.</think>\n<answer>8.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/Ouj6p4ca60/slides/1.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>The slide is clear and directly relevant because it addresses a problem effectively by asking for better data efficiency. However, it lacks specificity and detail, which means there's room for additional depth or examples to fully clarify the issue or potential solutions.</think>\n<answer>6.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/PjiRSyUt7e/slides/9.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide effectively communicates the importance of understanding textual and visual context together by using an image and highlighting specific reasoning tasks. It specifies which airlines are directly in front and behind a particular one, showcasing the relevance of both elements in solving part-of-speech problems often tackled by models like GPT-4.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/w7LU2s14kE/slides/4.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide seems to focus on the structure of a large model called LM, highlighting how it processes or decodes knowledge by breaking down sentences. There's a clear structure showing \"Miles Davis plays the trumpet\" suggesting an example of text encoding or decoupling. However, there may be an issue with readability or understanding for the presentation audience as it requires knowledge or context involving LM which could be challenging for everyone. Additionally, there isn't any form of communication indicating interaction or feedback that could enhance clarity.\n</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.505/slides/3.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The slide shown is very minimalistic, possibly intended for a brainstorming or conceptual point, but lacks substantial content, clarity, or detail that would typically make up a well-constructed presentation slide.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31390/slides/1.jpg",
+      "ground_truth_score": 1.0,
+      "predicted_score": 1.0,
+      "model_output": "<think>The image appears to be solid black throughout, lacking any distinguishable features or details that would represent data, text, or graphical elements typically expected in a slide presentation. This type of image does not provide any meaningful content or information that one might aim to evaluate for quality or relevance in a professional or academic context.</think>\n<answer>1.00</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.findings-naacl.211/slides/33.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The image shows a title slide that reads \"Confirmation Bias\". It's a very simple slide with both the title text and some minor aesthetic elements, but it lacks any detailed content or visual representation of the subject matter which makes it informative or engaging.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2023/ChniRIfpRR/slides/14.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>The slide presents a dataset visualization, which is informative but the images are describing the objects in their own class, not split into which images were used and which weren't, making it unclear to me if the statement about ID-free images is correct.</think>\n<answer>6.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30029/slides/19.jpg",
+      "ground_truth_score": 1.0,
+      "predicted_score": null,
+      "model_output": "Inactive",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/Uczck6TlSZ/slides/7.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": null,
+      "model_output": "ulatory",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/lJWUJWLCJo/slides/36.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The slide appears minimalistic, focusing only on the heading \"Computational cost\" and listing \"Additional cost from: Encoding additional input\". It lacks details, examples, or deeper explanations which are necessary for educational or detailed understanding of the topic.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/UDqHhbqYJV/slides/6.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 6.5,
+      "model_output": "<think>The slide provides an overview of the experimental setting for a study regarding different methodologies used in prompting during language model evaluations. It lists several baselines such as zero-shot prompting, chain-of-thought prompting, among others. It also mentions that other LLMs apart from text-davinci-003 are evaluated on part of the benchmark.</think>\n<answer>6.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/zTu0QEpvtZ/slides/13.jpg",
+      "ground_truth_score": 5.0,
+      "predicted_score": 2.5,
+      "model_output": "<think>The slide is very simple, containing just the text \"Thanks!\" which effectively communicates gratitude. However, it lacks content or information that could engage or provide detail to the audience.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 2.5,
+        "mse": 6.25,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/eccv2024/1658/slides/5.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The image appears to be a slide or slide component from a presentation, likely related to a method involving 3D Gaussians. However, the slide lacks detailed explanation, examples, or sufficient context to fully evaluate its quality comprehensively. It seems to present an abstract concept without any numeric or visual data to validate the approach.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/icml2024/BwAkaxqiLB/slides/25.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide provides an overview of the flow shop scheduling problem, including the definition of FSSP, its goal, an example, and results comparing various heuristic algorithms against the optimum solution. It's well-structured with clear content and uses LaTeX formatting which increases its professional look. However, it does not visually depict complex schedules or make direct comparisons that are often useful for understanding different algorithms' performance.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/dI4wzAE6uV/slides/8.jpg",
+      "ground_truth_score": 4.5,
+      "predicted_score": 8.87,
+      "model_output": "<think>The slide is well-structured and informative, discussing an annotation workflow which details how question annotators use databases and description files to create corpora of questions. It includes a detailed explanation of the process, key components like supervision, experts, annotation workflow, database content, and a quality comparison between different annotations (8/10 for Collection, Check, Until and 9/10 for enrolls). The information is presented clearly, making it understandable and useful for a flow chart comprehension.</think>\n<answer>8.87</answer>",
+      "metrics": {
+        "mae": 4.369999999999999,
+        "mse": 19.096899999999994,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.78/slides/2.jpg",
+      "ground_truth_score": 7.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide contains a clear title, author names, affiliation logos, and an image of a person which seems to be an online session indicator Iran and a date. However, the person's name is not relevant as it implies it could be for an online discussion or a pre-recorded session that any attendee might have attended. There is no detailed content explanation, and student numbers are not specified.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/NjNfLdxr3A/slides/7.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 6.8,
+      "model_output": "<think>The slide effectively conveys a clear message using a visual metaphor to compare resources needed for large models with those required by individuals. However, while the concept is presented imaginatively, the slide lacks detailed information or data to support the adaptation methods showcased. It also misses specific examples or detailed explanations that might enhance understanding or argument strength.</think>\n<answer>6.8</answer>",
+      "metrics": {
+        "mae": 1.7000000000000002,
+        "mse": 2.8900000000000006,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.505/slides/35.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.5,
+      "model_output": "< Vollständiger Dialo.gsprozess > \n< answer > 7.50 </answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/ymt1zQXBDiF/slides/21.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide appears comprehensive and informative, presenting various methods for weighting functions in deep learning models, including their rationale and mathematical expressions. It's relevant to the topic at hand but seems to lack defining specifics regarding design sophistication, which impacts quality.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/eccv2024/2381/slides/4.jpg",
+      "ground_truth_score": 1.5,
+      "predicted_score": 1.5,
+      "model_output": "<think>The image provided does not contain textual content or graphical elements that suggest any specific quality metrics such as design, clarity, or functionality related to a presentation or report. It appears to be a title slide without further contents or visual information that would typically be present in a presentation, especially one with the title \"Hybrid Representation of 3DGS and Surface Mesh.\" This kind of slide might serve as an introduction to a more detailed presentation but lacks content necessary for evaluation based on quality or relevance.</think>\n<answer>1.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/xJ7YWXQOrg/slides/9.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The image shows a Sankey diagram with consistent colors and clear labels for points in time (9-Jan. and 30-Jan.) and events (GPT-4). The structure appears organized and informative, suitable for complex data visualizations.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/g0QovXbFw3/slides/6.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": null,
+      "model_output": "I'm sorry, can you please provide me with more information or context about the slide? Without that, I cannot assign a numerical quality rating.",
+      "metrics": {
+        "mae": null,
+        "mse": null,
+        "within_threshold": null,
+        "threshold": 0.35,
+        "error": "Failed to extract valid score"
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30469/slides/13.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide appears to clearly communicate a scientific concept with logical headings and structured information. It effectively uses bullet points to convey complex ideas about task embedding and model performance, enhancing understanding through visual comparisons with examples. However, the presence of technical terms might pose the difficulty mentioned for certain readers, particularly those not deeply familiar with machine learning concepts.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/naacl2024/2024.findings-naacl.211/slides/28.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>This slide seems to be designed as an educational or presentation aid, likely used for a discussion or lecture. It effectively outlines key aspects of a chosen persona with relevant details, which adds value to understanding the context.\n</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/31191/slides/46.jpg",
+      "ground_truth_score": 2.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The slide lacks content, so it cannot effectively communicate any results or insights to the audience.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/Uczck6TlSZ/slides/2.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide is clear and uses symbols for the different components which is good as it simplifies the explanation of complex concepts. However, it lacks any introduction, conclusion or narrative flow. It directly addresses the research question without providing context or implications, which affects its completeness and understanding from an audience perspective.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/29484/slides/4.jpg",
+      "ground_truth_score": 3.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The image provided shows a slide labeled \"Related Work\" which includes two distinct collage images of different people performing various actions. These collages seem to illustrate diverse activities or behaviors associated with the topic mentioned. However, there's inconsistency in the application or relation of these visuals to the concept being referred to as related work. The design looks manageably clear but lacks substantive content that would connect the images directly to the main idea.\n</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/DLJznSp6X3/slides/2.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 2.5,
+      "model_output": "<think>The image presents a humorous view through a meme about AI and machine learning, specifically portraying overfitting issues and solutions. While it's cleverly structured as a 'meme slide', its primary purpose appears more for entertainment than the enlightenment or utility in an educational or professional setting. As memes are typically not meant for serious discussion or comprehensive analysis, they often lack deep content or accuracy, which might not be appropriate for a formal presentation.</think>\n<answer>2.50</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2024/X1QeUYBXke/slides/19.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide presents a complex topic clearly, providing necessary technical terms and a flow diagram which can be confusing even for experts. The title is informative enough but lacks impact or catchy elements.</think>\n<answer>7.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30184/slides/13.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide is clear and well-organized with defined terms and descriptive notations. However, it lacks visual elements that might have made it more impactful or visually engaging for viewers.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.202/slides/2.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 3.5,
+      "model_output": "<think>The image shows a slide from a presentation discussing Large Language Models (LLMs) for generating structured code using natural language, specifically focusing on code completion tasks from the HumanEval benchmark. It includes code snippets, example outputs, metrics comparing different LLMs, and references to academic papers. However, the quality of a slide cannot be rated based solely on the content shown; one needs to consider factors like design, clarity, engagement, and practical usefulness not addressed here.</think>\n<answer>3.50</answer>",
+      "metrics": {
+        "mae": 5.0,
+        "mse": 25.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.202/slides/40.jpg",
+      "ground_truth_score": 6.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide presents data on cross-sibling transfer for what seems to be a machine learning task involving event type recognition, as indicated by the text referring to \"Transfer_Money\" mentioned in the context. It lists performance metrics for different scenarios (0-shot, 1-shot, and 10-shot tests) comparing \"same type\" and \"sibling type\" examples across `Arg-I` (argument IAICUIE) and `Arg-C` (argument C) measures. Although not explicitly asked, the data seems well-organized and indicative of meaningful analysis. The presentation also includes a note suggesting the use of sibling examples improves performance significantly over 0-shot settings. However, an assessment requires more than just raw data; the visual and textual clarity are important elements.</think> \n<answer>7.5</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/acl2023/2023.acl-long.505/slides/53.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 4.5,
+      "model_output": "<think>The slide appears informative but lacks design elements that might enhance engagement or clarity for viewers not familiar with the specific context of the data presented. It's a good summary slide but could benefit from clearer segmentation of information or more visually appealing charting styles.</think>\n<answer>4.50</answer>",
+      "metrics": {
+        "mae": 1.0,
+        "mse": 1.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2023/g0QovXbFw3/slides/17.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>Assessing the quality of a slide involves considering multiple aspects such as content, clarity, presentation, and educational value. The slide titled \"QA Moderation and Safety Evaluation\" appears to be part of a research presentation at NeurIPS 2023, which suggests an academic or technical context.\n\n- **Content**: The slide discusses practical applications of moderation methods for AI models, specifically focusing on QA (Question Answering) and its safety implications. It includes references to different models like Alpaca and Vicuna, which indicates depth in the subject.\n  \n- **Clarity**: The chart on the right helps visually represent data, making complex comparisons (between human evaluation, GPT-4 evaluation, GPT-4 vs. QA-Moderation, etc.) accessible. The text is clear and relatively concise, avoiding overly complex jargon while still providing enough detail to understand the topic.\n\n- **Presentation**: The design incorporates color contrasts and distinct sections clearly demarcated, enhancing readability. The numbering helps ground viewers in the sequence of presentations.\n\n- **Educational Value**: Given its focus on evaluating AI models and their moderation effectiveness, it serves an informative purpose suitable for researchers and professionals interested in AI ethics and model evaluation.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/29484/slides/9.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The image appears to be a well-structured presentation slide that clearly outlines the model structure for generating images based on input prompts. It includes key components like the polarity in the middle, a top-down arrows, cross-connections, and a bottom-dotted arrows. The block diagram also covers the training pipeline and a section labeled \"Loss:diffusion denoising loss (L2)\". All these elements seem to be structured logically to convey the concept effectively.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2023/E01k9048soZ/slides/39.jpg",
+      "ground_truth_score": 8.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The image is clear and well-organized, providing detailed information about the structured text dispatching system. It effectively communicates the flow and interconnections between different components without being cluttered. However, for an even higher rating, there could potentially be more detailed annotations or more illustrative examples to assist in understanding complex concepts.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 0.0,
+        "mse": 0.0,
+        "within_threshold": 1.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/nips2022/A6AFK_JwrIW/slides/11.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>The slide appears informative but lacks some details that might increase its effectiveness. It effectively outlines an important research challenge in machine learning, providing clear diagrams and graphs. However, there could be more theoretical depth or discussion on existing solutions and proposed approaches beyond the cursory mention.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/iclr2024/LY3ukUANko/slides/27.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 8.5,
+      "model_output": "<think>The slide appears clear and relevant to the subject matter, providing important theoretical points about MQAR and input-dependent mixing. It's well-organized with distinct sections for propositions and theorems, which benefits understanding significantly. The inclusion of a visual example is helpful but not necessary for comprehending the main message.</think>\n<answer>8.50</answer>",
+      "metrics": {
+        "mae": 3.0,
+        "mse": 9.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    },
+    {
+      "task": "score",
+      "slide_id": "unknown",
+      "image": "downloads/cvpr2024/30053/slides/15.jpg",
+      "ground_truth_score": 5.5,
+      "predicted_score": 7.5,
+      "model_output": "<think>Assessing the quality of a slide involves considering multiple aspects such as clarity, relevance, data presentation, and methodology. This slide appears to be part of a scientific report or study, which typically requires a critical evaluation by domain experts for credibility.\n\nKey points to consider:\n- **Content**: The slide discusses experiments and an ablation study, which are essential for understanding the contribution of different factors (temporal, multi-view, spatial) to the performance of autonomous driving tasks.\n- **Clarity**: The text is concise and specifically explains the results. However, there might be some overlapping information that could be streamlined or more contextually embedded.\n- **Methodology**: The study is well-structured, using tables and clear comparisons between different models and configurations with descriptions of differences (\\(\\triangle\\)).\n- **Visuals**: Tables (e.g., Table 4 and Table 5) are professionally set up to support the data.\n\nDisadvantages:\n- Lack of summary or conclusion that would highlight the main findings and their implications.\n- Sparseness in explanation beyond presenting numerical results, though this depends on the scope of the broader document.\n\nPersonal expert judgment plays a role in rating, where my criteria would lean towards scientific rigor but also a bit of readability and outcome interpretation. The data provided is substantial and well-presented.</think>\n<answer>7.50</answer>",
+      "metrics": {
+        "mae": 2.0,
+        "mse": 4.0,
+        "within_threshold": 0.0,
+        "threshold": 0.35
+      }
+    }
+  ]
+}

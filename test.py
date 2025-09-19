@@ -299,8 +299,8 @@ class MultiTaskTester:
                         model=self.test_model,
                         messages=messages,
                         temperature=1.0,
-                        top_p=0.95,
-                        max_tokens=1024,
+                        # top_p=0.95,
+                        max_completion_tokens=1024*2,
                     )
                     
                     generated_text = completion.choices[0].message.content or ""
@@ -388,8 +388,8 @@ class MultiTaskTester:
                         model=self.test_model,
                         messages=messages,
                         temperature=1.0,
-                        top_p=0.95,
-                        max_tokens=1024,
+                        # top_p=0.95,
+                        max_completion_tokens=1024,
                     )
                     
                     generated_text = completion.choices[0].message.content or ""
@@ -538,7 +538,7 @@ class MultiTaskTester:
                         messages=messages,
                         temperature=1.0,
                         # top_p=0.95,
-                        max_tokens=1024*2,
+                        max_completion_tokens=1024*2,
                     )
                     
                     generated_text = completion.choices[0].message.content or ""
